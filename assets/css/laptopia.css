@@ -968,6 +968,7 @@ textarea:focus-visible {
 /* HERO BALANCE */
 @media (min-width: 901px) {
   .laptopia-hero {
+    direction: ltr;
     display: grid;
     grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
     align-items: center;
@@ -979,8 +980,10 @@ textarea:focus-visible {
 
   .laptopia-hero-content {
     grid-column: 2;
+    direction: rtl;
     width: min(100%, 610px);
     justify-self: end;
+    text-align: right;
   }
 
   .laptopia-hero-visual {
