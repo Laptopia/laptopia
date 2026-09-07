@@ -826,8 +826,8 @@ textarea:focus-visible {
   position: relative;
   z-index: 2;
   max-width: 680px;
-  margin: 0;
-  text-align: right;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .laptopia-hero h1,
