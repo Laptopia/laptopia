@@ -51,20 +51,4 @@
 
   </div>
 
-  <div class="laptopia-hero-visual" aria-hidden="true">
-    <div class="laptopia-tech-orbit laptopia-tech-orbit-one"></div>
-    <div class="laptopia-tech-orbit laptopia-tech-orbit-two"></div>
-    <div class="laptopia-tech-board">
-      <span class="laptopia-tech-chip"></span>
-      <span class="laptopia-tech-line laptopia-tech-line-one"></span>
-      <span class="laptopia-tech-line laptopia-tech-line-two"></span>
-      <span class="laptopia-tech-node laptopia-tech-node-one"></span>
-      <span class="laptopia-tech-node laptopia-tech-node-two"></span>
-      <span class="laptopia-tech-node laptopia-tech-node-three"></span>
-    </div>
-    <div class="laptopia-tech-laptop">
-      <span></span>
-    </div>
-  </div>
-
 </section>

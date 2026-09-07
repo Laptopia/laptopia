@@ -216,7 +216,7 @@ textarea:focus-visible {
 /* HERO */
 
 .laptopia-hero {
-  padding: 72px 20px 66px;
+  padding: 58px 20px 54px;
   text-align: center;
   background: linear-gradient(180deg,#f8fafc 0%,#f3f4f6 100%);
 }
@@ -863,155 +863,18 @@ textarea:focus-visible {
   transform: translateY(-3px);
 }
 
-.laptopia-hero-visual {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  width: min(34vw, 390px);
-  height: min(34vw, 390px);
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.laptopia-tech-board {
-  position: absolute;
-  top: 16%;
-  left: 13%;
-  width: 72%;
-  height: 58%;
-  border: 1px solid rgba(125, 211, 252, .65);
-  border-radius: 24px;
-  background: linear-gradient(145deg, rgba(15, 23, 42, .96), rgba(30, 41, 59, .9));
-  box-shadow: 0 28px 70px rgba(15, 23, 42, .24), inset 0 1px rgba(255, 255, 255, .12);
-  transform: rotate(-8deg);
-}
-
-.laptopia-tech-board::before,
-.laptopia-tech-board::after {
-  position: absolute;
-  content: "";
-  background: repeating-linear-gradient(90deg, transparent 0 17px, rgba(56, 189, 248, .3) 18px 19px);
-}
-
-.laptopia-tech-board::before { inset: 15% 10%; }
-.laptopia-tech-board::after { inset: 10% 15%; background: repeating-linear-gradient(0deg, transparent 0 16px, rgba(129, 140, 248, .25) 17px 18px); }
-
-.laptopia-tech-chip {
-  position: absolute;
-  top: 36%;
-  right: 38%;
-  z-index: 2;
-  width: 24%;
-  aspect-ratio: 1;
-  border: 1px solid #67e8f9;
-  border-radius: 8px;
-  background: radial-gradient(circle at 35% 30%, #a5f3fc, #0e7490 24%, #0f172a 25%);
-  box-shadow: 0 0 22px rgba(34, 211, 238, .55);
-}
-
-.laptopia-tech-line,
-.laptopia-tech-node { position: absolute; z-index: 2; }
-.laptopia-tech-line { height: 2px; background: #67e8f9; box-shadow: 0 0 10px rgba(103, 232, 249, .7); }
-.laptopia-tech-line-one { top: 31%; right: 9%; width: 27%; }
-.laptopia-tech-line-two { top: 68%; left: 9%; width: 25%; }
-.laptopia-tech-node { width: 8px; height: 8px; border-radius: 50%; background: #a5f3fc; box-shadow: 0 0 12px #22d3ee; }
-.laptopia-tech-node-one { top: 28%; right: 5%; }
-.laptopia-tech-node-two { top: 65%; left: 5%; }
-.laptopia-tech-node-three { bottom: 13%; right: 24%; }
-
-.laptopia-tech-laptop {
-  position: absolute;
-  right: 2%;
-  bottom: 7%;
-  width: 78%;
-  height: 32%;
-  border: 2px solid rgba(186, 230, 253, .85);
-  border-radius: 10px 10px 4px 4px;
-  background: linear-gradient(145deg, rgba(30, 41, 59, .86), rgba(15, 23, 42, .98));
-  box-shadow: 0 22px 38px rgba(15, 23, 42, .2);
-  transform: perspective(240px) rotateX(12deg) rotate(-4deg);
-}
-
-.laptopia-tech-laptop::after {
-  position: absolute;
-  right: -7%;
-  bottom: -15%;
-  left: -7%;
-  height: 12%;
-  border-radius: 0 0 12px 12px;
-  background: #94a3b8;
-  content: "";
-}
-
-.laptopia-tech-laptop span { position: absolute; inset: 12% 10%; border: 1px solid rgba(103, 232, 249, .6); border-radius: 4px; background: radial-gradient(circle at 60% 35%, rgba(34, 211, 238, .28), transparent 45%), #0f172a; }
-
-.laptopia-tech-orbit { position: absolute; border: 1px solid rgba(99, 102, 241, .22); border-radius: 50%; }
-.laptopia-tech-orbit-one { inset: 3%; transform: rotate(28deg) scaleY(.42); }
-.laptopia-tech-orbit-two { inset: 12%; transform: rotate(-32deg) scaleY(.55); }
-
 @media (max-width: 900px) {
   .laptopia-hero-content { max-width: 640px; margin: 0 auto; text-align: center; }
-  .laptopia-hero-visual { opacity: .22; left: 50%; width: 360px; height: 360px; transform: translate(-50%, -50%); }
 }
 
 @media (max-width: 600px) {
   .laptopia-hero-content { text-align: center; }
-  .laptopia-hero-visual { width: 280px; height: 280px; opacity: .12; }
   .laptopia-hero .laptopia-btn:hover { transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .laptopia-hero .laptopia-btn { transition: none; }
   .laptopia-hero .laptopia-btn:hover { transform: none; }
-}
-
-/* HERO BALANCE */
-@media (min-width: 901px) {
-  .laptopia-hero {
-    direction: ltr;
-    display: grid;
-    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
-    align-items: center;
-    column-gap: clamp(28px, 5vw, 72px);
-    min-height: 0;
-    padding: 54px clamp(24px, 5vw, 76px) 50px;
-    text-align: right;
-  }
-
-  .laptopia-hero-content {
-    grid-column: 2;
-    direction: rtl;
-    width: min(100%, 610px);
-    justify-self: end;
-    text-align: right;
-  }
-
-  .laptopia-hero-visual {
-    position: relative;
-    top: auto;
-    left: auto;
-    grid-column: 1;
-    grid-row: 1;
-    width: min(100%, 460px);
-    height: 340px;
-    justify-self: center;
-    transform: none;
-    opacity: 1;
-    filter: saturate(.92);
-  }
-
-  .laptopia-tech-board {
-    border-color: rgba(125, 211, 252, .88);
-    box-shadow: 0 28px 70px rgba(15, 23, 42, .3), 0 0 34px rgba(56, 189, 248, .16), inset 0 1px rgba(255, 255, 255, .16);
-  }
-
-  .laptopia-tech-board::before { background: repeating-linear-gradient(90deg, transparent 0 17px, rgba(56, 189, 248, .48) 18px 19px); }
-  .laptopia-tech-board::after { background: repeating-linear-gradient(0deg, transparent 0 16px, rgba(129, 140, 248, .4) 17px 18px); }
-  .laptopia-tech-line { box-shadow: 0 0 14px rgba(103, 232, 249, .9); }
-  .laptopia-tech-node { box-shadow: 0 0 16px #22d3ee; }
-  .laptopia-tech-laptop { box-shadow: 0 22px 38px rgba(15, 23, 42, .3), 0 0 24px rgba(56, 189, 248, .12); }
-  .laptopia-tech-orbit { border-color: rgba(99, 102, 241, .38); }
-  .laptopia-phone-line { margin-top: 10px; }
 }
 
 @media (max-width: 900px) {
