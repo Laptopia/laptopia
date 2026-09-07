@@ -1,0 +1,701 @@
+
+.laptopia-section,
+.laptopia-section * {
+  box-sizing: border-box;
+}
+
+.laptopia-section {
+  direction: rtl;
+  font-family: Arial, sans-serif;
+  color: #111827;
+  line-height: 1.5;
+}
+
+.laptopia-section a {
+  text-decoration: none;
+}
+
+.laptopia-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.laptopia-section-title {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.25;
+}
+
+.laptopia-section-subtitle {
+  margin: 0 0 36px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 17px;
+}
+
+.laptopia-btn {
+  display: inline-block;
+  padding: 15px 27px;
+  border-radius: 11px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: .2s ease;
+}
+
+.laptopia-btn:hover {
+  transform: translateY(-2px);
+}
+
+.laptopia-btn-whatsapp {
+  background: #25D366;
+  color: #fff !important;
+}
+
+.laptopia-btn-dark {
+  background: #111827;
+  color: #fff !important;
+}
+
+.laptopia-btn-white {
+  background: #fff;
+  color: #111827 !important;
+}
+
+.laptopia-btn-google {
+  background: #4285F4;
+  color: #fff !important;
+}
+
+
+/* HEADER */
+
+.laptopia-header {
+  direction: rtl;
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 13px 20px;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #e5e7eb;
+  backdrop-filter: blur(10px);
+}
+
+.laptopia-header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.laptopia-logo {
+  color: #111827;
+  font-size: 26px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.laptopia-logo span {
+  display: block;
+  margin-top: 4px;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.laptopia-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.laptopia-nav a {
+  color: #374151;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.laptopia-header-phone {
+  padding: 11px 17px;
+  border-radius: 10px;
+  background: #111827;
+  color: #fff !important;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+/* HERO */
+
+.laptopia-hero {
+  padding: 72px 20px 66px;
+  text-align: center;
+  background: linear-gradient(180deg,#f8fafc 0%,#f3f4f6 100%);
+}
+
+.laptopia-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.laptopia-badge {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.laptopia-hero h1 {
+  margin: 0 0 17px;
+  font-size: 50px;
+  line-height: 1.15;
+}
+
+.laptopia-hero h2 {
+  margin: 0 0 17px;
+  color: #374151;
+  font-size: 26px;
+  line-height: 1.45;
+}
+
+.laptopia-hero p {
+  max-width: 800px;
+  margin: 0 auto 26px;
+  color: #4b5563;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.laptopia-appointment {
+  display: inline-block;
+  margin-bottom: 27px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #fff3cd;
+  color: #7a5200;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.laptopia-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
+.laptopia-trust {
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.laptopia-trust span {
+  padding: 9px 14px;
+  border-radius: 9px;
+  background: #fff;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.laptopia-phone-line {
+  margin-top: 16px;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+
+/* SERVICES */
+
+.laptopia-services {
+  padding: 66px 20px;
+  background: #fff;
+}
+
+.laptopia-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 17px;
+}
+
+.laptopia-card {
+  padding: 24px 19px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  background: #f8fafc;
+}
+
+.laptopia-card h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+}
+
+.laptopia-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+
+/* BOARD */
+
+.laptopia-board {
+  padding: 68px 20px;
+  background: #111827;
+  color: #fff;
+  text-align: center;
+}
+
+.laptopia-board-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.laptopia-board-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #243044;
+  color: #dbeafe;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.laptopia-board h2 {
+  margin: 0 0 16px;
+  font-size: 39px;
+}
+
+.laptopia-board p {
+  max-width: 760px;
+  margin: 0 auto 22px;
+  color: #d1d5db;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.laptopia-board-price {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 11px;
+  background: #fff;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
+/* PROCESS */
+
+.laptopia-process {
+  padding: 66px 20px;
+  background: #f8fafc;
+}
+
+.laptopia-process-grid {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 15px;
+}
+
+.laptopia-step {
+  padding: 22px 15px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.laptopia-step-number {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111827;
+  color: #fff;
+  font-weight: 700;
+}
+
+.laptopia-step h3 {
+  margin: 0 0 7px;
+  font-size: 18px;
+}
+
+.laptopia-step p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* PRICES */
+
+.laptopia-prices {
+  padding: 66px 20px;
+  background: #fff;
+}
+
+.laptopia-price-list {
+  max-width: 830px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.laptopia-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 21px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.laptopia-price-row:last-child {
+  border-bottom: none;
+}
+
+.laptopia-price-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.laptopia-price-value {
+  color: #374151;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.laptopia-diagnostic {
+  max-width: 830px;
+  margin: 24px auto 0;
+  padding: 18px 20px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  background: #f8fafc;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.laptopia-price-note {
+  max-width: 830px;
+  margin: 20px auto 0;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* WARRANTY */
+
+.laptopia-warranty {
+  padding: 66px 20px;
+  background: #f8fafc;
+}
+
+.laptopia-warranty-grid {
+  max-width: 850px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 17px;
+}
+
+.laptopia-warranty-box {
+  padding: 25px 18px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.laptopia-warranty-box strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 28px;
+}
+
+
+/* REVIEWS */
+
+.laptopia-reviews-heading {
+  padding: 58px 20px 20px;
+  background: #fff;
+}
+
+
+/* CONTACT */
+
+.laptopia-contact {
+  padding: 67px 20px;
+  background: #111827;
+  color: #fff;
+  text-align: center;
+}
+
+.laptopia-contact-content {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.laptopia-contact h2 {
+  margin: 0 0 13px;
+  font-size: 36px;
+}
+
+.laptopia-contact-intro {
+  max-width: 720px;
+  margin: 0 auto 26px;
+  color: #d1d5db;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.laptopia-contact-note {
+  display: inline-block;
+  margin-bottom: 27px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: #7c2d12;
+  color: #fff;
+  font-weight: 700;
+}
+
+.laptopia-contact-info {
+  max-width: 600px;
+  margin: 0 auto 26px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+}
+
+.laptopia-info-box {
+  padding: 17px;
+  border: 1px solid #374151;
+  border-radius: 13px;
+  background: #1f2937;
+}
+
+.laptopia-info-title {
+  margin-bottom: 5px;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.laptopia-info-value {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.laptopia-hours {
+  max-width: 630px;
+  margin: 28px auto 0;
+  overflow: hidden;
+  border: 1px solid #374151;
+  border-radius: 14px;
+}
+
+.laptopia-hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 17px;
+  border-bottom: 1px solid #374151;
+}
+
+.laptopia-hours-row:last-child {
+  border-bottom: none;
+}
+
+
+/* FOOTER */
+
+.laptopia-footer {
+  direction: rtl;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background: #0b1220;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+
+/* FLOATING WHATSAPP */
+
+.laptopia-floating-whatsapp {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff !important;
+  box-shadow: 0 6px 22px rgba(0,0,0,.22);
+}
+
+.laptopia-floating-whatsapp svg {
+  width: 31px;
+  height: 31px;
+  fill: currentColor;
+}
+
+
+/* TABLET */
+
+@media(max-width:900px) {
+  .laptopia-nav {
+    display: none;
+  }
+
+  .laptopia-services-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .laptopia-process-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  .laptopia-header {
+    padding: 10px 13px;
+  }
+
+  .laptopia-logo {
+    font-size: 21px;
+  }
+
+  .laptopia-logo span {
+    font-size: 11px;
+  }
+
+  .laptopia-header-phone {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .laptopia-hero {
+    padding: 40px 15px 42px;
+  }
+
+  .laptopia-hero h1 {
+    font-size: 31px;
+    line-height: 1.25;
+  }
+
+  .laptopia-hero h2 {
+    font-size: 19px;
+  }
+
+  .laptopia-hero p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .laptopia-appointment {
+    font-size: 14px;
+  }
+
+  .laptopia-btn {
+    width: 100%;
+    padding: 14px 15px;
+    font-size: 16px;
+  }
+
+  .laptopia-services,
+  .laptopia-process,
+  .laptopia-prices,
+  .laptopia-warranty,
+  .laptopia-board,
+  .laptopia-contact {
+    padding: 45px 15px;
+  }
+
+  .laptopia-section-title,
+  .laptopia-board h2,
+  .laptopia-contact h2 {
+    font-size: 28px;
+  }
+
+  .laptopia-section-subtitle {
+    margin-bottom: 27px;
+    font-size: 15px;
+  }
+
+  .laptopia-services-grid,
+  .laptopia-process-grid,
+  .laptopia-warranty-grid,
+  .laptopia-contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .laptopia-card {
+    padding: 20px 16px;
+  }
+
+  .laptopia-board p {
+    font-size: 16px;
+  }
+
+  .laptopia-board-price {
+    font-size: 18px;
+  }
+
+  .laptopia-price-row {
+    padding: 14px 12px;
+    gap: 8px;
+  }
+
+  .laptopia-price-name {
+    font-size: 14px;
+  }
+
+  .laptopia-price-value {
+    font-size: 12px;
+  }
+
+  .laptopia-contact-intro {
+    font-size: 15px;
+  }
+
+  .laptopia-hours-row {
+    font-size: 14px;
+  }
+
+  .laptopia-floating-whatsapp {
+    left: 14px;
+    bottom: 14px;
+    width: 52px;
+    height: 52px;
+  }
+}
