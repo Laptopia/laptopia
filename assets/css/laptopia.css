@@ -964,3 +964,53 @@ textarea:focus-visible {
   .laptopia-hero .laptopia-btn { transition: none; }
   .laptopia-hero .laptopia-btn:hover { transform: none; }
 }
+
+/* HERO BALANCE */
+@media (min-width: 901px) {
+  .laptopia-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+    align-items: center;
+    column-gap: clamp(28px, 5vw, 72px);
+    min-height: 0;
+    padding: 54px clamp(24px, 5vw, 76px) 50px;
+    text-align: right;
+  }
+
+  .laptopia-hero-content {
+    grid-column: 2;
+    width: min(100%, 610px);
+    justify-self: end;
+  }
+
+  .laptopia-hero-visual {
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-column: 1;
+    grid-row: 1;
+    width: min(100%, 460px);
+    height: 340px;
+    justify-self: center;
+    transform: none;
+    opacity: 1;
+    filter: saturate(.92);
+  }
+
+  .laptopia-tech-board {
+    border-color: rgba(125, 211, 252, .88);
+    box-shadow: 0 28px 70px rgba(15, 23, 42, .3), 0 0 34px rgba(56, 189, 248, .16), inset 0 1px rgba(255, 255, 255, .16);
+  }
+
+  .laptopia-tech-board::before { background: repeating-linear-gradient(90deg, transparent 0 17px, rgba(56, 189, 248, .48) 18px 19px); }
+  .laptopia-tech-board::after { background: repeating-linear-gradient(0deg, transparent 0 16px, rgba(129, 140, 248, .4) 17px 18px); }
+  .laptopia-tech-line { box-shadow: 0 0 14px rgba(103, 232, 249, .9); }
+  .laptopia-tech-node { box-shadow: 0 0 16px #22d3ee; }
+  .laptopia-tech-laptop { box-shadow: 0 22px 38px rgba(15, 23, 42, .3), 0 0 24px rgba(56, 189, 248, .12); }
+  .laptopia-tech-orbit { border-color: rgba(99, 102, 241, .38); }
+  .laptopia-phone-line { margin-top: 10px; }
+}
+
+@media (max-width: 900px) {
+  .laptopia-hero { padding-top: 48px; padding-bottom: 52px; }
+}
