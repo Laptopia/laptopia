@@ -1,3 +1,87 @@
+/* Добавить в начало assets/css/laptopia.css, перед правилами .laptopia-*.
+   Базовые значения сохранены из текущего Hello Elementor reset.css. */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #fff;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+/* Размеры и отступы заголовков уже заданы правилами Laptopia. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+a {
+  background-color: transparent;
+  color: #c36;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: #336;
+}
+
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Кнопки Laptopia — ссылки .laptopia-btn с собственным оформлением.
+   Для элементов форм достаточно базовой типографики;
+   розовые рамки и фоны кнопок Hello Elementor не переносим. */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Сохранение видимого клавиатурного фокуса. */
+[tabindex]:not([tabindex="-1"]):focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  box-shadow: 0 0 0 4px #fff;
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
 
 .laptopia-section,
 .laptopia-section * {
