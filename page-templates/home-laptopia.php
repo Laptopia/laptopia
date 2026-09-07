@@ -5,7 +5,6 @@
 
 defined( 'ABSPATH' ) || exit;
 
-get_header();
 
 get_template_part( 'template-parts/header' );
 get_template_part( 'template-parts/hero' );
@@ -22,4 +21,3 @@ get_template_part( 'template-parts/contact' );
 get_template_part( 'template-parts/footer' );
 get_template_part( 'template-parts/floating-whatsapp' );
 
-get_footer();
