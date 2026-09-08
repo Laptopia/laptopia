@@ -94,6 +94,26 @@ defined( 'ABSPATH' ) || exit;
       <h3>החלטה בהתאם לממצאי הבדיקה</h3>
       <p>לא בכל מקרה ניתן לתקן את לוח האם. האפשרות להמשיך בתיקון נבחנת בהתאם לסוג התקלה ולמצב הלוח, והעבודה מתבצעת רק לאחר אישור הלקוח.</p>
     </div>
+    <div class="laptopia-component-gallery">
+      <figure class="laptopia-component-figure">
+        <img
+          src="https://laptopia.co.il/wp-content/uploads/2026/09/component-repair.webp"
+          alt="תיקון ברמת הרכיב בלוח אם של מחשב נייד במעבדת Laptopia ברמלה"
+          loading="lazy"
+          decoding="async"
+        >
+        <figcaption>דוגמה לתיקון ברמת הרכיב בלוח אם של מחשב נייד</figcaption>
+      </figure>
+      <figure class="laptopia-component-figure">
+        <img
+          src="https://laptopia.co.il/wp-content/uploads/2026/09/micro-component-coin.webp"
+          alt="רכיב אלקטרוני זעיר במסגרת תיקון לוח אם למחשב נייד"
+          loading="lazy"
+          decoding="async"
+        >
+        <figcaption>דוגמה לרכיב זעיר המולחם במסגרת תיקון ברמת הרכיב</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="laptopia-section laptopia-process" aria-labelledby="process-title">
