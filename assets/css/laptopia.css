@@ -351,6 +351,10 @@ textarea:focus-visible {
 }
 
 
+.laptopia-services[aria-labelledby="symptoms-title"] {
+  padding-bottom: 28px;
+}
+
 .laptopia-liquid-damage-figure {
   margin: 0;
 }
