@@ -110,7 +110,7 @@ defined( 'ABSPATH' ) || exit;
       </figure>
       <figure class="laptopia-component-figure">
         <img
-          src="https://laptopia.co.il/wp-content/uploads/2026/09/micro-component-coin.webp"
+          src="https://laptopia.co.il/wp-content/uploads/2026/09/micro-component-coin-e1788901294840.webp"
           width="573"
           height="573"
           alt="רכיב אלקטרוני זעיר במסגרת תיקון לוח אם למחשב נייד"
