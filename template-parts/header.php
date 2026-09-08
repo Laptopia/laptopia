@@ -2,10 +2,10 @@
 
   <div class="laptopia-header-inner">
 
-    <div class="laptopia-logo">
+    <a class="laptopia-logo laptopia-element-link" href="/">
       Laptopia
       <span>מעבדת מחשבים ניידים ברמלה</span>
-    </div>
+    </a>
 
     <nav class="laptopia-nav">
       <a href="#services">שירותים</a>

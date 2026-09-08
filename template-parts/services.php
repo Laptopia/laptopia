@@ -12,10 +12,10 @@
 
     <div class="laptopia-services-grid">
 
-      <div class="laptopia-card">
+      <a class="laptopia-card laptopia-element-link" href="/motherboard-repair/">
         <h3>תיקון לוח אם</h3>
         <p>איתור ותיקון תקלות אלקטרוניות ברמת הרכיב.</p>
-      </div>
+      </a>
 
       <div class="laptopia-card">
         <h3>החלפת מסך</h3>

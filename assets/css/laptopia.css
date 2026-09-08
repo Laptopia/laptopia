@@ -105,6 +105,17 @@ textarea:focus-visible {
   margin: 0 auto;
 }
 
+.laptopia-element-link,
+.laptopia-element-link:hover,
+.laptopia-element-link:active {
+  color: #202832;
+  text-decoration: none;
+}
+
+.laptopia-board-price.laptopia-element-link {
+  color: #ffffff;
+}
+
 .laptopia-section-title {
   margin: 0 0 12px;
   text-align: center;

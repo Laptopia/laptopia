@@ -17,9 +17,9 @@
       ותקלות מורכבות בלוח האם.
     </p>
 
-    <div class="laptopia-board-price">
+    <a class="laptopia-board-price laptopia-element-link" href="/motherboard-repair/">
       תיקון לוח אם – החל מ־700 ₪
-    </div>
+    </a>
 
   </div>
 
