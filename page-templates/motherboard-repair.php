@@ -68,6 +68,12 @@ defined( 'ABSPATH' ) || exit;
         <div class="laptopia-card">
           <h3>קצרים ונזקי נוזלים</h3>
           <p>קצר או נזק מנוזלים עלולים לפגוע ברכיבים ובמעגלים בלוח האם. אפשרות התיקון תלויה במצב הלוח ובהיקף הנזק ונבחנת לאחר בדיקה.</p>
+          <img
+            src="https://laptopia.co.il/wp-content/uploads/2026/09/water-optimized.webp"
+            alt="תיקון לוח אם למחשב נייד לאחר נזקי נוזלים במעבדת Laptopia ברמלה"
+            loading="lazy"
+            decoding="async"
+          >
         </div>
       </div>
     </div>
