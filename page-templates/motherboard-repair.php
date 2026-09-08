@@ -70,13 +70,16 @@ defined( 'ABSPATH' ) || exit;
           <p>קצר או נזק מנוזלים עלולים לפגוע ברכיבים ובמעגלים בלוח האם. אפשרות התיקון תלויה במצב הלוח ובהיקף הנזק ונבחנת לאחר בדיקה.</p>
         </div>
       </div>
-      <img
-        class="laptopia-liquid-damage-image"
-        src="https://laptopia.co.il/wp-content/uploads/2026/09/water-optimized.webp"
-        alt="תיקון לוח אם למחשב נייד לאחר נזקי נוזלים במעבדת Laptopia ברמלה"
-        loading="lazy"
-        decoding="async"
-      >
+      <figure class="laptopia-liquid-damage-figure">
+        <img
+          class="laptopia-liquid-damage-image"
+          src="https://laptopia.co.il/wp-content/uploads/2026/09/water-optimized.webp"
+          alt="תיקון לוח אם למחשב נייד לאחר נזקי נוזלים במעבדת Laptopia ברמלה"
+          loading="lazy"
+          decoding="async"
+        >
+        <figcaption>דוגמה לנזקי נוזלים וקורוזיה בלוח אם של מחשב נייד</figcaption>
+      </figure>
     </div>
   </section>
 

@@ -351,6 +351,17 @@ textarea:focus-visible {
 }
 
 
+.laptopia-liquid-damage-figure {
+  margin: 0;
+}
+
+.laptopia-liquid-damage-figure figcaption {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #56616e;
+}
+
 .laptopia-liquid-damage-image {
   display: block;
   width: 100%;
