@@ -91,7 +91,7 @@ textarea:focus-visible {
 .laptopia-section {
   direction: rtl;
   font-family: Arial, sans-serif;
-  color: #111827;
+  color: #202832;
   line-height: 1.5;
 }
 
@@ -106,50 +106,55 @@ textarea:focus-visible {
 }
 
 .laptopia-section-title {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   text-align: center;
   font-size: 36px;
   line-height: 1.25;
+  font-weight: 700;
 }
 
 .laptopia-section-subtitle {
-  margin: 0 0 36px;
+  margin: 0 0 32px;
   text-align: center;
-  color: #6b7280;
+  color: #56616e;
   font-size: 17px;
 }
 
 .laptopia-btn {
   display: inline-block;
   padding: 15px 27px;
-  border-radius: 11px;
+  border-radius: 12px;
   font-size: 18px;
   font-weight: 700;
-  transition: .2s ease;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 20px rgba(32, 40, 50, .10);
 }
 
 .laptopia-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(32, 40, 50, .15);
 }
 
 .laptopia-btn-whatsapp {
-  background: #25D366;
+  background: #147d47;
   color: #fff !important;
 }
 
 .laptopia-btn-dark {
-  background: #111827;
+  background: #28313b;
   color: #fff !important;
 }
 
 .laptopia-btn-white {
   background: #fff;
-  color: #111827 !important;
+  color: #202832 !important;
 }
 
 .laptopia-btn-google {
-  background: #4285F4;
-  color: #fff !important;
+  background: #f1f3f5;
+  color: #202832 !important;
+  border-color: #dce1e6;
 }
 
 
@@ -163,7 +168,7 @@ textarea:focus-visible {
   z-index: 1000;
   padding: 13px 20px;
   background: rgba(255,255,255,.96);
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #dce1e6;
   backdrop-filter: blur(10px);
 }
 
@@ -177,7 +182,7 @@ textarea:focus-visible {
 }
 
 .laptopia-logo {
-  color: #111827;
+  color: #202832;
   font-size: 26px;
   line-height: 1.15;
   font-weight: 800;
@@ -186,7 +191,7 @@ textarea:focus-visible {
 .laptopia-logo span {
   display: block;
   margin-top: 4px;
-  color: #6b7280;
+  color: #56616e;
   font-size: 13px;
   font-weight: 400;
 }
@@ -198,15 +203,15 @@ textarea:focus-visible {
 }
 
 .laptopia-nav a {
-  color: #374151;
+  color: #56616e;
   font-size: 15px;
   font-weight: 700;
 }
 
 .laptopia-header-phone {
   padding: 11px 17px;
-  border-radius: 10px;
-  background: #111827;
+  border-radius: 12px;
+  background: #28313b;
   color: #fff !important;
   font-weight: 700;
   white-space: nowrap;
@@ -218,7 +223,7 @@ textarea:focus-visible {
 .laptopia-hero {
   padding: 58px 20px 54px;
   text-align: center;
-  background: linear-gradient(180deg,#f8fafc 0%,#f3f4f6 100%);
+  background: linear-gradient(180deg, #f1f3f5 0%, #ffffff 100%);
 }
 
 .laptopia-hero-content {
@@ -231,8 +236,8 @@ textarea:focus-visible {
   margin-bottom: 22px;
   padding: 8px 15px;
   border-radius: 999px;
-  background: #e5e7eb;
-  color: #374151;
+  background: #f1f3f5;
+  color: #56616e;
   font-size: 14px;
   font-weight: 700;
 }
@@ -245,7 +250,7 @@ textarea:focus-visible {
 
 .laptopia-hero h2 {
   margin: 0 0 17px;
-  color: #374151;
+  color: #56616e;
   font-size: 26px;
   line-height: 1.45;
 }
@@ -253,7 +258,7 @@ textarea:focus-visible {
 .laptopia-hero p {
   max-width: 800px;
   margin: 0 auto 26px;
-  color: #4b5563;
+  color: #56616e;
   font-size: 19px;
   line-height: 1.8;
 }
@@ -262,11 +267,12 @@ textarea:focus-visible {
   display: inline-block;
   margin-bottom: 27px;
   padding: 10px 16px;
-  border-radius: 10px;
-  background: #fff3cd;
-  color: #7a5200;
+  border-radius: 12px;
+  background: #f1f3f5;
+  color: #202832;
   font-size: 16px;
   font-weight: 700;
+  border: 1px solid #dce1e6;
 }
 
 .laptopia-buttons {
@@ -286,15 +292,15 @@ textarea:focus-visible {
 
 .laptopia-trust span {
   padding: 9px 14px;
-  border-radius: 9px;
+  border-radius: 12px;
   background: #fff;
-  color: #4b5563;
+  color: #56616e;
   font-size: 14px;
 }
 
 .laptopia-phone-line {
   margin-top: 16px;
-  color: #6b7280;
+  color: #56616e;
   font-size: 15px;
 }
 
@@ -302,8 +308,8 @@ textarea:focus-visible {
 /* SERVICES */
 
 .laptopia-services {
-  padding: 66px 20px;
-  background: #fff;
+  padding: 64px 20px;
+  background: #ffffff;
 }
 
 .laptopia-services-grid {
@@ -313,11 +319,12 @@ textarea:focus-visible {
 }
 
 .laptopia-card {
-  padding: 24px 19px;
+  padding: 24px 20px;
   text-align: center;
-  border: 1px solid #e5e7eb;
-  border-radius: 15px;
-  background: #f8fafc;
+  border: 1px solid #dce1e6;
+  border-radius: 16px;
+  background: #f1f3f5;
+  box-shadow: 0 6px 20px rgba(32, 40, 50, .05);
 }
 
 .laptopia-card h3 {
@@ -327,7 +334,7 @@ textarea:focus-visible {
 
 .laptopia-card p {
   margin: 0;
-  color: #6b7280;
+  color: #56616e;
   font-size: 15px;
   line-height: 1.65;
 }
@@ -336,9 +343,9 @@ textarea:focus-visible {
 /* BOARD */
 
 .laptopia-board {
-  padding: 68px 20px;
-  background: #111827;
-  color: #fff;
+  padding: 64px 20px;
+  background: #f1f3f5;
+  color: #202832;
   text-align: center;
 }
 
@@ -352,21 +359,24 @@ textarea:focus-visible {
   margin-bottom: 18px;
   padding: 8px 14px;
   border-radius: 999px;
-  background: #243044;
-  color: #dbeafe;
+  background: #ffffff;
+  color: #56616e;
   font-size: 14px;
   font-weight: 700;
+  border: 1px solid #dce1e6;
 }
 
 .laptopia-board h2 {
-  margin: 0 0 16px;
-  font-size: 39px;
+  margin: 0 0 12px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .laptopia-board p {
   max-width: 760px;
   margin: 0 auto 22px;
-  color: #d1d5db;
+  color: #56616e;
   font-size: 18px;
   line-height: 1.8;
 }
@@ -374,9 +384,9 @@ textarea:focus-visible {
 .laptopia-board-price {
   display: inline-block;
   padding: 13px 20px;
-  border-radius: 11px;
-  background: #fff;
-  color: #111827;
+  border-radius: 12px;
+  background: #28313b;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 800;
 }
@@ -385,8 +395,8 @@ textarea:focus-visible {
 /* PROCESS */
 
 .laptopia-process {
-  padding: 66px 20px;
-  background: #f8fafc;
+  padding: 64px 20px;
+  background: #ffffff;
 }
 
 .laptopia-process-grid {
@@ -396,11 +406,12 @@ textarea:focus-visible {
 }
 
 .laptopia-step {
-  padding: 22px 15px;
+  padding: 24px 20px;
   text-align: center;
-  border: 1px solid #e5e7eb;
-  border-radius: 15px;
-  background: #fff;
+  border: 1px solid #dce1e6;
+  border-radius: 16px;
+  background: #f1f3f5;
+  box-shadow: 0 6px 20px rgba(32, 40, 50, .05);
 }
 
 .laptopia-step-number {
@@ -411,7 +422,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #111827;
+  background: #28313b;
   color: #fff;
   font-weight: 700;
 }
@@ -423,7 +434,7 @@ textarea:focus-visible {
 
 .laptopia-step p {
   margin: 0;
-  color: #6b7280;
+  color: #56616e;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -432,16 +443,17 @@ textarea:focus-visible {
 /* PRICES */
 
 .laptopia-prices {
-  padding: 66px 20px;
-  background: #fff;
+  padding: 64px 20px;
+  background: #ffffff;
 }
 
 .laptopia-price-list {
   max-width: 830px;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #dce1e6;
   border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(32, 40, 50, .05);
 }
 
 .laptopia-price-row {
@@ -450,7 +462,7 @@ textarea:focus-visible {
   justify-content: space-between;
   gap: 20px;
   padding: 16px 21px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #dce1e6;
 }
 
 .laptopia-price-row:last-child {
@@ -463,7 +475,7 @@ textarea:focus-visible {
 }
 
 .laptopia-price-value {
-  color: #374151;
+  color: #56616e;
   font-size: 15px;
   font-weight: 700;
   white-space: nowrap;
@@ -474,10 +486,10 @@ textarea:focus-visible {
   margin: 24px auto 0;
   padding: 18px 20px;
   text-align: center;
-  border: 1px solid #e5e7eb;
-  border-radius: 13px;
-  background: #f8fafc;
-  color: #374151;
+  border: 1px solid #dce1e6;
+  border-radius: 16px;
+  background: #f1f3f5;
+  color: #56616e;
   line-height: 1.7;
 }
 
@@ -485,7 +497,7 @@ textarea:focus-visible {
   max-width: 830px;
   margin: 20px auto 0;
   text-align: center;
-  color: #6b7280;
+  color: #56616e;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -494,8 +506,8 @@ textarea:focus-visible {
 /* WARRANTY */
 
 .laptopia-warranty {
-  padding: 66px 20px;
-  background: #f8fafc;
+  padding: 64px 20px;
+  background: #ffffff;
 }
 
 .laptopia-warranty-grid {
@@ -507,11 +519,12 @@ textarea:focus-visible {
 }
 
 .laptopia-warranty-box {
-  padding: 25px 18px;
+  padding: 24px 20px;
   text-align: center;
-  border: 1px solid #e5e7eb;
-  border-radius: 15px;
-  background: #fff;
+  border: 1px solid #dce1e6;
+  border-radius: 16px;
+  background: #f1f3f5;
+  box-shadow: 0 6px 20px rgba(32, 40, 50, .05);
 }
 
 .laptopia-warranty-box strong {
@@ -524,7 +537,7 @@ textarea:focus-visible {
 /* REVIEWS */
 
 .laptopia-reviews-heading {
-  padding: 58px 20px 20px;
+  padding: 64px 20px 24px;
   background: #fff;
 }
 
@@ -532,8 +545,8 @@ textarea:focus-visible {
 /* CONTACT */
 
 .laptopia-contact {
-  padding: 67px 20px;
-  background: #111827;
+  padding: 64px 20px;
+  background: #28313b;
   color: #fff;
   text-align: center;
 }
@@ -544,14 +557,16 @@ textarea:focus-visible {
 }
 
 .laptopia-contact h2 {
-  margin: 0 0 13px;
+  margin: 0 0 12px;
   font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .laptopia-contact-intro {
   max-width: 720px;
   margin: 0 auto 26px;
-  color: #d1d5db;
+  color: #dce1e6;
   font-size: 17px;
   line-height: 1.8;
 }
@@ -560,10 +575,11 @@ textarea:focus-visible {
   display: inline-block;
   margin-bottom: 27px;
   padding: 10px 15px;
-  border-radius: 10px;
-  background: #7c2d12;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .06);
   color: #fff;
   font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, .18);
 }
 
 .laptopia-contact-info {
@@ -575,15 +591,15 @@ textarea:focus-visible {
 }
 
 .laptopia-info-box {
-  padding: 17px;
-  border: 1px solid #374151;
-  border-radius: 13px;
-  background: #1f2937;
+  padding: 24px 20px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .04);
 }
 
 .laptopia-info-title {
   margin-bottom: 5px;
-  color: #9ca3af;
+  color: #cbd2d9;
   font-size: 13px;
 }
 
@@ -596,15 +612,16 @@ textarea:focus-visible {
   max-width: 630px;
   margin: 28px auto 0;
   overflow: hidden;
-  border: 1px solid #374151;
-  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .04);
 }
 
 .laptopia-hours-row {
   display: flex;
   justify-content: space-between;
   padding: 11px 17px;
-  border-bottom: 1px solid #374151;
+  border-bottom: 1px solid rgba(255, 255, 255, .18);
 }
 
 .laptopia-hours-row:last-child {
@@ -619,9 +636,10 @@ textarea:focus-visible {
   font-family: Arial, sans-serif;
   padding: 20px;
   text-align: center;
-  background: #0b1220;
-  color: #9ca3af;
+  background: #28313b;
+  color: #cbd2d9;
   font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
 }
 
 
@@ -638,9 +656,9 @@ textarea:focus-visible {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #25D366;
+  background: #147d47;
   color: #fff !important;
-  box-shadow: 0 6px 22px rgba(0,0,0,.22);
+  box-shadow: 0 8px 24px rgba(32, 40, 50, .20);
 }
 
 .laptopia-floating-whatsapp svg {
@@ -722,7 +740,7 @@ textarea:focus-visible {
   .laptopia-warranty,
   .laptopia-board,
   .laptopia-contact {
-    padding: 45px 15px;
+    padding: 44px 15px;
   }
 
   .laptopia-section-title,
@@ -790,9 +808,9 @@ textarea:focus-visible {
   isolation: isolate;
   overflow: hidden;
   background:
-    radial-gradient(circle at 14% 18%, rgba(56, 189, 248, .16), transparent 34%),
-    radial-gradient(circle at 88% 22%, rgba(99, 102, 241, .2), transparent 38%),
-    linear-gradient(135deg, #f8fafc 0%, #eef2ff 52%, #e0f2fe 100%);
+    radial-gradient(ellipse at 14% 0%, rgba(100, 116, 139, .09), transparent 55%),
+    radial-gradient(ellipse at 88% 0%, rgba(100, 116, 139, .07), transparent 50%),
+    linear-gradient(180deg, #f1f3f5 0%, #ffffff 100%);
 }
 
 .laptopia-hero::before,
@@ -809,16 +827,16 @@ textarea:focus-visible {
   right: -8%;
   width: 430px;
   height: 430px;
-  border: 1px solid rgba(99, 102, 241, .16);
-  box-shadow: 0 0 0 24px rgba(99, 102, 241, .035), 0 0 0 48px rgba(56, 189, 248, .025);
+  border: 1px solid rgba(100, 116, 139, .16);
+  box-shadow: 0 0 0 24px rgba(100, 116, 139, .035), 0 0 0 48px rgba(100, 116, 139, .025);
 }
 
 .laptopia-hero::after {
-  bottom: -32%;
+  bottom: 20%;
   left: -8%;
   width: 360px;
   height: 360px;
-  background: radial-gradient(circle, rgba(14, 165, 233, .14), transparent 68%);
+  background: radial-gradient(circle, rgba(100, 116, 139, .06), transparent 68%);
   filter: blur(8px);
 }
 
@@ -842,8 +860,8 @@ textarea:focus-visible {
 
 .laptopia-hero .laptopia-badge,
 .laptopia-hero .laptopia-trust span {
-  border: 1px solid rgba(99, 102, 241, .16);
-  box-shadow: 0 8px 22px rgba(30, 64, 175, .07);
+  border: 1px solid rgba(100, 116, 139, .16);
+  box-shadow: 0 8px 22px rgba(32, 40, 50, .05);
 }
 
 .laptopia-hero .laptopia-badge {
@@ -853,14 +871,14 @@ textarea:focus-visible {
 
 .laptopia-hero .laptopia-btn {
   border: 1px solid rgba(255, 255, 255, .22);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, .12);
+  box-shadow: 0 8px 20px rgba(32, 40, 50, .10);
   transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
 
 .laptopia-hero .laptopia-btn:hover {
-  box-shadow: 0 14px 28px rgba(15, 23, 42, .18);
+  box-shadow: 0 12px 24px rgba(32, 40, 50, .15);
   filter: brightness(1.04);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 900px) {
@@ -873,7 +891,9 @@ textarea:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .laptopia-btn,
   .laptopia-hero .laptopia-btn { transition: none; }
+  .laptopia-btn:hover,
   .laptopia-hero .laptopia-btn:hover { transform: none; }
 }
 
