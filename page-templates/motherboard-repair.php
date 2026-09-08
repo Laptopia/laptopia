@@ -74,6 +74,8 @@ defined( 'ABSPATH' ) || exit;
         <img
           class="laptopia-liquid-damage-image"
           src="https://laptopia.co.il/wp-content/uploads/2026/09/water-optimized.webp"
+          width="1215"
+          height="911"
           alt="תיקון לוח אם למחשב נייד לאחר נזקי נוזלים במעבדת Laptopia ברמלה"
           loading="lazy"
           decoding="async"
@@ -98,6 +100,8 @@ defined( 'ABSPATH' ) || exit;
       <figure class="laptopia-component-figure">
         <img
           src="https://laptopia.co.il/wp-content/uploads/2026/09/component-repair.webp"
+          width="573"
+          height="573"
           alt="תיקון ברמת הרכיב בלוח אם של מחשב נייד במעבדת Laptopia ברמלה"
           loading="lazy"
           decoding="async"
@@ -107,6 +111,8 @@ defined( 'ABSPATH' ) || exit;
       <figure class="laptopia-component-figure">
         <img
           src="https://laptopia.co.il/wp-content/uploads/2026/09/micro-component-coin.webp"
+          width="573"
+          height="573"
           alt="רכיב אלקטרוני זעיר במסגרת תיקון לוח אם למחשב נייד"
           loading="lazy"
           decoding="async"
@@ -188,7 +194,7 @@ defined( 'ABSPATH' ) || exit;
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener">שלחו הודעה בוואטסאפ</a>
         <a class="laptopia-btn laptopia-btn-white" href="tel:+972538036244">התקשרו למעבדה</a>
-        <a class="laptopia-btn laptopia-btn-white" href="<?php echo esc_url( home_url( '/' ) ); ?>">לכל שירותי המעבדה</a>
+        <a class="laptopia-btn laptopia-btn-white" href="https://laptopia.co.il/#services">לכל שירותי המעבדה</a>
       </div>
     </div>
   </section>
