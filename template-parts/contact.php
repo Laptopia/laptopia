@@ -37,37 +37,37 @@
 
       <div class="laptopia-hours-row">
         <span>ראשון</span>
-        <strong dir="ltr">10:00–22:00</strong>
+        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>שני</span>
-        <strong dir="ltr">10:00–22:00</strong>
+        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>שלישי</span>
-        <strong dir="ltr">10:00–22:00</strong>
+        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>רביעי</span>
-        <strong dir="ltr">10:00–22:00</strong>
+        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>חמישי</span>
-        <strong dir="ltr">10:00–22:00</strong>
+        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>שישי</span>
-        <strong dir="ltr">09:00–15:00</strong>
+        <strong><bdi dir="ltr">09:00–15:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>שבת</span>
-        <strong dir="ltr">19:30–23:00</strong>
+        <strong><bdi dir="ltr">19:30–23:00</bdi></strong>
       </div>
 
     </div>
