@@ -138,6 +138,34 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
+.laptopia-link-arrow {
+  display: inline-block;
+  margin-inline-start: 4px;
+  color: #56616e;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+
+.laptopia-board-price .laptopia-link-arrow {
+  color: #cbd2d9;
+}
+
+.laptopia-element-link:hover .laptopia-link-arrow {
+  transform: translateX(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laptopia-link-arrow {
+    transition: none;
+  }
+
+  .laptopia-element-link:hover .laptopia-link-arrow {
+    transform: none;
+  }
+}
+
 .laptopia-section-title {
   margin: 0 0 12px;
   text-align: center;
