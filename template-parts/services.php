@@ -17,10 +17,10 @@
         <p>איתור ותיקון תקלות אלקטרוניות ברמת הרכיב.</p>
       </a>
 
-      <div class="laptopia-card">
+      <a class="laptopia-card laptopia-element-link" href="https://laptopia.co.il/screen-replacement/">
         <h3>החלפת מסך</h3>
         <p>החלפת מסכים שבורים, סדוקים או ללא תצוגה.</p>
-      </div>
+      </a>
 
       <div class="laptopia-card">
         <h3>החלפת מקלדת</h3>

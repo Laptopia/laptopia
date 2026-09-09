@@ -113,9 +113,11 @@ defined( 'ABSPATH' ) || exit;
   <section class="laptopia-section laptopia-warranty" id="warranty" aria-labelledby="screen-warranty-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="screen-warranty-title">אחריות על המסך שהוחלף</h2>
-      <div class="laptopia-warranty-box">
-        <strong><bdi dir="ltr">6</bdi> חודשי אחריות על מסך שהוחלף</strong>
-        <p>האחריות ניתנת בהתאם לסוג התיקון והרכיב.</p>
+      <div class="laptopia-board-content">
+        <div class="laptopia-card">
+          <h3><bdi dir="ltr">6</bdi> חודשי אחריות על מסך שהוחלף</h3>
+          <p>האחריות ניתנת בהתאם לסוג התיקון והרכיב.</p>
+        </div>
       </div>
       <p class="laptopia-price-note"><a href="<?php echo esc_url( home_url( '/#warranty' ) ); ?>">למידע על האחריות</a></p>
     </div>
