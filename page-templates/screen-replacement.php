@@ -70,6 +70,15 @@ defined( 'ABSPATH' ) || exit;
           <p>היעדר תצוגה אינו מוכיח שהמסך תקול. בודקים את מקור התקלה לפני שמחליטים על החלפת המסך.</p>
         </div>
       </div>
+      <figure class="laptopia-component-figure laptopia-screen-figure">
+        <img
+          src="https://laptopia.co.il/wp-content/uploads/2026/09/broken-screen.webp"
+          alt="החלפת מסך למחשב נייד עם מסך שבור במעבדת Laptopia ברמלה"
+          loading="lazy"
+          decoding="async"
+        >
+        <figcaption>דוגמה למסך שבור במחשב נייד לפני החלפה</figcaption>
+      </figure>
     </div>
   </section>
 

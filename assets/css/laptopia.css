@@ -442,6 +442,11 @@ textarea:focus-visible {
   margin: 0;
 }
 
+.laptopia-screen-figure {
+  max-width: 560px;
+  margin: 28px auto 0;
+}
+
 @media (max-width: 600px) {
   .laptopia-component-gallery {
     grid-template-columns: 1fr;
