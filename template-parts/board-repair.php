@@ -18,7 +18,7 @@
     </p>
 
     <a class="laptopia-board-price laptopia-element-link" href="/motherboard-repair/">
-      תיקון לוח אם <span class="laptopia-link-arrow" aria-hidden="true">←</span> – החל מ־700 ₪
+      תיקון לוח אם – החל מ־700 ₪
     </a>
 
   </div>

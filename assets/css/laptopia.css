@@ -138,30 +138,37 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
-.laptopia-link-arrow {
-  display: inline-block;
-  margin-inline-start: 4px;
+.laptopia-element-link:is(.laptopia-card, .laptopia-board-price, .laptopia-price-row) {
+  position: relative;
+}
+
+.laptopia-element-link:is(.laptopia-card, .laptopia-board-price, .laptopia-price-row)::after {
+  content: "↗";
+  position: absolute;
+  top: 8px;
+  left: 10px;
   color: #56616e;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1;
+  pointer-events: none;
   transition: transform .2s ease;
 }
 
-.laptopia-board-price .laptopia-link-arrow {
+.laptopia-element-link.laptopia-board-price::after {
   color: #cbd2d9;
 }
 
-.laptopia-element-link:hover .laptopia-link-arrow {
-  transform: translateX(-2px);
+.laptopia-element-link:is(.laptopia-card, .laptopia-board-price, .laptopia-price-row):hover::after {
+  transform: translate(1px, -1px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .laptopia-link-arrow {
+  .laptopia-element-link:is(.laptopia-card, .laptopia-board-price, .laptopia-price-row)::after {
     transition: none;
   }
 
-  .laptopia-element-link:hover .laptopia-link-arrow {
+  .laptopia-element-link:is(.laptopia-card, .laptopia-board-price, .laptopia-price-row):hover::after {
     transform: none;
   }
 }

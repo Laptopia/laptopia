@@ -13,7 +13,7 @@
     <div class="laptopia-services-grid">
 
       <a class="laptopia-card laptopia-element-link" href="/motherboard-repair/">
-        <h3>תיקון לוח אם <span class="laptopia-link-arrow" aria-hidden="true">←</span></h3>
+        <h3>תיקון לוח אם</h3>
         <p>איתור ותיקון תקלות אלקטרוניות ברמת הרכיב.</p>
       </a>
 

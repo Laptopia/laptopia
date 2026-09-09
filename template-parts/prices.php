@@ -65,7 +65,7 @@
       </div>
 
       <a class="laptopia-price-row laptopia-element-link" href="/motherboard-repair/">
-        <div class="laptopia-price-name">תיקון לוח אם <span class="laptopia-link-arrow" aria-hidden="true">←</span></div>
+        <div class="laptopia-price-name">תיקון לוח אם</div>
         <div class="laptopia-price-value">החל מ־700 ₪</div>
       </a>
 
