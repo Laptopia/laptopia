@@ -14,7 +14,7 @@
 
       <a class="laptopia-card laptopia-element-link" href="/motherboard-repair/">
         <h3>תיקון לוח אם</h3>
-        <p>איתור ותיקון תקלות אלקטרוניות ברמת הרכיב.</p>
+        <p>תיקון לוח אם ברמת הרכיב, כולל קצרים, תקלות טעינה ונזקי נוזלים.</p>
       </a>
 
       <a class="laptopia-card laptopia-element-link" href="https://laptopia.co.il/screen-replacement/">
@@ -32,10 +32,10 @@
         <p>תיקון והחלפת שקעי טעינה, USB ו-USB-C.</p>
       </div>
 
-      <div class="laptopia-card">
-        <h3>נזקי נוזלים</h3>
-        <p>טיפול במחשב לאחר חדירת מים, קפה או נוזלים אחרים.</p>
-      </div>
+      <a class="laptopia-card laptopia-element-link" href="https://laptopia.co.il/battery-replacement/">
+        <h3>החלפת סוללה</h3>
+        <p>החלפת סוללות למחשבים ניידים, כולל בדיקת התאמה ואבחון לפי הצורך.</p>
+      </a>
 
       <div class="laptopia-card">
         <h3>מערכת קירור</h3>
@@ -48,8 +48,8 @@
       </div>
 
       <div class="laptopia-card">
-        <h3>סוללות ושדרוגי חומרה</h3>
-        <p>החלפת סוללות, SSD, זיכרון ורכיבי חומרה נוספים.</p>
+        <h3>שדרוגי חומרה</h3>
+        <p>שדרוגי SSD וזיכרון למחשבים ניידים לשיפור ביצועים ונפח אחסון.</p>
       </div>
 
     </div>

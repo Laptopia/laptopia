@@ -44,10 +44,10 @@
         <div class="laptopia-price-value">החל מ־300 ₪</div>
       </div>
 
-      <div class="laptopia-price-row">
+      <a class="laptopia-price-row laptopia-element-link" href="https://laptopia.co.il/battery-replacement/">
         <div class="laptopia-price-name">החלפת סוללה</div>
         <div class="laptopia-price-value">החל מ־400 ₪</div>
-      </div>
+      </a>
 
       <div class="laptopia-price-row">
         <div class="laptopia-price-name">תיקון צירים</div>
