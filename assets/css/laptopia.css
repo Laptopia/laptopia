@@ -778,12 +778,27 @@ textarea:focus-visible {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 24px;
+  gap: 10px 32px;
   margin-top: 12px;
+  font-size: 14px;
 }
 
 .laptopia-footer-services a {
+  position: relative;
   color: inherit;
+}
+
+.laptopia-footer-services a + a::before {
+  content: "·";
+  position: absolute;
+  inset-inline-start: -18px;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .laptopia-footer-services a + a::before {
+    content: none;
+  }
 }
 
 .laptopia-footer-services a:hover,
