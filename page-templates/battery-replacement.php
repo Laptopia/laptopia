@@ -61,6 +61,26 @@ defined( 'ABSPATH' ) || exit;
         <div class="laptopia-card"><h3>המחשב נכבה ללא מטען</h3><p>אם המחשב פועל רק כשהמטען מחובר, ייתכן שהסוללה אינה מספקת מתח. נדרש אבחון כדי להבחין בין תקלה בסוללה לבעיה במערכת הטעינה.</p></div>
         <div class="laptopia-card"><h3>נפיחות או שינוי במבנה המארז</h3><p>סוללה נפוחה עלולה לגרום להתרוממות של חלקי המארז. במקרה של חשד לנפיחות, הפסיקו להשתמש במחשב ולטעון אותו ופנו למעבדה. אין ללחוץ על הסוללה או לנסות לנקב אותה.</p></div>
       </div>
+      <div class="laptopia-component-gallery">
+        <figure class="laptopia-component-figure">
+          <img
+            src="https://laptopia.co.il/wp-content/uploads/2026/09/battery-new-vs-swollen.webp"
+            alt="השוואה בין סוללה תקינה לסוללה נפוחה במחשב נייד"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>השוואה בין סוללה תקינה לסוללה נפוחה במחשב נייד</figcaption>
+        </figure>
+        <figure class="laptopia-component-figure">
+          <img
+            src="https://laptopia.co.il/wp-content/uploads/2026/09/swollen-battery-case.webp"
+            alt="מארז מחשב נייד שהתעוות בעקבות סוללה נפוחה"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>דוגמה לעיוות במארז מחשב נייד בעקבות סוללה נפוחה</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
