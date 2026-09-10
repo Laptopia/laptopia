@@ -774,6 +774,25 @@ textarea:focus-visible {
 }
 
 
+.laptopia-footer-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  margin-top: 12px;
+}
+
+.laptopia-footer-services a {
+  color: inherit;
+}
+
+.laptopia-footer-services a:hover,
+.laptopia-footer-services a:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* FLOATING WHATSAPP */
 
 .laptopia-floating-whatsapp {
