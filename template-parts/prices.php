@@ -19,10 +19,10 @@
         <div class="laptopia-price-value">150 ₪</div>
       </div>
 
-      <div class="laptopia-price-row">
+      <a class="laptopia-price-row laptopia-element-link" href="/cooling-cleaning/">
         <div class="laptopia-price-name">ניקוי מערכת קירור</div>
         <div class="laptopia-price-value">החל מ־300 ₪</div>
-      </div>
+      </a>
 
       <a class="laptopia-price-row laptopia-element-link" href="https://laptopia.co.il/screen-replacement/">
         <div class="laptopia-price-name">החלפת מסך</div>

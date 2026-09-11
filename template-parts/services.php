@@ -37,10 +37,10 @@
         <p>החלפת סוללות למחשבים ניידים, כולל בדיקת התאמה ואבחון לפי הצורך.</p>
       </a>
 
-      <div class="laptopia-card">
+      <a class="laptopia-card laptopia-element-link" href="/cooling-cleaning/">
         <h3>מערכת קירור</h3>
         <p>ניקוי מערכת הקירור וטיפול בהתחממות.</p>
-      </div>
+      </a>
 
       <div class="laptopia-card">
         <h3>תיקון צירים ופלסטיקה</h3>
