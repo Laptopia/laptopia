@@ -13,41 +13,81 @@
     <div class="laptopia-services-grid">
 
       <a class="laptopia-card laptopia-element-link" href="/motherboard-repair/">
+        <div class="laptopia-service-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            <rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 3v3m6-3v3M9 18v3m6-3v3M3 9h3m-3 6h3m12-6h3m-3 6h3"/>
+          </svg>
+        </div>
         <h3>תיקון לוח אם</h3>
         <p>תיקון לוח אם ברמת הרכיב, כולל קצרים, תקלות טעינה ונזקי נוזלים.</p>
       </a>
 
       <a class="laptopia-card laptopia-element-link" href="https://laptopia.co.il/screen-replacement/">
+        <div class="laptopia-service-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            <rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/>
+          </svg>
+        </div>
         <h3>החלפת מסך</h3>
         <p>החלפת מסכים שבורים, סדוקים או ללא תצוגה.</p>
       </a>
 
       <a class="laptopia-card laptopia-element-link" href="https://laptopia.co.il/keyboard-replacement/">
+        <div class="laptopia-service-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            <rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 15h10"/>
+          </svg>
+        </div>
         <h3>החלפת מקלדת</h3>
         <p>החלפת מקלדות תקולות מכל הסוגים.</p>
       </a>
 
       <div class="laptopia-card">
+        <div class="laptopia-service-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            <rect x="5" y="6" width="14" height="9" rx="4"/><path d="M9 10h6m-3 5v6M9 3v3m6-3v3"/>
+          </svg>
+        </div>
         <h3>שקעי טעינה ו-USB</h3>
         <p>תיקון והחלפת שקעי טעינה, USB ו-USB-C.</p>
       </div>
 
       <a class="laptopia-card laptopia-element-link" href="https://laptopia.co.il/battery-replacement/">
+        <div class="laptopia-service-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            <rect x="2" y="6" width="18" height="12" rx="2"/><path d="M22 10v4M6 12h4m-2-2v4m6-2h3"/>
+          </svg>
+        </div>
         <h3>החלפת סוללה</h3>
         <p>החלפת סוללות למחשבים ניידים, כולל בדיקת התאמה ואבחון לפי הצורך.</p>
       </a>
 
       <a class="laptopia-card laptopia-element-link" href="/cooling-cleaning/">
+        <div class="laptopia-service-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            <circle cx="12" cy="12" r="2"/><path d="M10 10C5 5 11 1 14 4c2 2 0 5-1 6m1 0c5-5 9 1 6 4-2 2-5 0-6-1m0 1c5 5-1 9-4 6-2-2 0-5 1-6m-1 0c-5 5-9-1-6-4 2-2 5 0 6 1"/>
+          </svg>
+        </div>
         <h3>מערכת קירור</h3>
         <p>ניקוי מערכת הקירור וטיפול בהתחממות.</p>
       </a>
 
       <div class="laptopia-card">
+        <div class="laptopia-service-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            <rect x="9" y="4" width="6" height="16" rx="2"/><path d="M9 7H3v10h6m6-10h6v10h-6M12 8v8"/>
+          </svg>
+        </div>
         <h3>תיקון צירים ופלסטיקה</h3>
         <p>תיקון נזקי צירים והחלפת חלקי פלסטיקה לפי הצורך.</p>
       </div>
 
       <div class="laptopia-card">
+        <div class="laptopia-service-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            <rect x="3" y="5" width="18" height="12" rx="1"/><path d="M7 9h3v4H7zm7 0h3v4h-3zM6 17v3m4-3v3m4-3v3m4-3v3"/>
+          </svg>
+        </div>
         <h3>שדרוגי חומרה</h3>
         <p>שדרוגי SSD וזיכרון למחשבים ניידים לשיפור ביצועים ונפח אחסון.</p>
       </div>
