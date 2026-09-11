@@ -29,10 +29,10 @@
         <div class="laptopia-price-value">החל מ־550 ₪</div>
       </a>
 
-      <div class="laptopia-price-row">
+      <a class="laptopia-price-row laptopia-element-link" href="https://laptopia.co.il/keyboard-replacement/">
         <div class="laptopia-price-name">החלפת מקלדת</div>
         <div class="laptopia-price-value">החל מ־550 ₪</div>
-      </div>
+      </a>
 
       <div class="laptopia-price-row">
         <div class="laptopia-price-name">החלפת שקע טעינה</div>

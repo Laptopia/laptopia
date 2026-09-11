@@ -22,10 +22,10 @@
         <p>החלפת מסכים שבורים, סדוקים או ללא תצוגה.</p>
       </a>
 
-      <div class="laptopia-card">
+      <a class="laptopia-card laptopia-element-link" href="https://laptopia.co.il/keyboard-replacement/">
         <h3>החלפת מקלדת</h3>
         <p>החלפת מקלדות תקולות מכל הסוגים.</p>
-      </div>
+      </a>
 
       <div class="laptopia-card">
         <h3>שקעי טעינה ו-USB</h3>
