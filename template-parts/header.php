@@ -11,18 +11,20 @@ $service_link = $args['service_link'] ?? array();
       <span>מעבדת מחשבים ניידים ברמלה</span>
     </a>
 
+    <div class="laptopia-header-navigation">
+    <?php get_template_part( 'template-parts/services-navigation' ); ?>
     <nav class="laptopia-nav"<?php if ( $service_header ) : ?> aria-label="ניווט ראשי"<?php endif; ?>>
       <?php if ( $service_header ) : ?>
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>">דף הבית</a>
       <a href="<?php echo esc_url( $service_link['href'] ); ?>"><?php echo esc_html( $service_link['label'] ); ?></a>
       <?php else : ?>
-      <a href="#services">שירותים</a>
       <a href="#board">תיקון לוחות אם</a>
       <?php endif; ?>
       <a href="#prices">מחירים</a>
       <a href="#warranty">אחריות</a>
       <a href="#contact">יצירת קשר</a>
     </nav>
+    </div>
 
     <a class="laptopia-header-phone"
        href="tel:+972538036244">
