@@ -16,22 +16,14 @@ defined( 'ABSPATH' ) || exit;
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="laptopia-header" dir="rtl">
-  <div class="laptopia-header-inner">
-    <a class="laptopia-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-      Laptopia
-      <span>מעבדת מחשבים ניידים ברמלה</span>
-    </a>
-    <nav class="laptopia-nav" aria-label="ניווט ראשי">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">דף הבית</a>
-      <a href="#board">תיקון ברמת הרכיב</a>
-      <a href="#prices">מחירים</a>
-      <a href="#warranty">אחריות</a>
-      <a href="#contact">יצירת קשר</a>
-    </nav>
-    <a class="laptopia-header-phone" href="tel:+972538036244"><bdi dir="ltr">053-803-6244</bdi></a>
-  </div>
-</header>
+<?php
+get_template_part( 'template-parts/header', null, array(
+    'service_link' => array(
+        'href'  => '#board',
+        'label' => 'תיקון ברמת הרכיב',
+    ),
+) );
+?>
 
 <main dir="rtl">
   <nav class="laptopia-section laptopia-inner" aria-label="פירורי לחם">
