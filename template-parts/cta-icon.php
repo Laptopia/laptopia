@@ -1,11 +1,15 @@
 <?php
+$type = $args['type'] ?? '';
 $icons = array(
     'phone' => '<path d="m7 3 3 5-2 2c1 3 3 5 6 6l2-2 5 3c0 3-2 4-4 4C9 20 4 15 3 7c0-2 1-4 4-4Z"/>',
-    'whatsapp' => '<path d="M20 11.5a8 8 0 0 1-11.8 7L3 20l1.5-5.2A8 8 0 1 1 20 11.5Z"/><path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 2c-1 2-3 2-5 1-3-1-5-3-6-6-1-2-1-3 2-4Z"/>',
-    'navigation' => '<path d="m21 3-7 18-3-8-8-3 18-7Z"/>',
+    'whatsapp' => '<path d="M19.11 17.45c-.28-.14-1.65-.81-1.91-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.9 1.1-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43s1.02 2.82 1.16 3.01c.14.19 2 3.05 4.85 4.28.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.12.55-.08 1.65-.68 1.88-1.33.23-.66.23-1.22.16-1.33-.07-.12-.26-.19-.54-.33z"/><path d="M16.03 3C8.84 3 3 8.82 3 16c0 2.3.6 4.55 1.74 6.53L3 29l6.65-1.74A13 13 0 0 0 16.03 29C23.22 29 29 23.18 29 16S23.22 3 16.03 3zm0 23.63c-2.04 0-4.04-.55-5.78-1.58l-.41-.24-3.94 1.03 1.05-3.84-.27-.43A10.56 10.56 0 0 1 5.37 16c0-5.86 4.78-10.63 10.66-10.63S26.66 10.14 26.66 16 21.9 26.63 16.03 26.63z"/>',
+    'waze' => '<path fill="#fff" d="M20 11a8 8 0 0 0-16 0c0 3-1 4-2 5 2 2 5 3 10 3a8 8 0 0 0 8-8Z"/><circle cx="7" cy="20" r="2" fill="currentColor"/><circle cx="16" cy="20" r="2" fill="currentColor"/><circle cx="9" cy="10" r=".7" fill="currentColor"/><circle cx="15" cy="10" r=".7" fill="currentColor"/><path d="M9 13c1 2 5 2 6 0"/>',
+    'google' => '<path fill="#4285f4" d="M21.6 12.23c0-.71-.06-1.39-.18-2.05H12v3.88h5.38a4.6 4.6 0 0 1-2 3.02v2.51h3.24c1.9-1.75 2.98-4.33 2.98-7.36Z"/><path fill="#34a853" d="M12 22c2.7 0 4.96-.9 6.62-2.41l-3.24-2.51c-.9.6-2.05.96-3.38.96-2.6 0-4.81-1.76-5.6-4.12H3.05v2.59A10 10 0 0 0 12 22Z"/><path fill="#fbbc05" d="M6.4 13.92a6 6 0 0 1 0-3.84V7.49H3.05a10 10 0 0 0 0 9.02l3.35-2.59Z"/><path fill="#ea4335" d="M12 5.96c1.47 0 2.79.5 3.83 1.5l2.87-2.88A9.62 9.62 0 0 0 12 2a10 10 0 0 0-8.95 5.49l3.35 2.59C7.19 7.72 9.4 5.96 12 5.96Z"/>',
 );
+$icons['google-maps'] = '<path fill="#34a853" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Z"/><path fill="#4285f4" d="M5 9a7 7 0 0 1 12-5L9 12Z"/><path fill="#ea4335" d="M12 2a7 7 0 0 1 5 2l-5 5-5-5a7 7 0 0 1 5-2Z"/><path fill="#fbbc04" d="m9 12 8-8a7 7 0 0 1 2 5c0 1-.3 2-.7 3L12 18Z"/><circle cx="12" cy="9" r="2.5" fill="#fff"/>';
+$filled = in_array( $type, array( 'whatsapp', 'google', 'google-maps' ), true );
 ?>
-<svg class="laptopia-cta-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<svg class="laptopia-cta-icon" width="17" height="17" viewBox="<?php echo 'whatsapp' === $type ? '0 0 32 32' : '0 0 24 24'; ?>" fill="<?php echo $filled ? 'currentColor' : 'none'; ?>" stroke="<?php echo $filled ? 'none' : 'currentColor'; ?>" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
   <?php // Fixed SVG markup, never user input.
-  echo $icons[ $args['type'] ?? '' ] ?? ''; ?>
+  echo $icons[ $type ] ?? ''; ?>
 </svg>

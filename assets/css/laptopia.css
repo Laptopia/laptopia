@@ -211,8 +211,40 @@ textarea:focus-visible {
 }
 
 .laptopia-btn-whatsapp {
-  background: #147d47;
-  color: #fff !important;
+  background: #25d366;
+  color: #28313b !important;
+}
+
+.laptopia-btn-whatsapp:hover {
+  background: #1fbd5a;
+}
+
+.laptopia-btn-waze {
+  background: #33ccff;
+  color: #202832 !important;
+}
+
+.laptopia-btn-waze:hover {
+  background: #24bcef;
+}
+
+.laptopia-btn-google-maps {
+  background: #fff;
+  color: #202832 !important;
+  border-color: #dce1e6;
+}
+
+.laptopia-buttons.laptopia-contact-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+@media (max-width: 600px) {
+  .laptopia-buttons.laptopia-contact-actions {
+    grid-template-columns: 1fr;
+  }
 }
 
 .laptopia-btn-dark {

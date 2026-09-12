@@ -37,8 +37,8 @@ get_template_part( 'template-parts/header', null, array(
       <div class="laptopia-board-price">ניקוי מערכת קירור — החל מ־300 ₪</div>
       <p>המחיר הסופי נקבע לפי דגם המחשב, מצבו והעבודה הנדרשת. הטיפול מתבצע לאחר אישור הלקוח.</p>
       <div class="laptopia-buttons">
-        <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener">לתיאום בדיקה בוואטסאפ</a>
-        <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244">התקשרו למעבדה</a>
+        <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום בדיקה בוואטסאפ</span></span></a>
+        <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
       </div>
       <div class="laptopia-phone-line">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</div>
     </div>
@@ -151,8 +151,8 @@ get_template_part( 'template-parts/header', null, array(
       </div>
       <p class="laptopia-contact-note">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</p>
       <div class="laptopia-buttons">
-        <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener">שלחו הודעה בוואטסאפ</a>
-        <a class="laptopia-btn laptopia-btn-white" href="tel:+972538036244">התקשרו למעבדה</a>
+        <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה בוואטסאפ</span></span></a>
+        <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
         <a class="laptopia-btn laptopia-btn-white" href="<?php echo esc_url( home_url( '/#services' ) ); ?>">לכל שירותי המעבדה</a>
       </div>
     </div>

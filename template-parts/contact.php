@@ -76,7 +76,7 @@
       בשבתות ובחגים שעות הפעילות עשויות להשתנות
     </p>
 
-    <div class="laptopia-buttons">
+    <div class="laptopia-buttons laptopia-contact-actions">
 
       <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener">
         <span class="laptopia-cta-content">
@@ -85,7 +85,7 @@
         </span>
       </a>
 
-      <a class="laptopia-btn laptopia-btn-white"
+      <a class="laptopia-btn laptopia-btn-dark"
          href="tel:+972538036244">
         <span class="laptopia-cta-content">
           <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?>
@@ -93,10 +93,17 @@
         </span>
       </a>
 
-      <a class="laptopia-btn laptopia-btn-google" href="https://www.google.com/maps/search/?api=1&amp;query=Almog+St+2+Ramla" target="_blank" rel="noopener">
+      <a class="laptopia-btn laptopia-btn-google-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Almog+St+2+Ramla" target="_blank" rel="noopener">
         <span class="laptopia-cta-content">
-          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'navigation' ) ); ?>
-          <span>ניווט למעבדה</span>
+          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'google-maps' ) ); ?>
+          <span>ניווט ב-<bdi dir="ltr">Google Maps</bdi></span>
+        </span>
+      </a>
+
+      <a class="laptopia-btn laptopia-btn-waze" href="https://waze.com/ul?q=%D7%A8%D7%97%D7%95%D7%91%20%D7%90%D7%9C%D7%9E%D7%95%D7%92%202%2C%20%D7%A8%D7%9E%D7%9C%D7%94&amp;navigate=yes" target="_blank" rel="noopener">
+        <span class="laptopia-cta-content">
+          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'waze' ) ); ?>
+          <span>ניווט ב-<bdi dir="ltr">Waze</bdi></span>
         </span>
       </a>
 
