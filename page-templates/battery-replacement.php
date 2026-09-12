@@ -76,8 +76,8 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-board" aria-labelledby="battery-diagnosis-title">
-    <div class="laptopia-board-content">
+  <section class="laptopia-section laptopia-board laptopia-info-panel-section" aria-labelledby="battery-diagnosis-title">
+    <div class="laptopia-board-content laptopia-info-panel">
       <h2 id="battery-diagnosis-title">מתי צריך להחליף סוללה ומתי הבעיה במקום אחר?</h2>
       <p>החלפת סוללה מתאימה כאשר הבדיקה מצביעה על סוללה שחוקה או תקולה. חוסר טעינה אינו מעיד בהכרח על צורך בהחלפה, ולכן בודקים את מקור התקלה לפני הזמנת חלק או ביצוע העבודה.</p>
       <h3>המטען ושקע הטעינה</h3>
@@ -146,7 +146,7 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-services" aria-labelledby="battery-faq-title">
+  <section class="laptopia-section laptopia-services laptopia-faq" aria-labelledby="battery-faq-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="battery-faq-title">שאלות נפוצות על החלפת סוללה</h2>
       <div class="laptopia-warranty-grid">

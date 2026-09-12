@@ -60,8 +60,8 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-board" id="cleaning" aria-labelledby="cleaning-title">
-    <div class="laptopia-board-content">
+  <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="cleaning" aria-labelledby="cleaning-title">
+    <div class="laptopia-board-content laptopia-info-panel">
       <h2 id="cleaning-title">מה כולל ניקוי מערכת הקירור?</h2>
       <p>הטיפול מותאם למבנה המחשב ולמצב מערכת הקירור. לאחר בדיקה קובעים את היקף הניקוי והתחזוקה הנדרשים ומוסרים הצעת מחיר לאישור.</p>
       <h3>גישה למערכת וניקוי האבק</h3>
@@ -127,7 +127,7 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-services" aria-labelledby="cooling-faq-title">
+  <section class="laptopia-section laptopia-services laptopia-faq" aria-labelledby="cooling-faq-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="cooling-faq-title">שאלות נפוצות על ניקוי מערכת קירור</h2>
       <div class="laptopia-warranty-grid">

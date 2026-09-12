@@ -1,6 +1,6 @@
-<section class="laptopia-section laptopia-board" id="board">
+<section class="laptopia-section laptopia-board laptopia-info-panel-section" id="board">
 
-  <div class="laptopia-board-content">
+  <div class="laptopia-board-content laptopia-info-panel">
 
     <div class="laptopia-board-label">
       תחום התמחות מרכזי

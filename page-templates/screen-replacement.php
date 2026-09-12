@@ -74,8 +74,8 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-board" id="screens" aria-labelledby="screens-title">
-    <div class="laptopia-board-content">
+  <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="screens" aria-labelledby="screens-title">
+    <div class="laptopia-board-content laptopia-info-panel">
       <h2 id="screens-title">אילו מסכים מחליפים ואיך מתאימים מסך למחשב?</h2>
       <p>אנו מחליפים מסכים שנמצאו תקולים או שניזוקו, לאחר בדיקת התאמה לדגם המחשב וזמינות המסך הנדרש. מסכים שנראים דומים אינם בהכרח מתאימים לאותו מחשב.</p>
       <h3>התאמה לדגם ולמאפייני המסך</h3>
@@ -132,7 +132,7 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-services" aria-labelledby="screen-faq-title">
+  <section class="laptopia-section laptopia-services laptopia-faq" aria-labelledby="screen-faq-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="screen-faq-title">שאלות נפוצות על החלפת מסך</h2>
       <div class="laptopia-warranty-grid">

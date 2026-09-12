@@ -77,8 +77,8 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-board" id="board" aria-labelledby="board-title">
-    <div class="laptopia-board-content">
+  <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="board" aria-labelledby="board-title">
+    <div class="laptopia-board-content laptopia-info-panel">
       <h2 id="board-title">מה כולל תיקון לוח אם למחשב נייד?</h2>
       <p>תיקון לוח אם למחשב נייד הוא אחד מתחומי ההתמחות המרכזיים של Laptopia ברמלה. התהליך מתחיל באבחון מקור התקלה ובבדיקת אפשרות התיקון.</p>
       <h3>אבחון מקור התקלה</h3>
@@ -160,7 +160,7 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-services" aria-labelledby="faq-title">
+  <section class="laptopia-section laptopia-services laptopia-faq" aria-labelledby="faq-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="faq-title">שאלות נפוצות על תיקון לוחות אם</h2>
       <div class="laptopia-warranty-grid">

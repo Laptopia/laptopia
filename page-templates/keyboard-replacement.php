@@ -59,8 +59,8 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-board" aria-labelledby="keyboard-diagnosis-title">
-    <div class="laptopia-board-content">
+  <section class="laptopia-section laptopia-board laptopia-info-panel-section" aria-labelledby="keyboard-diagnosis-title">
+    <div class="laptopia-board-content laptopia-info-panel">
       <h2 id="keyboard-diagnosis-title">מתי נדרשת החלפה ומתי הסיבה אינה במקלדת?</h2>
       <p>החלפה מתאימה כאשר הבדיקה מצביעה על תקלה במקלדת או על נזק שאינו מאפשר שימוש תקין. לפני הזמנת חלק בודקים את התסמינים ואת מקורם.</p>
       <h3>הגדרות וחיבור המקלדת</h3>
@@ -130,7 +130,7 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-services" aria-labelledby="keyboard-faq-title">
+  <section class="laptopia-section laptopia-services laptopia-faq" aria-labelledby="keyboard-faq-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="keyboard-faq-title">שאלות נפוצות על החלפת מקלדת</h2>
       <div class="laptopia-warranty-grid">

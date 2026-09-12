@@ -567,7 +567,7 @@ textarea:focus-visible {
 }
 
 .laptopia-board p {
-  max-width: 760px;
+  max-width: 860px;
   margin: 0 auto 22px;
   color: #56616e;
   font-size: 18px;
@@ -1409,15 +1409,49 @@ textarea:focus-visible {
 }
 
 @media (min-width: 901px) {
-  .laptopia-hero:not([aria-labelledby]) .laptopia-hero-content {
+  .laptopia-hero .laptopia-hero-content {
     width: 90%;
-    max-width: 1120px;
+    max-width: 1000px;
   }
 
-  .laptopia-hero:not([aria-labelledby]) p {
-    width: 100%;
-    max-width: none;
+  .laptopia-hero p {
+    width: 90%;
+    max-width: 860px;
     text-wrap: pretty;
+  }
+}
+
+.laptopia-info-panel-section {
+  background: #fff;
+}
+
+.laptopia-info-panel {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid #dce1e6;
+  border-radius: 16px;
+  background: #f1f3f5;
+}
+
+.laptopia-section-subtitle {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.laptopia-faq .laptopia-warranty-grid {
+  max-width: 1000px;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .laptopia-faq .laptopia-warranty-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .laptopia-process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
