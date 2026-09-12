@@ -26,10 +26,6 @@ get_template_part( 'template-parts/header', null, array(
 ?>
 
 <main dir="rtl">
-  <nav class="laptopia-section laptopia-inner" aria-label="פירורי לחם">
-    <p><a href="<?php echo esc_url( home_url( '/' ) ); ?>">דף הבית</a> / <span aria-current="page">החלפת מקלדת למחשב נייד</span></p>
-  </nav>
-
   <section class="laptopia-section laptopia-hero" aria-labelledby="keyboard-title">
     <div class="laptopia-hero-content">
       <h1 id="keyboard-title">החלפת מקלדת למחשב נייד ברמלה והסביבה</h1>

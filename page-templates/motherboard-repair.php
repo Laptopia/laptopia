@@ -26,10 +26,6 @@ get_template_part( 'template-parts/header', null, array(
 ?>
 
 <main dir="rtl">
-  <nav class="laptopia-section laptopia-inner" aria-label="פירורי לחם">
-    <p><a href="<?php echo esc_url( home_url( '/' ) ); ?>">דף הבית</a> / <span aria-current="page">תיקון לוחות אם למחשבים ניידים</span></p>
-  </nav>
-
   <section class="laptopia-section laptopia-hero" aria-labelledby="repair-title">
     <div class="laptopia-hero-content">
       <h1 id="repair-title">תיקון לוחות אם למחשבים ניידים ברמלה והסביבה</h1>
