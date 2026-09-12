@@ -42,15 +42,13 @@
         <p>החלפת מקלדות תקולות מכל הסוגים.</p>
       </a>
 
-      <div class="laptopia-card">
+      <a class="laptopia-card laptopia-element-link" href="/charging-usb-repair/">
         <div class="laptopia-service-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
-            <rect x="5" y="6" width="14" height="9" rx="4"/><path d="M9 10h6m-3 5v6M9 3v3m6-3v3"/>
-          </svg>
+          <?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging-usb-repair' ) ); ?>
         </div>
         <h3>שקעי טעינה ו-USB</h3>
         <p>תיקון והחלפת שקעי טעינה, USB ו-USB-C.</p>
-      </div>
+      </a>
 
       <a class="laptopia-card laptopia-element-link" href="https://laptopia.co.il/battery-replacement/">
         <div class="laptopia-service-icon" aria-hidden="true">
@@ -72,25 +70,21 @@
         <p>ניקוי מערכת הקירור וטיפול בהתחממות.</p>
       </a>
 
-      <div class="laptopia-card">
+      <a class="laptopia-card laptopia-element-link" href="/hinges-plastics-repair/">
         <div class="laptopia-service-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
-            <rect x="9" y="4" width="6" height="16" rx="2"/><path d="M9 7H3v10h6m6-10h6v10h-6M12 8v8"/>
-          </svg>
+          <?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinges-plastics-repair' ) ); ?>
         </div>
         <h3>תיקון צירים ופלסטיקה</h3>
         <p>תיקון נזקי צירים והחלפת חלקי פלסטיקה לפי הצורך.</p>
-      </div>
+      </a>
 
-      <div class="laptopia-card">
+      <a class="laptopia-card laptopia-element-link" href="/ram-ssd-windows-upgrade/">
         <div class="laptopia-service-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
-            <rect x="3" y="5" width="18" height="12" rx="1"/><path d="M7 9h3v4H7zm7 0h3v4h-3zM6 17v3m4-3v3m4-3v3m4-3v3"/>
-          </svg>
+          <?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'ram-ssd-windows-upgrade' ) ); ?>
         </div>
         <h3>שדרוגי חומרה</h3>
         <p>שדרוגי SSD וזיכרון למחשבים ניידים לשיפור ביצועים ונפח אחסון.</p>
-      </div>
+      </a>
 
     </div>
 

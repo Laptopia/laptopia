@@ -4,7 +4,15 @@ function laptopia_get_icon_svg( $key ) {
     if ( 'brand-mark' === $key ) {
         return file_get_contents( get_stylesheet_directory() . '/assets/icons/brand-mark.svg' );
     }
+    // Page slugs reuse component icons, including callers such as header/favicons.
+    $aliases = array(
+        'charging-usb-repair' => 'charging',
+        'hinges-plastics-repair' => 'hinge',
+        'ram-ssd-windows-upgrade' => 'upgrade',
+    );
+    $key = $aliases[ $key ] ?? $key;
     $icons = array(
+        'upgrade' => '<rect x="3" y="6" width="18" height="12" rx="1"/><path d="M7 10h3v4H7zm7 0h3v4h-3zM6 18v3m4-3v3m4-3v3m4-3v3M12 3v3m-3-3 3-2 3 2"/>',
         'charging' => '<rect x="4" y="7" width="16" height="10" rx="3"/><path d="M8 11h8m-8 2h8M8 4v3m8-3v3M8 17v3m8-3v3"/>',
         'hinge' => '<path d="M4 5h7v14H4zM13 5h7v14h-7zM11 8h2m-2 8h2M7 9h.01M7 15h.01M17 9h.01M17 15h.01"/>',
         'software' => '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18m-10 4-3 2 3 2m3-4 3 2-3 2"/>',

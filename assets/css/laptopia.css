@@ -1600,3 +1600,42 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
     bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   }
 }
+
+/* Service labels may wrap within the existing compact navigation panel. */
+.laptopia-services-panel a span {
+  min-width: 0;
+  white-space: normal;
+}
+
+/* Keep mixed-direction amounts together inside service price badges. */
+.laptopia-service-cta .laptopia-service-price-amount {
+  white-space: nowrap;
+}
+
+/* Real repair examples reuse the content rail and existing figure treatment. */
+.laptopia-service-case .laptopia-component-gallery {
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+.laptopia-service-case .laptopia-case-gallery-single {
+  grid-template-columns: 1fr;
+  max-width: 420px;
+}
+
+.laptopia-service-case .laptopia-component-figure img {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #f1f3f5;
+  border: 1px solid #dce1e6;
+}
+
+.laptopia-service-case .laptopia-case-gallery-single img {
+  aspect-ratio: auto;
+}
+
+@media (min-width: 901px) {
+  .laptopia-service-case .laptopia-component-gallery:not(.laptopia-case-gallery-single) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

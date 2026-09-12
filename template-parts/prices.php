@@ -17,12 +17,12 @@
       array( 'label' => 'ניקוי מערכת קירור', 'price' => 'החל מ־300 ₪', 'icon' => 'cooling-cleaning', 'url' => '/cooling-cleaning/' ),
       array( 'label' => 'החלפת מסך', 'price' => 'החל מ־550 ₪', 'icon' => 'screen-replacement', 'url' => 'https://laptopia.co.il/screen-replacement/' ),
       array( 'label' => 'החלפת מקלדת', 'price' => 'החל מ־550 ₪', 'icon' => 'keyboard-replacement', 'url' => 'https://laptopia.co.il/keyboard-replacement/' ),
-      array( 'label' => 'החלפת שקע טעינה', 'price' => 'החל מ־250 ₪', 'icon' => 'charging' ),
-      array( 'label' => 'החלפת שקע USB', 'price' => 'החל מ־300 ₪', 'icon' => 'charging' ),
+      array( 'label' => 'החלפת שקע טעינה', 'price' => 'החל מ־250 ₪', 'icon' => 'charging', 'url' => '/charging-usb-repair/' ),
+      array( 'label' => 'החלפת שקע USB', 'price' => 'החל מ־300 ₪', 'icon' => 'charging', 'url' => '/charging-usb-repair/' ),
       array( 'label' => 'החלפת סוללה', 'price' => 'החל מ־400 ₪', 'icon' => 'battery-replacement', 'url' => 'https://laptopia.co.il/battery-replacement/' ),
-      array( 'label' => 'תיקון צירים', 'price' => 'החל מ־500 ₪', 'icon' => 'hinge' ),
-      array( 'label' => 'החלפת חלקי פלסטיקה', 'price' => 'החל מ־700 ₪', 'icon' => 'hinge' ),
-      array( 'label' => 'התקנת מערכת הפעלה', 'price' => '300 ₪', 'icon' => 'software' ),
+      array( 'label' => 'תיקון צירים', 'price' => 'החל מ־500 ₪', 'icon' => 'hinge', 'url' => '/hinges-plastics-repair/' ),
+      array( 'label' => 'החלפת חלקי פלסטיקה', 'price' => 'החל מ־700 ₪', 'icon' => 'hinge', 'url' => '/hinges-plastics-repair/' ),
+      array( 'label' => 'התקנת מערכת הפעלה', 'price' => '300 ₪', 'icon' => 'software', 'url' => '/ram-ssd-windows-upgrade/' ),
       array( 'label' => 'תיקון לוח אם', 'price' => 'החל מ־700 ₪', 'icon' => 'motherboard-repair', 'url' => '/motherboard-repair/' ),
     );
     ?>
