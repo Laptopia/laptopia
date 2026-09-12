@@ -163,10 +163,6 @@ textarea:focus-visible {
   transform: translate(1px, -1px);
 }
 
-.laptopia-service-contact-actions > :last-child {
-  grid-column: 1 / -1;
-}
-
 @media (max-width: 600px) {
   .laptopia-element-link:is(.laptopia-card, .laptopia-board-price, .laptopia-price-row)::after {
     display: none;
@@ -236,6 +232,17 @@ textarea:focus-visible {
   background: #f1f3f5;
   color: #202832 !important;
   border-color: #dce1e6;
+}
+
+.laptopia-service-contact-actions :is(.laptopia-btn-white, .laptopia-btn-google-maps) {
+  background: #f1f3f5;
+  border-color: #dce1e6;
+  box-shadow: 0 6px 20px rgba(32, 40, 50, .05);
+}
+
+.laptopia-service-contact-actions :is(.laptopia-btn-white, .laptopia-btn-google-maps):hover {
+  border-color: #c3ccd5;
+  box-shadow: 0 12px 24px rgba(32, 40, 50, .15);
 }
 
 .laptopia-buttons.laptopia-contact-actions {

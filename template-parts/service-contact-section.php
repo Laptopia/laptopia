@@ -8,9 +8,6 @@ $title_ids = array(
   'keyboard-replacement.php' => 'keyboard-contact-title',
 );
 $title_id = $title_ids[ $template ] ?? 'service-contact-title';
-$actions_args = 'motherboard-repair.php' === $template
-  ? array( 'services_url' => 'https://laptopia.co.il/#services' )
-  : array();
 ?>
 <section class="laptopia-section laptopia-contact laptopia-service-contact" id="contact" aria-labelledby="<?php echo esc_attr( $title_id ); ?>">
   <div class="laptopia-contact-content">
@@ -21,6 +18,6 @@ $actions_args = 'motherboard-repair.php' === $template
       <div class="laptopia-info-box"><div class="laptopia-info-value"><bdi dir="ltr">053-803-6244</bdi></div></div>
     </div>
     <p class="laptopia-contact-note">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</p>
-    <?php get_template_part( 'template-parts/service-contact-actions', null, $actions_args ); ?>
+    <?php get_template_part( 'template-parts/service-contact-actions' ); ?>
   </div>
 </section>
