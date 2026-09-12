@@ -680,6 +680,19 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
+.laptopia-price-service {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.laptopia-price-service svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  color: #56616e;
+}
+
 .laptopia-diagnostic {
   max-width: var(--laptopia-content-rail);
   margin: 24px auto 0;
