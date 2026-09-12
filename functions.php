@@ -4,10 +4,20 @@ require_once get_stylesheet_directory() . '/inc/services.php';
 require_once get_stylesheet_directory() . '/inc/icons.php';
 
 function laptopia_background_mode() {
-    if ( is_page_template( 'page-templates/home-laptopia.php' ) ) {
-        return 'network';
+    $modes = array(
+        'home-laptopia' => 'network',
+        'motherboard-repair' => 'pcb',
+        'screen-replacement' => 'screen',
+        'keyboard-replacement' => 'keyboard',
+        'cooling-cleaning' => 'cooling',
+        'battery-replacement' => 'battery',
+    );
+    foreach ( $modes as $template => $mode ) {
+        if ( is_page_template( 'page-templates/' . $template . '.php' ) ) {
+            return $mode;
+        }
     }
-    return is_page_template( 'page-templates/motherboard-repair.php' ) ? 'pcb' : '';
+    return '';
 }
 
 add_action( 'wp_head', function() {

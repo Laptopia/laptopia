@@ -1,7 +1,11 @@
 (() => {
   'use strict';
   const mode = document.body.dataset.laptopiaBackground;
-  const modes = { pcb: ['pcb.js', 'createPCB'], network: ['network.js', 'createNetwork'] };
+  const modes = {
+    pcb: ['pcb.js', 'createPCB'], network: ['network.js', 'createNetwork'],
+    screen: ['screen.js', 'createScreen'], keyboard: ['keyboard.js', 'createKeyboard'],
+    cooling: ['cooling.js', 'createCooling'], battery: ['battery.js', 'createBattery']
+  };
   if (!Object.hasOwn(modes, mode) || window.LaptopiaBackground) return;
   const [moduleFile, factory] = modes[mode];
   const moduleUrl = new URL(moduleFile, document.currentScript.src);
