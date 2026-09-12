@@ -27,7 +27,9 @@ get_template_part( 'template-parts/prices' );
 get_template_part( 'template-parts/warranty' );
 get_template_part( 'template-parts/reviews-heading' );
 
+echo '<div class="laptopia-reviews-rail">';
 echo do_shortcode( '[trustindex no-registration=google]' );
+echo '</div>';
 
 get_template_part( 'template-parts/contact' );
 get_template_part( 'template-parts/footer' );
