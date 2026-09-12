@@ -183,11 +183,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-info-box"><div class="laptopia-info-value"><bdi dir="ltr">053-803-6244</bdi></div></div>
       </div>
       <p class="laptopia-contact-note">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</p>
-      <div class="laptopia-buttons">
-        <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה בוואטסאפ</span></span></a>
-        <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
-        <a class="laptopia-btn laptopia-btn-white" href="https://laptopia.co.il/#services">לכל שירותי המעבדה</a>
-      </div>
+      <?php get_template_part( 'template-parts/service-contact-actions', null, array( 'services_url' => 'https://laptopia.co.il/#services' ) ); ?>
     </div>
   </section>
 </main>

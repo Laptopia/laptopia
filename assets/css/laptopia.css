@@ -163,6 +163,10 @@ textarea:focus-visible {
   transform: translate(1px, -1px);
 }
 
+.laptopia-service-contact-actions > :last-child {
+  grid-column: 1 / -1;
+}
+
 @media (max-width: 600px) {
   .laptopia-element-link:is(.laptopia-card, .laptopia-board-price, .laptopia-price-row)::after {
     display: none;
