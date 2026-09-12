@@ -1220,14 +1220,18 @@ textarea:focus-visible {
     display: block;
   }
 
+  .laptopia-header-navigation,
   .laptopia-services-dropdown {
-    position: relative;
+    position: static;
   }
 
   .laptopia-services-panel {
     top: 100%;
-    inset-inline-start: 0;
+    inset-inline-start: auto;
     inset-inline-end: auto;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
     width: min(290px, calc(100vw - 48px));
     max-width: 290px;
     padding: 2px 8px;
@@ -1247,7 +1251,6 @@ textarea:focus-visible {
   }
 
   .laptopia-header-navigation {
-    position: relative;
     order: 3;
     flex-basis: 100%;
     justify-content: center;
