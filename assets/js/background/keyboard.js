@@ -1,50 +1,52 @@
 import { createServiceState, line, dot } from './service-state.js';
 
-export function createKeyboard(){
-  const s=createServiceState();let keys=[],fields=[],lastKey=-1,lastAmbient=-1;
-  function resize(size){
-    s.resize(size);keys=[];fields=[];lastKey=lastAmbient=-1;
-    const layouts=s.mobile?[[.04,.32,3,5]]:s.width<=1024?[[-.04,.34,4,6],[.78,.78,2,4]]:[[-.04,.28,4,7],[.72,.72,3,6]];
-    const pitch=s.mobile?55:68;
-    for(let f=0;f<layouts.length;f++){
-      const l=layouts[f],x=l[0]*s.width,y=l[1]*s.height;const path=new Path2D();
-      for(let row=0;row<l[2];row++){
-        let px=x+(row%2)*pitch*.2;
-        path.moveTo(px-12,y+row*pitch+24);path.lineTo(px+l[3]*pitch,y+row*pitch+24);
-        for(let col=0;col<l[3];col++){
-          const span=row===l[2]-1&&col===2?2:col===l[3]-1?1.35:1;
-          keys.push({x:px,y:y+row*pitch,w:pitch*span-10,h:pitch-20,row,col,field:f,trigger:-100,active:0});
-          px+=pitch*span;if(span===2)col++;
-        }
+export function createKeyboard() {
+  const s=createServiceState();let keys=[],buses=[],lastKey=-1,lastAmbient=-1,unit=64,rows=5;
+  function resize(size) {
+    s.resize(size);keys=[];buses=[];lastKey=lastAmbient=-1;
+    const regular=Array(12).fill(1);
+    const layouts=s.mobile?[Array(6).fill(1),[1.2,1,1,1,1, .8],[1.2,3.6,1.2]]:
+      [[...Array(13).fill(1),2],[1.5,...regular,1.5],[1.75,...Array(11).fill(1),2.25],[2.25,...Array(10).fill(1),2.75],[1.5,1.5,1.5,6,1.5,1.5,1.5]];
+    rows=layouts.length;unit=s.mobile?s.width*.88/6:Math.min(64,s.width*.94/15);
+    const width=unit*(s.mobile?6:15),left=(s.width-width)/2,top=s.height*.32,rowPitch=unit*.82;
+    for(let row=0;row<rows;row++) {
+      let x=left+(row===1?unit*.12:row===2?unit*.18:0);
+      const y=top+row*rowPitch;
+      buses.push({x:left,y:y+unit*.30,nx:left+width});
+      for(let col=0;col<layouts[row].length;col++) {
+        const span=layouts[row][col],w=unit*span-7,h=unit*.61;
+        const center=Math.max(0,1-Math.abs((x+w/2)/s.width-.5)/.29);
+        keys.push({x,y,w,h,row,col,weight:1-center*.80,trigger:-100,active:0});x+=unit*span;
       }
-      fields.push({path});
     }
     s.elements=keys.length;
   }
-  function schedule(index){
-    const k=keys[index],reach=s.quality>.5?1:2;
-    for(const other of keys){if(other.field!==k.field)continue;const d=Math.abs(other.col-k.col)+Math.abs(other.row-k.row);
-      if(d<=reach&&(other.col===k.col||other.row===k.row))other.trigger=s.time+d*.065;
+  function schedule(index) {
+    const source=keys[index],cx=source.x+source.w/2,reach=s.quality>.5?1.2:2.2;
+    for(const k of keys) {
+      const dx=Math.abs(k.x+k.w/2-cx)/unit,dy=Math.abs(k.row-source.row);
+      if((dy===0&&dx<reach)||(dy<=2&&dx<.6))k.trigger=s.time+(dx+dy)*.065;
     }
   }
-  function render(ctx,dt,reduced){
-    s.begin(ctx,dt,reduced);let nearest=-1,best=Infinity;
-    if(!reduced&&s.pointer.active&&!s.mobile){
-      for(let i=0;i<keys.length;i++){const k=keys[i],dx=k.x+k.w/2-s.pointer.x,dy=k.y+k.h/2-s.pointer.y,d=dx*dx+dy*dy;if(d<best){best=d;nearest=i;}}
-      if(best<70*70&&nearest!==lastKey){schedule(nearest);lastKey=nearest;}
+  function render(ctx,dt,reduced) {
+    s.begin(ctx,dt,reduced);let nearest=-1;
+    if(!reduced&&s.pointer.active&&!s.mobile) {
+      for(let i=0;i<keys.length;i++){const k=keys[i];if(s.pointer.x>=k.x&&s.pointer.x<=k.x+k.w&&s.pointer.y>=k.y&&s.pointer.y<=k.y+k.h){nearest=i;break;}}
+      if(nearest>=0&&nearest!==lastKey)schedule(nearest);lastKey=nearest;
     }else lastKey=-1;
-    if(!reduced&&Math.floor(s.time/11)!==lastAmbient){lastAmbient=Math.floor(s.time/11);schedule((lastAmbient*7+Math.floor(keys.length/2))%keys.length);}
-    ctx.lineWidth=.6;ctx.strokeStyle='rgba(86,97,110,.035)';for(const f of fields)ctx.stroke(f.path);
-    const limit=s.mobile?Math.max(1,Math.round(2-s.quality)):Math.round(5-s.quality*2);
-    for(const k of keys){
+    if(!reduced&&Math.floor(s.time/12)!==lastAmbient){lastAmbient=Math.floor(s.time/12);schedule((lastAmbient*11+Math.floor(keys.length*.33))%keys.length);}
+    ctx.lineWidth=.6;for(const b of buses)line(ctx,b.x,b.y,b.nx,b.y,.022);
+    const budget=s.mobile?Math.max(1,Math.round(2-s.quality)):Math.round(5-s.quality*2);
+    for(const k of keys) {
       const age=s.time-k.trigger,ripple=reduced||age<0||age>.5?0:Math.sin(Math.PI*age/.5)*Math.exp(-age*2);
-      const hover=s.activity(k.x+k.w/2,k.y+k.h/2,70);
-      k.active=s.follow(k.active,Math.max(ripple,hover));const press=k.active*1.8;
-      ctx.lineWidth=1.1;ctx.strokeStyle=`rgba(40,49,59,${.11+k.active*.22})`;ctx.fillStyle=`rgba(86,97,110,${.018+k.active*.045})`;
-      ctx.beginPath();ctx.roundRect(k.x,k.y+press,k.w,k.h,7);ctx.stroke();ctx.fill();
-      if(s.quality<1){ctx.lineWidth=.6;line(ctx,k.x+8,k.y+k.h-4+press,k.x+k.w-8,k.y+k.h-4+press,.055+k.active*.10);}
-      if(!reduced&&age>=0&&age<.45&&ripple>.02&&s.particles<limit){dot(ctx,k.x+k.w/2+age*80,k.y+k.h/2,ripple*.25,1.6);s.particles++;}
+      const pressed=nearest>=0&&keys[nearest]===k?1:0;
+      k.active=s.follow(k.active,Math.max(ripple,pressed)*k.weight);
+      const offset=k.active*2;
+      ctx.lineWidth=1.05;ctx.strokeStyle=`rgba(40,49,59,${.14*k.weight+k.active*.17})`;ctx.fillStyle=`rgba(86,97,110,${.015*k.weight+k.active*.045})`;
+      ctx.beginPath();ctx.roundRect(k.x,k.y+offset,k.w,k.h,5);ctx.stroke();ctx.fill();
+      if(s.quality<1){ctx.lineWidth=.6;line(ctx,k.x+6,k.y+k.h-4+offset,k.x+k.w-6,k.y+k.h-4+offset,.06*k.weight+k.active*.08);}
+      if(!reduced&&age>=0&&age<.45&&ripple>.02&&s.particles<budget){dot(ctx,k.x+k.w/2+age*unit,k.y+k.h/2,ripple*.20*k.weight,1.4);s.particles++;}
     }
   }
-  return{init(){},resize,render,pointerMove:s.pointerMove,setQuality:s.setQuality,getStats(){return{...s.getStats(),fields:fields.length};},destroy(){keys=[];fields=[];}};
+  return{init(){},resize,render,pointerMove:s.pointerMove,setQuality:s.setQuality,getStats(){return{...s.getStats(),fields:1,rows};},destroy(){keys=[];buses=[];}};
 }

@@ -1,42 +1,61 @@
 import { createServiceState, bezier, dot } from './service-state.js';
 
-export function createBattery(){
-  const s=createServiceState();let modules=[],rails=[];
-  const point={x:0,y:0};
-  function resize(size){
-    s.resize(size);modules=[];rails=[];
-    const positions=s.mobile?[[.18,.32],[.82,.78]]:[[.10,.26],[.89,.30],[.06,.61],[.86,.67],[.27,.86],[.65,.91]];
-    const count=s.mobile?2:s.width<=1024?5:6;
-    for(let i=0;i<count;i++)modules.push({x:positions[i][0]*s.width,y:positions[i][1]*s.height,cells:3+i%4,w:s.mobile?90:130,h:s.mobile?13:17,phase:Math.random()*Math.PI*2,active:0});
-    // Two pack branches, linked once: a power-distribution composition, not a web.
-    const pairs=s.mobile?[[0,1]]:count===5?[[0,2],[2,4],[4,3],[3,1]]:[[0,2],[2,4],[4,5],[5,3],[3,1]];
-    for(const [a,b] of pairs){if(a>=count||b>=count)continue;const p=modules[a],q=modules[b];rails.push({a,b,phase:Math.random(),active:0,p:new Float64Array([p.x,p.y,p.x+(q.x-p.x)*.15,p.y+(q.y-p.y)*.4,q.x-(q.x-p.x)*.15,q.y-(q.y-p.y)*.4,q.x,q.y])});}
-    s.elements=modules.length+rails.length;
+export function createBattery() {
+  const s = createServiceState(); let packs = [], rails = [];
+  const point = { x: 0, y: 0 };
+  function resize(size) {
+    s.resize(size); packs = []; rails = [];
+    const positions = s.mobile ? [[.24,.32],[.74,.77]] : [[.12,.28],[.86,.32],[.14,.76],[.84,.78],[.50,.58]];
+    const count = s.mobile ? 2 : 5, cellW = s.mobile ? 16 : 22, cellH = s.mobile ? 75 : 112;
+    for (let i = 0; i < count; i++) {
+      const cells = s.mobile ? 3 + i % 2 : 3 + i % 4, x = positions[i][0] * s.width, y = positions[i][1] * s.height;
+      packs.push({ x, y, cells, cellW, cellH, weight: i === 4 ? .23 : 1, phase: i * 1.26, active: 0, junctionX: x + (cells * (cellW + 6) - 6) / 2 + 15 });
+    }
+    const pairs = s.mobile ? [[0,1]] : [[0,2],[2,4],[4,3],[3,1]];
+    for (const [a,b] of pairs) {
+      const p = packs[a], q = packs[b];
+      rails.push({ a,b,phase:Math.random(),active:0,weight:a===4||b===4?.4:.85,
+        points:new Float64Array([p.junctionX,p.y,p.junctionX+(q.junctionX-p.junctionX)*.3,p.y+30,q.junctionX-(q.junctionX-p.junctionX)*.3,q.y-30,q.junctionX,q.y]) });
+    }
+    s.elements = packs.reduce((n,p) => n + p.cells, 0) + rails.length;
   }
-  function render(ctx,dt,reduced){
+  function render(ctx,dt,reduced) {
     s.begin(ctx,dt,reduced);
-    for(const m of modules){
-      m.active=s.follow(m.active,s.activity(m.x,m.y,240),4);
-      const charge=reduced?.48:.45+Math.sin(s.time*.32+m.phase)*.18+m.active*.32;
-      for(let k=0;k<m.cells;k++){
-        const x=m.x-m.w/2,y=m.y+(k-(m.cells-1)/2)*(m.h+7),level=Math.max(.08,Math.min(1,charge*m.cells-k));
-        ctx.lineWidth=.9;ctx.strokeStyle=`rgba(40,49,59,${.13+m.active*.12})`;ctx.beginPath();ctx.roundRect(x,y,m.w,m.h,4);ctx.stroke();
-        ctx.fillStyle=`rgba(86,97,110,${.045+level*.08+m.active*.055})`;ctx.beginPath();ctx.roundRect(x+3,y+3,Math.max(1,(m.w-6)*level),m.h-6,2);ctx.fill();
+    for (const p of packs) {
+      p.active = s.follow(p.active,s.activity(p.x,p.y,240)*p.weight,3);
+      const width = p.cells*(p.cellW+6)-6, left=p.x-width/2, top=p.y-p.cellH/2;
+      ctx.lineWidth=.8;ctx.strokeStyle=`rgba(86,97,110,${.065*p.weight})`;
+      // Open retaining brackets join the cylindrical cells into an internal pack.
+      ctx.beginPath();ctx.moveTo(left-5,top+16);ctx.lineTo(left-5,top-5);ctx.lineTo(left+width+5,top-5);ctx.lineTo(left+width+5,top+16);
+      ctx.moveTo(left-5,top+p.cellH-16);ctx.lineTo(left-5,top+p.cellH+5);ctx.lineTo(left+width+5,top+p.cellH+5);ctx.lineTo(left+width+5,top+p.cellH-16);ctx.stroke();
+      for(let cell=0;cell<p.cells;cell++) {
+        const x=left+cell*(p.cellW+6), seed=cell%3===0?.30:cell%3===1?.68:.96;
+        const ambient=reduced?0:Math.sin(s.time*.24+p.phase+cell*.3)*.07;
+        const level=Math.max(.12,Math.min(1,seed+ambient+p.active*.30)), innerH=p.cellH-14, fillH=innerH*level;
+        ctx.lineWidth=1.1;ctx.strokeStyle=`rgba(40,49,59,${.16*p.weight+p.active*.13})`;
+        ctx.beginPath();ctx.roundRect(x,top,p.cellW,p.cellH,p.cellW*.4);ctx.stroke();
+        ctx.fillStyle=`rgba(86,97,110,${.075*p.weight+p.active*.055})`;
+        ctx.beginPath();ctx.roundRect(x+3,top+7+innerH-fillH,p.cellW-6,fillH,3);ctx.fill();
+        ctx.lineWidth=.65;ctx.beginPath();ctx.ellipse(x+p.cellW/2,top+8,p.cellW*.30,2.4,0,0,Math.PI*2);ctx.stroke();
       }
-      ctx.lineWidth=1;ctx.strokeStyle='rgba(40,49,59,.15)';ctx.strokeRect(m.x+m.w/2+9,m.y-5,10,10);
-      dot(ctx,m.x+m.w/2+14,m.y,.16+m.active*.2,1.8);
+      ctx.lineWidth=.9;ctx.strokeStyle=`rgba(40,49,59,${.12*p.weight+p.active*.16})`;ctx.strokeRect(p.junctionX-5,p.y-8,10,16);
+      dot(ctx,p.junctionX,p.y,.15*p.weight+p.active*.18,1.8);
     }
-    const budget=s.mobile?Math.max(1,Math.round(2-s.quality)):Math.round(5-s.quality*2);let bursts=0;
-    for(let i=0;i<rails.length;i++){
-      const r=rails[i],p=r.p,a=modules[r.a],b=modules[r.b];r.active=s.follow(r.active,Math.max(a.active,b.active));
-      ctx.lineWidth=1;ctx.strokeStyle=`rgba(40,49,59,${.065+r.active*.15})`;ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.bezierCurveTo(p[2],p[3],p[4],p[5],p[6],p[7]);ctx.stroke();
-      bezier(point,p,.5);dot(ctx,point.x,point.y,.12+r.active*.13,2.2);
+    const budget=s.mobile?Math.max(1,Math.round(2-s.quality)):Math.round(4-s.quality);let bursts=0;
+    for(let i=0;i<rails.length;i++) {
+      const r=rails[i],p=packs[r.a],q=packs[r.b],v=r.points;
+      r.active=s.follow(r.active,Math.max(p.active,q.active),4);
+      ctx.lineWidth=.9;ctx.strokeStyle=`rgba(40,49,59,${(.075+r.active*.13)*r.weight})`;ctx.beginPath();ctx.moveTo(v[0],v[1]);ctx.bezierCurveTo(v[2],v[3],v[4],v[5],v[6],v[7]);ctx.stroke();
       if(reduced)continue;
-      r.phase=(r.phase+dt*(s.mobile?.04:.055)*(1+r.active*2))%1;
-      const burst=s.gust>0&&r.active>.15&&bursts<(s.quality>1?1:2);
-      if(i<budget||burst){const t=a.active>b.active?1-r.phase:r.phase;bezier(point,p,t);dot(ctx,point.x,point.y,.22+r.active*.13,1.8,r.active>.5?'88,128,117':'40,49,59');s.particles++;
-        if(burst){bezier(point,p,(t+.10)%1);dot(ctx,point.x,point.y,.19,1.4);s.particles++;bursts++;}}
+      r.phase=(r.phase+dt*(s.mobile?.045:.06)*(1+r.active*2))%1;
+      const burst=s.gust>0&&r.active>.18&&bursts<(s.quality>1?1:2);
+      if(i<budget||burst){const t=p.active>q.active?1-r.phase:r.phase;bezier(point,v,t);
+        const center=Math.max(0,1-Math.abs(point.x/s.width-.5)/.27), quiet=1-center*.75;
+        dot(ctx,point.x,point.y,(.22+r.active*.15)*quiet,1.8,r.active>.5?'89,127,115':'40,49,59');s.particles++;
+        if(burst){bezier(point,v,(t+.09)%1);dot(ctx,point.x,point.y,.16*quiet,1.4);s.particles++;bursts++;}}
     }
   }
-  return{init(){},resize,render,pointerMove:s.pointerMove,setQuality:s.setQuality,getStats(){return{...s.getStats(),modules:modules.length,rails:rails.length};},destroy(){modules=[];rails=[];}};
+  return {init(){},resize,render,pointerMove:s.pointerMove,setQuality:s.setQuality,
+    getStats(){return{...s.getStats(),packs:packs.length,cells:packs.reduce((n,p)=>n+p.cells,0),rails:rails.length};},
+    destroy(){packs=[];rails=[];}};
 }
