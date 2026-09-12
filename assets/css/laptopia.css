@@ -1247,7 +1247,7 @@ textarea:focus-visible {
   position: absolute;
   inset-inline-start: 0;
   top: calc(100% + 8px);
-  width: 220px;
+  width: 300px;
   max-width: calc(100vw - 28px);
   max-height: min(60vh, 440px);
   overflow-y: auto;
@@ -1749,5 +1749,47 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
 
   .laptopia-price-card {
     padding: 20px 16px;
+  }
+}
+
+/* Shared count-aware information/card grids; price and gallery grids are separate. */
+@media (min-width: 901px) {
+  .laptopia-services-panel a span {
+    white-space: nowrap;
+  }
+
+  .laptopia-warranty-grid:has(> :nth-child(3)) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .laptopia-warranty-grid:has(> :nth-child(3)) > * {
+    grid-column: span 2;
+  }
+
+  .laptopia-warranty-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .laptopia-warranty-grid:has(> :nth-child(5):last-child) > :nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .laptopia-warranty-grid:has(> :nth-child(5):last-child) > :nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .laptopia-warranty-grid,
+  .laptopia-faq .laptopia-warranty-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .laptopia-warranty-grid > * {
+    grid-column: span 2;
+  }
+
+  .laptopia-warranty-grid:has(> :nth-child(odd):last-child) > :last-child {
+    grid-column: 2 / span 2;
   }
 }
