@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class( 'laptopia-service-page' ); ?>>
 <?php wp_body_open(); ?>
 <?php get_template_part( 'template-parts/header', null, array(
     'service_link' => array( 'href' => '#ports', 'label' => 'בדיקת שקעי טעינה' ),
@@ -22,7 +22,10 @@ defined( 'ABSPATH' ) || exit;
     <div class="laptopia-hero-content">
       <h1 id="service-title">תיקון שקעי טעינה ו־USB למחשב נייד ברמלה והסביבה</h1>
       <p>טעינה שמתנתקת, מחבר רופף או התקן USB שלא מזוהה מצדיקים בדיקה. ב־Laptopia ברמלה מאבחנים את השקע ואת המעגלים הקשורים אליו לפני שקובעים אם נדרשת החלפת מחבר או עבודה ברמת הרכיב.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?><span>שקע טעינה — <span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">250 ₪</bdi></span><br><bdi dir="ltr">USB / USB-C</bdi> — <span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">300 ₪</bdi></span></span></div>
+      <div class="laptopia-service-price-grid">
+        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?><span><span class="laptopia-price-card-label">שקע טעינה</span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">250 ₪</bdi></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?><span><span class="laptopia-price-card-label"><bdi dir="ltr">USB / USB-C</bdi></span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">300 ₪</bdi></span></span></div>
+      </div>
       <p>המחיר והיקף העבודה נקבעים לאחר בדיקה ואישור הלקוח.</p>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה ב-WhatsApp</span></span></a>
@@ -80,11 +83,19 @@ defined( 'ABSPATH' ) || exit;
   <section class="laptopia-section laptopia-prices" id="prices">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">כמה עולה תיקון שקע טעינה או USB?</h2>
-      <div class="laptopia-diagnostic">
-        <p><strong>שקע טעינה — החל מ־250 ₪</strong></p>
-        <p><strong>USB / USB-C — החל מ־300 ₪</strong></p>
-        <p>המחיר הסופי תלוי בדגם, במצב המחבר ובממצאי הבדיקה. תיקון בקר, הזנה או מעגלים נוספים מתומחר לפי היקף העבודה, לאחר אבחון ואישור הלקוח.</p>
+      <div class="laptopia-service-price-grid">
+        <div class="laptopia-card laptopia-price-card">
+          <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?></div>
+          <h3>שקע טעינה</h3>
+          <p class="laptopia-price-card-value">החל מ־250 ₪</p>
+        </div>
+        <div class="laptopia-card laptopia-price-card">
+          <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?></div>
+          <h3>USB / USB-C</h3>
+          <p class="laptopia-price-card-value">החל מ־300 ₪</p>
+        </div>
       </div>
+      <p class="laptopia-price-note">המחיר הסופי תלוי בדגם, במצב המחבר ובממצאי הבדיקה. תיקון בקר, הזנה או מעגלים נוספים מתומחר לפי היקף העבודה, לאחר אבחון ואישור הלקוח.</p>
     </div>
   </section>
   <section class="laptopia-section laptopia-board laptopia-info-panel-section">

@@ -12,6 +12,7 @@ function laptopia_get_icon_svg( $key ) {
     );
     $key = $aliases[ $key ] ?? $key;
     $icons = array(
+        'storage' => '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M7 7h10M7 17h.01M10 17h.01M14 17h3M8 21v-2m4 2v-2m4 2v-2"/>',
         'upgrade' => '<rect x="3" y="6" width="18" height="12" rx="1"/><path d="M7 10h3v4H7zm7 0h3v4h-3zM6 18v3m4-3v3m4-3v3m4-3v3M12 3v3m-3-3 3-2 3 2"/>',
         'charging' => '<rect x="4" y="7" width="16" height="10" rx="3"/><path d="M8 11h8m-8 2h8M8 4v3m8-3v3M8 17v3m8-3v3"/>',
         'hinge' => '<path d="M4 5h7v14H4zM13 5h7v14h-7zM11 8h2m-2 8h2M7 9h.01M7 15h.01M17 9h.01M17 15h.01"/>',

@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class( 'laptopia-service-page' ); ?>>
 <?php wp_body_open(); ?>
 <?php get_template_part( 'template-parts/header', null, array(
     'service_link' => array( 'href' => '#hinges', 'label' => 'בדיקת צירים ומארז' ),
@@ -22,7 +22,10 @@ defined( 'ABSPATH' ) || exit;
     <div class="laptopia-hero-content">
       <h1 id="service-title">תיקון צירים ופלסטיקה למחשב נייד ברמלה והסביבה</h1>
       <p>ציר קשה, מסגרת שנפתחת או מכסה שמתרומם יכולים להעיד על נזק בציר או בנקודות העיגון שלו. במעבדת Laptopia ברמלה בודקים את המכלול לפני שמציעים שיקום חיבורים או החלפת חלקי מארז.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?><span>תיקון צירים — <span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">500 ₪</bdi></span><br>תיקון פלסטיקה / מארז — <span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">700 ₪</bdi></span></span></div>
+      <div class="laptopia-service-price-grid">
+        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?><span><span class="laptopia-price-card-label">תיקון צירים</span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">500 ₪</bdi></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?><span><span class="laptopia-price-card-label">תיקון פלסטיקה / מארז</span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">700 ₪</bdi></span></span></div>
+      </div>
       <p>המחיר והיקף העבודה נקבעים לאחר בדיקה ואישור הלקוח.</p>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה ב-WhatsApp</span></span></a>
@@ -59,18 +62,21 @@ defined( 'ABSPATH' ) || exit;
     'images' => array(
       array(
         'src' => 'https://laptopia.co.il/wp-content/uploads/2026/09/hinge-damage-1.webp',
+        'caption' => 'לפני',
         'alt' => 'ציר מחשב נייד שנעקר מהמארז לפני תיקון',
         'width' => 573,
         'height' => 573,
       ),
       array(
         'src' => 'https://laptopia.co.il/wp-content/uploads/2026/09/hinge-damage-2.webp',
+        'caption' => 'אזור הנזק',
         'alt' => 'נזק באזור הציר והפלסטיקה של מחשב נייד',
         'width' => 573,
         'height' => 573,
       ),
       array(
         'src' => 'https://laptopia.co.il/wp-content/uploads/2026/09/hinge-repair-after.webp',
+        'caption' => 'אחרי',
         'alt' => 'מחשב נייד ASUS לאחר תיקון ציר ופלסטיקה',
         'width' => 573,
         'height' => 573,
@@ -90,11 +96,19 @@ defined( 'ABSPATH' ) || exit;
   <section class="laptopia-section laptopia-prices" id="prices">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">כמה עולה תיקון צירים ופלסטיקה?</h2>
-      <div class="laptopia-diagnostic">
-        <p><strong>תיקון צירים — החל מ־500 ₪</strong></p>
-        <p><strong>תיקון פלסטיקה / מארז — החל מ־700 ₪</strong></p>
-        <p>המחיר תלוי במבנה הדגם, בחלקים שנפגעו ובזמינות החלקים הנדרשים. דרך הטיפול והמחיר נקבעים לאחר בדיקה ואישור הלקוח.</p>
+      <div class="laptopia-service-price-grid">
+        <div class="laptopia-card laptopia-price-card">
+          <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?></div>
+          <h3>תיקון צירים</h3>
+          <p class="laptopia-price-card-value">החל מ־500 ₪</p>
+        </div>
+        <div class="laptopia-card laptopia-price-card">
+          <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?></div>
+          <h3>תיקון פלסטיקה / מארז</h3>
+          <p class="laptopia-price-card-value">החל מ־700 ₪</p>
+        </div>
       </div>
+      <p class="laptopia-price-note">המחיר תלוי במבנה הדגם, בחלקים שנפגעו ובזמינות החלקים הנדרשים. דרך הטיפול והמחיר נקבעים לאחר בדיקה ואישור הלקוח.</p>
     </div>
   </section>
   <section class="laptopia-section laptopia-board laptopia-info-panel-section">

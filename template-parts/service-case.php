@@ -17,6 +17,9 @@ $case_gallery_class = count( $case_images ) === 1 ? ' laptopia-case-gallery-sing
                <?php if ( ! empty( $image['title'] ) ) : ?>title="<?php echo esc_attr( $image['title'] ); ?>"<?php endif; ?>
                <?php if ( ! empty( $image['width'] ) && ! empty( $image['height'] ) ) : ?>width="<?php echo esc_attr( (string) (int) $image['width'] ); ?>" height="<?php echo esc_attr( (string) (int) $image['height'] ); ?>"<?php endif; ?>
                loading="lazy" decoding="async">
+          <?php if ( ! empty( $image['caption'] ) ) : ?>
+            <figcaption><?php echo esc_html( $image['caption'] ); ?></figcaption>
+          <?php endif; ?>
         </figure>
       <?php endforeach; ?>
     </div>

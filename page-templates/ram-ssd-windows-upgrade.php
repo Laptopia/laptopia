@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class( 'laptopia-service-page' ); ?>>
 <?php wp_body_open(); ?>
 <?php get_template_part( 'template-parts/header', null, array(
     'service_link' => array( 'href' => '#upgrades', 'label' => 'התאמת זיכרון ו־SSD' ),
@@ -46,11 +46,11 @@ defined( 'ABSPATH' ) || exit;
     <div class="laptopia-board-content laptopia-info-panel">
       <h2>זיכרון, SSD ומערכת הפעלה — שלושה טיפולים שונים</h2>
       <h3>התאמת זיכרון RAM</h3>
-      <p>בודקים סוג זיכרון, נפח נתמך ומספר חריצים. בחלק מהמחשבים הזיכרון מולחם ואינו ניתן לשדרוג רגיל; בדגמים אחרים יש חריץ אחד או שניים. ההתאמה תלויה בדגם ובפלטפורמה.</p>
+      <p>בחלק מהמחשבים הזיכרון מולחם ואינו ניתן לשדרוג רגיל; בדגמים אחרים יש חריץ אחד או שניים. ההתאמה תלויה בדגם ובפלטפורמה.</p>
       <h3>התאמת SSD והעברת מידע</h3>
-      <p>בודקים חיבור SATA או NVMe, מבנה הכונן והנפח הרצוי לפי הדגם. לא כל מחשב תומך בכל NVMe. העברת מערכת או מידע אפשרית רק בהתאם למצב הכונן ולתנאים הטכניים.</p>
+      <p>לא כל מחשב תומך בכל NVMe. העברת מערכת או מידע אפשרית רק בהתאם למצב הכונן ולתנאים הטכניים.</p>
       <h3>התקנת מערכת הפעלה</h3>
-      <p>העבודה כוללת התקנת Windows, מנהלי התקנים, עדכוני Windows ובדיקת מערכת בסיסית. התקנה אינה מבטיחה פתרון של תקלה חומרתית.</p>
+      <p>התקנה אינה מבטיחה פתרון של תקלה חומרתית.</p>
     </div>
   </section>
   <?php get_template_part( 'template-parts/process', null, array(
@@ -66,10 +66,25 @@ defined( 'ABSPATH' ) || exit;
   <section class="laptopia-section laptopia-prices" id="prices">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">מחירי שדרוג והתקנת מערכת הפעלה</h2>
-      <div class="laptopia-warranty-grid">
-        <div class="laptopia-card"><h3>שדרוג זיכרון RAM</h3><p>מחיר בהתאם לדגם ולנפח</p></div>
-        <div class="laptopia-card"><h3>שדרוג או החלפת SSD</h3><p>מחיר בהתאם לדגם, לסוג ולנפח</p></div>
-        <div class="laptopia-card"><h3>התקנת מערכת הפעלה</h3><p>300 ₪</p></div>
+      <div class="laptopia-service-price-grid laptopia-service-price-grid-three">
+        <div class="laptopia-card laptopia-price-card">
+          <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'upgrade' ) ); ?></div>
+          <h3>שדרוג זיכרון RAM</h3>
+          <p>בודקים סוג זיכרון, נפח נתמך ומספר חריצים.</p>
+          <p class="laptopia-price-card-value laptopia-price-card-status">מחיר בהתאם לדגם ולנפח</p>
+        </div>
+        <div class="laptopia-card laptopia-price-card">
+          <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'storage' ) ); ?></div>
+          <h3>שדרוג או החלפת SSD</h3>
+          <p>בודקים חיבור SATA או NVMe, מבנה הכונן והנפח הרצוי לפי הדגם.</p>
+          <p class="laptopia-price-card-value laptopia-price-card-status">מחיר בהתאם לדגם, לסוג ולנפח</p>
+        </div>
+        <div class="laptopia-card laptopia-price-card">
+          <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'software' ) ); ?></div>
+          <h3>התקנת מערכת הפעלה</h3>
+          <p>העבודה כוללת התקנת Windows, מנהלי התקנים, עדכוני Windows ובדיקת מערכת בסיסית.</p>
+          <p class="laptopia-price-card-value">300 ₪</p>
+        </div>
       </div>
       <p class="laptopia-price-note">מחירי RAM ו־SSD נקבעים לפי הרכיב המתאים והיקף העבודה. הצעת המחיר נמסרת לפני הביצוע; אין מחיר קבוע לשדרוג ללא בדיקת התאמה.</p>
     </div>
