@@ -16,23 +16,58 @@
   if (!ctx) return;
   document.body.prepend(canvas);
   let effect, frame = 0, resizeFrame = 0, destroyed = false;
-  let last = 0, interval = 1000 / 60, slowFrames = 0;
+  let last = 0, nextDraw = 0, lastTick = 0, cadence = 1000 / 60;
+  let stage = 0, renderCost = 0, overloaded = 0, recovered = 0;
+  const policies = [0, 1000 / 60, 1000 / 45, 1000 / 30];
+  function resetTiming() {
+    last = nextDraw = lastTick = 0;
+    overloaded = recovered = 0;
+  }
+  function adapt(cost, dt) {
+    renderCost += (cost - renderCost) * .08;
+    const targetInterval = stage ? policies[stage] : Math.min(1000 / 60, cadence);
+    const budget = Math.max(3, targetInterval * .65);
+    overloaded = renderCost > budget ? overloaded + dt : Math.max(0, overloaded - dt * 2);
+    recovered = renderCost < budget * .55 ? recovered + dt : 0;
+    if (overloaded > 1.5 && stage < 3) {
+      stage++;
+      overloaded = recovered = 0;
+      nextDraw = 0;
+      effect.setQuality?.(stage === 1 ? 'medium' : 'low');
+    } else if (recovered > 5 && stage > 0) {
+      stage--;
+      overloaded = recovered = 0;
+      nextDraw = 0;
+      effect.setQuality?.(stage === 0 ? 'high' : stage === 1 ? 'medium' : 'low');
+    }
+  }
   const pointer = { x: -1000, y: -1000, active: false };
   function stop() {
     cancelAnimationFrame(frame);
     frame = 0;
-    last = 0;
+    resetTiming();
   }
   function draw(now) {
     frame = 0;
     if (destroyed || document.hidden || !effect) return;
-    if (!last || now - last >= interval - 1) {
+    if (lastTick) {
+      const gap = now - lastTick;
+      if (gap > 2 && gap < 100) cadence += (gap - cadence) * .05;
+    }
+    lastTick = now;
+    const interval = policies[stage];
+    if (!last || !interval || now >= nextDraw - .5) {
       const dt = last ? Math.min((now - last) / 1000, .1) : 0;
       last = now;
       const start = performance.now();
       effect.render(ctx, dt, motion.matches);
-      slowFrames = performance.now() - start > 10 ? slowFrames + 1 : Math.max(0, slowFrames - 1);
-      if (slowFrames > 20) interval = 1000 / 30;
+      if (!motion.matches) adapt(performance.now() - start, dt);
+      // Accumulate deadlines: capped 45/60 FPS must not halve a faster rAF clock.
+      if (stage && !nextDraw) nextDraw = now + policies[stage];
+      else if (stage) {
+        nextDraw += policies[stage];
+        if (now - nextDraw > policies[stage]) nextDraw = now + policies[stage];
+      }
     }
     if (!motion.matches) frame = requestAnimationFrame(draw);
   }
@@ -48,7 +83,7 @@
     canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     effect?.resize({ width, height, mobile: width <= 600 || coarse.matches });
-    last = 0;
+    resetTiming();
     start();
   }
   function scheduleResize() {
@@ -97,7 +132,13 @@
   function pageshow(event) {
     if (event.persisted) start();
   }
-  window.LaptopiaBackground = { destroy };
+  window.LaptopiaBackground = {
+    destroy,
+    getStats() {
+      return { mode, framePolicy: stage ? [0, 60, 45, 30][stage] : 'native', renderMs: renderCost,
+        effect: effect?.getStats?.() };
+    }
+  };
   window.addEventListener('resize', scheduleResize, { passive: true });
   window.addEventListener('pointermove', move, { passive: true });
   document.documentElement.addEventListener('pointerleave', leave);
