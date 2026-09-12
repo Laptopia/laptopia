@@ -28,12 +28,18 @@
     <div class="laptopia-buttons">
 
       <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener">
-        שלחו הודעה בוואטסאפ
+        <span class="laptopia-cta-content">
+          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?>
+          <span>שלחו הודעה ב-<bdi dir="ltr">WhatsApp</bdi></span>
+        </span>
       </a>
 
       <a class="laptopia-btn laptopia-btn-dark"
          href="tel:+972538036244">
-        התקשרו עכשיו
+        <span class="laptopia-cta-content">
+          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?>
+          <span>התקשרו למעבדה</span>
+        </span>
       </a>
 
     </div>

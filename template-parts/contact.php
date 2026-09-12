@@ -79,16 +79,25 @@
     <div class="laptopia-buttons">
 
       <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener">
-        שלחו הודעה בוואטסאפ
+        <span class="laptopia-cta-content">
+          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?>
+          <span>שלחו הודעה ב-<bdi dir="ltr">WhatsApp</bdi></span>
+        </span>
       </a>
 
       <a class="laptopia-btn laptopia-btn-white"
          href="tel:+972538036244">
-        התקשרו עכשיו
+        <span class="laptopia-cta-content">
+          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?>
+          <span>התקשרו למעבדה</span>
+        </span>
       </a>
 
       <a class="laptopia-btn laptopia-btn-google" href="https://www.google.com/maps/search/?api=1&amp;query=Almog+St+2+Ramla" target="_blank" rel="noopener">
-        ניווט למעבדה
+        <span class="laptopia-cta-content">
+          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'navigation' ) ); ?>
+          <span>ניווט למעבדה</span>
+        </span>
       </a>
 
     </div>
