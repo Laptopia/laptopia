@@ -305,15 +305,29 @@ textarea:focus-visible {
 }
 
 .laptopia-logo {
-  color: #202832;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  color: #28313b;
   font-size: 26px;
   line-height: 1.15;
   font-weight: 800;
 }
 
-.laptopia-logo span {
+.laptopia-logo-wordmark {
+  display: block;
+}
+
+.laptopia-logo-accent {
+  color: #2f80ed;
+}
+
+.laptopia-logo-subtitle {
   display: block;
   margin-top: 4px;
+  letter-spacing: .49px;
   color: #56616e;
   font-size: 13px;
   font-weight: 400;
@@ -979,8 +993,9 @@ textarea:focus-visible {
     font-size: 21px;
   }
 
-  .laptopia-logo span {
+  .laptopia-logo-subtitle {
     font-size: 11px;
+    letter-spacing: .16px;
   }
 
   .laptopia-header-phone {

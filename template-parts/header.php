@@ -7,8 +7,8 @@ $service_link = $args['service_link'] ?? array();
   <div class="laptopia-header-inner">
 
     <a class="laptopia-logo<?php if ( ! $service_header ) : ?> laptopia-element-link<?php endif; ?>" href="<?php echo esc_url( $service_header ? home_url( '/' ) : '/' ); ?>">
-      Laptopia
-      <span>מעבדת מחשבים ניידים ברמלה</span>
+      <span class="laptopia-logo-wordmark" dir="ltr">Laptop<span class="laptopia-logo-accent">ia</span></span>
+      <span class="laptopia-logo-subtitle">מעבדת מחשבים ניידים</span>
     </a>
 
     <div class="laptopia-header-navigation">
