@@ -174,18 +174,10 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-contact" id="contact" aria-labelledby="contact-title">
-    <div class="laptopia-contact-content">
-      <h2 id="contact-title">לתיאום אבחון במעבדת Laptopia</h2>
-      <p class="laptopia-contact-intro">שלחו לנו בוואטסאפ את דגם המחשב ותיאור התקלה. אפשר לצרף תמונה כדי לעזור לנו להבין את הבעיה.</p>
-      <div class="laptopia-contact-info">
-        <div class="laptopia-info-box"><div class="laptopia-info-value">אלמוג 2, רמלה</div></div>
-        <div class="laptopia-info-box"><div class="laptopia-info-value"><bdi dir="ltr">053-803-6244</bdi></div></div>
-      </div>
-      <p class="laptopia-contact-note">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</p>
-      <?php get_template_part( 'template-parts/service-contact-actions', null, array( 'services_url' => 'https://laptopia.co.il/#services' ) ); ?>
-    </div>
-  </section>
+  <?php get_template_part( 'template-parts/service-contact-section', null, array(
+    'heading' => 'לתיאום אבחון במעבדת Laptopia',
+    'description' => 'שלחו לנו בוואטסאפ את דגם המחשב ותיאור התקלה. אפשר לצרף תמונה כדי לעזור לנו להבין את הבעיה.',
+  ) ); ?>
 </main>
 
 <?php

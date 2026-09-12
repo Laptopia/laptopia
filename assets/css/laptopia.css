@@ -742,6 +742,20 @@ textarea:focus-visible {
   margin: 0 auto;
 }
 
+.laptopia-service-contact .laptopia-contact-content {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.laptopia-service-contact .laptopia-contact-info,
+.laptopia-service-contact .laptopia-contact-note,
+.laptopia-service-contact .laptopia-service-contact-actions {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
 .laptopia-contact h2 {
   margin: 0 0 12px;
   font-size: 36px;

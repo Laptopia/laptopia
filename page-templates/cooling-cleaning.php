@@ -141,18 +141,10 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-contact" id="contact" aria-labelledby="cooling-contact-title">
-    <div class="laptopia-contact-content">
-      <h2 id="cooling-contact-title">לתיאום בדיקת מערכת הקירור ב־Laptopia</h2>
-      <p class="laptopia-contact-intro">שלחו את דגם המחשב ותארו מתי מופיעים החום, הרעש או ההאטה. נתאם את מסירת המחשב לבדיקה.</p>
-      <div class="laptopia-contact-info">
-        <div class="laptopia-info-box"><div class="laptopia-info-value">אלמוג 2, רמלה</div></div>
-        <div class="laptopia-info-box"><div class="laptopia-info-value"><bdi dir="ltr">053-803-6244</bdi></div></div>
-      </div>
-      <p class="laptopia-contact-note">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</p>
-      <?php get_template_part( 'template-parts/service-contact-actions' ); ?>
-    </div>
-  </section>
+  <?php get_template_part( 'template-parts/service-contact-section', null, array(
+    'heading' => 'לתיאום בדיקת מערכת הקירור ב־Laptopia',
+    'description' => 'שלחו את דגם המחשב ותארו מתי מופיעים החום, הרעש או ההאטה. נתאם את מסירת המחשב לבדיקה.',
+  ) ); ?>
 </main>
 
 <?php
