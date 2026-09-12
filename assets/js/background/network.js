@@ -44,11 +44,16 @@ export function createNetwork() {
         const spread = Math.min(radius * .78, cellWidth * .36, cellHeight * .36);
         const cluster = clusters.length, members = [addNode(bx, by, cluster, true)];
         const rotation = Math.random() * Math.PI * 2;
+        const stretch = 1.05 + Math.random() * .12;
+        const squash = .82 + Math.random() * .12;
+        const bias = (Math.random() - .5) * spread * .24;
         for (let s = 0; s < satellites; s++) {
-          const angle = rotation + s * 2.39996 + (Math.random() - .5) * .5;
-          const distance = spread * (.28 + .72 * Math.sqrt((s + .5) / satellites));
-          const x = bx + Math.cos(angle) * distance * (.85 + Math.random() * .3);
-          const y = by + Math.sin(angle) * distance * (.85 + Math.random() * .3);
+          const angle = s * 2.39996 + (Math.random() - .5) * .65;
+          const distance = spread * (.28 + .72 * Math.sqrt((s + .5) / satellites)) * (.9 + Math.random() * .2);
+          const localX = Math.cos(angle) * distance * stretch + bias;
+          const localY = Math.sin(angle) * distance * squash + (s % 4 === 0 ? spread * .08 : 0);
+          const x = Math.max(8, Math.min(width - 8, bx + localX * Math.cos(rotation) - localY * Math.sin(rotation)));
+          const y = Math.max(8, Math.min(height - 8, by + localX * Math.sin(rotation) + localY * Math.cos(rotation)));
           members.push(addNode(x, y, cluster));
         }
         clusters.push({ hub: members[0], members });
@@ -96,9 +101,7 @@ export function createNetwork() {
       }
     }
     candidates.sort((a, b) => a.distance - b.distance);
-    for (const edge of candidates) {
-      if (root(edge.i) === root(edge.j)) continue;
-      parent[root(edge.i)] = root(edge.j);
+    function addBridge(edge) {
       let from = -1, to = -1, shortest = Infinity;
       for (const i of clusters[edge.i].members) {
         for (const j of clusters[edge.j].members) {
@@ -115,6 +118,16 @@ export function createNetwork() {
       chain.push(to);
       bridges.push(chain);
     }
+    for (const edge of candidates) {
+      if (root(edge.i) === root(edge.j)) continue;
+      parent[root(edge.i)] = root(edge.j);
+      edge.used = true;
+      addBridge(edge);
+    }
+    // One extra nearby corridor softens separate islands without an all-to-all web.
+    const extra = candidates.find(edge => !edge.used && edge.distance <= radius * 3.8);
+    const nodeLimit = mobile ? 40 : tablet ? 100 : 140;
+    if (extra && particles.length + 2 <= nodeLimit) addBridge(extra);
     // Expand the membership lookup once to include shared corridor nodes.
     const expanded = new Uint8Array(particles.length * particles.length);
     for (let i = 0; i < originalCount; i++) {
