@@ -108,7 +108,7 @@ defined( 'ABSPATH' ) || exit;
   </section>
   <section class="laptopia-section laptopia-services">
     <div class="laptopia-inner">
-      <h2 class="laptopia-section-title">שירות במעבדת Laptopia ברמלה והסביבה</h2>
+      <h2 class="laptopia-section-title"><?php get_template_part( 'template-parts/brand-text', null, array( 'text' => 'שירות במעבדת Laptopia ברמלה והסביבה' ) ); ?></h2>
       <p class="laptopia-section-subtitle">המעבדה נמצאת ברחוב אלמוג 2, רמלה. אנו מקבלים מחשבים מלקוחות ברמלה, לוד, באר יעקב, ראשון לציון ורחובות.</p>
       <p class="laptopia-price-note">קבלת מחשבים במעבדה בתיאום מראש בלבד</p>
     </div>

@@ -7,7 +7,7 @@ $service_link = $args['service_link'] ?? array();
   <div class="laptopia-header-inner">
 
     <a class="laptopia-logo<?php if ( ! $service_header ) : ?> laptopia-element-link<?php endif; ?>" href="<?php echo esc_url( $service_header ? home_url( '/' ) : '/' ); ?>">
-      <span class="laptopia-logo-wordmark" dir="ltr">Laptop<span class="laptopia-logo-accent">ia</span></span>
+      <span class="laptopia-logo-wordmark"><?php get_template_part( 'template-parts/brand-wordmark' ); ?></span>
       <span class="laptopia-logo-subtitle">מעבדת מחשבים ניידים</span>
     </a>
 

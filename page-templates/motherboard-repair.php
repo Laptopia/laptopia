@@ -112,7 +112,7 @@ get_template_part( 'template-parts/header', null, array(
 
   <section class="laptopia-section laptopia-process" aria-labelledby="process-title">
     <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="process-title">איך מתבצע התיקון ב־Laptopia?</h2>
+      <h2 class="laptopia-section-title" id="process-title"><?php get_template_part( 'template-parts/brand-text', null, array( 'text' => 'איך מתבצע התיקון ב־Laptopia?' ) ); ?></h2>
       <div class="laptopia-process-grid">
         <div class="laptopia-step"><div class="laptopia-step-number">1</div><h3>תיאום מראש</h3><p>מתאמים את מסירת המחשב למעבדה ברמלה.</p></div>
         <div class="laptopia-step"><div class="laptopia-step-number">2</div><h3>אבחון התקלה</h3><p>בודקים את המחשב ומאתרים את מקור התקלה.</p></div>

@@ -320,7 +320,12 @@ textarea:focus-visible {
   display: block;
 }
 
-.laptopia-logo-accent {
+.laptopia-brand-wordmark {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.laptopia-brand-accent {
   color: #2f80ed;
 }
 
