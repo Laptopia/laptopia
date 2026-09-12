@@ -34,7 +34,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="repair-title">תיקון לוחות אם למחשבים ניידים ברמלה והסביבה</h1>
       <p>המחשב הנייד לא נדלק, לא נטען או סובל מתקלה בלוח האם? ב־Laptopia ברמלה מבצעים אבחון ותיקון תקלות אלקטרוניות ברמת הרכיב, כולל תקלות הדלקה, טעינה, קצרים ונזקי נוזלים. אפשרות התיקון והמחיר נקבעים לאחר בדיקה.</p>
-      <div class="laptopia-board-price">תיקון לוח אם — החל מ־700 ₪</div>
+      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'motherboard-repair' ) ); ?><span>תיקון לוח אם — החל מ־700 ₪</span></div>
       <p>המחיר הסופי נקבע לאחר אבחון, בהתאם לדגם, לתקלה ולחלקים הנדרשים. התיקון מתבצע רק לאחר אישור הלקוח.</p>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום אבחון בוואטסאפ</span></span></a>

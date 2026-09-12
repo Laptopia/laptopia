@@ -3,6 +3,10 @@
 require_once get_stylesheet_directory() . '/inc/services.php';
 require_once get_stylesheet_directory() . '/inc/icons.php';
 
+function laptopia_background_mode() {
+    return is_page_template( 'page-templates/home-laptopia.php' ) ? 'pcb' : '';
+}
+
 add_action( 'wp_head', function() {
     $key = 'brand-mark';
     if ( ! is_front_page() ) {
@@ -35,6 +39,15 @@ add_action( 'after_setup_theme', function() {
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
+    if ( 'pcb' === laptopia_background_mode() ) {
+        wp_enqueue_script(
+            'laptopia-background',
+            get_stylesheet_directory_uri() . '/assets/js/background/engine.js',
+            array(),
+            filemtime( get_stylesheet_directory() . '/assets/js/background/engine.js' ),
+            true
+        );
+    }
     wp_enqueue_style(
         'laptopia-child',
         get_stylesheet_directory_uri() . '/assets/css/laptopia.css',

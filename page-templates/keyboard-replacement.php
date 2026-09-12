@@ -34,7 +34,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="keyboard-title">החלפת מקלדת למחשב נייד ברמלה והסביבה</h1>
       <p>מקשים לא מגיבים, חסרים או מקלידים תווים באופן לא צפוי? במעבדת Laptopia ברמלה בודקים את מקור התקלה. כאשר נדרשת החלפת מקלדת, מתאימים את החלק לדגם המחשב ובודקים את זמינותו לפני אישור העבודה.</p>
-      <div class="laptopia-board-price">החלפת מקלדת — החל מ־550 ₪</div>
+      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'keyboard-replacement' ) ); ?><span>החלפת מקלדת — החל מ־550 ₪</span></div>
       <p>המחיר הסופי תלוי בדגם, במקלדת הנדרשת ובמורכבות הפירוק וההרכבה.</p>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום בדיקה בוואטסאפ</span></span></a>

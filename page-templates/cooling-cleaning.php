@@ -34,7 +34,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="cooling-title">ניקוי מערכת קירור למחשב נייד ברמלה והסביבה</h1>
       <p>המחשב מתחמם, המאוורר רועש או שהביצועים יורדים בזמן עבודה? במעבדת Laptopia ברמלה בודקים את מערכת הקירור ואת הצורך בניקוי. הצטברות אבק יכולה לפגוע בזרימת האוויר, אך לא כל התחממות נפתרת בניקוי בלבד.</p>
-      <div class="laptopia-board-price">ניקוי מערכת קירור — החל מ־300 ₪</div>
+      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'cooling-cleaning' ) ); ?><span>ניקוי מערכת קירור — החל מ־300 ₪</span></div>
       <p>המחיר הסופי נקבע לפי דגם המחשב, מצבו והעבודה הנדרשת. הטיפול מתבצע לאחר אישור הלקוח.</p>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום בדיקה בוואטסאפ</span></span></a>

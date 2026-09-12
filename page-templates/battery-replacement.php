@@ -34,7 +34,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="battery-title">החלפת סוללה למחשב נייד ברמלה והסביבה</h1>
       <p>המחשב מתרוקן מהר או נכבה כשמנתקים את המטען? במעבדת Laptopia ברמלה בודקים את מקור התקלה ואת הצורך בהחלפת הסוללה. כאשר נדרשת החלפה, בודקים התאמה לדגם וזמינות של סוללה מתאימה.</p>
-      <div class="laptopia-board-price">החלפת סוללה — החל מ־400 ₪</div>
+      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'battery-replacement' ) ); ?><span>החלפת סוללה — החל מ־400 ₪</span></div>
       <p>המחיר הסופי נקבע בהתאם לדגם המחשב, לסוללה הנדרשת ולמורכבות העבודה. ההחלפה מתבצעת רק לאחר אישור הלקוח.</p>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום בדיקה בוואטסאפ</span></span></a>
