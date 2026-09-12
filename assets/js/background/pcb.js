@@ -28,18 +28,18 @@ export function createPCB() {
         ? Math.min(...track.points.map(p => Math.hypot(p.x - pointer.x, p.y - pointer.y))) : 1000;
       const target = Math.max(0, 1 - nearest / 180);
       track.active += (target - track.active) * (1 - Math.exp(-dt * 5));
-      ctx.strokeStyle = `rgba(40,49,59,${.045 + track.layer * .01 + track.active * .13})`;
+      ctx.strokeStyle = `rgba(40,49,59,${.061 + track.layer * .0135 + track.active * .17})`;
       ctx.beginPath();
       track.points.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
       ctx.stroke();
       for (const p of [track.points[0], track.points[3]]) {
-        ctx.fillStyle = `rgba(86,97,110,${.07 + track.active * .12})`;
+        ctx.fillStyle = `rgba(86,97,110,${.095 + track.active * .15})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, 1.8, 0, Math.PI * 2);
         ctx.fill();
       }
       if (reduced) continue;
-      track.phase = (track.phase + dt * (mobile ? 9 : 14) / track.total) % 1;
+      track.phase = (track.phase + dt * (mobile ? 11 : 18) / track.total) % 1;
       if (track.active > .01) {
         let closest = 0, best = Infinity, travelled = 0, destination = 0;
         track.points.forEach((p, i) => {
@@ -52,7 +52,7 @@ export function createPCB() {
         });
         destination = closest / track.total;
         const delta = ((destination - track.phase + 1.5) % 1) - .5;
-        track.phase = (track.phase + delta * track.active * dt * .8 + 1) % 1;
+        track.phase = (track.phase + delta * track.active * dt * 1.2 + 1) % 1;
       }
       let distance = track.phase * track.total;
       for (let i = 0; i < track.lengths.length; i++) {
@@ -60,7 +60,7 @@ export function createPCB() {
         if (distance <= length) {
           const t = length ? distance / length : 0;
           const a = track.points[i], b = track.points[i + 1];
-          ctx.fillStyle = `rgba(40,49,59,${.09 + track.active * .13})`;
+          ctx.fillStyle = `rgba(40,49,59,${.13 + track.active * .17})`;
           ctx.beginPath();
           ctx.arc(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t, 1.4 + track.active * .4, 0, Math.PI * 2);
           ctx.fill();

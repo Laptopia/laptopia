@@ -1553,7 +1553,7 @@ body[data-laptopia-background="pcb"] {
 }
 
 body[data-laptopia-background="pcb"] :is(.laptopia-services, .laptopia-process, .laptopia-prices, .laptopia-warranty, .laptopia-reviews-heading, .laptopia-info-panel-section) {
-  background-color: rgba(255, 255, 255, .35);
+  background-color: rgba(255, 255, 255, .20);
 }
 
 body[data-laptopia-background="pcb"] .laptopia-hero {
