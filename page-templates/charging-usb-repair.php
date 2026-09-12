@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class( 'laptopia-service-page' ); ?>>
+<body <?php body_class( 'laptopia-service-page' ); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
 <?php wp_body_open(); ?>
 <?php get_template_part( 'template-parts/header', null, array(
     'service_link' => array( 'href' => '#ports', 'label' => 'בדיקת שקעי טעינה' ),

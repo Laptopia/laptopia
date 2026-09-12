@@ -11,6 +11,9 @@ function laptopia_background_mode() {
         'keyboard-replacement' => 'keyboard',
         'cooling-cleaning' => 'cooling',
         'battery-replacement' => 'battery',
+        'charging-usb-repair' => 'charging',
+        'hinges-plastics-repair' => 'hinges',
+        'ram-ssd-windows-upgrade' => 'upgrade',
     );
     foreach ( $modes as $template => $mode ) {
         if ( is_page_template( 'page-templates/' . $template . '.php' ) ) {

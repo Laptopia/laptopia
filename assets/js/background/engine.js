@@ -4,7 +4,9 @@
   const modes = {
     pcb: ['pcb.js', 'createPCB'], network: ['network.js', 'createNetwork'],
     screen: ['screen.js', 'createScreen'], keyboard: ['keyboard.js', 'createKeyboard'],
-    cooling: ['cooling.js', 'createCooling'], battery: ['battery.js', 'createBattery']
+    cooling: ['cooling.js', 'createCooling'], battery: ['battery.js', 'createBattery'],
+    charging: ['charging.js', 'createCharging'], hinges: ['hinges.js', 'createHinges'],
+    upgrade: ['upgrade.js', 'createUpgrade']
   };
   if (!Object.hasOwn(modes, mode) || window.LaptopiaBackground) return;
   const [moduleFile, factory] = modes[mode];
