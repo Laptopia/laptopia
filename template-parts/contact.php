@@ -85,7 +85,7 @@
         </span>
       </a>
 
-      <a class="laptopia-btn laptopia-btn-dark"
+      <a class="laptopia-btn laptopia-btn-white"
          href="tel:+972538036244">
         <span class="laptopia-cta-content">
           <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?>
