@@ -6,7 +6,10 @@
   </summary>
   <nav class="laptopia-services-panel" id="laptopia-services-panel" aria-label="שירותי המעבדה">
     <?php foreach ( laptopia_get_services() as $service ) : ?>
-      <a href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>"<?php if ( is_page( $service['slug'] ) ) : ?> aria-current="page"<?php endif; ?>><?php echo esc_html( $service['label'] ); ?></a>
+      <a href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>"<?php if ( is_page( $service['slug'] ) ) : ?> aria-current="page"<?php endif; ?>>
+        <?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => $service['slug'] ) ); ?>
+        <span><?php echo esc_html( $service['short_label'] ); ?></span>
+      </a>
     <?php endforeach; ?>
     <a class="laptopia-services-all" href="<?php echo esc_url( home_url( '/#services' ) ); ?>">כל שירותי המעבדה</a>
   </nav>

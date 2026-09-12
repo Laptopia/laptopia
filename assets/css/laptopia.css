@@ -163,6 +163,12 @@ textarea:focus-visible {
   transform: translate(1px, -1px);
 }
 
+@media (max-width: 600px) {
+  .laptopia-element-link:is(.laptopia-card, .laptopia-board-price, .laptopia-price-row)::after {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .laptopia-element-link:is(.laptopia-card, .laptopia-board-price, .laptopia-price-row)::after {
     transition: none;
@@ -1123,12 +1129,13 @@ textarea:focus-visible {
   position: absolute;
   inset-inline-start: 0;
   top: calc(100% + 8px);
-  width: 310px;
+  width: max-content;
+  min-width: 230px;
   max-width: calc(100vw - 28px);
   max-height: min(60vh, 440px);
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 8px;
+  padding: 6px;
   background: #fff;
   border: 1px solid #dce1e6;
   border-radius: 12px;
@@ -1141,12 +1148,23 @@ textarea:focus-visible {
 }
 
 .laptopia-services-panel a {
-  display: block;
-  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 40px;
+  padding: 8px 10px;
+  white-space: nowrap;
   border-radius: 6px;
   color: #424c58;
   font-size: 15px;
   line-height: 1.5;
+}
+
+.laptopia-dropdown-icon {
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  color: #424c58;
 }
 
 .laptopia-services-panel a:hover,
@@ -1192,6 +1210,12 @@ textarea:focus-visible {
     top: 100%;
     inset-inline: 14px;
     width: auto;
+    min-width: 0;
+  }
+
+  .laptopia-services-panel a {
+    min-height: 44px;
+    padding: 10px 12px;
   }
 }
 
@@ -1210,5 +1234,43 @@ textarea:focus-visible {
   .laptopia-services-toggle {
     padding: 10px 12px;
     min-height: 44px;
+  }
+}
+
+/* Back to top */
+.laptopia-back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #c3ccd5;
+  border-radius: 10px;
+  background: #f1f3f5;
+  color: #28313b;
+  font-size: 24px;
+  line-height: 1;
+  box-shadow: 0 4px 14px rgba(32, 40, 50, .12);
+  cursor: pointer;
+}
+
+.laptopia-back-to-top[hidden] {
+  display: none;
+}
+
+.laptopia-back-to-top:focus-visible {
+  outline: 2px solid #56616e;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .laptopia-back-to-top {
+    right: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   }
 }

@@ -26,3 +26,36 @@
     sync();
   });
 })();
+
+(() => {
+  const logo = document.querySelector('.laptopia-header .laptopia-logo');
+  if (!logo) return;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'laptopia-back-to-top';
+  button.setAttribute('aria-label', 'חזרה לראש העמוד');
+  button.textContent = '↑';
+  button.hidden = true;
+  document.body.append(button);
+
+  const updateVisibility = () => {
+    const hide = window.scrollY < 600;
+    if (hide && document.activeElement === button) logo.focus({ preventScroll: true });
+    button.hidden = hide;
+  };
+
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+  window.addEventListener('pageshow', updateVisibility);
+  button.addEventListener('click', () => {
+    if (window.location.hash) {
+      history.replaceState(history.state, '', window.location.pathname + window.location.search);
+    }
+    logo.focus({ preventScroll: true });
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+    });
+  });
+  updateVisibility();
+})();
