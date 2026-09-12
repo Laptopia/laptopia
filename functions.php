@@ -1,22 +1,36 @@
 <?php
 
 require_once get_stylesheet_directory() . '/inc/services.php';
+require_once get_stylesheet_directory() . '/inc/icons.php';
 
 add_action( 'wp_head', function() {
-    // WordPress owns favicon output whenever a Site Icon has been configured.
-    if ( has_site_icon() ) {
-        return;
+    $key = 'brand-mark';
+    if ( ! is_front_page() ) {
+        foreach ( laptopia_get_services() as $service ) {
+            if ( is_page( $service['slug'] ) ) {
+                $key = $service['slug'];
+                break;
+            }
+        }
     }
     $icon_url = get_stylesheet_directory_uri() . '/assets/icons/';
+    // Data URIs use esc_attr(): esc_url() would remove the data scheme.
+    $favicon = 'brand-mark' === $key
+        ? $icon_url . 'brand-mark.svg'
+        : 'data:image/svg+xml;base64,' . base64_encode( str_replace( 'currentColor', '#28313b', laptopia_get_icon_svg( $key ) ) );
     ?>
-    <link rel="icon" href="<?php echo esc_url( $icon_url . 'brand-mark.svg' ); ?>" type="image/svg+xml" sizes="any">
+    <link rel="icon" href="<?php echo esc_attr( $favicon ); ?>" type="image/svg+xml" sizes="any">
+    <?php if ( 'brand-mark' === $key ) : ?>
     <link rel="icon" href="<?php echo esc_url( $icon_url . 'favicon-32.png' ); ?>" type="image/png" sizes="32x32">
     <link rel="icon" href="<?php echo esc_url( $icon_url . 'site-icon-192.png' ); ?>" type="image/png" sizes="192x192">
+    <?php endif; ?>
     <link rel="apple-touch-icon" href="<?php echo esc_url( $icon_url . 'apple-touch-icon-180.png' ); ?>" sizes="180x180">
     <?php
 }, 99 );
 
 add_action( 'after_setup_theme', function() {
+    // Only replace public-page Site Icon links; admin/login hooks stay intact.
+    remove_action( 'wp_head', 'wp_site_icon', 99 );
     add_theme_support( 'title-tag' );
 } );
 
