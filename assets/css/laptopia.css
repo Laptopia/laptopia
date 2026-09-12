@@ -1426,12 +1426,24 @@ textarea:focus-visible {
 }
 
 .laptopia-info-panel {
-  max-width: 1000px;
+  max-width: 850px;
   margin-inline: auto;
   padding: clamp(24px, 4vw, 48px);
   border: 1px solid #dce1e6;
   border-radius: 16px;
   background: #f1f3f5;
+}
+
+.laptopia-info-panel p {
+  max-width: 740px;
+}
+
+.laptopia-info-panel h3 {
+  margin: 20px 0 8px;
+}
+
+.laptopia-info-panel p:last-child {
+  margin-bottom: 0;
 }
 
 .laptopia-section-subtitle {
