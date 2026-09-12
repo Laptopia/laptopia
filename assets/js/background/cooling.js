@@ -25,7 +25,8 @@ export function createCooling(){
       const flow=flows[c*(s.mobile?7:9)+Math.floor((s.mobile?7:9)/2)];
       for(const t of (s.mobile?[.22,.78]:[.12,.88])){
         const p={x:0,y:0};bezier(p,flow.p,t);
-        vents.push({x:p.x,y:p.y,exhaust:t>.5});
+        const tangent={x:0,y:0};bezier(tangent,flow.p,t+.01);
+        vents.push({x:p.x,y:p.y,angle:Math.atan2(tangent.y-p.y,tangent.x-p.x),exhaust:t>.5});
       }
     }
     s.elements=flows.length+vortices.length+vents.length;
@@ -37,17 +38,26 @@ export function createCooling(){
   function render(ctx,dt,reduced){
     s.begin(ctx,dt,reduced);
     for(const v of vents){
+      ctx.save();ctx.translate(v.x,v.y);ctx.rotate(v.angle);
       ctx.lineWidth=.85;ctx.strokeStyle=`rgba(${v.exhaust?'135,107,102':'81,127,130'},.10)`;
       ctx.beginPath();for(let slot=0;slot<5;slot++){
-        const y=v.y+(slot-2)*7;ctx.moveTo(v.x-8,y);ctx.lineTo(v.x+8,y);
+        const y=(slot-2)*7;ctx.moveTo(-8,y);ctx.lineTo(8,y);
       }ctx.stroke();
       // Small chevrons show airflow direction in the static composition too.
-      ctx.beginPath();ctx.moveTo(v.x-5,v.y-20);ctx.lineTo(v.x+1,v.y-16);ctx.lineTo(v.x-5,v.y-12);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(12,-4);ctx.lineTo(18,0);ctx.lineTo(12,4);ctx.stroke();ctx.restore();
     }
     for(let z=0;z<vortices.length;z++){
       const v=vortices[z];
       // Thin nested thermal contours add depth without a blur or bright heatmap.
       for(let k=0;k<3;k++){ctx.lineWidth=.7;ctx.strokeStyle=`rgba(${z?'87,128,129':'138,106,102'},${.027-k*.005})`;ctx.beginPath();ctx.ellipse(v.x,v.y,v.r+k*18,(v.r+k*18)*.55,.3,k*.5,Math.PI*1.65+k*.5);ctx.stroke();}
+    }
+    // A restrained impeller silhouette anchors each airflow system.
+    for(const v of vortices){
+      const active=s.activity(v.x,v.y,220), angle=reduced?0:s.time*(.10+active*.35);
+      ctx.save();ctx.translate(v.x,v.y);ctx.rotate(angle);ctx.lineWidth=.7;ctx.strokeStyle='rgba(40,49,59,.065)';
+      ctx.beginPath();ctx.arc(0,0,22,0,Math.PI*2);ctx.stroke();
+      for(let blade=0;blade<5;blade++){ctx.rotate(Math.PI*2/5);ctx.beginPath();ctx.moveTo(4,0);ctx.quadraticCurveTo(20,-12,18,7);ctx.quadraticCurveTo(10,10,4,0);ctx.stroke();}
+      ctx.restore();dot(ctx,v.x,v.y,.11,2.2);
     }
     const limit=s.mobile?Math.max(1,Math.round(3-s.quality)):Math.round(12-s.quality*4);
     for(let i=0;i<flows.length;i++){
@@ -63,7 +73,7 @@ export function createCooling(){
       // Distribute animated particles across corridors, rather than the first group only.
       if(i%3===0&&s.particles<limit){bezier(point,modified,f.phase);
         const central=Math.max(0,1-Math.abs(point.x/s.width-.5)/.28),weight=1-central*.8;
-        dot(ctx,point.x,point.y,(.22+f.active*.12)*weight,1.6,f.phase<.2?'79,132,132':f.phase>.8?'137,108,101':'40,49,59');s.particles++;}
+        dot(ctx,point.x,point.y,(.22+f.active*.12)*weight,1.6,f.phase<.2?'79,132,132':f.active>.25?'79,132,132':f.phase>.8?'137,108,101':'40,49,59');s.particles++;}
     }
   }
   return{init(){},resize,render,pointerMove:s.pointerMove,setQuality:s.setQuality,getStats(){return{...s.getStats(),corridors,streams:flows.length,vortices:vortices.length,intakes:vents.length/2,exhausts:vents.length/2};},destroy(){flows=[];vortices=[];vents=[];edgeClip=centerClip=null;}};

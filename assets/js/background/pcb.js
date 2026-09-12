@@ -27,6 +27,13 @@ export function createPCB() {
       // Package sizes and small SMD banks distinguish a board from boxed diagrams.
       const chipW=s.mobile?45:i===0?96:i===2?110:52,chipH=chipW*.65;
       path.rect(x-chipW/2,y-chipH/2,chipW,chipH);
+      // The principal package carries a simple laptop mark, tied to the logo buses.
+      if(i===0){const markW=chipW*.42,markH=chipH*.36;
+        path.rect(x-markW/2,y-markH/2,markW,markH);
+        path.moveTo(x-markW/2-4,y+markH/2+4);path.lineTo(x+markW/2+4,y+markH/2+4);}
+      for(let pin=0;pin<6;pin++){const px=x-chipW*.35+pin*chipW*.14;
+        path.moveTo(px,y-chipH/2-6);path.lineTo(px,y-chipH/2);
+        path.moveTo(px,y+chipH/2);path.lineTo(px,y+chipH/2+6);}
       for (let k=0;k<8;k++) {
         const py=y-chipH*.40+k*chipH*.11;
         path.moveTo(x-chipW/2-9,py);path.lineTo(x-chipW/2,py);

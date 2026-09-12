@@ -2,13 +2,13 @@ import { createServiceState, line, dot } from './service-state.js';
 
 export function createScreen() {
   const s = createServiceState();
-  let panel, textures = [], cracks = [], pixels = [], defects = [], centers = [], pressure = 0;
+  let panel, textures = [], cracks = [], pixels = [], defects = [], centers = [], paths = [], selectedPath = -1, pulse = 1;
   function tone(x, y) {
     const center = Math.max(0, 1 - Math.abs(x / s.width - .5) / .3) * Math.max(0, 1 - Math.abs(y / s.height - .5) / .6);
     return 1 - center * .82;
   }
   function resize(size) {
-    s.resize(size); textures = []; cracks = []; pixels = []; defects = []; centers = []; pressure = 0;
+    s.resize(size); textures = []; cracks = []; pixels = []; defects = []; centers = []; paths = []; selectedPath = -1; pulse = 1;
     panel = s.mobile ? { x: s.width * .07, y: s.height * .24, w: s.width * .86, h: s.height * .38 }
       : { x: s.width * .055, y: s.height * .17, w: s.width * .89, h: s.height * .66 };
     // One continuous LCD surface. Central subpixels are a separate quiet layer.
@@ -30,15 +30,17 @@ export function createScreen() {
       const rays = s.mobile ? 5 : region === 1 ? 3 : 6;
       for (let ray = 0; ray < rays; ray++) {
         const angle = region === 1 ? Math.PI * .7 + ray * .42 : ray * Math.PI * 2 / rays + .13;
-        let px = x, py = y;
+        let px = x, py = y; const path = { segments: [], length: 0 };
         for (let k = 0; k < 4; k++) {
-          const a = angle + (Math.random() - .5) * .25, length = (s.mobile ? 12 : 20) + Math.random() * 14;
+          const a = angle + (Math.random() - .5) * .25, length = (s.mobile ? 16 : 30) + Math.random() * 18;
           const nx = Math.max(panel.x + 3, Math.min(panel.x + panel.w - 3, px + Math.cos(a) * length));
           const ny = Math.max(panel.y + 3, Math.min(panel.y + panel.h - 3, py + Math.sin(a) * length));
-          cracks.push({ x: px, y: py, nx, ny, weight: tone((px + nx) / 2, (py + ny) / 2), active: 0, primary: true });
+          const segment = { x: px, y: py, nx, ny, start: path.length, length: Math.hypot(nx-px,ny-py), weight: tone((px + nx) / 2, (py + ny) / 2), active: 0, primary: true };
+          path.length += segment.length; path.segments.push(segment); cracks.push(segment);
           if (k === 2) cracks.push({ x: px, y: py, nx: px + Math.cos(a + .7) * length * .6, ny: py + Math.sin(a + .7) * length * .6, weight: tone(px, py), active: 0, primary: false });
           px = nx; py = ny;
         }
+        paths.push(path);
       }
       for (let i = 0; i < 5; i++) pixels.push({ x: x + (i % 3) * 5, y: y + Math.floor(i / 3) * 6, weight: tone(x, y) });
     }
@@ -63,34 +65,46 @@ export function createScreen() {
       d.active = s.follow(d.active, s.activity((d.x + d.nx) / 2, (d.y + d.ny) / 2, 190));
       ctx.lineWidth = 1.1; line(ctx, d.x, d.y, d.nx, d.ny, .13 + d.active * .10);
     }
+    // Probe the fracture geometry, never draw an object attached to the cursor.
+    let nearest = -1, nearestDistance = 200 * 200;
+    const probe = s.pointer;
+    if (!reduced && !s.mobile && probe.active) for (let i=0;i<paths.length;i++) {
+      for (const f of paths[i].segments) {
+        const dx=f.nx-f.x, dy=f.ny-f.y;
+        const t=Math.max(0,Math.min(1,((probe.x-f.x)*dx+(probe.y-f.y)*dy)/Math.max(1,f.length*f.length)));
+        const d=(probe.x-f.x-dx*t)**2+(probe.y-f.y-dy*t)**2;
+        if(d<nearestDistance){nearestDistance=d;nearest=i;}
+      }
+    }
+    if(nearest!==selectedPath){selectedPath=nearest;pulse=0;}
+    else if(pulse>=1&&s.gust>.15)pulse=0;
     for (let i = 0; i < cracks.length; i++) {
       const f = cracks[i]; if (!f.primary && s.quality > .5 && i % 2) continue;
-      f.active = s.follow(f.active, s.activity(f.x, f.y, 200) * f.weight);
-      const dx = (s.pointer.x - f.x) * f.active * .008, dy = (s.pointer.y - f.y) * f.active * .008;
+      f.active = s.follow(f.active, s.activity((f.x+f.nx)/2, (f.y+f.ny)/2, 200) * f.weight);
       ctx.lineWidth = f.primary ? 1.05 : .6;
-      line(ctx, f.x + dx, f.y + dy, f.nx + dx * .4, f.ny + dy * .4, .15 * f.weight + f.active * .12);
+      line(ctx,f.x,f.y,f.nx,f.ny,.15*f.weight+f.active*.12);
+      if(!reduced&&s.gust>.15&&f.active>.08&&s.quality<1.5){
+        // RGB separation follows the same crack segment, with a subpixel offset.
+        line(ctx,f.x+1,f.y,f.nx+1,f.ny,f.active*.08,'67,130,153');
+        line(ctx,f.x-1,f.y,f.nx-1,f.ny,f.active*.06,'147,90,111');
+      }
     }
     for (const c of centers) dot(ctx, c.x, c.y, .18 * c.weight, 2.2);
-    for (const p of pixels) { ctx.fillStyle = `rgba(40,49,59,${.16 * p.weight})`; ctx.fillRect(p.x, p.y, 2.5, 2.5); }
-    const p = s.pointer, inside = p.active && p.x >= panel.x && p.x <= panel.x + panel.w && p.y >= panel.y && p.y <= panel.y + panel.h;
-    pressure = s.follow(pressure, !s.mobile && inside ? tone(p.x, p.y) : 0, 12);
-    if (reduced) return;
-    if (pressure > .01) {
-      const flash = Math.max(0, (s.gust - .15) / .15), scan = s.time * 180 % 80 - 40, shift = Math.sin(s.time * 15) * 1.5;
-      ctx.lineWidth = .9; line(ctx, p.x - 40, p.y + scan * .25, p.x + 40, p.y + scan * .25, .18 * pressure);
-      // A few displaced subpixels make the surface disturbance explicit.
-      ctx.fillStyle = `rgba(86,97,110,${.12 * pressure})`;
-      for (let i = 0; i < 4; i++) ctx.fillRect(p.x - 14 + i * 8 + shift, p.y + i % 2 * 5, 2, 3);
-      if (flash > .01) {
-        line(ctx, p.x - 32 + shift, p.y - 1, p.x + 32 + shift, p.y - 1, flash * pressure * .13, '67,130,153');
-        line(ctx, p.x - 32 - shift, p.y + 1, p.x + 32 - shift, p.y + 1, flash * pressure * .08, '147,90,111');
+    for (const p of pixels) { ctx.fillStyle = `rgba(40,49,59,${.16*p.weight})`; ctx.fillRect(p.x,p.y,2.5,2.5); }
+    if(reduced)return;
+    const cycle=11+s.quality*4, phase=s.time%cycle;
+    const active=selectedPath>=0&&pulse<1;
+    const path=active?paths[selectedPath]:phase<.7?paths[Math.floor(s.time/cycle)%paths.length]:null;
+    if(active)pulse=Math.min(1,pulse+dt*2.2);
+    if(path){
+      const distance=path.length*(active?pulse:phase/.7);
+      for(const f of path.segments)if(distance>=f.start&&distance<=f.start+f.length){
+        const t=(distance-f.start)/Math.max(1,f.length);
+        dot(ctx,f.x+(f.nx-f.x)*t,f.y+(f.ny-f.y)*t,(active?.28:.16)*f.weight,1.5);s.particles++;break;
       }
-      s.particles++;
     }
-    const cycle = 11 + s.quality * 4, phase = s.time % cycle;
-    if (phase < .5) { const c = centers[Math.floor(s.time / cycle) % centers.length]; dot(ctx, c.x - 25 + phase * 100, c.y, .16 * c.weight * Math.sin(phase / .5 * Math.PI), 1.4); s.particles++; }
   }
   return { init() {}, resize, render, pointerMove: s.pointerMove, setQuality: s.setQuality,
     getStats() { return { ...s.getStats(), panels: 1, epicenters: centers.length, cracks: cracks.length }; },
-    destroy() { textures = []; cracks = []; pixels = []; defects = []; centers = []; panel = null; } };
+    destroy() { textures = []; cracks = []; pixels = []; defects = []; centers = []; paths = []; panel = null; } };
 }

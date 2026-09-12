@@ -31,7 +31,7 @@ export function createBattery() {
       for(let cell=0;cell<p.cells;cell++) {
         const x=left+cell*(p.cellW+6), seed=cell%3===0?.30:cell%3===1?.68:.96;
         const ambient=reduced?0:Math.sin(s.time*.24+p.phase+cell*.3)*.07;
-        const level=Math.max(.12,Math.min(1,seed+ambient+p.active*.30)), innerH=p.cellH-14, fillH=innerH*level;
+        const level=Math.max(.12,Math.min(1,seed+ambient+p.active*(.20+.10*Math.sin(s.time*3-cell*.65)))), innerH=p.cellH-14, fillH=innerH*level;
         ctx.lineWidth=1.1;ctx.strokeStyle=`rgba(40,49,59,${.16*p.weight+p.active*.13})`;
         ctx.beginPath();ctx.roundRect(x,top,p.cellW,p.cellH,p.cellW*.4);ctx.stroke();
         ctx.fillStyle=`rgba(86,97,110,${.075*p.weight+p.active*.055})`;
@@ -39,6 +39,13 @@ export function createBattery() {
         ctx.lineWidth=.65;ctx.beginPath();ctx.ellipse(x+p.cellW/2,top+8,p.cellW*.30,2.4,0,0,Math.PI*2);ctx.stroke();
       }
       ctx.lineWidth=.9;ctx.strokeStyle=`rgba(40,49,59,${.12*p.weight+p.active*.16})`;ctx.strokeRect(p.junctionX-5,p.y-8,10,16);
+      // Busbars connect each cell terminal to the BMS, rather than floating packs.
+      ctx.beginPath();ctx.moveTo(left+p.cellW/2,top-10);ctx.lineTo(left+width-p.cellW/2,top-10);
+      for(let cell=0;cell<p.cells;cell++){const terminal=left+cell*(p.cellW+6)+p.cellW/2;
+        ctx.moveTo(terminal,top-10);ctx.lineTo(terminal,top);}
+      ctx.moveTo(left+width-p.cellW/2,top-10);ctx.lineTo(p.junctionX,top-10);ctx.lineTo(p.junctionX,p.y-8);ctx.stroke();
+      ctx.lineWidth=.65;ctx.beginPath();ctx.moveTo(left+4,top+p.cellH+12);ctx.lineTo(left+10,top+p.cellH+12);
+      ctx.moveTo(left+7,top+p.cellH+9);ctx.lineTo(left+7,top+p.cellH+15);ctx.stroke();
       dot(ctx,p.junctionX,p.y,.15*p.weight+p.active*.18,1.8);
     }
     const budget=s.mobile?Math.max(1,Math.round(2-s.quality)):Math.round(4-s.quality);let bursts=0;

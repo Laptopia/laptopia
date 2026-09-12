@@ -44,6 +44,10 @@ export function createKeyboard() {
       const offset=k.active*2;
       ctx.lineWidth=1.05;ctx.strokeStyle=`rgba(40,49,59,${.14*k.weight+k.active*.17})`;ctx.fillStyle=`rgba(86,97,110,${.015*k.weight+k.active*.045})`;
       ctx.beginPath();ctx.roundRect(k.x,k.y+offset,k.w,k.h,5);ctx.stroke();ctx.fill();
+      // Unlabelled keycap legends and a long spacebar recess clarify the keyboard.
+      ctx.lineWidth=.65;
+      const mark=k.w>unit*2?Math.min(k.w*.45,unit*1.4):k.col===0||k.w>unit*1.3?10:4;
+      line(ctx,k.x+k.w/2-mark/2,k.y+k.h*.42+offset,k.x+k.w/2+mark/2,k.y+k.h*.42+offset,.065*k.weight+k.active*.07);
       if(s.quality<1){ctx.lineWidth=.6;line(ctx,k.x+6,k.y+k.h-4+offset,k.x+k.w-6,k.y+k.h-4+offset,.06*k.weight+k.active*.08);}
       if(!reduced&&age>=0&&age<.45&&ripple>.02&&s.particles<budget){dot(ctx,k.x+k.w/2+age*unit,k.y+k.h/2,ripple*.20*k.weight,1.4);s.particles++;}
     }
