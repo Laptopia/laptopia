@@ -1,13 +1,28 @@
 (() => {
   document.querySelectorAll('.laptopia-services-dropdown').forEach((dropdown) => {
     const toggle = dropdown.querySelector('summary');
-    const sync = () => toggle.setAttribute('aria-expanded', String(dropdown.open));
+    const header = dropdown.closest('.laptopia-header');
+    const overlay = document.createElement('div');
+    overlay.className = 'laptopia-services-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.hidden = true;
+    document.body.append(overlay);
+    const sync = () => {
+      toggle.setAttribute('aria-expanded', String(dropdown.open));
+      overlay.hidden = !dropdown.open;
+      header?.classList.toggle('laptopia-services-open', dropdown.open);
+    };
     const close = (restoreFocus = false) => {
       dropdown.open = false;
       sync();
       if (restoreFocus) toggle.focus();
     };
     dropdown.addEventListener('toggle', sync);
+    overlay.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      close(true);
+    });
     dropdown.addEventListener('click', (event) => {
       if (event.target.closest('a')) close(true);
     });

@@ -1100,6 +1100,26 @@ textarea:focus-visible {
   position: relative;
 }
 
+.laptopia-services-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: transparent;
+}
+
+.laptopia-services-overlay[hidden] {
+  display: none;
+}
+
+.laptopia-header.laptopia-services-open {
+  z-index: 10001;
+  pointer-events: none;
+}
+
+.laptopia-services-open .laptopia-services-dropdown {
+  pointer-events: auto;
+}
+
 .laptopia-services-toggle {
   display: flex;
   align-items: center;
@@ -1210,14 +1230,14 @@ textarea:focus-visible {
     inset-inline-start: 24px;
     inset-inline-end: auto;
     width: calc(100% - 48px);
-    max-width: 320px;
-    padding: 3px 8px;
+    max-width: 290px;
+    padding: 2px 8px;
     box-shadow: 0 6px 18px rgba(32, 40, 50, .09);
   }
 
   .laptopia-services-panel a {
-    min-height: 44px;
-    padding: 8px 12px;
+    min-height: 42px;
+    padding: 7px 12px;
   }
 }
 
