@@ -4,7 +4,10 @@ require_once get_stylesheet_directory() . '/inc/services.php';
 require_once get_stylesheet_directory() . '/inc/icons.php';
 
 function laptopia_background_mode() {
-    return is_page_template( 'page-templates/home-laptopia.php' ) ? 'pcb' : '';
+    if ( is_page_template( 'page-templates/home-laptopia.php' ) ) {
+        return 'network';
+    }
+    return is_page_template( 'page-templates/motherboard-repair.php' ) ? 'pcb' : '';
 }
 
 add_action( 'wp_head', function() {
@@ -39,7 +42,7 @@ add_action( 'after_setup_theme', function() {
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
-    if ( 'pcb' === laptopia_background_mode() ) {
+    if ( '' !== laptopia_background_mode() ) {
         wp_enqueue_script(
             'laptopia-background',
             get_stylesheet_directory_uri() . '/assets/js/background/engine.js',

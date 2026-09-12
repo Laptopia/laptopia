@@ -1,8 +1,10 @@
 (() => {
   'use strict';
   const mode = document.body.dataset.laptopiaBackground;
-  if (mode !== 'pcb' || window.LaptopiaBackground) return;
-  const moduleUrl = new URL('pcb.js', document.currentScript.src);
+  const modes = { pcb: ['pcb.js', 'createPCB'], network: ['network.js', 'createNetwork'] };
+  if (!Object.hasOwn(modes, mode) || window.LaptopiaBackground) return;
+  const [moduleFile, factory] = modes[mode];
+  const moduleUrl = new URL(moduleFile, document.currentScript.src);
   // Match the engine cache version when fetching the lazy effect module.
   moduleUrl.search = new URL(document.currentScript.src).search;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -104,9 +106,9 @@
   coarse.addEventListener('change', preference);
   window.addEventListener('pagehide', pagehide);
   window.addEventListener('pageshow', pageshow);
-  import(moduleUrl.href).then(({ createPCB }) => {
+  import(moduleUrl.href).then(module => {
     if (destroyed) return;
-    effect = createPCB();
+    effect = module[factory]();
     effect.init();
     resize();
   }).catch(destroy);
