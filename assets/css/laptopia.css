@@ -872,9 +872,13 @@ textarea:focus-visible {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #147d47;
-  color: #fff !important;
+  background: #25d366;
+  color: #28313b !important;
   box-shadow: 0 8px 24px rgba(32, 40, 50, .20);
+}
+
+.laptopia-floating-whatsapp:hover {
+  background: #1fbd5a;
 }
 
 .laptopia-floating-whatsapp svg {

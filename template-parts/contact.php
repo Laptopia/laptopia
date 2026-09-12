@@ -93,14 +93,14 @@
         </span>
       </a>
 
-      <a class="laptopia-btn laptopia-btn-google-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Almog+St+2+Ramla" target="_blank" rel="noopener">
+      <a class="laptopia-btn laptopia-btn-google-maps" href="https://maps.app.goo.gl/142XHnrHZfT4tYYQA" target="_blank" rel="noopener">
         <span class="laptopia-cta-content">
           <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'google-maps' ) ); ?>
           <span>ניווט ב-<bdi dir="ltr">Google Maps</bdi></span>
         </span>
       </a>
 
-      <a class="laptopia-btn laptopia-btn-waze" href="https://waze.com/ul?q=%D7%A8%D7%97%D7%95%D7%91%20%D7%90%D7%9C%D7%9E%D7%95%D7%92%202%2C%20%D7%A8%D7%9E%D7%9C%D7%94&amp;navigate=yes" target="_blank" rel="noopener">
+      <a class="laptopia-btn laptopia-btn-waze" href="https://ul.waze.com/ul?venue_id=22872383.228592761.149507&amp;overview=yes&amp;utm_campaign=default&amp;utm_source=waze_website&amp;utm_medium=lm_share_location" target="_blank" rel="noopener">
         <span class="laptopia-cta-content">
           <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'waze' ) ); ?>
           <span>ניווט ב-<bdi dir="ltr">Waze</bdi></span>
