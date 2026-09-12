@@ -3,7 +3,7 @@ export function createNetwork() {
   let radius = 120, columns = 0, rows = 0, time = 0;
   let heads = new Int32Array(0), next = new Int32Array(0), routes = [], trunks = [];
   let temporary = new Uint8Array(0), temporaryDegree = new Uint8Array(0);
-  let backbone = new Uint8Array(0), degree = new Uint8Array(0);
+  let backbone = new Uint8Array(0);
   let baseHeads = new Int32Array(0), baseNext = new Int32Array(0), neighbors = [];
   let qualityTarget = 0, quality = 0;
   const stats = { quality: 'high', nodes: 0, localLinks: 0, backboneLinks: 0, temporaryLinks: 0, pulses: 0 };
@@ -140,7 +140,6 @@ export function createNetwork() {
       chain.push(to);
       trunks.push(chain);
     }
-    degree = new Uint8Array(nodes.length);
     next = new Int32Array(nodes.length);
     temporary = new Uint8Array(nodes.length * nodes.length);
     backbone = new Uint8Array(nodes.length * nodes.length);
@@ -258,8 +257,6 @@ export function createNetwork() {
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.layer === 2 ? 2 : p.layer === 0 ? 1.1 : 1.5, 0, Math.PI * 2);
       ctx.fill();
-      // Open terminal footprints make the hierarchy readable without labels.
-      if(p.layer===2){ctx.lineWidth=.65;ctx.strokeStyle=`rgba(40,49,59,${.10+p.activity*.12})`;ctx.strokeRect(p.x-4,p.y-4,8,8);}
     }
     buildBuckets();
     for (let k = 0; k < pairs.length; k += 2) {
@@ -291,20 +288,18 @@ export function createNetwork() {
       temporaryDegree[to]++;
     }
     ctx.lineWidth = .8;
-    degree.fill(0);
-    const localDegree = mobile ? 3 : 4;
     for (let i = 0; i < nodes.length; i++) {
       const a = nodes[i];
       for (const bucket of neighbors[a.bucket]) {
           for (let j = heads[bucket]; j !== -1; j = next[j]) {
-            if (j <= i || backbone[i * nodes.length + j] || degree[i]>=localDegree || degree[j]>=localDegree) continue;
+            if (j <= i || backbone[i * nodes.length + j]) continue;
             const b = nodes[j], squared = (a.x - b.x) ** 2 + (a.y - b.y) ** 2;
             const limit = (a.layer === 2 || b.layer === 2 ? radius : radius * .96) * density;
             if (squared >= limit * limit) continue;
             // Blend base links into rewired links as activity grows and fades.
             const blend = temporary[i * nodes.length + j] ? Math.min(a.activity, b.activity) : 0;
             if (drawLink(ctx, a, b, limit, a.layer === 0 && b.layer === 0 ? .08 : .09,
-              Math.max(a.activity, b.activity), 1 - blend * .35, squared)) { stats.localLinks++; degree[i]++; degree[j]++; }
+              Math.max(a.activity, b.activity), 1 - blend * .35, squared)) stats.localLinks++;
           }
       }
     }
@@ -384,7 +379,7 @@ export function createNetwork() {
       nodes = []; routes = []; trunks = []; pulses = [];
       heads = next = new Int32Array(0);
       temporary = temporaryDegree = new Uint8Array(0);
-      backbone = degree = new Uint8Array(0);
+      backbone = new Uint8Array(0);
       baseHeads = baseNext = new Int32Array(0); neighbors = [];
       nearest.fill(-1); pointer.active = false; pendingBurst = false;
     }
