@@ -2,6 +2,7 @@
 
 require_once get_stylesheet_directory() . '/inc/services.php';
 require_once get_stylesheet_directory() . '/inc/icons.php';
+require_once get_stylesheet_directory() . '/inc/seo.php';
 
 function laptopia_background_mode() {
     $modes = array(
