@@ -1,9 +1,9 @@
 <?php
 
-// Filter Rank Math's own graph; never emit a second JSON-LD block.
-function laptopia_filter_page_schema( $data ) {
+// One scope for JSON-LD and Open Graph; unrelated pages/admin remain untouched.
+function laptopia_is_business_page() {
     if ( is_admin() || ! is_page() ) {
-        return $data;
+        return false;
     }
 
     $templates = array( 'home-laptopia' );
@@ -17,7 +17,12 @@ function laptopia_filter_page_schema( $data ) {
             break;
         }
     }
-    if ( ! $matches ) {
+    return $matches;
+}
+
+// Filter Rank Math's own graph; never emit a second JSON-LD block.
+function laptopia_filter_page_schema( $data ) {
+    if ( ! laptopia_is_business_page() ) {
         return $data;
     }
 
@@ -54,3 +59,15 @@ function laptopia_filter_page_schema( $data ) {
 }
 
 add_filter( 'rank_math/json_ld', 'laptopia_filter_page_schema', 99 );
+
+add_filter( 'rank_math/opengraph/type', static function( $type ) {
+    return laptopia_is_business_page() ? 'website' : $type;
+}, 99 );
+
+function laptopia_filter_article_date_meta( $value ) {
+    return laptopia_is_business_page() ? false : $value;
+}
+
+add_filter( 'rank_math/opengraph/facebook/article_published_time', 'laptopia_filter_article_date_meta', 99 );
+add_filter( 'rank_math/opengraph/facebook/article_modified_time', 'laptopia_filter_article_date_meta', 99 );
+add_filter( 'rank_math/opengraph/facebook/og_updated_time', 'laptopia_filter_article_date_meta', 99 );
