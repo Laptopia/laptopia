@@ -329,6 +329,15 @@ textarea:focus-visible {
   color: #2f80ed;
 }
 
+.laptopia-info-panel .laptopia-brand-accent {
+  color: #1d6cd1;
+}
+
+.laptopia-footer .laptopia-brand-accent,
+.laptopia-contact .laptopia-brand-accent {
+  color: #5999f1;
+}
+
 .laptopia-logo-subtitle {
   display: block;
   margin-top: 4px;

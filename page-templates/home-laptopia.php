@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 <?php
 get_template_part( 'template-parts/header' );
+echo '<main>';
 get_template_part( 'template-parts/hero' );
 get_template_part( 'template-parts/services' );
 get_template_part( 'template-parts/board-repair' );
@@ -32,6 +33,7 @@ echo do_shortcode( '[trustindex no-registration=google]' );
 echo '</div>';
 
 get_template_part( 'template-parts/contact' );
+echo '</main>';
 get_template_part( 'template-parts/footer' );
 get_template_part( 'template-parts/floating-whatsapp' );
 
