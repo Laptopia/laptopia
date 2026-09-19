@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
+<body <?php body_class( 'laptopia-service-page' ); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
 <?php wp_body_open(); ?>
 
 <?php
@@ -29,14 +29,28 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-hero" aria-labelledby="screen-title">
     <div class="laptopia-hero-content">
       <h1 id="screen-title">החלפת מסך למחשב נייד ברמלה והסביבה</h1>
-      <p>המסך נשבר, מופיעים פסים או שהתמונה אינה מוצגת כראוי? במעבדת Laptopia ברמלה בודקים את מקור הבעיה ומתאימים מסך חלופי למחשב כאשר נדרשת החלפה.</p>
+      <p>מסך שבור, פסים או תמונה שנעלמת? בודקים אם מקור התקלה במסך ומתאימים חלק חלופי לפי הדגם.</p>
       <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'screen-replacement' ) ); ?><span>החלפת מסך — החל מ־550 ₪</span></div>
-      <p>המחיר הסופי נקבע בהתאם לדגם המחשב, למסך הנדרש ולסוג התקלה. ההחלפה מתבצעת לאחר אישור הלקוח.</p>
+      <p>המחיר הסופי נקבע לפי הדגם והמסך המתאים, לפני אישור העבודה.</p>
+      <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '6 חודשי אחריות על מסך שהוחלף' ) ); ?>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום בדיקה בוואטסאפ</span></span></a>
         <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
       </div>
       <div class="laptopia-phone-line">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</div>
+    </div>
+  </section>
+  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="screen-prices-title">
+    <div class="laptopia-inner">
+      <h2 class="laptopia-section-title" id="screen-prices-title">כמה עולה החלפת מסך למחשב נייד?</h2>
+      <div class="laptopia-diagnostic">
+        <strong>החלפת מסך — החל מ־550 ₪</strong>
+        <p>העלות תלויה בדגם המחשב, בסוג המסך ובמורכבות העבודה. הצעת המחיר נמסרת לפני ביצוע ההחלפה והעבודה מתבצעת רק לאחר אישור הלקוח.</p>
+        <h3>דמי אבחון</h3>
+        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
+        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
+      </div>
+      <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
     </div>
   </section>
 
@@ -94,18 +108,6 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="screen-prices-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="screen-prices-title">כמה עולה החלפת מסך למחשב נייד?</h2>
-      <div class="laptopia-diagnostic">
-        <strong>החלפת מסך — החל מ־550 ₪</strong>
-        <p>העלות תלויה בדגם המחשב, בסוג המסך ובמורכבות העבודה. הצעת המחיר נמסרת לפני ביצוע ההחלפה והעבודה מתבצעת רק לאחר אישור הלקוח.</p>
-        <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
-        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="laptopia-section laptopia-warranty" id="warranty" aria-labelledby="screen-warranty-title">
     <div class="laptopia-inner">
@@ -117,14 +119,7 @@ get_template_part( 'template-parts/header', null, array(
         </div>
       </div>
       <p class="laptopia-price-note"><a href="<?php echo esc_url( home_url( '/#warranty' ) ); ?>">למידע על האחריות</a></p>
-    </div>
-  </section>
-
-  <section class="laptopia-section laptopia-services" aria-labelledby="screen-geography-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="screen-geography-title">החלפת מסכים ברמלה והסביבה</h2>
-      <p class="laptopia-section-subtitle">מעבדת Laptopia נמצאת ברחוב אלמוג 2, רמלה. ניתן לפנות אלינו מרמלה וגם מלוד, באר יעקב, ראשון לציון ורחובות לצורך בדיקת מסך והחלפתו.</p>
-      <p class="laptopia-price-note">מסירת המחשב מתבצעת במעבדה ברמלה, בתיאום מראש.</p>
+    <?php get_template_part( 'template-parts/warranty-exclusion' ); ?>
     </div>
   </section>
 

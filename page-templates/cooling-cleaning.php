@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
+<body <?php body_class( 'laptopia-service-page' ); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
 <?php wp_body_open(); ?>
 
 <?php
@@ -29,9 +29,10 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-hero" aria-labelledby="cooling-title">
     <div class="laptopia-hero-content">
       <h1 id="cooling-title">ניקוי מערכת קירור למחשב נייד ברמלה והסביבה</h1>
-      <p>המחשב מתחמם, המאוורר רועש או שהביצועים יורדים בזמן עבודה? במעבדת Laptopia ברמלה בודקים את מערכת הקירור ואת הצורך בניקוי. הצטברות אבק יכולה לפגוע בזרימת האוויר, אך לא כל התחממות נפתרת בניקוי בלבד.</p>
+      <p>המחשב מתחמם, המאוורר רועש או שהביצועים יורדים? בודקים את זרימת האוויר, המאוורר והצטברות האבק לפני שקובעים את הטיפול.</p>
       <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'cooling-cleaning' ) ); ?><span>ניקוי מערכת קירור — החל מ־300 ₪</span></div>
-      <p>המחיר הסופי נקבע לפי דגם המחשב, מצבו והעבודה הנדרשת. הטיפול מתבצע לאחר אישור הלקוח.</p>
+      <p>המחיר הסופי נקבע לפי הדגם והיקף הטיפול, לפני אישור העבודה.</p>
+      <?php get_template_part( 'template-parts/service-hero-details' ); ?>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום בדיקה בוואטסאפ</span></span></a>
         <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
@@ -78,6 +79,19 @@ get_template_part( 'template-parts/header', null, array(
       </figure>
     </div>
   </section>
+  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="cooling-prices-title">
+    <div class="laptopia-inner">
+      <h2 class="laptopia-section-title" id="cooling-prices-title">כמה עולה ניקוי מערכת קירור למחשב נייד?</h2>
+      <div class="laptopia-diagnostic">
+        <strong>ניקוי מערכת קירור — החל מ־300 ₪</strong>
+        <p>העלות תלויה בדגם, בגישה למערכת ובהיקף העבודה. אם מתגלה צורך בתיקון או בהחלפת רכיב, המחיר יימסר לאישור לפני ביצועו.</p>
+        <h3>דמי אבחון</h3>
+        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
+        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
+      </div>
+      <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
+    </div>
+  </section>
 
   <section class="laptopia-section laptopia-process" aria-labelledby="cooling-process-title">
     <div class="laptopia-inner">
@@ -92,18 +106,6 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="cooling-prices-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="cooling-prices-title">כמה עולה ניקוי מערכת קירור למחשב נייד?</h2>
-      <div class="laptopia-diagnostic">
-        <strong>ניקוי מערכת קירור — החל מ־300 ₪</strong>
-        <p>העלות תלויה בדגם, בגישה למערכת ובהיקף העבודה. אם מתגלה צורך בתיקון או בהחלפת רכיב, המחיר יימסר לאישור לפני ביצועו.</p>
-        <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
-        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="laptopia-section laptopia-warranty" id="warranty" aria-labelledby="cooling-warranty-title">
     <div class="laptopia-inner">
@@ -112,14 +114,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-card"><h3>תנאים בהתאם לעבודה שבוצעה</h3><p>תנאי האחריות יובהרו בהתאם לסוג הטיפול והרכיב. ניקוי אינו מבטיח שהמחשב לא יצבור אבק מחדש או שכל תקלה הגורמת להתחממות תיפתר.</p></div>
       </div>
       <p class="laptopia-price-note"><a href="<?php echo esc_url( home_url( '/#warranty' ) ); ?>">למידע על האחריות</a></p>
-    </div>
-  </section>
-
-  <section class="laptopia-section laptopia-services" aria-labelledby="cooling-geography-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="cooling-geography-title">ניקוי מחשבים ניידים ברמלה והסביבה</h2>
-      <p class="laptopia-section-subtitle">מעבדת Laptopia נמצאת ברחוב אלמוג 2, רמלה, ומקבלת מחשבים מלקוחות ברמלה, לוד, באר יעקב, ראשון לציון ורחובות.</p>
-      <p class="laptopia-price-note">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</p>
+    <?php get_template_part( 'template-parts/warranty-exclusion' ); ?>
     </div>
   </section>
 

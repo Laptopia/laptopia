@@ -22,9 +22,9 @@ get_template_part( 'template-parts/header' );
 echo '<main>';
 get_template_part( 'template-parts/hero' );
 get_template_part( 'template-parts/services' );
+get_template_part( 'template-parts/prices' );
 get_template_part( 'template-parts/board-repair' );
 get_template_part( 'template-parts/process' );
-get_template_part( 'template-parts/prices' );
 get_template_part( 'template-parts/warranty' );
 get_template_part( 'template-parts/reviews-heading' );
 

@@ -29,6 +29,8 @@
 
     </div>
 
+    <?php get_template_part( 'template-parts/warranty-exclusion' ); ?>
+
   </div>
 
 </section>

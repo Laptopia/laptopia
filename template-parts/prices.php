@@ -60,6 +60,8 @@
       לסוג החלק ולמורכבות העבודה.
     </div>
 
+    <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
+
   </div>
 
 </section>

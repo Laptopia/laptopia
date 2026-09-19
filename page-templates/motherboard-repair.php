@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
+<body <?php body_class( 'laptopia-service-page' ); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
 <?php wp_body_open(); ?>
 
 <?php
@@ -29,9 +29,10 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-hero" aria-labelledby="repair-title">
     <div class="laptopia-hero-content">
       <h1 id="repair-title">תיקון לוחות אם למחשבים ניידים ברמלה והסביבה</h1>
-      <p>המחשב הנייד לא נדלק, לא נטען או סובל מתקלה בלוח האם? ב־Laptopia ברמלה מבצעים אבחון ותיקון תקלות אלקטרוניות ברמת הרכיב, כולל תקלות הדלקה, טעינה, קצרים ונזקי נוזלים. אפשרות התיקון והמחיר נקבעים לאחר בדיקה.</p>
+      <p>המחשב לא נדלק, לא נטען או נפגע מנוזלים? בודקים את מקור התקלה ואת אפשרות התיקון ברמת הרכיב לפני שמתחילים בעבודה.</p>
       <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'motherboard-repair' ) ); ?><span>תיקון לוח אם — החל מ־700 ₪</span></div>
-      <p>המחיר הסופי נקבע לאחר אבחון, בהתאם לדגם, לתקלה ולחלקים הנדרשים. התיקון מתבצע רק לאחר אישור הלקוח.</p>
+      <p>המחיר הסופי נקבע לאחר אבחון ואישור הלקוח.</p>
+      <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '3 חודשי אחריות על התיקון' ) ); ?>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום אבחון בוואטסאפ</span></span></a>
         <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
@@ -109,6 +110,19 @@ get_template_part( 'template-parts/header', null, array(
       </figure>
     </div>
   </section>
+  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="prices-title">
+    <div class="laptopia-inner">
+      <h2 class="laptopia-section-title" id="prices-title">כמה עולה תיקון לוח אם?</h2>
+      <div class="laptopia-diagnostic">
+        <strong>תיקון לוח אם — החל מ־700 ₪</strong>
+        <p>המחיר הסופי נקבע בהתאם לדגם המחשב, לסוג התקלה, לחלקים הנדרשים ולמורכבות העבודה. התיקון מתבצע רק לאחר אישור הלקוח.</p>
+        <h3>דמי אבחון</h3>
+        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
+        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
+      </div>
+      <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
+    </div>
+  </section>
 
   <section class="laptopia-section laptopia-process" aria-labelledby="process-title">
     <div class="laptopia-inner">
@@ -123,18 +137,6 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="prices-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="prices-title">כמה עולה תיקון לוח אם?</h2>
-      <div class="laptopia-diagnostic">
-        <strong>תיקון לוח אם — החל מ־700 ₪</strong>
-        <p>המחיר הסופי נקבע בהתאם לדגם המחשב, לסוג התקלה, לחלקים הנדרשים ולמורכבות העבודה. התיקון מתבצע רק לאחר אישור הלקוח.</p>
-        <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
-        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="laptopia-section laptopia-warranty" id="warranty" aria-labelledby="warranty-title">
     <div class="laptopia-inner">
@@ -145,14 +147,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-card"><h3>אחריות על התיקון</h3><p>3 חודשי אחריות על תיקון שבוצע במעבדה, בהתאם לסוג התיקון והרכיב.</p></div>
       </div>
       <p class="laptopia-price-note"><a href="<?php echo esc_url( home_url( '/#warranty' ) ); ?>">למידע על האחריות</a></p>
-    </div>
-  </section>
-
-  <section class="laptopia-section laptopia-services" aria-labelledby="geography-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="geography-title">תיקון לוחות אם ברמלה והסביבה</h2>
-      <p class="laptopia-section-subtitle">Laptopia היא מעבדת מחשבים ניידים ברמלה, ברחוב אלמוג 2. המעבדה נותנת שירות ללקוחות מרמלה ומהערים הסמוכות: לוד, באר יעקב, ראשון לציון ורחובות.</p>
-      <p class="laptopia-price-note">מסירת המחשב מתבצעת במעבדה ברמלה, בתיאום מראש.</p>
+    <?php get_template_part( 'template-parts/warranty-exclusion' ); ?>
     </div>
   </section>
 

@@ -21,9 +21,10 @@ defined( 'ABSPATH' ) || exit;
   <section class="laptopia-section laptopia-hero" aria-labelledby="service-title">
     <div class="laptopia-hero-content">
       <h1 id="service-title">שדרוג זיכרון ו־SSD והתקנת מערכת הפעלה למחשב נייד ברמלה והסביבה</h1>
-      <p>מחשב איטי או צורך בנפח נוסף אינם מצביעים תמיד על אותו פתרון. ב־Laptopia ברמלה בודקים התאמת זיכרון RAM, כונן SSD והתקנת מערכת הפעלה לפי הדגם, מצב המחשב והצרכים שלכם.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'upgrade' ) ); ?><span>התקנת מערכת הפעלה — 300 ₪</span></div>
-      <p>המחיר והיקף העבודה נקבעים לאחר בדיקה ואישור הלקוח.</p>
+      <p>צריכים יותר זיכרון, נפח SSD או התקנת Windows? בודקים התאמה לדגם ומפרידים בין שדרוג חומרה, מערכת הפעלה וטיפול במידע.</p>
+      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'upgrade' ) ); ?><span class="laptopia-service-price-lines"><span>RAM — מחיר לפי התאמה ורכיב</span><span>SSD — מחיר לפי סוג ונפח</span><span>Windows — 300 ₪</span></span></div>
+      <p>Windows מותקן באמצעות רישיון קיים של הלקוח; גיבוי והעברת מידע מתומחרים בנפרד.</p>
+      <?php get_template_part( 'template-parts/service-hero-details' ); ?>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה ב-WhatsApp</span></span></a>
         <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
@@ -31,38 +32,6 @@ defined( 'ABSPATH' ) || exit;
       <div class="laptopia-phone-line">קבלת מחשבים במעבדה בתיאום מראש בלבד</div>
     </div>
   </section>
-  <section class="laptopia-section laptopia-services">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title">מתי כדאי לבדוק שדרוג או התקנת מערכת?</h2>
-      <div class="laptopia-warranty-grid">
-        <div class="laptopia-card"><h3>איטיות בריבוי משימות</h3><p>מחסור בזיכרון עשוי להשפיע על עבודה עם כמה תוכנות. בודקים את השימוש ואת האפשרות לשדרוג לפני רכישת רכיב.</p></div>
-        <div class="laptopia-card"><h3>נפח אחסון שאינו מספיק</h3><p>כונן מלא או צורך בנפח נוסף מצדיקים בדיקת אפשרויות SSD המתאימות למחשב.</p></div>
-        <div class="laptopia-card"><h3>כונן ישן או חשוד בתקלה</h3><p>ניתן לבדוק החלפת HDD ב־SSD או החלפת SSD תקול. מצב הכונן הקיים משפיע על אפשרות העברת המידע.</p></div>
-        <div class="laptopia-card"><h3>מערכת שאינה פועלת כרגיל</h3><p>שגיאות או קושי בהפעלה עשויים להיות קשורים לתוכנה או לחומרה. לפני התקנה מחדש מאבחנים את מקור הבעיה.</p></div>
-      </div>
-    </div>
-  </section>
-  <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="upgrades">
-    <div class="laptopia-board-content laptopia-info-panel">
-      <h2>זיכרון, SSD ומערכת הפעלה — שלושה טיפולים שונים</h2>
-      <h3>התאמת זיכרון RAM</h3>
-      <p>בחלק מהמחשבים הזיכרון מולחם ואינו ניתן לשדרוג רגיל; בדגמים אחרים יש חריץ אחד או שניים. ההתאמה תלויה בדגם ובפלטפורמה.</p>
-      <h3>התאמת SSD והעברת מידע</h3>
-      <p>לא כל מחשב תומך בכל NVMe. העברת מערכת או מידע אפשרית רק בהתאם למצב הכונן ולתנאים הטכניים.</p>
-      <h3>התקנת מערכת הפעלה</h3>
-      <p>התקנה אינה מבטיחה פתרון של תקלה חומרתית.</p>
-    </div>
-  </section>
-  <?php get_template_part( 'template-parts/process', null, array(
-    'title' => 'איך מתבצע השדרוג או התקנת המערכת?',
-    'steps' => array(
-      array( 'title' => 'תיאום מראש', 'text' => 'שולחים דגם, צרכים ותיאור הבעיה.' ),
-      array( 'title' => 'בדיקת התאמה', 'text' => 'בודקים זיכרון, כונן ומצב מערכת לפי הצורך.' ),
-      array( 'title' => 'הצעת מחיר', 'text' => 'מפרטים רכיבים, עבודה וטיפול במידע לאישור.' ),
-      array( 'title' => 'ביצוע ובדיקה', 'text' => 'מבצעים את העבודה המאושרת ובודקים את המערכת.' ),
-      array( 'title' => 'איסוף', 'text' => 'מודיעים כשהמחשב מוכן לאיסוף.' ),
-    ),
-  ) ); ?>
   <section class="laptopia-section laptopia-prices" id="prices">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">מחירי שדרוג והתקנת מערכת הפעלה</h2>
@@ -87,6 +56,31 @@ defined( 'ABSPATH' ) || exit;
         </div>
       </div>
       <p class="laptopia-price-note">מחירי RAM ו־SSD נקבעים לפי הרכיב המתאים והיקף העבודה. הצעת המחיר נמסרת לפני הביצוע; אין מחיר קבוע לשדרוג ללא בדיקת התאמה.</p>
+      <p class="laptopia-price-note">התקנת Windows מתבצעת באמצעות רישיון קיים של הלקוח. המחיר אינו כולל רכישת רישיון חדש.</p>
+      <p class="laptopia-price-note">גיבוי והעברת מידע אינם כלולים במחיר התקנת מערכת ההפעלה ומתומחרים בנפרד, בהתאם להיקף העבודה ולמצב הכונן.</p>
+      <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
+    </div>
+  </section>
+  <section class="laptopia-section laptopia-services">
+    <div class="laptopia-inner">
+      <h2 class="laptopia-section-title">מתי כדאי לבדוק שדרוג או התקנת מערכת?</h2>
+      <div class="laptopia-warranty-grid">
+        <div class="laptopia-card"><h3>איטיות בריבוי משימות</h3><p>מחסור בזיכרון עשוי להשפיע על עבודה עם כמה תוכנות. בודקים את השימוש ואת האפשרות לשדרוג לפני רכישת רכיב.</p></div>
+        <div class="laptopia-card"><h3>נפח אחסון שאינו מספיק</h3><p>כונן מלא או צורך בנפח נוסף מצדיקים בדיקת אפשרויות SSD המתאימות למחשב.</p></div>
+        <div class="laptopia-card"><h3>כונן ישן או חשוד בתקלה</h3><p>ניתן לבדוק החלפת HDD ב־SSD או החלפת SSD תקול. מצב הכונן הקיים משפיע על אפשרות העברת המידע.</p></div>
+        <div class="laptopia-card"><h3>מערכת שאינה פועלת כרגיל</h3><p>שגיאות או קושי בהפעלה עשויים להיות קשורים לתוכנה או לחומרה. לפני התקנה מחדש מאבחנים את מקור הבעיה.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="upgrades">
+    <div class="laptopia-board-content laptopia-info-panel">
+      <h2>זיכרון, SSD ומערכת הפעלה — שלושה טיפולים שונים</h2>
+      <h3>התאמת זיכרון RAM</h3>
+      <p>בחלק מהמחשבים הזיכרון מולחם ואינו ניתן לשדרוג רגיל; בדגמים אחרים יש חריץ אחד או שניים. ההתאמה תלויה בדגם ובפלטפורמה.</p>
+      <h3>התאמת SSD והעברת מידע</h3>
+      <p>לא כל מחשב תומך בכל NVMe. העברת מערכת או מידע אפשרית רק בהתאם למצב הכונן ולתנאים הטכניים.</p>
+      <h3>התקנת מערכת הפעלה</h3>
+      <p>התקנה אינה מבטיחה פתרון של תקלה חומרתית.</p>
     </div>
   </section>
   <section class="laptopia-section laptopia-board laptopia-info-panel-section">
@@ -98,19 +92,23 @@ defined( 'ABSPATH' ) || exit;
       <p>גיבוי או העברת מידע מתבצעים בנפרד ובהתאם למצב הכונן ולבקשת הלקוח. לא מניחים שהתקנה מחדש תשמור את המידע הקיים; מסכמים את הטיפול במידע מראש.</p>
     </div>
   </section>
+  <?php get_template_part( 'template-parts/process', null, array(
+    'title' => 'איך מתבצע השדרוג או התקנת המערכת?',
+    'steps' => array(
+      array( 'title' => 'תיאום מראש', 'text' => 'שולחים דגם, צרכים ותיאור הבעיה.' ),
+      array( 'title' => 'בדיקת התאמה', 'text' => 'בודקים זיכרון, כונן ומצב מערכת לפי הצורך.' ),
+      array( 'title' => 'הצעת מחיר', 'text' => 'מפרטים רכיבים, עבודה וטיפול במידע לאישור.' ),
+      array( 'title' => 'ביצוע ובדיקה', 'text' => 'מבצעים את העבודה המאושרת ובודקים את המערכת.' ),
+      array( 'title' => 'איסוף', 'text' => 'מודיעים כשהמחשב מוכן לאיסוף.' ),
+    ),
+  ) ); ?>
   <section class="laptopia-section laptopia-warranty" id="warranty">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">אחריות ותנאי השירות</h2>
       <div class="laptopia-board-content">
         <div class="laptopia-card"><h3>תנאי השירות והאחריות לפני אישור</h3><p>פרטי הרכיבים המוצעים, תנאי האחריות והיקף התקנת המערכת יימסרו לפני אישור העבודה. טיפול במידע נבדק ומתואם בנפרד.</p></div>
       </div>
-    </div>
-  </section>
-  <section class="laptopia-section laptopia-services">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title"><?php get_template_part( 'template-parts/brand-text', null, array( 'text' => 'שירות במעבדת Laptopia ברמלה והסביבה' ) ); ?></h2>
-      <p class="laptopia-section-subtitle">המעבדה נמצאת ברחוב אלמוג 2, רמלה. אנו מקבלים מחשבים מלקוחות ברמלה, לוד, באר יעקב, ראשון לציון ורחובות.</p>
-      <p class="laptopia-price-note">קבלת מחשבים במעבדה בתיאום מראש בלבד</p>
+    <?php get_template_part( 'template-parts/warranty-exclusion' ); ?>
     </div>
   </section>
   <section class="laptopia-section laptopia-services laptopia-faq">

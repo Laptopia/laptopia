@@ -221,10 +221,6 @@ textarea:focus-visible {
   color: #28313b !important;
 }
 
-.laptopia-btn-whatsapp:hover {
-  background: #1fbd5a;
-}
-
 .laptopia-btn-waze {
   background: #33ccff;
   color: #202832 !important;
@@ -965,10 +961,6 @@ textarea:focus-visible {
   background: #25d366;
   color: #28313b !important;
   box-shadow: 0 8px 24px rgba(32, 40, 50, .20);
-}
-
-.laptopia-floating-whatsapp:hover {
-  background: #1fbd5a;
 }
 
 .laptopia-floating-whatsapp svg {
@@ -1820,5 +1812,121 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
 
   .laptopia-warranty-grid:has(> :nth-child(odd):last-child) > :last-child {
     grid-column: 2 / span 2;
+  }
+}
+
+
+/* Shared WhatsApp interaction: no persistent glow and no touch hover simulation. */
+.laptopia-btn.laptopia-btn-whatsapp,
+.laptopia-floating-whatsapp {
+  transition: transform .2s ease, box-shadow .25s ease, background-color .2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .laptopia-btn.laptopia-btn-whatsapp:hover,
+  .laptopia-floating-whatsapp:hover {
+    background: #1fbd5a;
+    box-shadow: 0 10px 28px rgba(37, 211, 102, .32), 0 0 0 5px rgba(37, 211, 102, .10);
+  }
+}
+
+.laptopia-btn.laptopia-btn-whatsapp:focus-visible,
+.laptopia-floating-whatsapp:focus-visible {
+  background: #1fbd5a;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, .32), 0 0 0 5px rgba(37, 211, 102, .10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laptopia-btn.laptopia-btn-whatsapp,
+  .laptopia-floating-whatsapp {
+    transition: none;
+  }
+}
+
+/* Compact service facts remain close to price and contact actions in every service hero. */
+.laptopia-service-hero-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 18px;
+  width: 90%;
+  max-width: var(--laptopia-text-rail);
+  margin: -8px auto 20px;
+  color: #56616e;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.laptopia-service-hero-details > * {
+  color: inherit;
+  white-space: nowrap;
+}
+
+.laptopia-service-price-lines > span {
+  display: block;
+}
+
+.laptopia-service-price-lines {
+  min-width: 0;
+  max-width: 100%;
+  text-align: start;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.laptopia-service-hero-details a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .laptopia-service-page .laptopia-hero {
+    padding-top: 32px;
+    padding-bottom: 36px;
+  }
+
+  .laptopia-service-page .laptopia-hero h1 {
+    margin-bottom: 12px;
+  }
+
+  .laptopia-service-page .laptopia-hero p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .laptopia-service-hero-details {
+    display: grid;
+    gap: 3px;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+
+  .laptopia-service-hero-details .laptopia-service-hero-location {
+    white-space: normal;
+  }
+
+  .laptopia-hero .laptopia-service-price-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .laptopia-hero .laptopia-service-price-grid .laptopia-service-cta {
+    padding: 9px 12px;
+  }
+
+  .laptopia-hero .laptopia-service-price-grid .laptopia-service-cta > span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .laptopia-hero .laptopia-service-price-grid .laptopia-price-card-label {
+    margin-bottom: 0;
   }
 }

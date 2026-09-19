@@ -21,12 +21,13 @@ defined( 'ABSPATH' ) || exit;
   <section class="laptopia-section laptopia-hero" aria-labelledby="service-title">
     <div class="laptopia-hero-content">
       <h1 id="service-title">תיקון שקעי טעינה ו־USB למחשב נייד ברמלה והסביבה</h1>
-      <p>טעינה שמתנתקת, מחבר רופף או התקן USB שלא מזוהה מצדיקים בדיקה. ב־Laptopia ברמלה מאבחנים את השקע ואת המעגלים הקשורים אליו לפני שקובעים אם נדרשת החלפת מחבר או עבודה ברמת הרכיב.</p>
+      <p>טעינה שמתנתקת, שקע רופף או USB שאינו מזוהה? בודקים אם הבעיה במחבר, בהלחמות, בבקר או במעגלי הלוח.</p>
       <div class="laptopia-service-price-grid">
         <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?><span><span class="laptopia-price-card-label">שקע טעינה</span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">250 ₪</bdi></span></span></div>
         <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?><span><span class="laptopia-price-card-label"><bdi dir="ltr">USB / USB-C</bdi></span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">300 ₪</bdi></span></span></div>
       </div>
       <p>המחיר והיקף העבודה נקבעים לאחר בדיקה ואישור הלקוח.</p>
+      <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '3 חודשי אחריות על התיקון' ) ); ?>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה ב-WhatsApp</span></span></a>
         <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
@@ -46,17 +47,6 @@ defined( 'ABSPATH' ) || exit;
       </div>
     </div>
   </section>
-  <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="ports">
-    <div class="laptopia-board-content laptopia-info-panel">
-      <h2>מה בודקים בתיקון שקע טעינה ו־USB?</h2>
-      <h3>בדיקת המחבר והחיבור ללוח</h3>
-      <p>בודקים נזק פיזי, חופש במחבר ומצב ההלחמות. לפי הממצאים ניתן לשקול תיקון הלחמה או החלפת מחבר מתאים.</p>
-      <h3>הזנה, בקר וקווי נתונים</h3>
-      <p>בתקלות USB-C / Type-C בודקים גם את ההזנה, הבקר, רכיבי המעגל סביב המחבר וקווי הנתונים. לא כל תקלה נפתרת בהחלפת השקע.</p>
-      <h3>טיפול ברמת הרכיב לפי האבחון</h3>
-      <p>אם התקלה עמוקה יותר, היקף העבודה נקבע לאחר בדיקה ונמסר לאישור. מידע נוסף נמצא בעמוד <a href="<?php echo esc_url( home_url( '/motherboard-repair/' ) ); ?>">תיקון לוח אם למחשב נייד</a>.</p>
-    </div>
-  </section>
   <?php get_template_part( 'template-parts/service-case', null, array(
     'heading' => 'דוגמה מתיקון אמיתי',
     'description' => 'במקרה זה המחבר נפגע יחד עם חלק מאזור הלוח. התיקון כלל שיקום של אזור החיבור בלוח והתקנת המחבר מחדש.',
@@ -70,16 +60,17 @@ defined( 'ABSPATH' ) || exit;
       ),
     ),
   ) ); ?>
-  <?php get_template_part( 'template-parts/process', null, array(
-    'title' => 'איך מתבצע תיקון שקעי הטעינה וה־USB?',
-    'steps' => array(
-      array( 'title' => 'תיאום מראש', 'text' => 'שולחים דגם ותיאור התקלה ומתאמים מסירה.' ),
-      array( 'title' => 'אבחון החיבור', 'text' => 'בודקים מחבר, הזנה וקווי נתונים לפי התקלה.' ),
-      array( 'title' => 'הצעת מחיר', 'text' => 'מפרטים את הטיפול הנדרש ומבקשים אישור.' ),
-      array( 'title' => 'תיקון ובדיקה', 'text' => 'מבצעים את העבודה המאושרת ובודקים את החיבור.' ),
-      array( 'title' => 'איסוף', 'text' => 'מודיעים כשהמחשב מוכן לאיסוף.' ),
-    ),
-  ) ); ?>
+  <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="ports">
+    <div class="laptopia-board-content laptopia-info-panel">
+      <h2>מה בודקים בתיקון שקע טעינה ו־USB?</h2>
+      <h3>בדיקת המחבר והחיבור ללוח</h3>
+      <p>בודקים נזק פיזי, חופש במחבר ומצב ההלחמות. לפי הממצאים ניתן לשקול תיקון הלחמה או החלפת מחבר מתאים.</p>
+      <h3>הזנה, בקר וקווי נתונים</h3>
+      <p>בתקלות USB-C / Type-C בודקים גם את ההזנה, הבקר, רכיבי המעגל סביב המחבר וקווי הנתונים. לא כל תקלה נפתרת בהחלפת השקע.</p>
+      <h3>טיפול ברמת הרכיב לפי האבחון</h3>
+      <p>אם התקלה עמוקה יותר, היקף העבודה נקבע לאחר בדיקה ונמסר לאישור. מידע נוסף נמצא בעמוד <a href="<?php echo esc_url( home_url( '/motherboard-repair/' ) ); ?>">תיקון לוח אם למחשב נייד</a>.</p>
+    </div>
+  </section>
   <section class="laptopia-section laptopia-prices" id="prices">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">כמה עולה תיקון שקע טעינה או USB?</h2>
@@ -96,8 +87,19 @@ defined( 'ABSPATH' ) || exit;
         </div>
       </div>
       <p class="laptopia-price-note">המחיר הסופי תלוי בדגם, במצב המחבר ובממצאי הבדיקה. תיקון בקר, הזנה או מעגלים נוספים מתומחר לפי היקף העבודה, לאחר אבחון ואישור הלקוח.</p>
+      <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
     </div>
   </section>
+  <?php get_template_part( 'template-parts/process', null, array(
+    'title' => 'איך מתבצע תיקון שקעי הטעינה וה־USB?',
+    'steps' => array(
+      array( 'title' => 'תיאום מראש', 'text' => 'שולחים דגם ותיאור התקלה ומתאמים מסירה.' ),
+      array( 'title' => 'אבחון החיבור', 'text' => 'בודקים מחבר, הזנה וקווי נתונים לפי התקלה.' ),
+      array( 'title' => 'הצעת מחיר', 'text' => 'מפרטים את הטיפול הנדרש ומבקשים אישור.' ),
+      array( 'title' => 'תיקון ובדיקה', 'text' => 'מבצעים את העבודה המאושרת ובודקים את החיבור.' ),
+      array( 'title' => 'איסוף', 'text' => 'מודיעים כשהמחשב מוכן לאיסוף.' ),
+    ),
+  ) ); ?>
   <section class="laptopia-section laptopia-board laptopia-info-panel-section">
     <div class="laptopia-board-content laptopia-info-panel">
       <h2>מה משפיע על היקף התיקון?</h2>
@@ -113,13 +115,7 @@ defined( 'ABSPATH' ) || exit;
       <div class="laptopia-board-content">
         <div class="laptopia-card"><h3>3 חודשי אחריות על התיקון</h3><p>היקף העבודה ותנאי האחריות יימסרו לפני אישור התיקון. אם נדרש טיפול ברכיבים נוספים, הוא יפורט בהצעה.</p></div>
       </div>
-    </div>
-  </section>
-  <section class="laptopia-section laptopia-services">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title"><?php get_template_part( 'template-parts/brand-text', null, array( 'text' => 'שירות במעבדת Laptopia ברמלה והסביבה' ) ); ?></h2>
-      <p class="laptopia-section-subtitle">המעבדה נמצאת ברחוב אלמוג 2, רמלה. אנו מקבלים מחשבים מלקוחות ברמלה, לוד, באר יעקב, ראשון לציון ורחובות.</p>
-      <p class="laptopia-price-note">קבלת מחשבים במעבדה בתיאום מראש בלבד</p>
+    <?php get_template_part( 'template-parts/warranty-exclusion' ); ?>
     </div>
   </section>
   <section class="laptopia-section laptopia-services laptopia-faq">

@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
+<body <?php body_class( 'laptopia-service-page' ); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
 <?php wp_body_open(); ?>
 
 <?php
@@ -29,9 +29,10 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-hero" aria-labelledby="battery-title">
     <div class="laptopia-hero-content">
       <h1 id="battery-title">החלפת סוללה למחשב נייד ברמלה והסביבה</h1>
-      <p>המחשב מתרוקן מהר או נכבה כשמנתקים את המטען? במעבדת Laptopia ברמלה בודקים את מקור התקלה ואת הצורך בהחלפת הסוללה. כאשר נדרשת החלפה, בודקים התאמה לדגם וזמינות של סוללה מתאימה.</p>
+      <p>הסוללה מתרוקנת מהר, מתנפחת או שהמחשב נכבה ללא מטען? בודקים אם נדרשת החלפה או שמקור התקלה במערכת הטעינה.</p>
       <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'battery-replacement' ) ); ?><span>החלפת סוללה — החל מ־400 ₪</span></div>
-      <p>המחיר הסופי נקבע בהתאם לדגם המחשב, לסוללה הנדרשת ולמורכבות העבודה. ההחלפה מתבצעת רק לאחר אישור הלקוח.</p>
+      <p>המחיר הסופי נקבע לפי הדגם והסוללה המתאימה, לפני אישור העבודה.</p>
+      <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '12 חודשי אחריות על סוללה מקורית' ) ); ?>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום בדיקה בוואטסאפ</span></span></a>
         <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
@@ -94,6 +95,19 @@ get_template_part( 'template-parts/header', null, array(
       </div>
     </div>
   </section>
+  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="battery-prices-title">
+    <div class="laptopia-inner">
+      <h2 class="laptopia-section-title" id="battery-prices-title">כמה עולה החלפת סוללה למחשב נייד?</h2>
+      <div class="laptopia-diagnostic">
+        <strong>החלפת סוללה — החל מ־400 ₪</strong>
+        <p>העלות הסופית תלויה בדגם המחשב, בסוג הסוללה ובמורכבות העבודה. המחיר נמסר לאישור לפני ההחלפה.</p>
+        <h3>דמי אבחון</h3>
+        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
+        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
+      </div>
+      <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
+    </div>
+  </section>
 
   <section class="laptopia-section laptopia-process" aria-labelledby="battery-process-title">
     <div class="laptopia-inner">
@@ -108,18 +122,6 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="battery-prices-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="battery-prices-title">כמה עולה החלפת סוללה למחשב נייד?</h2>
-      <div class="laptopia-diagnostic">
-        <strong>החלפת סוללה — החל מ־400 ₪</strong>
-        <p>העלות הסופית תלויה בדגם המחשב, בסוג הסוללה ובמורכבות העבודה. המחיר נמסר לאישור לפני ההחלפה.</p>
-        <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
-        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="laptopia-section laptopia-warranty" id="warranty" aria-labelledby="battery-warranty-title">
     <div class="laptopia-inner">
@@ -131,14 +133,7 @@ get_template_part( 'template-parts/header', null, array(
         </div>
       </div>
       <p class="laptopia-price-note"><a href="<?php echo esc_url( home_url( '/#warranty' ) ); ?>">למידע על האחריות</a></p>
-    </div>
-  </section>
-
-  <section class="laptopia-section laptopia-services" aria-labelledby="battery-geography-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="battery-geography-title">החלפת סוללה ברמלה והסביבה</h2>
-      <p class="laptopia-section-subtitle">מעבדת Laptopia נמצאת ברחוב אלמוג 2, רמלה. אנו מקבלים מחשבים מלקוחות ברמלה ובערים הסמוכות: לוד, באר יעקב, ראשון לציון ורחובות.</p>
-      <p class="laptopia-price-note">מסירת המחשב מתבצעת במעבדה ברמלה, בתיאום מראש בלבד.</p>
+    <?php get_template_part( 'template-parts/warranty-exclusion' ); ?>
     </div>
   </section>
 

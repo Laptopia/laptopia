@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
+<body <?php body_class( 'laptopia-service-page' ); ?> data-laptopia-background="<?php echo esc_attr( laptopia_background_mode() ); ?>">
 <?php wp_body_open(); ?>
 
 <?php
@@ -29,9 +29,10 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-hero" aria-labelledby="keyboard-title">
     <div class="laptopia-hero-content">
       <h1 id="keyboard-title">החלפת מקלדת למחשב נייד ברמלה והסביבה</h1>
-      <p>מקשים לא מגיבים, חסרים או מקלידים תווים באופן לא צפוי? במעבדת Laptopia ברמלה בודקים את מקור התקלה. כאשר נדרשת החלפת מקלדת, מתאימים את החלק לדגם המחשב ובודקים את זמינותו לפני אישור העבודה.</p>
+      <p>מקשים חסרים, לא מגיבים או מקלידים תווים לא צפויים? בודקים אם מקור התקלה במקלדת ומתאימים חלק לפי מבנה הדגם.</p>
       <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'keyboard-replacement' ) ); ?><span>החלפת מקלדת — החל מ־550 ₪</span></div>
-      <p>המחיר הסופי תלוי בדגם, במקלדת הנדרשת ובמורכבות הפירוק וההרכבה.</p>
+      <p>המחיר הסופי נקבע לפי הדגם ואופן התקנת המקלדת.</p>
+      <?php get_template_part( 'template-parts/service-hero-details' ); ?>
       <div class="laptopia-buttons">
         <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>לתיאום בדיקה בוואטסאפ</span></span></a>
         <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
@@ -81,6 +82,19 @@ get_template_part( 'template-parts/header', null, array(
       </figure>
     </div>
   </section>
+  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="keyboard-prices-title">
+    <div class="laptopia-inner">
+      <h2 class="laptopia-section-title" id="keyboard-prices-title">כמה עולה החלפת מקלדת למחשב נייד?</h2>
+      <div class="laptopia-diagnostic">
+        <strong>החלפת מקלדת — החל מ־550 ₪</strong>
+        <p>המחיר תלוי בדגם, בסוג המקלדת ובאופן התקנתה. הצעת המחיר נמסרת לפני העבודה, וההחלפה מתבצעת לאחר אישור הלקוח.</p>
+        <h3>דמי אבחון</h3>
+        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
+        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
+      </div>
+      <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
+    </div>
+  </section>
 
   <section class="laptopia-section laptopia-process" aria-labelledby="keyboard-process-title">
     <div class="laptopia-inner">
@@ -95,18 +109,6 @@ get_template_part( 'template-parts/header', null, array(
     </div>
   </section>
 
-  <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="keyboard-prices-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="keyboard-prices-title">כמה עולה החלפת מקלדת למחשב נייד?</h2>
-      <div class="laptopia-diagnostic">
-        <strong>החלפת מקלדת — החל מ־550 ₪</strong>
-        <p>המחיר תלוי בדגם, בסוג המקלדת ובאופן התקנתה. הצעת המחיר נמסרת לפני העבודה, וההחלפה מתבצעת לאחר אישור הלקוח.</p>
-        <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
-        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="laptopia-section laptopia-warranty" id="warranty" aria-labelledby="keyboard-warranty-title">
     <div class="laptopia-inner">
@@ -115,14 +117,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-card"><h3>פרטי החלק והאחריות לפני אישור</h3><p>סוג המקלדת המוצעת, תנאי האחריות והיקף העבודה יימסרו לפני אישור ההחלפה. אם נדרש טיפול נוסף מעבר למקלדת, הוא יפורט בהצעה.</p></div>
       </div>
       <p class="laptopia-price-note"><a href="<?php echo esc_url( home_url( '/#warranty' ) ); ?>">למידע על האחריות</a></p>
-    </div>
-  </section>
-
-  <section class="laptopia-section laptopia-services" aria-labelledby="keyboard-geography-title">
-    <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="keyboard-geography-title">החלפת מקלדת ברמלה והסביבה</h2>
-      <p class="laptopia-section-subtitle">מעבדת Laptopia נמצאת ברחוב אלמוג 2, רמלה. אנו מקבלים מחשבים מלקוחות ברמלה, לוד, באר יעקב, ראשון לציון ורחובות.</p>
-      <p class="laptopia-price-note">מסירת המחשב מתבצעת במעבדה ברמלה, בתיאום מראש בלבד.</p>
+    <?php get_template_part( 'template-parts/warranty-exclusion' ); ?>
     </div>
   </section>
 
