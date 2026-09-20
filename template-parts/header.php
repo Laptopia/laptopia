@@ -34,8 +34,10 @@ $inner_header = $service_header || ! empty( $custom_nav );
     </div>
 
     <a class="laptopia-header-phone"
-       href="tel:+972538036244">
-      <bdi dir="ltr">053-803-6244</bdi>
+       href="tel:+972538036244"
+       aria-label="התקשרו למעבדה: 053-803-6244">
+      <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?>
+      <bdi class="laptopia-header-phone-number" dir="ltr">053-803-6244</bdi>
     </a>
 
   </div>
