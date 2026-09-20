@@ -68,7 +68,8 @@ defined( 'ABSPATH' ) || exit;
       <h3>הזנה, בקר וקווי נתונים</h3>
       <p>בתקלות <?php echo laptopia_bidi_ltr( 'USB-C' ); ?> / <?php echo laptopia_bidi_ltr( 'Type-C' ); ?> בודקים גם את ההזנה, הבקר, רכיבי המעגל סביב המחבר וקווי הנתונים. לא כל תקלה נפתרת בהחלפת השקע.</p>
       <h3>טיפול ברמת הרכיב לפי האבחון</h3>
-      <p>אם התקלה עמוקה יותר, היקף העבודה נקבע לאחר בדיקה ונמסר לאישור. מידע נוסף נמצא בעמוד <a href="<?php echo esc_url( home_url( '/motherboard-repair/' ) ); ?>">תיקון לוח אם למחשב נייד</a>.</p>
+      <p>אם התקלה עמוקה יותר, היקף העבודה נקבע לאחר בדיקה ונמסר לאישור. מידע נוסף נמצא בעמוד <a class="laptopia-context-link" href="<?php echo esc_url( home_url( '/motherboard-repair/' ) ); ?>">תיקון לוח אם למחשב נייד</a>.</p>
+      <p>כאשר חוסר הטעינה עשוי להיות קשור לסוללה, אפשר לקרוא גם על <a class="laptopia-context-link" href="<?php echo esc_url( home_url( '/battery-replacement/' ) ); ?>">החלפת סוללה למחשב נייד</a>.</p>
     </div>
   </section>
   <section class="laptopia-section laptopia-prices" id="prices">

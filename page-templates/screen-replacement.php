@@ -57,7 +57,7 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-services" aria-labelledby="screen-symptoms-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="screen-symptoms-title">מתי צריך להחליף מסך למחשב נייד?</h2>
-      <p class="laptopia-section-subtitle">שבר במסך או שינוי בתצוגה מצריכים בדיקה. לא כל תקלה בתמונה נובעת מהמסך עצמו, ולכן חשוב לזהות את מקור הבעיה לפני ההחלפה.</p>
+      <p class="laptopia-section-subtitle">שבר במסך או שינוי בתצוגה מצריכים בדיקה. לא כל תקלה בתמונה נובעת מהמסך עצמו, ולכן חשוב לזהות את מקור הבעיה לפני ההחלפה. אם הנזק כולל גם את המסגרת, המכסה או הצירים, ראו גם <a class="laptopia-context-link" href="<?php echo esc_url( home_url( '/hinges-plastics-repair/' ) ); ?>">תיקון צירים ופלסטיקה</a>.</p>
       <div class="laptopia-warranty-grid">
         <div class="laptopia-card">
           <h3>מסך שבור או כתמים בתצוגה</h3>

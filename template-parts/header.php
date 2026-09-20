@@ -22,7 +22,6 @@ $inner_header = $service_header || ! empty( $custom_nav );
           <?php endforeach; ?>
         <?php else : ?>
           <?php if ( $service_header ) : ?>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">דף הבית</a>
           <a href="<?php echo esc_url( $service_link['href'] ); ?>"><?php echo laptopia_bidi_text( $service_link['label'] ); ?></a>
           <?php else : ?>
           <a href="#board">תיקון לוחות אם</a>

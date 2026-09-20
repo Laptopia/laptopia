@@ -105,6 +105,18 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
+.laptopia-section .laptopia-context-link {
+  color: #1d6cd1;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.laptopia-section .laptopia-context-link:hover,
+.laptopia-section .laptopia-context-link:focus-visible {
+  color: #1557ad;
+}
+
 .laptopia-inner {
   width: 100%;
   max-width: var(--laptopia-grid-rail);
@@ -1478,6 +1490,18 @@ bdi[dir="ltr"] {
     padding: 10px 12px;
     min-height: 44px;
   }
+
+  .laptopia-header-about,
+  .laptopia-header-phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .laptopia-header-about {
+    padding-inline: 6px;
+  }
 }
 
 .laptopia-cta-content {
@@ -1699,11 +1723,6 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 }
 
 @media (max-width: 900px) {
-  main .laptopia-section,
-  .laptopia-footer {
-    padding-left: calc(58px + env(safe-area-inset-left, 0px));
-  }
-
   .laptopia-floating-control {
     width: 44px;
     height: 44px;
@@ -1721,16 +1740,20 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   }
 
   .laptopia-back-to-top {
-    right: auto;
-    left: calc(7px + env(safe-area-inset-left, 0px));
+    right: calc(7px + env(safe-area-inset-right, 0px));
+    left: auto;
     top: auto;
-    bottom: calc(66px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   }
 
   .laptopia-floating-whatsapp {
     left: calc(7px + env(safe-area-inset-left, 0px));
     top: auto;
     bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .laptopia-footer {
+    padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px));
   }
 }
 

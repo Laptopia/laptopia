@@ -52,7 +52,7 @@ get_template_part( 'template-parts/header', null, array(
         </div>
         <div class="laptopia-card">
           <h3>המחשב אינו נטען</h3>
-          <p>תקלה בטעינה אינה מעידה בהכרח על לוח אם תקול. נדרש אבחון כדי לזהות את מקור הבעיה ולקבוע מה צריך לתקן.</p>
+          <p>תקלה בטעינה אינה מעידה בהכרח על לוח אם תקול. נדרש אבחון כדי לזהות את מקור הבעיה ולקבוע מה צריך לתקן. כאשר עולה חשד לשקע או למחבר, אפשר לקרוא גם על <a class="laptopia-context-link" href="<?php echo esc_url( home_url( '/charging-usb-repair/' ) ); ?>">תיקון שקעי טעינה ו־USB</a>.</p>
         </div>
         <div class="laptopia-card">
           <h3>קצרים ונזקי נוזלים</h3>
