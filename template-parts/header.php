@@ -16,7 +16,7 @@ $service_link = $args['service_link'] ?? array();
     <nav class="laptopia-nav"<?php if ( $service_header ) : ?> aria-label="ניווט ראשי"<?php endif; ?>>
       <?php if ( $service_header ) : ?>
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>">דף הבית</a>
-      <a href="<?php echo esc_url( $service_link['href'] ); ?>"><?php echo esc_html( $service_link['label'] ); ?></a>
+      <a href="<?php echo esc_url( $service_link['href'] ); ?>"><?php echo laptopia_bidi_text( $service_link['label'] ); ?></a>
       <?php else : ?>
       <a href="#board">תיקון לוחות אם</a>
       <?php endif; ?>
@@ -28,7 +28,7 @@ $service_link = $args['service_link'] ?? array();
 
     <a class="laptopia-header-phone"
        href="tel:+972538036244">
-      <?php if ( $service_header ) : ?><bdi dir="ltr">053-803-6244</bdi><?php else : ?>053-803-6244<?php endif; ?>
+      <bdi dir="ltr">053-803-6244</bdi>
     </a>
 
   </div>

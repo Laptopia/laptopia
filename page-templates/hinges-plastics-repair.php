@@ -29,7 +29,7 @@ defined( 'ABSPATH' ) || exit;
       <p>המחיר והיקף העבודה נקבעים לאחר בדיקה ואישור הלקוח.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '3 חודשי אחריות על התיקון' ) ); ?>
       <div class="laptopia-buttons">
-        <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה ב-WhatsApp</span></span></a>
+        <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה ב-<?php echo laptopia_bidi_ltr( 'WhatsApp' ); ?></span></span></a>
         <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
       </div>
       <div class="laptopia-phone-line">קבלת מחשבים במעבדה בתיאום מראש בלבד</div>
@@ -100,12 +100,12 @@ defined( 'ABSPATH' ) || exit;
         <div class="laptopia-card laptopia-price-card">
           <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?></div>
           <h3>תיקון צירים</h3>
-          <p class="laptopia-price-card-value">החל מ־500 ₪</p>
+          <p class="laptopia-price-card-value">החל מ־<?php echo laptopia_bidi_price( '500 ₪' ); ?></p>
         </div>
         <div class="laptopia-card laptopia-price-card">
           <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?></div>
           <h3>תיקון פלסטיקה / מארז</h3>
-          <p class="laptopia-price-card-value">החל מ־700 ₪</p>
+          <p class="laptopia-price-card-value">החל מ־<?php echo laptopia_bidi_price( '700 ₪' ); ?></p>
         </div>
       </div>
       <p class="laptopia-price-note">המחיר תלוי במבנה הדגם, בחלקים שנפגעו ובזמינות החלקים הנדרשים. דרך הטיפול והמחיר נקבעים לאחר בדיקה ואישור הלקוח.</p>

@@ -20,13 +20,13 @@ defined( 'ABSPATH' ) || exit;
 <main dir="rtl">
   <section class="laptopia-section laptopia-hero" aria-labelledby="service-title">
     <div class="laptopia-hero-content">
-      <h1 id="service-title">שדרוג זיכרון ו־SSD והתקנת מערכת הפעלה למחשב נייד ברמלה והסביבה</h1>
-      <p>צריכים יותר זיכרון, נפח SSD או התקנת Windows? בודקים התאמה לדגם ומפרידים בין שדרוג חומרה, מערכת הפעלה וטיפול במידע.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'upgrade' ) ); ?><span class="laptopia-service-price-lines"><span>RAM — מחיר לפי התאמה ורכיב</span><span>SSD — מחיר לפי סוג ונפח</span><span>Windows — 300 ₪</span></span></div>
-      <p>Windows מותקן באמצעות רישיון קיים של הלקוח; גיבוי והעברת מידע מתומחרים בנפרד.</p>
+      <h1 id="service-title">שדרוג זיכרון ו־<?php echo laptopia_bidi_ltr( 'SSD' ); ?> והתקנת מערכת הפעלה למחשב נייד ברמלה והסביבה</h1>
+      <p>צריכים יותר זיכרון, נפח <?php echo laptopia_bidi_ltr( 'SSD' ); ?> או התקנת <?php echo laptopia_bidi_ltr( 'Windows' ); ?>? בודקים התאמה לדגם ומפרידים בין שדרוג חומרה, מערכת הפעלה וטיפול במידע.</p>
+      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'upgrade' ) ); ?><span class="laptopia-service-price-lines"><span><?php echo laptopia_bidi_ltr( 'RAM' ); ?> — מחיר לפי התאמה ורכיב</span><span><?php echo laptopia_bidi_ltr( 'SSD' ); ?> — מחיר לפי סוג ונפח</span><span><?php echo laptopia_bidi_ltr( 'Windows' ); ?> — <?php echo laptopia_bidi_price( '300 ₪' ); ?></span></span></div>
+      <p><?php echo laptopia_bidi_ltr( 'Windows' ); ?> מותקן באמצעות רישיון קיים של הלקוח; גיבוי והעברת מידע מתומחרים בנפרד.</p>
       <?php get_template_part( 'template-parts/service-hero-details' ); ?>
       <div class="laptopia-buttons">
-        <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה ב-WhatsApp</span></span></a>
+        <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?><span>שלחו הודעה ב-<?php echo laptopia_bidi_ltr( 'WhatsApp' ); ?></span></span></a>
         <a class="laptopia-btn laptopia-btn-dark" href="tel:+972538036244"><span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?><span>התקשרו למעבדה</span></span></a>
       </div>
       <div class="laptopia-phone-line">קבלת מחשבים במעבדה בתיאום מראש בלבד</div>
@@ -38,25 +38,25 @@ defined( 'ABSPATH' ) || exit;
       <div class="laptopia-service-price-grid laptopia-service-price-grid-three">
         <div class="laptopia-card laptopia-price-card">
           <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'upgrade' ) ); ?></div>
-          <h3>שדרוג זיכרון RAM</h3>
+          <h3>שדרוג זיכרון <?php echo laptopia_bidi_ltr( 'RAM' ); ?></h3>
           <p>בודקים סוג זיכרון, נפח נתמך ומספר חריצים.</p>
           <p class="laptopia-price-card-value laptopia-price-card-status">מחיר בהתאם לדגם ולנפח</p>
         </div>
         <div class="laptopia-card laptopia-price-card">
           <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'storage' ) ); ?></div>
-          <h3>שדרוג או החלפת SSD</h3>
-          <p>בודקים חיבור SATA או NVMe, מבנה הכונן והנפח הרצוי לפי הדגם.</p>
+          <h3>שדרוג או החלפת <?php echo laptopia_bidi_ltr( 'SSD' ); ?></h3>
+          <p>בודקים חיבור <?php echo laptopia_bidi_ltr( 'SATA' ); ?> או <?php echo laptopia_bidi_ltr( 'NVMe' ); ?>, מבנה הכונן והנפח הרצוי לפי הדגם.</p>
           <p class="laptopia-price-card-value laptopia-price-card-status">מחיר בהתאם לדגם, לסוג ולנפח</p>
         </div>
         <div class="laptopia-card laptopia-price-card">
           <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'software' ) ); ?></div>
           <h3>התקנת מערכת הפעלה</h3>
-          <p>העבודה כוללת התקנת Windows, מנהלי התקנים, עדכוני Windows ובדיקת מערכת בסיסית.</p>
-          <p class="laptopia-price-card-value">300 ₪</p>
+          <p>העבודה כוללת התקנת <?php echo laptopia_bidi_ltr( 'Windows' ); ?>, מנהלי התקנים, עדכוני <?php echo laptopia_bidi_ltr( 'Windows' ); ?> ובדיקת מערכת בסיסית.</p>
+          <p class="laptopia-price-card-value"><?php echo laptopia_bidi_price( '300 ₪' ); ?></p>
         </div>
       </div>
-      <p class="laptopia-price-note">מחירי RAM ו־SSD נקבעים לפי הרכיב המתאים והיקף העבודה. הצעת המחיר נמסרת לפני הביצוע; אין מחיר קבוע לשדרוג ללא בדיקת התאמה.</p>
-      <p class="laptopia-price-note">התקנת Windows מתבצעת באמצעות רישיון קיים של הלקוח. המחיר אינו כולל רכישת רישיון חדש.</p>
+      <p class="laptopia-price-note">מחירי <?php echo laptopia_bidi_ltr( 'RAM' ); ?> ו־<?php echo laptopia_bidi_ltr( 'SSD' ); ?> נקבעים לפי הרכיב המתאים והיקף העבודה. הצעת המחיר נמסרת לפני הביצוע; אין מחיר קבוע לשדרוג ללא בדיקת התאמה.</p>
+      <p class="laptopia-price-note">התקנת <?php echo laptopia_bidi_ltr( 'Windows' ); ?> מתבצעת באמצעות רישיון קיים של הלקוח. המחיר אינו כולל רכישת רישיון חדש.</p>
       <p class="laptopia-price-note">גיבוי והעברת מידע אינם כלולים במחיר התקנת מערכת ההפעלה ומתומחרים בנפרד, בהתאם להיקף העבודה ולמצב הכונן.</p>
       <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
     </div>
@@ -66,19 +66,19 @@ defined( 'ABSPATH' ) || exit;
       <h2 class="laptopia-section-title">מתי כדאי לבדוק שדרוג או התקנת מערכת?</h2>
       <div class="laptopia-warranty-grid">
         <div class="laptopia-card"><h3>איטיות בריבוי משימות</h3><p>מחסור בזיכרון עשוי להשפיע על עבודה עם כמה תוכנות. בודקים את השימוש ואת האפשרות לשדרוג לפני רכישת רכיב.</p></div>
-        <div class="laptopia-card"><h3>נפח אחסון שאינו מספיק</h3><p>כונן מלא או צורך בנפח נוסף מצדיקים בדיקת אפשרויות SSD המתאימות למחשב.</p></div>
-        <div class="laptopia-card"><h3>כונן ישן או חשוד בתקלה</h3><p>ניתן לבדוק החלפת HDD ב־SSD או החלפת SSD תקול. מצב הכונן הקיים משפיע על אפשרות העברת המידע.</p></div>
+        <div class="laptopia-card"><h3>נפח אחסון שאינו מספיק</h3><p>כונן מלא או צורך בנפח נוסף מצדיקים בדיקת אפשרויות <?php echo laptopia_bidi_ltr( 'SSD' ); ?> המתאימות למחשב.</p></div>
+        <div class="laptopia-card"><h3>כונן ישן או חשוד בתקלה</h3><p>ניתן לבדוק החלפת <?php echo laptopia_bidi_ltr( 'HDD' ); ?> ב־<?php echo laptopia_bidi_ltr( 'SSD' ); ?> או החלפת <?php echo laptopia_bidi_ltr( 'SSD' ); ?> תקול. מצב הכונן הקיים משפיע על אפשרות העברת המידע.</p></div>
         <div class="laptopia-card"><h3>מערכת שאינה פועלת כרגיל</h3><p>שגיאות או קושי בהפעלה עשויים להיות קשורים לתוכנה או לחומרה. לפני התקנה מחדש מאבחנים את מקור הבעיה.</p></div>
       </div>
     </div>
   </section>
   <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="upgrades">
     <div class="laptopia-board-content laptopia-info-panel">
-      <h2>זיכרון, SSD ומערכת הפעלה — שלושה טיפולים שונים</h2>
-      <h3>התאמת זיכרון RAM</h3>
+      <h2>זיכרון, <?php echo laptopia_bidi_ltr( 'SSD' ); ?> ומערכת הפעלה — שלושה טיפולים שונים</h2>
+      <h3>התאמת זיכרון <?php echo laptopia_bidi_ltr( 'RAM' ); ?></h3>
       <p>בחלק מהמחשבים הזיכרון מולחם ואינו ניתן לשדרוג רגיל; בדגמים אחרים יש חריץ אחד או שניים. ההתאמה תלויה בדגם ובפלטפורמה.</p>
-      <h3>התאמת SSD והעברת מידע</h3>
-      <p>לא כל מחשב תומך בכל NVMe. העברת מערכת או מידע אפשרית רק בהתאם למצב הכונן ולתנאים הטכניים.</p>
+      <h3>התאמת <?php echo laptopia_bidi_ltr( 'SSD' ); ?> והעברת מידע</h3>
+      <p>לא כל מחשב תומך בכל <?php echo laptopia_bidi_ltr( 'NVMe' ); ?>. העברת מערכת או מידע אפשרית רק בהתאם למצב הכונן ולתנאים הטכניים.</p>
       <h3>התקנת מערכת הפעלה</h3>
       <p>התקנה אינה מבטיחה פתרון של תקלה חומרתית.</p>
     </div>
@@ -113,12 +113,12 @@ defined( 'ABSPATH' ) || exit;
   </section>
   <section class="laptopia-section laptopia-services laptopia-faq">
     <div class="laptopia-inner">
-      <h2 class="laptopia-section-title">שאלות נפוצות על זיכרון, SSD ו־Windows</h2>
+      <h2 class="laptopia-section-title">שאלות נפוצות על זיכרון, <?php echo laptopia_bidi_ltr( 'SSD' ); ?> ו־<?php echo laptopia_bidi_ltr( 'Windows' ); ?></h2>
       <div class="laptopia-warranty-grid">
         <div class="laptopia-card"><h3>האם אפשר להוסיף זיכרון לכל מחשב נייד?</h3><p>לא. זיכרון מולחם, מספר חריצים ומגבלות הנפח משתנים לפי הדגם. בודקים את האפשרויות לפני הצעה.</p></div>
-        <div class="laptopia-card"><h3>האם כל מחשב תומך בכונן NVMe?</h3><p>לא. סוג החיבור, מבנה הכונן ותמיכת המחשב נבדקים לפי הדגם. בחלק מהדגמים נדרש SSD מסוג SATA.</p></div>
+        <div class="laptopia-card"><h3>האם כל מחשב תומך בכונן <?php echo laptopia_bidi_ltr( 'NVMe' ); ?>?</h3><p>לא. סוג החיבור, מבנה הכונן ותמיכת המחשב נבדקים לפי הדגם. בחלק מהדגמים נדרש <?php echo laptopia_bidi_ltr( 'SSD' ); ?> מסוג <?php echo laptopia_bidi_ltr( 'SATA' ); ?>.</p></div>
         <div class="laptopia-card"><h3>האם אפשר להעביר את המידע מהכונן הישן?</h3><p>האפשרות תלויה במצב הכונן ובגישה למידע. גיבוי או העברה מתואמים בנפרד; אין התחייבות לשמירת נתונים ללא בדיקה.</p></div>
-        <div class="laptopia-card"><h3>מה כוללת התקנת מערכת הפעלה ב־300 ₪?</h3><p>התקנת Windows, מנהלי התקנים, עדכוני Windows ובדיקת מערכת בסיסית. טיפול במידע מתבצע בנפרד לפי הבקשה והמצב.</p></div>
+        <div class="laptopia-card"><h3>מה כוללת התקנת מערכת הפעלה ב־<?php echo laptopia_bidi_price( '300 ₪' ); ?>?</h3><p>התקנת <?php echo laptopia_bidi_ltr( 'Windows' ); ?>, מנהלי התקנים, עדכוני <?php echo laptopia_bidi_ltr( 'Windows' ); ?> ובדיקת מערכת בסיסית. טיפול במידע מתבצע בנפרד לפי הבקשה והמצב.</p></div>
         <div class="laptopia-card"><h3>האם שדרוג יפתור כל איטיות?</h3><p>לא בהכרח. מאבחנים את מקור האיטיות ומתאימים את ההצעה לממצאים ולדגם.</p></div>
         <div class="laptopia-card"><h3>כמה זמן נמשכת העבודה?</h3><p>משך העבודה תלוי בדגם, בזמינות הרכיבים, במצב הכונן ובהיקף העבודה שאושר.</p></div>
       </div>

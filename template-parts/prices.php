@@ -35,9 +35,9 @@
         <?php endif; ?>
             <div class="laptopia-price-name laptopia-price-service">
               <?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => $row['icon'] ) ); ?>
-              <span><?php echo esc_html( $row['label'] ); ?></span>
+              <span><?php echo laptopia_bidi_text( $row['label'] ); ?></span>
             </div>
-            <div class="laptopia-price-value"><?php echo esc_html( $row['price'] ); ?></div>
+            <div class="laptopia-price-value"><?php echo laptopia_bidi_text( $row['price'] ); ?></div>
         <?php if ( isset( $row['url'] ) ) : ?>
           </a>
         <?php else : ?>
@@ -48,7 +48,7 @@
 
     <div class="laptopia-diagnostic">
       במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון,
-      דמי האבחון הם 150 ₪.
+      דמי האבחון הם <?php echo laptopia_bidi_price( '150 ₪' ); ?>.
       <br>
       אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית,
       לא ייגבו דמי אבחון.

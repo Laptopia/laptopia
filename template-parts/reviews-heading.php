@@ -7,7 +7,7 @@
     </h2>
 
     <div class="laptopia-section-subtitle">
-      ביקורות אמיתיות מ-Google
+      ביקורות אמיתיות מ-<?php echo laptopia_bidi_ltr( 'Google' ); ?>
     </div>
 
     <div class="laptopia-buttons">

@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="keyboard-title">החלפת מקלדת למחשב נייד ברמלה והסביבה</h1>
       <p>מקשים חסרים, לא מגיבים או מקלידים תווים לא צפויים? בודקים אם מקור התקלה במקלדת ומתאימים חלק לפי מבנה הדגם.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'keyboard-replacement' ) ); ?><span>החלפת מקלדת — החל מ־550 ₪</span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'keyboard-replacement' ) ); ?><span>החלפת מקלדת — החל מ־<?php echo laptopia_bidi_price( '550 ₪' ); ?></span></div>
       <p>המחיר הסופי נקבע לפי הדגם ואופן התקנת המקלדת.</p>
       <?php get_template_part( 'template-parts/service-hero-details' ); ?>
       <div class="laptopia-buttons">
@@ -78,7 +78,7 @@ get_template_part( 'template-parts/header', null, array(
       </div>
       <figure class="laptopia-component-figure laptopia-screen-figure">
         <img src="https://laptopia.co.il/wp-content/uploads/2026/09/asus-keyboard-replacement-original-clean-e1789160656975.webp" alt="החלפת מקלדת RGB במחשב נייד ASUS עקב תקלה בכפתור ההפעלה" width="792" height="1104" loading="lazy" decoding="async">
-        <figcaption>החלפת מקלדת RGB במחשב נייד ASUS בעקבות תקלה בכפתור ההפעלה</figcaption>
+        <figcaption>החלפת מקלדת <?php echo laptopia_bidi_ltr( 'RGB' ); ?> במחשב נייד <?php echo laptopia_bidi_ltr( 'ASUS' ); ?> בעקבות תקלה בכפתור ההפעלה</figcaption>
       </figure>
     </div>
   </section>
@@ -86,10 +86,10 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="keyboard-prices-title">כמה עולה החלפת מקלדת למחשב נייד?</h2>
       <div class="laptopia-diagnostic">
-        <strong>החלפת מקלדת — החל מ־550 ₪</strong>
+        <strong>החלפת מקלדת — החל מ־<?php echo laptopia_bidi_price( '550 ₪' ); ?></strong>
         <p>המחיר תלוי בדגם, בסוג המקלדת ובאופן התקנתה. הצעת המחיר נמסרת לפני העבודה, וההחלפה מתבצעת לאחר אישור הלקוח.</p>
         <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם 150 ₪.</p>
+        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם <?php echo laptopia_bidi_price( '150 ₪' ); ?>.</p>
         <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
       </div>
       <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
@@ -129,7 +129,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-card"><h3>האם מקשים שלא מגיבים מחייבים החלפה?</h3><p>לא בהכרח. בודקים גם הגדרות, חיבורים ותקלות אפשריות ברכיבים אחרים לפני שקובעים מה צריך לתקן.</p></div>
         <div class="laptopia-card"><h3>האם יש מקלדת מתאימה לדגם שלי?</h3><p>שלחו את הדגם המדויק. נבדוק התאמה, פריסה וזמינות של חלק מתאים; אין התחייבות למלאי לכל דגם.</p></div>
         <div class="laptopia-card"><h3>כמה זמן נמשכת ההחלפה?</h3><p>משך העבודה תלוי בדגם המחשב, בזמינות המקלדת ובסוג התקלה.</p></div>
-        <div class="laptopia-card"><h3>מה המחיר ואילו תנאים נמסרים מראש?</h3><p>המחיר מתחיל ב־550 ₪. המחיר הסופי, פרטי המקלדת ותנאי האחריות נמסרים לאישור לפני ההחלפה.</p></div>
+        <div class="laptopia-card"><h3>מה המחיר ואילו תנאים נמסרים מראש?</h3><p>המחיר מתחיל ב־<?php echo laptopia_bidi_price( '550 ₪' ); ?>. המחיר הסופי, פרטי המקלדת ותנאי האחריות נמסרים לאישור לפני ההחלפה.</p></div>
         <div class="laptopia-card"><h3>צריך לתאם לפני ההגעה?</h3><p>כן. פנו בוואטסאפ או בטלפון לתיאום מסירת המחשב למעבדה ברמלה.</p></div>
       </div>
     </div>

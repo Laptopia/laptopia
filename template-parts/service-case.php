@@ -8,7 +8,7 @@ $case_gallery_class = count( $case_images ) === 1 ? ' laptopia-case-gallery-sing
 ?>
 <section class="laptopia-section laptopia-services laptopia-service-case">
   <div class="laptopia-board-content">
-    <h2 class="laptopia-section-title"><?php echo esc_html( $args['heading'] ?? '' ); ?></h2>
+    <h2 class="laptopia-section-title"><?php echo laptopia_bidi_text( $args['heading'] ?? '' ); ?></h2>
     <div class="laptopia-component-gallery<?php echo esc_attr( $case_gallery_class ); ?>">
       <?php foreach ( $case_images as $image ) : ?>
         <figure class="laptopia-component-figure">
@@ -18,11 +18,11 @@ $case_gallery_class = count( $case_images ) === 1 ? ' laptopia-case-gallery-sing
                <?php if ( ! empty( $image['width'] ) && ! empty( $image['height'] ) ) : ?>width="<?php echo esc_attr( (string) (int) $image['width'] ); ?>" height="<?php echo esc_attr( (string) (int) $image['height'] ); ?>"<?php endif; ?>
                loading="lazy" decoding="async">
           <?php if ( ! empty( $image['caption'] ) ) : ?>
-            <figcaption><?php echo esc_html( $image['caption'] ); ?></figcaption>
+            <figcaption><?php echo laptopia_bidi_text( $image['caption'] ); ?></figcaption>
           <?php endif; ?>
         </figure>
       <?php endforeach; ?>
     </div>
-    <p class="laptopia-price-note"><?php echo esc_html( $args['description'] ?? '' ); ?></p>
+    <p class="laptopia-price-note"><?php echo laptopia_bidi_text( $args['description'] ?? '' ); ?></p>
   </div>
 </section>

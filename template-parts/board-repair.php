@@ -20,7 +20,7 @@
     <a class="laptopia-board-price laptopia-element-link laptopia-service-cta" href="/motherboard-repair/">
       <?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'motherboard-repair' ) ); ?>
       <span>
-      תיקון לוח אם – החל מ־700 ₪
+      תיקון לוח אם – החל מ־<?php echo laptopia_bidi_price( '700 ₪' ); ?>
       </span>
     </a>
 

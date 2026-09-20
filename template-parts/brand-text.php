@@ -5,5 +5,5 @@ foreach ( $brand_parts as $brand_index => $brand_part ) {
     if ( $brand_index > 0 ) {
         get_template_part( 'template-parts/brand-wordmark' );
     }
-    echo esc_html( $brand_part );
+    echo laptopia_bidi_text( $brand_part );
 }

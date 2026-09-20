@@ -46,8 +46,8 @@
         <div class="laptopia-service-icon" aria-hidden="true">
           <?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging-usb-repair' ) ); ?>
         </div>
-        <h3>שקעי טעינה ו-USB</h3>
-        <p>תיקון והחלפת שקעי טעינה, USB ו-USB-C.</p>
+        <h3>שקעי טעינה ו-<?php echo laptopia_bidi_ltr( 'USB' ); ?></h3>
+        <p>תיקון והחלפת שקעי טעינה, <?php echo laptopia_bidi_ltr( 'USB' ); ?> ו-<?php echo laptopia_bidi_ltr( 'USB-C' ); ?>.</p>
       </a>
 
       <a class="laptopia-card laptopia-element-link" href="https://laptopia.co.il/battery-replacement/">
@@ -83,7 +83,7 @@
           <?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'ram-ssd-windows-upgrade' ) ); ?>
         </div>
         <h3>שדרוגי חומרה</h3>
-        <p>שדרוגי SSD וזיכרון למחשבים ניידים לשיפור ביצועים ונפח אחסון.</p>
+        <p>שדרוגי <?php echo laptopia_bidi_ltr( 'SSD' ); ?> וזיכרון למחשבים ניידים לשיפור ביצועים ונפח אחסון.</p>
       </a>
 
     </div>
