@@ -14,6 +14,7 @@ $inner_header = $service_header || ! empty( $custom_nav );
     </a>
 
     <div class="laptopia-header-navigation">
+    <a class="laptopia-header-about" href="<?php echo esc_url( home_url( '/service-areas/' ) ); ?>"<?php if ( is_page( 'service-areas' ) ) : ?> aria-current="page"<?php endif; ?>>אודותינו</a>
     <?php get_template_part( 'template-parts/services-navigation' ); ?>
     <nav class="laptopia-nav"<?php if ( $inner_header ) : ?> aria-label="ניווט ראשי"<?php endif; ?>>
       <?php if ( ! empty( $custom_nav ) ) : ?>

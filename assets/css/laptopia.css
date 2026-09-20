@@ -1231,6 +1231,26 @@ textarea:focus-visible {
   gap: 18px;
 }
 
+.laptopia-header-about {
+  color: #1d6cd1;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.laptopia-header-about:hover,
+.laptopia-header-about[aria-current="page"] {
+  color: #1557ad;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.laptopia-header-about:focus-visible {
+  color: #1557ad;
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
 .laptopia-header-navigation .laptopia-nav {
   gap: 18px;
 }

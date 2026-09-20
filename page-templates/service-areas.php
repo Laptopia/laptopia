@@ -20,7 +20,6 @@ defined( 'ABSPATH' ) || exit;
   'nav_links' => array(
     array( 'href' => home_url( '/' ), 'label' => 'דף הבית' ),
     array( 'href' => '#about-laptopia-title', 'label' => 'על המעבדה' ),
-    array( 'href' => '#primary-areas-title', 'label' => 'אזורי שירות' ),
     array( 'href' => '#contact', 'label' => 'יצירת קשר' ),
   ),
 ) ); ?>
