@@ -8,9 +8,8 @@ $inner_header = $service_header || ! empty( $custom_nav );
 
   <div class="laptopia-header-inner">
 
-    <a class="laptopia-logo<?php if ( ! $service_header ) : ?> laptopia-element-link<?php endif; ?>" href="<?php echo esc_url( $service_header ? home_url( '/' ) : '/' ); ?>">
-      <span class="laptopia-logo-wordmark"><?php get_template_part( 'template-parts/brand-wordmark' ); ?></span>
-      <span class="laptopia-logo-subtitle">מעבדת מחשבים ניידים</span>
+    <a class="laptopia-logo<?php if ( ! $service_header ) : ?> laptopia-element-link<?php endif; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Laptopia — דף הבית">
+      <?php get_template_part( 'template-parts/brand-logo', null, array( 'variant' => 'light', 'loading' => false, 'fetchpriority' => 'high', 'alt' => 'Laptopia — מעבדת מחשבים ניידים' ) ); ?>
     </a>
 
     <div class="laptopia-header-navigation">
