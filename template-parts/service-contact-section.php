@@ -18,6 +18,9 @@ $title_id = $title_ids[ $template ] ?? 'service-contact-title';
       <div class="laptopia-info-box"><div class="laptopia-info-value"><bdi dir="ltr">053-803-6244</bdi></div></div>
     </div>
     <p class="laptopia-contact-note">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</p>
+    <?php if ( ! is_page_template( 'page-templates/service-areas.php' ) ) : ?>
+      <p class="laptopia-contact-note"><a href="<?php echo esc_url( home_url( '/service-areas/' ) ); ?>">אזורי שירות והגעה למעבדה</a></p>
+    <?php endif; ?>
     <?php get_template_part( 'template-parts/service-contact-actions' ); ?>
   </div>
 </section>

@@ -26,6 +26,7 @@ get_template_part( 'template-parts/prices' );
 get_template_part( 'template-parts/board-repair' );
 get_template_part( 'template-parts/process' );
 get_template_part( 'template-parts/warranty' );
+get_template_part( 'template-parts/service-areas-summary' );
 get_template_part( 'template-parts/reviews-heading' );
 
 echo '<div class="laptopia-reviews-rail">';
