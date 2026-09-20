@@ -1247,15 +1247,15 @@ textarea:focus-visible {
 .laptopia-header-navigation {
   min-width: 0;
   flex: 1 1 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
   gap: 18px;
 }
 
 .laptopia-header-about {
-  grid-column: 2;
-  justify-self: center;
+  flex: 0 0 auto;
   color: #1d6cd1;
   font-size: 15px;
   font-weight: 700;
@@ -1263,13 +1263,16 @@ textarea:focus-visible {
 }
 
 .laptopia-header-navigation .laptopia-services-dropdown {
-  grid-column: 1;
-  justify-self: start;
+  flex: 0 0 auto;
 }
 
 .laptopia-header-navigation .laptopia-nav {
-  grid-column: 3;
-  justify-self: end;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+}
+
+.laptopia-header-navigation .laptopia-nav a {
+  white-space: nowrap;
 }
 
 .laptopia-header-about:hover,
@@ -1440,13 +1443,15 @@ textarea:focus-visible {
 
 @media (max-width: 600px) {
   .laptopia-header-inner {
+    width: 100%;
     flex-wrap: wrap;
     gap: 6px 12px;
   }
 
   .laptopia-header-navigation {
     order: 3;
-    flex-basis: 100%;
+    flex: 0 0 100%;
+    width: 100%;
   }
 
   .laptopia-services-dropdown {
