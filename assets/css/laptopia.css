@@ -323,6 +323,15 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
+.laptopia-bidi-phrase {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+bdi[dir="ltr"] {
+  white-space: nowrap;
+}
+
 .laptopia-brand-accent {
   color: #2f80ed;
 }
@@ -1675,9 +1684,52 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
   display: none;
 }
 
-@media (max-width: 600px) {
+body.laptopia-floating-whatsapp-obscured .laptopia-floating-whatsapp,
+body.laptopia-back-to-top-obscured .laptopia-back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.laptopia-floating-whatsapp-obscured .laptopia-floating-whatsapp:focus,
+body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (max-width: 900px) {
+  main .laptopia-section,
+  .laptopia-footer {
+    padding-left: calc(58px + env(safe-area-inset-left, 0px));
+  }
+
+  .laptopia-floating-control {
+    width: 44px;
+    height: 44px;
+    transition: box-shadow .25s ease, background-color .2s ease;
+  }
+
+  .laptopia-floating-icon-whatsapp {
+    width: 24px;
+    height: 24px;
+  }
+
+  .laptopia-floating-icon-arrow {
+    width: 22px;
+    height: 22px;
+  }
+
   .laptopia-back-to-top {
-    right: 14px;
+    right: auto;
+    left: calc(7px + env(safe-area-inset-left, 0px));
+    top: auto;
+    bottom: calc(66px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .laptopia-floating-whatsapp {
+    left: calc(7px + env(safe-area-inset-left, 0px));
+    top: auto;
     bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   }
 }
