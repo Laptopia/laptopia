@@ -1435,6 +1435,26 @@ bdi[dir="ltr"] {
 }
 
 @media (max-width: 900px) {
+  .laptopia-header {
+    transition: padding-block .2s ease, box-shadow .2s ease;
+  }
+
+  .laptopia-logo,
+  .laptopia-services-toggle,
+  .laptopia-header-about,
+  .laptopia-header-phone {
+    min-height: 44px;
+  }
+
+  .laptopia-header.laptopia-header-compact {
+    padding-block: 3px;
+    box-shadow: 0 4px 14px rgba(32, 40, 50, .08);
+  }
+
+  :is(#prices, #warranty, #contact) {
+    scroll-margin-top: 66px;
+  }
+
   .laptopia-services-menu-icon {
     display: block;
   }
@@ -1460,6 +1480,12 @@ bdi[dir="ltr"] {
   .laptopia-services-panel a {
     min-height: 42px;
     padding: 7px 12px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .laptopia-header.laptopia-header-compact .laptopia-logo .laptopia-brand-logo {
+    width: 130px;
   }
 }
 
@@ -2058,6 +2084,10 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .laptopia-header {
+    transition: none;
+  }
+
   .laptopia-btn.laptopia-btn-whatsapp,
   .laptopia-floating-control {
     transition: none;

@@ -46,6 +46,8 @@
   const logo = document.querySelector('.laptopia-header .laptopia-logo');
   if (!logo) return;
 
+  const header = logo.closest('.laptopia-header');
+  const mobileHeaderQuery = window.matchMedia('(max-width: 900px)');
   const floatingWhatsapp = document.querySelector('.laptopia-floating-whatsapp');
 
   const button = document.createElement('button');
@@ -159,7 +161,14 @@
   };
 
   const updateVisibility = () => {
-    const hide = window.scrollY < 600;
+    const compactHeader = mobileHeaderQuery.matches && (
+      header?.classList.contains('laptopia-header-compact')
+        ? window.scrollY > 4
+        : window.scrollY > 24
+    );
+    header?.classList.toggle('laptopia-header-compact', compactHeader);
+
+    const hide = window.scrollY < 400;
     if (hide && document.activeElement === button) logo.focus({ preventScroll: true });
     button.hidden = hide;
     scheduleCollisionUpdate();
@@ -169,6 +178,7 @@
   window.addEventListener('resize', scheduleCollisionUpdate, { passive: true });
   window.addEventListener('pageshow', updateVisibility);
   desktopCollisionQuery.addEventListener('change', syncCollisionMode);
+  mobileHeaderQuery.addEventListener('change', updateVisibility);
   floatingWhatsapp?.addEventListener('focus', scheduleCollisionUpdate);
   floatingWhatsapp?.addEventListener('blur', scheduleCollisionUpdate);
   button.addEventListener('focus', scheduleCollisionUpdate);
