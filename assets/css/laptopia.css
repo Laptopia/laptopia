@@ -1501,7 +1501,7 @@ bdi[dir="ltr"] {
     gap: 4px;
     padding: 4px 2px;
     min-height: 44px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .laptopia-header-about,
@@ -1516,7 +1516,7 @@ bdi[dir="ltr"] {
     width: auto;
     min-width: 0;
     padding: 4px 2px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .laptopia-header-phone {
@@ -1524,6 +1524,9 @@ bdi[dir="ltr"] {
     width: 44px;
     min-width: 44px;
     padding: 0;
+    background: transparent;
+    color: #56616e !important;
+    border-radius: 10px;
   }
 
   .laptopia-header-phone-number,
@@ -1537,8 +1540,23 @@ bdi[dir="ltr"] {
     height: 19px;
   }
 
+  .laptopia-services-menu-icon {
+    width: 19px;
+    height: 19px;
+  }
+
+  .laptopia-header-phone:focus-visible {
+    background: #f1f3f5;
+  }
+
   .laptopia-logo .laptopia-brand-logo {
     width: clamp(76px, 24vw, 100px);
+  }
+}
+
+@media (max-width: 600px) and (hover: hover) and (pointer: fine) {
+  .laptopia-header-phone:hover {
+    background: #f1f3f5;
   }
 }
 
