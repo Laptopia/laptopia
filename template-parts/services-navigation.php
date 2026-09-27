@@ -1,4 +1,4 @@
-<details class="laptopia-services-dropdown" dir="rtl">
+<details class="laptopia-services-dropdown<?php if ( is_page( array_column( laptopia_get_services(), 'slug' ) ) ) : ?> laptopia-services-dropdown--current<?php endif; ?>" dir="rtl">
   <summary class="laptopia-services-toggle" aria-controls="laptopia-services-panel" aria-expanded="false">
     <svg class="laptopia-services-menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     שירותים
@@ -11,6 +11,5 @@
         <span><?php echo laptopia_bidi_text( $service['short_label'] ); ?></span>
       </a>
     <?php endforeach; ?>
-    <a class="laptopia-services-all" href="<?php echo esc_url( home_url( '/#services' ) ); ?>">כל שירותי המעבדה</a>
   </nav>
 </details>

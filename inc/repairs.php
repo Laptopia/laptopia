@@ -15,6 +15,8 @@ function laptopia_get_repair_cases() {
             'service_path' => '/hinges-plastics-repair/',
             'heading' => 'תיקון צירים במחשב ASUS TUF Gaming F15',
             'intro' => 'שחזור נקודות העיגון של הצירים לאחר שהמארז נפתח באזור החיבור בעת פתיחת המסך.',
+            'card_title' => 'תיקון צירים',
+            'card_description' => 'שחזור נקודות עיגון שנעקרו מהמארז באזור הצירים.',
             'problem' => 'המחשב הגיע למעבדה לאחר שקיבוע הצירים נפגע. בעת פתיחת המסך המארז היה נפתח באזור הצירים.',
             'diagnosis' => 'לאחר פירוק המחשב התברר שנקודות העיגון של הצירים נעקרו ממקומן ביחידת המקלדת והמארז העליון. הבעיה הייתה במושבי החיבור שנשברו.',
             'repair' => 'נקודות העיגון שוחזרו באמצעות תושבות הברגה חדשות וארוכות יותר מפליז, ברגים ארוכים מתאימים וחיזוק באפוקסי. לאחר מכן המחשב הורכב מחדש.',
@@ -49,7 +51,8 @@ function laptopia_get_repair_case( $slug ) {
 }
 
 function laptopia_repair_case_url( $slug ) {
-    return home_url( '/repairs/' . sanitize_title( $slug ) . '/' );
+    $page = laptopia_published_repair_page( $slug );
+    return $page ? get_permalink( $page ) : '';
 }
 
 function laptopia_published_repair_page( $slug = '' ) {

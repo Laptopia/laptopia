@@ -67,7 +67,7 @@ defined( 'ABSPATH' ) || exit;
       <div class="laptopia-repair-rail">
         <p class="laptopia-repair-eyebrow">תיקון אמיתי מהמעבדה</p>
         <h2 id="related-repair-title">שיקום עיגוני צירים במקרה אמיתי</h2>
-        <?php get_template_part( 'template-parts/repair-card', null, array( 'case' => laptopia_get_repair_case( 'asus-tuf-f15-hinge-repair' ) ) ); ?>
+        <?php get_template_part( 'template-parts/repair-card', null, array( 'case' => laptopia_get_repair_case( 'asus-tuf-f15-hinge-repair' ), 'compact' => true ) ); ?>
       </div>
     </section>
   <?php endif; ?>

@@ -1,5 +1,6 @@
 (() => {
-  document.querySelectorAll('.laptopia-services-dropdown').forEach((dropdown) => {
+  const menus = [...document.querySelectorAll('.laptopia-services-dropdown, .laptopia-mobile-navigation')];
+  menus.forEach((dropdown) => {
     const toggle = dropdown.querySelector('summary');
     const header = dropdown.closest('.laptopia-header');
     const overlay = document.createElement('div');
@@ -10,14 +11,17 @@
     const sync = () => {
       toggle.setAttribute('aria-expanded', String(dropdown.open));
       overlay.hidden = !dropdown.open;
-      header?.classList.toggle('laptopia-services-open', dropdown.open);
+      header?.classList.toggle('laptopia-services-open', menus.some((menu) => menu.open));
     };
     const close = (restoreFocus = false) => {
       dropdown.open = false;
       sync();
       if (restoreFocus) toggle.focus();
     };
-    dropdown.addEventListener('toggle', sync);
+    dropdown.addEventListener('toggle', () => {
+      if (dropdown.open) menus.forEach((menu) => { if (menu !== dropdown) menu.open = false; });
+      sync();
+    });
     overlay.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
@@ -39,6 +43,9 @@
       if (event.relatedTarget && !dropdown.contains(event.relatedTarget)) close();
     });
     sync();
+  });
+  window.matchMedia('(max-width: 600px)').addEventListener('change', () => {
+    menus.forEach((menu) => { menu.open = false; });
   });
 })();
 

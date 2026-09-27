@@ -59,6 +59,15 @@ add_action( 'after_setup_theme', function() {
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
+    if ( is_page_template( 'page-templates/repair-case.php' ) ) {
+        wp_enqueue_script(
+            'laptopia-repair-lightbox',
+            get_stylesheet_directory_uri() . '/assets/js/repair-lightbox.js',
+            array(),
+            filemtime( get_stylesheet_directory() . '/assets/js/repair-lightbox.js' ),
+            true
+        );
+    }
     if ( '' !== laptopia_background_mode() ) {
         wp_enqueue_script(
             'laptopia-background',
