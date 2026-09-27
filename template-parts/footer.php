@@ -6,6 +6,9 @@
     <?php foreach ( laptopia_get_services() as $service ) : ?>
       <a href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>"<?php if ( is_page( $service['slug'] ) ) : ?> aria-current="page"<?php endif; ?>><?php echo laptopia_bidi_text( $service['short_label'] ); ?></a>
     <?php endforeach; ?>
+    <?php if ( laptopia_has_published_repair_case() ) : ?>
+      <a href="<?php echo esc_url( home_url( '/repairs/' ) ); ?>"<?php if ( is_page( 'repairs' ) ) : ?> aria-current="page"<?php endif; ?>>תיקונים מהמעבדה</a>
+    <?php endif; ?>
     <a href="<?php echo esc_url( home_url( '/service-areas/' ) ); ?>"<?php if ( is_page( 'service-areas' ) ) : ?> aria-current="page"<?php endif; ?>>אודותינו ואזורי שירות</a>
   </nav>
 </footer>

@@ -6,7 +6,7 @@ function laptopia_is_business_page() {
         return false;
     }
 
-    $templates = array( 'home-laptopia', 'service-areas' );
+    $templates = array( 'home-laptopia', 'service-areas', 'repairs', 'repair-case' );
     foreach ( laptopia_get_services() as $service ) {
         $templates[] = $service['slug'];
     }
@@ -89,14 +89,62 @@ function laptopia_is_service_areas_page() {
     return ! is_admin() && is_page_template( 'page-templates/service-areas.php' );
 }
 
+function laptopia_repair_seo() {
+    if ( is_admin() ) {
+        return null;
+    }
+    if ( is_page_template( 'page-templates/repairs.php' ) ) {
+        return array(
+            'title' => 'תיקונים אמיתיים מהמעבדה | Laptopia',
+            'description' => 'מקרים אמיתיים של תיקון מחשבים ניידים במעבדת Laptopia ברמלה: הבעיה שנמצאה, העבודה שנעשתה והתוצאה. המחיר בכל מקרה מתייחס לאותו מחשב בלבד.',
+        );
+    }
+    if ( is_page_template( 'page-templates/repair-case.php' ) ) {
+        $case = laptopia_get_repair_case( get_post_field( 'post_name', get_queried_object_id() ) );
+        return $case ? array(
+            'title' => $case['seo_title'],
+            'description' => $case['seo_description'],
+            'image' => $case['images']['finished']['src'],
+        ) : null;
+    }
+    return null;
+}
+
 add_filter( 'rank_math/frontend/title', static function( $title ) {
+    $repair = laptopia_repair_seo();
+    if ( $repair ) {
+        return $repair['title'];
+    }
     return laptopia_is_service_areas_page()
         ? 'תיקון מחשבים ניידים ברמלה והסביבה | Laptopia'
         : $title;
 }, 99 );
 
 add_filter( 'rank_math/frontend/description', static function( $description ) {
+    $repair = laptopia_repair_seo();
+    if ( $repair ) {
+        return $repair['description'];
+    }
     return laptopia_is_service_areas_page()
         ? 'מעבדת Laptopia ברמלה מאפשרת ללקוחות פרטיים לפנות ישירות למהנדס לתיקון מחשבים ניידים ולוחות אם ברמת הרכיב. קבלת מחשבים מרמלה והסביבה בתיאום מראש.'
         : $description;
 }, 99 );
+
+add_filter( 'rank_math/frontend/canonical', static function( $canonical ) {
+    return laptopia_repair_seo() ? set_url_scheme( get_permalink( get_queried_object_id() ), 'https' ) : $canonical;
+}, 99 );
+
+foreach ( array( 'facebook', 'twitter' ) as $network ) {
+    add_filter( 'rank_math/opengraph/' . $network . '/og_title', static function( $title ) {
+        $repair = laptopia_repair_seo();
+        return $repair ? $repair['title'] : $title;
+    }, 99 );
+    add_filter( 'rank_math/opengraph/' . $network . '/og_description', static function( $description ) {
+        $repair = laptopia_repair_seo();
+        return $repair ? $repair['description'] : $description;
+    }, 99 );
+    add_filter( 'rank_math/opengraph/' . $network . '/image', static function( $image ) {
+        $repair = laptopia_repair_seo();
+        return $repair['image'] ?? $image;
+    }, 99 );
+}

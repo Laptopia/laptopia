@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Laptopia - תיקון שקעי טעינה ו־USB למחשב נייד
+ * Template Name: Laptopia - תיקון שקעי טעינה ו-USB למחשב נייד
  * Template Post Type: page
  */
 defined( 'ABSPATH' ) || exit;
@@ -20,11 +20,11 @@ defined( 'ABSPATH' ) || exit;
 <main dir="rtl">
   <section class="laptopia-section laptopia-hero" aria-labelledby="service-title">
     <div class="laptopia-hero-content">
-      <h1 id="service-title">תיקון שקעי טעינה ו־<?php echo laptopia_bidi_ltr( 'USB' ); ?> למחשב נייד ברמלה והסביבה</h1>
+      <h1 id="service-title">תיקון שקעי טעינה ו-<?php echo laptopia_bidi_ltr( 'USB' ); ?> למחשב נייד ברמלה והסביבה</h1>
       <p>טעינה שמתנתקת, שקע רופף או <?php echo laptopia_bidi_ltr( 'USB' ); ?> שאינו מזוהה? בודקים אם הבעיה במחבר, בהלחמות, בבקר או במעגלי הלוח.</p>
       <div class="laptopia-service-price-grid">
-        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?><span><span class="laptopia-price-card-label">שקע טעינה</span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">250 ₪</bdi></span></span></div>
-        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?><span><span class="laptopia-price-card-label"><bdi dir="ltr">USB / USB-C</bdi></span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">300 ₪</bdi></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?><span><span class="laptopia-price-card-label">שקע טעינה</span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">250₪</bdi></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?><span><span class="laptopia-price-card-label"><bdi dir="ltr">USB / USB-C</bdi></span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">300₪</bdi></span></span></div>
       </div>
       <p>המחיר והיקף העבודה נקבעים לאחר בדיקה ואישור הלקוח.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '3 חודשי אחריות על התיקון' ) ); ?>
@@ -62,7 +62,7 @@ defined( 'ABSPATH' ) || exit;
   ) ); ?>
   <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="ports">
     <div class="laptopia-board-content laptopia-info-panel">
-      <h2>מה בודקים בתיקון שקע טעינה ו־<?php echo laptopia_bidi_ltr( 'USB' ); ?>?</h2>
+      <h2>מה בודקים בתיקון שקע טעינה ו-<?php echo laptopia_bidi_ltr( 'USB' ); ?>?</h2>
       <h3>בדיקת המחבר והחיבור ללוח</h3>
       <p>בודקים נזק פיזי, חופש במחבר ומצב ההלחמות. לפי הממצאים ניתן לשקול תיקון הלחמה או החלפת מחבר מתאים.</p>
       <h3>הזנה, בקר וקווי נתונים</h3>
@@ -79,12 +79,12 @@ defined( 'ABSPATH' ) || exit;
         <div class="laptopia-card laptopia-price-card">
           <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?></div>
           <h3>שקע טעינה</h3>
-          <p class="laptopia-price-card-value">החל מ־<?php echo laptopia_bidi_price( '250 ₪' ); ?></p>
+          <p class="laptopia-price-card-value">החל מ- <?php echo laptopia_bidi_price( '250₪' ); ?></p>
         </div>
         <div class="laptopia-card laptopia-price-card">
           <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'charging' ) ); ?></div>
           <h3><?php echo laptopia_bidi_ltr( 'USB' ); ?> / <?php echo laptopia_bidi_ltr( 'USB-C' ); ?></h3>
-          <p class="laptopia-price-card-value">החל מ־<?php echo laptopia_bidi_price( '300 ₪' ); ?></p>
+          <p class="laptopia-price-card-value">החל מ- <?php echo laptopia_bidi_price( '300₪' ); ?></p>
         </div>
       </div>
       <p class="laptopia-price-note">המחיר הסופי תלוי בדגם, במצב המחבר ובממצאי הבדיקה. תיקון בקר, הזנה או מעגלים נוספים מתומחר לפי היקף העבודה, לאחר אבחון ואישור הלקוח.</p>
@@ -92,7 +92,7 @@ defined( 'ABSPATH' ) || exit;
     </div>
   </section>
   <?php get_template_part( 'template-parts/process', null, array(
-    'title' => 'איך מתבצע תיקון שקעי הטעינה וה־USB?',
+    'title' => 'איך מתבצע תיקון שקעי הטעינה וה-USB?',
     'steps' => array(
       array( 'title' => 'תיאום מראש', 'text' => 'שולחים דגם ותיאור התקלה ומתאמים מסירה.' ),
       array( 'title' => 'אבחון החיבור', 'text' => 'בודקים מחבר, הזנה וקווי נתונים לפי התקלה.' ),
@@ -121,7 +121,7 @@ defined( 'ABSPATH' ) || exit;
   </section>
   <section class="laptopia-section laptopia-services laptopia-faq">
     <div class="laptopia-inner">
-      <h2 class="laptopia-section-title">שאלות נפוצות על שקעי טעינה ו־<?php echo laptopia_bidi_ltr( 'USB' ); ?></h2>
+      <h2 class="laptopia-section-title">שאלות נפוצות על שקעי טעינה ו-<?php echo laptopia_bidi_ltr( 'USB' ); ?></h2>
       <div class="laptopia-warranty-grid">
         <div class="laptopia-card"><h3>האם תמיד צריך להחליף שקע שלא טוען?</h3><p>לא. ייתכן שהסיבה במטען, בחיבור או במעגלי ההזנה. מאבחנים לפני שקובעים מה לתקן.</p></div>
         <div class="laptopia-card"><h3>האם <?php echo laptopia_bidi_ltr( 'USB-C' ); ?> תקול נפתר בהחלפת המחבר?</h3><p>לא בהכרח. בקר, רכיבי הזנה וקווי נתונים עלולים להיות מקור התקלה. הטיפול נקבע לפי הבדיקה.</p></div>

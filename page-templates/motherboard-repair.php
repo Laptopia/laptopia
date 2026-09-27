@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="repair-title">תיקון לוחות אם למחשבים ניידים ברמלה והסביבה</h1>
       <p>המחשב לא נדלק, לא נטען או נפגע מנוזלים? בודקים את מקור התקלה ואת אפשרות התיקון ברמת הרכיב לפני שמתחילים בעבודה.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'motherboard-repair' ) ); ?><span>תיקון לוח אם — החל מ־<?php echo laptopia_bidi_price( '700 ₪' ); ?></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'motherboard-repair' ) ); ?><span>תיקון לוח אם — החל מ- <?php echo laptopia_bidi_price( '700₪' ); ?></span></div>
       <p>המחיר הסופי נקבע לאחר אבחון ואישור הלקוח.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '3 חודשי אחריות על התיקון' ) ); ?>
       <div class="laptopia-buttons">
@@ -52,7 +52,7 @@ get_template_part( 'template-parts/header', null, array(
         </div>
         <div class="laptopia-card">
           <h3>המחשב אינו נטען</h3>
-          <p>תקלה בטעינה אינה מעידה בהכרח על לוח אם תקול. נדרש אבחון כדי לזהות את מקור הבעיה ולקבוע מה צריך לתקן. כאשר עולה חשד לשקע או למחבר, אפשר לקרוא גם על <a class="laptopia-context-link" href="<?php echo esc_url( home_url( '/charging-usb-repair/' ) ); ?>">תיקון שקעי טעינה ו־USB</a>.</p>
+          <p>תקלה בטעינה אינה מעידה בהכרח על לוח אם תקול. נדרש אבחון כדי לזהות את מקור הבעיה ולקבוע מה צריך לתקן. כאשר עולה חשד לשקע או למחבר, אפשר לקרוא גם על <a class="laptopia-context-link" href="<?php echo esc_url( home_url( '/charging-usb-repair/' ) ); ?>">תיקון שקעי טעינה ו-USB</a>.</p>
         </div>
         <div class="laptopia-card">
           <h3>קצרים ונזקי נוזלים</h3>
@@ -114,10 +114,10 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="prices-title">כמה עולה תיקון לוח אם?</h2>
       <div class="laptopia-diagnostic">
-        <strong>תיקון לוח אם — החל מ־<?php echo laptopia_bidi_price( '700 ₪' ); ?></strong>
+        <strong>תיקון לוח אם — החל מ- <?php echo laptopia_bidi_price( '700₪' ); ?></strong>
         <p>המחיר הסופי נקבע בהתאם לדגם המחשב, לסוג התקלה, לחלקים הנדרשים ולמורכבות העבודה. התיקון מתבצע רק לאחר אישור הלקוח.</p>
         <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם <?php echo laptopia_bidi_price( '150 ₪' ); ?>.</p>
+        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם <?php echo laptopia_bidi_price( '150₪' ); ?>.</p>
         <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
       </div>
       <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
@@ -126,7 +126,7 @@ get_template_part( 'template-parts/header', null, array(
 
   <section class="laptopia-section laptopia-process" aria-labelledby="process-title">
     <div class="laptopia-inner">
-      <h2 class="laptopia-section-title" id="process-title"><?php get_template_part( 'template-parts/brand-text', null, array( 'text' => 'איך מתבצע התיקון ב־Laptopia?' ) ); ?></h2>
+      <h2 class="laptopia-section-title" id="process-title"><?php get_template_part( 'template-parts/brand-text', null, array( 'text' => 'איך מתבצע התיקון ב-Laptopia?' ) ); ?></h2>
       <div class="laptopia-process-grid">
         <div class="laptopia-step"><div class="laptopia-step-number">1</div><h3>תיאום מראש</h3><p>מתאמים את מסירת המחשב למעבדה ברמלה.</p></div>
         <div class="laptopia-step"><div class="laptopia-step-number">2</div><h3>אבחון התקלה</h3><p>בודקים את המחשב ומאתרים את מקור התקלה.</p></div>
@@ -157,8 +157,8 @@ get_template_part( 'template-parts/header', null, array(
       <div class="laptopia-warranty-grid">
         <div class="laptopia-card"><h3>המחשב לא נדלק — האם לוח האם תקול?</h3><p>לא בהכרח. תקלת הדלקה יכולה להיות קשורה גם למקור המתח או לרכיב אחר. נדרש אבחון כדי לזהות את מקור התקלה.</p></div>
         <div class="laptopia-card"><h3>האם אפשר לתקן את הלוח במקום להחליף אותו?</h3><p>בחלק מהמקרים ניתן לבצע תיקון ברמת הרכיב. האפשרות תלויה בסוג התקלה ובמצב הלוח ונקבעת לאחר אבחון.</p></div>
-        <div class="laptopia-card"><h3>כמה עולה תיקון לוח אם למחשב נייד?</h3><p>המחיר מתחיל ב־<?php echo laptopia_bidi_price( '700 ₪' ); ?>. המחיר הסופי נקבע לאחר אבחון ובהתאם לדגם, לתקלה ולחלקים הנדרשים. התיקון מתבצע רק לאחר אישור הלקוח.</p></div>
-        <div class="laptopia-card"><h3>האם משלמים על האבחון אם לא מתקנים?</h3><p>אם בוחרים שלא לבצע את התיקון לאחר האבחון, דמי האבחון הם <?php echo laptopia_bidi_price( '150 ₪' ); ?>. אם נמצא שהמחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p></div>
+        <div class="laptopia-card"><h3>כמה עולה תיקון לוח אם למחשב נייד?</h3><p>המחיר מתחיל ב-<?php echo laptopia_bidi_price( '700₪' ); ?>. המחיר הסופי נקבע לאחר אבחון ובהתאם לדגם, לתקלה ולחלקים הנדרשים. התיקון מתבצע רק לאחר אישור הלקוח.</p></div>
+        <div class="laptopia-card"><h3>האם משלמים על האבחון אם לא מתקנים?</h3><p>אם בוחרים שלא לבצע את התיקון לאחר האבחון, דמי האבחון הם <?php echo laptopia_bidi_price( '150₪' ); ?>. אם נמצא שהמחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p></div>
         <div class="laptopia-card"><h3>האם יש אחריות על התיקון?</h3><p>על תיקון שבוצע במעבדה ניתנים 3 חודשי אחריות, בהתאם לסוג התיקון והרכיב.</p></div>
         <div class="laptopia-card"><h3>כמה זמן לוקח לתקן לוח אם?</h3><p>משך הטיפול תלוי בסוג התקלה ובחלקים הנדרשים. לקבלת הערכת זמן למקרה שלכם, פנו למעבדה עם דגם המחשב ותיאור התקלה.</p></div>
       </div>

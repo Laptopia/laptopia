@@ -2,7 +2,9 @@
 
 require_once get_stylesheet_directory() . '/inc/services.php';
 require_once get_stylesheet_directory() . '/inc/icons.php';
+require_once get_stylesheet_directory() . '/inc/ui-icons.php';
 require_once get_stylesheet_directory() . '/inc/bidi.php';
+require_once get_stylesheet_directory() . '/inc/repairs.php';
 require_once get_stylesheet_directory() . '/inc/seo.php';
 
 function laptopia_background_mode() {

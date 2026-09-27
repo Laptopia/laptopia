@@ -2181,3 +2181,308 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
     margin-bottom: 0;
   }
 }
+
+/* Real repairs: one visual system for the listing, case and service-page teaser. */
+.laptopia-repair-page,
+.laptopia-repairs-page main,
+.laptopia-repair-case-page main {
+  color: #202832;
+}
+
+.laptopia-repair-rail,
+.laptopia-repair-breadcrumb,
+.laptopia-repair-story-grid,
+.laptopia-repair-hero-inner {
+  width: min(100% - 40px, var(--laptopia-content-rail));
+  margin-inline: auto;
+}
+
+.laptopia-repair-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-block: 22px 0;
+  color: #56616e;
+  font-size: 13px;
+}
+
+.laptopia-repair-breadcrumb a,
+.laptopia-repair-text-link {
+  color: #1d6cd1;
+  text-underline-offset: 3px;
+}
+
+.laptopia-repair-breadcrumb a:focus-visible,
+.laptopia-repair-text-link:focus-visible,
+.laptopia-repair-card:focus-visible {
+  outline: 3px solid #1d6cd1;
+  outline-offset: 4px;
+}
+
+.laptopia-repair-eyebrow {
+  margin: 0 0 10px;
+  color: #56616e;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.laptopia-repairs-intro,
+.laptopia-repair-hero {
+  padding-block: 54px;
+}
+
+.laptopia-repairs-intro h1,
+.laptopia-repair-hero h1 {
+  margin: 0 0 16px;
+  color: #28313b;
+  line-height: 1.18;
+}
+
+.laptopia-repairs-intro p:last-child,
+.laptopia-repair-hero p:not(.laptopia-repair-eyebrow),
+.laptopia-repair-story p:not(.laptopia-repair-eyebrow),
+.laptopia-repair-result > .laptopia-repair-rail > p:not(.laptopia-repair-eyebrow) {
+  max-width: var(--laptopia-text-rail);
+  line-height: 1.7;
+}
+
+.laptopia-repair-list-grid {
+  display: grid;
+  gap: 24px;
+  width: min(100% - 40px, var(--laptopia-grid-rail));
+  margin-inline: auto;
+}
+
+.laptopia-repair-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  overflow: hidden;
+  max-width: var(--laptopia-content-rail);
+  margin-inline: auto;
+  border: 1px solid #dce1e6;
+  border-radius: 16px;
+  background: #f1f3f5;
+  color: #202832;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgb(40 49 59 / 6%);
+}
+
+.laptopia-repair-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.laptopia-repair-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 24px;
+}
+
+.laptopia-repair-card-title {
+  margin: 0;
+  color: #28313b;
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.laptopia-repair-card-price {
+  font-weight: 700;
+}
+
+.laptopia-repair-card-read,
+.laptopia-repair-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.laptopia-ui-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  stroke: currentColor;
+}
+
+.laptopia-repair-card:hover .laptopia-repair-card-read {
+  color: #1d6cd1;
+}
+
+.laptopia-repair-hero-inner,
+.laptopia-repair-story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 32px;
+}
+
+.laptopia-repair-facts {
+  display: grid;
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.laptopia-repair-facts > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.laptopia-repair-facts dt {
+  color: #56616e;
+}
+
+.laptopia-repair-facts dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.laptopia-repair-photo {
+  min-width: 0;
+  margin: 0;
+}
+
+.laptopia-repair-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #dce1e6;
+  border-radius: 14px;
+}
+
+.laptopia-repair-photo figcaption {
+  margin-top: 7px;
+  color: #56616e;
+  font-size: 13px;
+}
+
+.laptopia-repair-story,
+.laptopia-repair-result,
+.laptopia-repair-related {
+  padding-block: 54px;
+}
+
+.laptopia-repair-story h2,
+.laptopia-repair-result h2,
+.laptopia-repair-related h2 {
+  margin: 0 0 14px;
+  color: #28313b;
+  line-height: 1.28;
+}
+
+.laptopia-repair-story-light {
+  background: #f1f3f5;
+}
+
+.laptopia-repair-story-light .laptopia-repair-photo img {
+  background: #fff;
+}
+
+.laptopia-repair-story-copy {
+  margin-bottom: 24px;
+}
+
+.laptopia-repair-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.laptopia-repair-details-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.laptopia-repair-photo-wide {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.laptopia-repair-result {
+  text-align: center;
+}
+
+.laptopia-repair-result .laptopia-repair-rail > p,
+.laptopia-repair-result .laptopia-buttons {
+  margin-inline: auto;
+}
+
+.laptopia-repair-result-facts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin: 22px 0;
+  font-weight: 700;
+}
+
+.laptopia-repair-note {
+  color: #56616e;
+  font-size: 14px;
+}
+
+.laptopia-repair-related .laptopia-repair-card {
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .laptopia-repair-rail,
+  .laptopia-repair-breadcrumb,
+  .laptopia-repair-story-grid,
+  .laptopia-repair-hero-inner,
+  .laptopia-repair-list-grid {
+    width: min(100% - 40px, 320px);
+  }
+
+  .laptopia-repairs-intro,
+  .laptopia-repair-hero,
+  .laptopia-repair-story,
+  .laptopia-repair-result,
+  .laptopia-repair-related {
+    padding-block: 34px;
+  }
+
+  .laptopia-repair-card,
+  .laptopia-repair-hero-inner,
+  .laptopia-repair-story-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .laptopia-repair-card img {
+    height: auto;
+    max-height: none;
+  }
+
+  .laptopia-repair-card-body {
+    padding: 18px;
+  }
+
+  .laptopia-repair-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .laptopia-repair-details .laptopia-repair-photo:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 360px) {
+  .laptopia-repair-details,
+  .laptopia-repair-details-two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .laptopia-repair-details .laptopia-repair-photo:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}

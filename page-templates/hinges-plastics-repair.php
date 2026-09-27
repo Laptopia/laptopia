@@ -23,8 +23,8 @@ defined( 'ABSPATH' ) || exit;
       <h1 id="service-title">תיקון צירים ופלסטיקה למחשב נייד ברמלה והסביבה</h1>
       <p>ציר קשה, מסגרת שנפתחת או מכסה שמתרומם? בודקים את הציר, נקודות העיגון וחלקי המארז לפני בחירת דרך התיקון.</p>
       <div class="laptopia-service-price-grid">
-        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?><span><span class="laptopia-price-card-label">תיקון צירים</span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">500 ₪</bdi></span></span></div>
-        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?><span><span class="laptopia-price-card-label">תיקון פלסטיקה / מארז</span><span class="laptopia-service-price-amount">החל מ־<bdi dir="ltr">700 ₪</bdi></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?><span><span class="laptopia-price-card-label">תיקון צירים</span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">500₪</bdi></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?><span><span class="laptopia-price-card-label">תיקון פלסטיקה / מארז</span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">700₪</bdi></span></span></div>
       </div>
       <p>המחיר והיקף העבודה נקבעים לאחר בדיקה ואישור הלקוח.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '3 חודשי אחריות על התיקון' ) ); ?>
@@ -62,6 +62,15 @@ defined( 'ABSPATH' ) || exit;
       ),
     ),
   ) ); ?>
+  <?php if ( laptopia_published_repair_page( 'asus-tuf-f15-hinge-repair' ) ) : ?>
+    <section class="laptopia-section laptopia-repair-related" aria-labelledby="related-repair-title">
+      <div class="laptopia-repair-rail">
+        <p class="laptopia-repair-eyebrow">תיקון אמיתי מהמעבדה</p>
+        <h2 id="related-repair-title">שיקום עיגוני צירים במקרה אמיתי</h2>
+        <?php get_template_part( 'template-parts/repair-card', null, array( 'case' => laptopia_get_repair_case( 'asus-tuf-f15-hinge-repair' ) ) ); ?>
+      </div>
+    </section>
+  <?php endif; ?>
   <section class="laptopia-section laptopia-services">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">מתי כדאי לבדוק צירים ופלסטיקה?</h2>
@@ -100,12 +109,12 @@ defined( 'ABSPATH' ) || exit;
         <div class="laptopia-card laptopia-price-card">
           <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?></div>
           <h3>תיקון צירים</h3>
-          <p class="laptopia-price-card-value">החל מ־<?php echo laptopia_bidi_price( '500 ₪' ); ?></p>
+          <p class="laptopia-price-card-value">החל מ- <?php echo laptopia_bidi_price( '500₪' ); ?></p>
         </div>
         <div class="laptopia-card laptopia-price-card">
           <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?></div>
           <h3>תיקון פלסטיקה / מארז</h3>
-          <p class="laptopia-price-card-value">החל מ־<?php echo laptopia_bidi_price( '700 ₪' ); ?></p>
+          <p class="laptopia-price-card-value">החל מ- <?php echo laptopia_bidi_price( '700₪' ); ?></p>
         </div>
       </div>
       <p class="laptopia-price-note">המחיר תלוי במבנה הדגם, בחלקים שנפגעו ובזמינות החלקים הנדרשים. דרך הטיפול והמחיר נקבעים לאחר בדיקה ואישור הלקוח.</p>
