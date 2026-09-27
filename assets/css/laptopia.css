@@ -5,84 +5,6 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Keep the Trustindex data source, but make its output use Laptopia's card language. */
-.laptopia-reviews-rail {
-  padding-bottom: 56px;
-  direction: rtl;
-}
-
-.laptopia-reviews-rail .ti-widget-container,
-.laptopia-reviews-rail .ti-reviews-container,
-.laptopia-reviews-rail .ti-reviews-container-wrapper {
-  width: 100% !important;
-  max-width: none !important;
-}
-
-.laptopia-reviews-rail .ti-reviews-container-wrapper {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin: 0 !important;
-  transform: none !important;
-}
-
-.laptopia-reviews-rail .ti-review-item {
-  display: none !important;
-  width: auto !important;
-  min-width: 0 !important;
-  padding: 0 !important;
-}
-
-.laptopia-reviews-rail .ti-review-item:nth-child(-n+3) {
-  display: block !important;
-}
-
-.laptopia-reviews-rail .ti-inner {
-  height: 100% !important;
-  padding: 20px !important;
-  border: 1px solid #dce1e6 !important;
-  border-radius: 14px !important;
-  background: #fff !important;
-  box-shadow: 0 6px 18px rgb(40 49 59 / 6%) !important;
-}
-
-.laptopia-reviews-rail .ti-review-content {
-  max-height: none !important;
-  overflow: visible !important;
-  color: #424c58 !important;
-  font-size: 15px !important;
-  line-height: 1.65 !important;
-}
-
-.laptopia-reviews-rail .ti-controls,
-.laptopia-reviews-rail .ti-read-more {
-  display: none !important;
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-  .laptopia-reviews-rail .ti-reviews-container-wrapper {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .laptopia-reviews-rail .ti-review-item:nth-child(3) {
-    display: none !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .laptopia-reviews-rail {
-    padding-bottom: 36px;
-  }
-
-  .laptopia-reviews-rail .ti-reviews-container-wrapper {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .laptopia-reviews-rail .ti-review-item:nth-child(n+2) {
-    display: none !important;
-  }
-}
-
 *,
 *::before,
 *::after {
@@ -375,7 +297,7 @@ textarea:focus-visible {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 13px 20px;
+  padding: clamp(10px, 1.2vw, 13px) clamp(13px, 1.8vw, 20px);
   background: rgba(255,255,255,.96);
   border-bottom: 1px solid #dce1e6;
   backdrop-filter: blur(10px);
@@ -387,7 +309,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: clamp(10px, 1.4vw, 20px);
 }
 
 .laptopia-logo {
@@ -405,7 +327,7 @@ textarea:focus-visible {
 }
 
 .laptopia-logo .laptopia-brand-logo {
-  width: 150px;
+  width: clamp(118px, 12vw, 150px);
 }
 
 .laptopia-brand-wordmark {
@@ -1132,19 +1054,6 @@ bdi[dir="ltr"] {
 
 @media(max-width:600px) {
 
-  .laptopia-header {
-    padding: 10px 13px;
-  }
-
-  .laptopia-logo .laptopia-brand-logo {
-    width: 130px;
-  }
-
-  .laptopia-header-phone {
-    padding: 9px 10px;
-    font-size: 12px;
-  }
-
   .laptopia-hero {
     padding: 40px 15px 42px;
   }
@@ -1351,7 +1260,7 @@ bdi[dir="ltr"] {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  gap: 18px;
+  gap: clamp(8px, 1.2vw, 18px);
 }
 
 .laptopia-header-about {
@@ -1507,92 +1416,43 @@ bdi[dir="ltr"] {
   display: none;
 }
 
-@media (min-width: 1025px) and (max-width: 1150px) {
-  .laptopia-header-navigation {
-    gap: 10px;
-  }
-
-  .laptopia-header-inner {
-    gap: 12px;
-  }
-}
-
+/* One full/compact boundary; the compact list has its own scoped rows. */
 @media (max-width: 1024px) {
-  .laptopia-header-home,
-  .laptopia-header-contact {
-    display: none;
+  .laptopia-header-inner {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 8px;
   }
 
-}
-
-@media (max-width: 900px) {
-  .laptopia-header {
-    transition: padding-block .2s ease, box-shadow .2s ease;
-  }
-
-  .laptopia-logo,
-  .laptopia-services-toggle,
-  .laptopia-header-repairs,
-  .laptopia-header-about,
-  .laptopia-header-phone {
+  .laptopia-logo {
     min-height: 44px;
   }
 
-  .laptopia-header.laptopia-header-compact {
-    padding-block: 3px;
-    box-shadow: 0 4px 14px rgba(32, 40, 50, .08);
+  .laptopia-logo .laptopia-brand-logo {
+    width: clamp(84px, 14vw, 108px);
   }
 
-  :is(#prices, #warranty, #contact) {
-    scroll-margin-top: 66px;
-  }
-
-  .laptopia-services-menu-icon {
-    display: block;
-  }
-
-  .laptopia-header-navigation,
-  .laptopia-services-dropdown {
+  .laptopia-header-navigation {
     position: static;
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: center;
+    gap: 0;
   }
 
-  .laptopia-services-panel {
-    top: 100%;
-    inset-inline-start: auto;
-    inset-inline-end: auto;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: min(290px, calc(100vw - 48px));
-    max-width: 290px;
-    padding: 2px 8px;
-    box-shadow: 0 6px 18px rgba(32, 40, 50, .09);
-  }
-
-  .laptopia-services-panel a {
-    min-height: 42px;
-    padding: 7px 12px;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-  .laptopia-header.laptopia-header-compact {
-    padding-block: 4px;
-  }
-}
-
-@media (max-width: 600px) {
+  .laptopia-header-home,
   .laptopia-header-navigation .laptopia-services-dropdown,
-  .laptopia-header-repairs {
-    display: none;
-  }
-
-  .laptopia-header-navigation .laptopia-header-about {
+  .laptopia-header-repairs,
+  .laptopia-header-navigation .laptopia-header-about,
+  .laptopia-header-contact {
     display: none;
   }
 
   .laptopia-header-navigation .laptopia-mobile-navigation {
     display: block;
+    position: static;
+    min-width: 0;
     pointer-events: auto;
   }
 
@@ -1624,9 +1484,10 @@ bdi[dir="ltr"] {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: min(320px, calc(100vw - 32px));
-    max-height: min(70vh, 520px);
+    inline-size: min(360px, calc(100vw - 32px));
+    max-block-size: min(70vh, 520px);
     overflow-y: auto;
+    overscroll-behavior: contain;
     padding: 8px;
     border: 1px solid #dce1e6;
     border-radius: 12px;
@@ -1647,19 +1508,26 @@ bdi[dir="ltr"] {
   }
 
   .laptopia-mobile-navigation-panel a {
-    display: flex;
-    align-items: center;
+    display: block;
+    inline-size: 100%;
+    min-inline-size: 0;
     min-height: 44px;
     padding: 8px 12px;
     border-radius: 6px;
     color: #424c58;
     font-size: 15px;
     line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
+  .laptopia-mobile-navigation-panel a:hover,
   .laptopia-mobile-navigation-panel a[aria-current] {
     background: #f1f3f5;
     color: #202832;
+  }
+
+  .laptopia-mobile-navigation-panel a[aria-current] {
     font-weight: 700;
   }
 
@@ -1667,73 +1535,21 @@ bdi[dir="ltr"] {
     border-top: 1px solid #dce1e6;
   }
 
-  .laptopia-header-inner {
-    width: 100%;
-    flex-wrap: nowrap;
-    gap: 6px;
-  }
-
-  .laptopia-header-navigation {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    flex: 1 1 auto;
-    width: auto;
-    gap: 2px;
-    overflow: visible;
-  }
-
-  .laptopia-header-navigation .laptopia-services-dropdown {
-    position: static;
-    width: auto;
-    min-width: 0;
-  }
-
-  .laptopia-services-panel {
-    inset-inline-start: auto;
-    inset-inline-end: auto;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: min(290px, calc(100vw - 48px));
-    max-width: 290px;
-  }
-
-  .laptopia-services-toggle {
-    width: 100%;
-    justify-content: center;
-    gap: 4px;
-    padding: 4px 2px;
-    min-height: 44px;
-    font-size: 14px;
-  }
-
-  .laptopia-header-about,
   .laptopia-header-phone {
     display: inline-flex;
+    flex: 0 0 44px;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-  }
-
-  .laptopia-header-about {
-    width: auto;
-    min-width: 0;
-    padding: 4px 2px;
-    font-size: 14px;
-  }
-
-  .laptopia-header-phone {
-    flex: 0 0 44px;
     width: 44px;
     min-width: 44px;
+    min-height: 44px;
     padding: 0;
     background: transparent;
     color: #56616e !important;
     border-radius: 10px;
   }
 
-  .laptopia-header-phone-number,
-  .laptopia-services-chevron {
+  .laptopia-header-phone-number {
     display: none;
   }
 
@@ -1743,21 +1559,24 @@ bdi[dir="ltr"] {
     height: 19px;
   }
 
-  .laptopia-services-menu-icon {
-    width: 19px;
-    height: 19px;
-  }
-
   .laptopia-header-phone:focus-visible {
     background: #f1f3f5;
   }
 
-  .laptopia-logo .laptopia-brand-logo {
-    width: clamp(76px, 24vw, 100px);
+  .laptopia-header.laptopia-header-compact {
+    box-shadow: 0 4px 14px rgba(32, 40, 50, .08);
+  }
+
+  .laptopia-services-open .laptopia-mobile-navigation {
+    pointer-events: auto;
+  }
+
+  :is(#prices, #warranty, #contact) {
+    scroll-margin-top: 66px;
   }
 }
 
-@media (max-width: 600px) and (hover: hover) and (pointer: fine) {
+@media (max-width: 1024px) and (hover: hover) and (pointer: fine) {
   .laptopia-header-phone:hover {
     background: #f1f3f5;
   }
@@ -2732,73 +2551,4 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   .laptopia-repair-details-two {
     grid-template-columns: minmax(0, 1fr);
   }
-}
-
-/* Final compact-header overrides live after legacy responsive rules. */
-@media (max-width: 1024px) {
-  .laptopia-header-inner { width: 100%; flex-wrap: nowrap; gap: 8px; }
-  .laptopia-header-navigation {
-    position: static;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    flex: 1 1 auto;
-    width: auto;
-    gap: 0;
-    overflow: visible;
-  }
-  .laptopia-header-home,
-  .laptopia-header-navigation .laptopia-services-dropdown,
-  .laptopia-header-repairs,
-  .laptopia-header-navigation .laptopia-header-about,
-  .laptopia-header-contact { display: none; }
-  .laptopia-header-navigation .laptopia-mobile-navigation {
-    display: block;
-    position: static;
-    pointer-events: auto;
-  }
-  .laptopia-mobile-navigation > summary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    min-height: 44px;
-    color: #56616e;
-    font-size: 14px;
-    font-weight: 700;
-    list-style: none;
-    cursor: pointer;
-  }
-  .laptopia-mobile-navigation-panel {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: min(360px, calc(100vw - 32px));
-    max-width: 360px;
-    max-height: min(70vh, 520px);
-    overflow-y: auto;
-    padding: 8px;
-    border: 1px solid #dce1e6;
-    border-radius: 12px;
-    background: #fff;
-    box-shadow: 0 10px 28px rgba(32, 40, 50, .12);
-    text-align: right;
-  }
-  .laptopia-logo .laptopia-brand-logo { width: clamp(84px, 14vw, 108px); }
-  .laptopia-header-phone {
-    display: inline-flex;
-    flex: 0 0 44px;
-    width: 44px;
-    min-width: 44px;
-    min-height: 44px;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background: transparent;
-    color: #56616e !important;
-  }
-  .laptopia-header-phone-number { display: none; }
-  .laptopia-header-phone .laptopia-cta-icon { display: block; width: 19px; height: 19px; }
-  .laptopia-services-open .laptopia-mobile-navigation { pointer-events: auto; }
 }
