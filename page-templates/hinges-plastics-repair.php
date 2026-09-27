@@ -23,8 +23,8 @@ defined( 'ABSPATH' ) || exit;
       <h1 id="service-title">תיקון צירים ופלסטיקה למחשב נייד ברמלה והסביבה</h1>
       <p>ציר קשה, מסגרת שנפתחת או מכסה שמתרומם? בודקים את הציר, נקודות העיגון וחלקי המארז לפני בחירת דרך התיקון.</p>
       <div class="laptopia-service-price-grid">
-        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?><span><span class="laptopia-price-card-label">תיקון צירים</span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">500₪</bdi></span></span></div>
-        <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?><span><span class="laptopia-price-card-label">תיקון פלסטיקה / מארז</span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">700₪</bdi></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><span><span class="laptopia-price-card-label">תיקון צירים</span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">500₪</bdi></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><span><span class="laptopia-price-card-label">תיקון פלסטיקה / מארז</span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">700₪</bdi></span></span></div>
       </div>
       <p>המחיר והיקף העבודה נקבעים לאחר בדיקה ואישור הלקוח.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '3 חודשי אחריות על התיקון' ) ); ?>
@@ -107,12 +107,10 @@ defined( 'ABSPATH' ) || exit;
       <h2 class="laptopia-section-title">כמה עולה תיקון צירים ופלסטיקה?</h2>
       <div class="laptopia-service-price-grid">
         <div class="laptopia-card laptopia-price-card">
-          <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?></div>
           <h3>תיקון צירים</h3>
           <p class="laptopia-price-card-value">החל מ- <?php echo laptopia_bidi_price( '500₪' ); ?></p>
         </div>
         <div class="laptopia-card laptopia-price-card">
-          <div class="laptopia-service-icon" aria-hidden="true"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'hinge' ) ); ?></div>
           <h3>תיקון פלסטיקה / מארז</h3>
           <p class="laptopia-price-card-value">החל מ- <?php echo laptopia_bidi_price( '700₪' ); ?></p>
         </div>

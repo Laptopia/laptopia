@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="keyboard-title">החלפת מקלדת למחשב נייד ברמלה והסביבה</h1>
       <p>מקשים חסרים, לא מגיבים או מקלידים תווים לא צפויים? בודקים אם מקור התקלה במקלדת ומתאימים חלק לפי מבנה הדגם.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'keyboard-replacement' ) ); ?><span>החלפת מקלדת — החל מ- <?php echo laptopia_bidi_price( '550₪' ); ?></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><span>החלפת מקלדת — החל מ- <?php echo laptopia_bidi_price( '550₪' ); ?></span></div>
       <p>המחיר הסופי נקבע לפי הדגם ואופן התקנת המקלדת.</p>
       <?php get_template_part( 'template-parts/service-hero-details' ); ?>
       <div class="laptopia-buttons">

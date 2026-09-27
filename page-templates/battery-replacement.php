@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="battery-title">החלפת סוללה למחשב נייד ברמלה והסביבה</h1>
       <p>הסוללה מתרוקנת מהר, מתנפחת או שהמחשב נכבה ללא מטען? בודקים אם נדרשת החלפה או שמקור התקלה במערכת הטעינה.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'battery-replacement' ) ); ?><span>החלפת סוללה — החל מ- <?php echo laptopia_bidi_price( '400₪' ); ?></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><span>החלפת סוללה — החל מ- <?php echo laptopia_bidi_price( '400₪' ); ?></span></div>
       <p>המחיר הסופי נקבע לפי הדגם והסוללה המתאימה, לפני אישור העבודה.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '12 חודשי אחריות על סוללה מקורית' ) ); ?>
       <div class="laptopia-buttons">

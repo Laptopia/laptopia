@@ -44,7 +44,7 @@
     });
     sync();
   });
-  window.matchMedia('(max-width: 600px)').addEventListener('change', () => {
+  window.matchMedia('(max-width: 1024px)').addEventListener('change', () => {
     menus.forEach((menu) => { menu.open = false; });
   });
 })();
@@ -54,7 +54,7 @@
   if (!logo) return;
 
   const header = logo.closest('.laptopia-header');
-  const mobileHeaderQuery = window.matchMedia('(max-width: 900px)');
+  const mobileHeaderQuery = window.matchMedia('(max-width: 1024px)');
   const floatingWhatsapp = document.querySelector('.laptopia-floating-whatsapp');
 
   const button = document.createElement('button');
@@ -70,7 +70,7 @@
   let collisionElements = [];
   let collisionTextRanges = [];
   let collisionObserver = null;
-  const desktopCollisionQuery = window.matchMedia('(min-width: 901px)');
+  const desktopCollisionQuery = window.matchMedia('(min-width: 1025px)');
 
   const refreshCollisionTargets = () => {
     collisionElements = [...document.querySelectorAll('main img, main .laptopia-btn, footer a')];

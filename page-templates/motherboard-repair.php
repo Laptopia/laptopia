@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="repair-title">תיקון לוחות אם למחשבים ניידים ברמלה והסביבה</h1>
       <p>המחשב לא נדלק, לא נטען או נפגע מנוזלים? בודקים את מקור התקלה ואת אפשרות התיקון ברמת הרכיב לפני שמתחילים בעבודה.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'motherboard-repair' ) ); ?><span>תיקון לוח אם — החל מ- <?php echo laptopia_bidi_price( '700₪' ); ?></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><span>תיקון לוח אם — החל מ- <?php echo laptopia_bidi_price( '700₪' ); ?></span></div>
       <p>המחיר הסופי נקבע לאחר אבחון ואישור הלקוח.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '3 חודשי אחריות על התיקון' ) ); ?>
       <div class="laptopia-buttons">

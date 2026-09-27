@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="laptopia-hero-content">
       <h1 id="service-title">שדרוג זיכרון ו-<?php echo laptopia_bidi_ltr( 'SSD' ); ?> והתקנת מערכת הפעלה למחשב נייד ברמלה והסביבה</h1>
       <p>צריכים יותר זיכרון, נפח <?php echo laptopia_bidi_ltr( 'SSD' ); ?> או התקנת <?php echo laptopia_bidi_ltr( 'Windows' ); ?>? בודקים התאמה לדגם ומפרידים בין שדרוג חומרה, מערכת הפעלה וטיפול במידע.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'upgrade' ) ); ?><span class="laptopia-service-price-lines"><span><?php echo laptopia_bidi_ltr( 'RAM' ); ?> — מחיר לפי התאמה ורכיב</span><span><?php echo laptopia_bidi_ltr( 'SSD' ); ?> — מחיר לפי סוג ונפח</span><span><?php echo laptopia_bidi_ltr( 'Windows' ); ?> — <?php echo laptopia_bidi_price( '300₪' ); ?></span></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><span class="laptopia-service-price-lines"><span><?php echo laptopia_bidi_ltr( 'RAM' ); ?> — מחיר לפי התאמה ורכיב</span><span><?php echo laptopia_bidi_ltr( 'SSD' ); ?> — מחיר לפי סוג ונפח</span><span><?php echo laptopia_bidi_ltr( 'Windows' ); ?> — <?php echo laptopia_bidi_price( '300₪' ); ?></span></span></div>
       <p><?php echo laptopia_bidi_ltr( 'Windows' ); ?> מותקן באמצעות רישיון קיים של הלקוח; גיבוי והעברת מידע מתומחרים בנפרד.</p>
       <?php get_template_part( 'template-parts/service-hero-details' ); ?>
       <div class="laptopia-buttons">

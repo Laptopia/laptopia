@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="screen-title">החלפת מסך למחשב נייד ברמלה והסביבה</h1>
       <p>מסך שבור, פסים או תמונה שנעלמת? בודקים אם מקור התקלה במסך ומתאימים חלק חלופי לפי הדגם.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => 'screen-replacement' ) ); ?><span>החלפת מסך — החל מ- <?php echo laptopia_bidi_price( '550₪' ); ?></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><span>החלפת מסך — החל מ- <?php echo laptopia_bidi_price( '550₪' ); ?></span></div>
       <p>המחיר הסופי נקבע לפי הדגם והמסך המתאים, לפני אישור העבודה.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '6 חודשי אחריות על מסך שהוחלף' ) ); ?>
       <div class="laptopia-buttons">
