@@ -303,6 +303,10 @@ textarea:focus-visible {
   backdrop-filter: blur(10px);
 }
 
+.laptopia-header.laptopia-header-compact {
+  box-shadow: 0 4px 14px rgba(32, 40, 50, .08);
+}
+
 .laptopia-header-inner {
   max-width: 1120px;
   margin: 0 auto;
@@ -1416,11 +1420,35 @@ bdi[dir="ltr"] {
   display: none;
 }
 
-/* One full/compact boundary; the compact list has its own scoped rows. */
+/* Priority navigation retains the desktop dropdown until the three links no longer fit. */
 @media (max-width: 1024px) {
   .laptopia-header-inner {
     width: 100%;
     flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .laptopia-logo .laptopia-brand-logo {
+    width: clamp(108px, 12vw, 132px);
+  }
+
+  .laptopia-header-navigation {
+    gap: 10px;
+  }
+
+  .laptopia-header-home,
+  .laptopia-header-contact {
+    display: none;
+  }
+
+  :is(#prices, #warranty, #contact) {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Only the narrow state uses the independent compact menu. */
+@media (max-width: 600px) {
+  .laptopia-header-inner {
     gap: 8px;
   }
 
@@ -1441,11 +1469,9 @@ bdi[dir="ltr"] {
     gap: 0;
   }
 
-  .laptopia-header-home,
   .laptopia-header-navigation .laptopia-services-dropdown,
   .laptopia-header-repairs,
-  .laptopia-header-navigation .laptopia-header-about,
-  .laptopia-header-contact {
+  .laptopia-header-navigation .laptopia-header-about {
     display: none;
   }
 
@@ -1563,10 +1589,6 @@ bdi[dir="ltr"] {
     background: #f1f3f5;
   }
 
-  .laptopia-header.laptopia-header-compact {
-    box-shadow: 0 4px 14px rgba(32, 40, 50, .08);
-  }
-
   .laptopia-services-open .laptopia-mobile-navigation {
     pointer-events: auto;
   }
@@ -1576,7 +1598,7 @@ bdi[dir="ltr"] {
   }
 }
 
-@media (max-width: 1024px) and (hover: hover) and (pointer: fine) {
+@media (max-width: 600px) and (hover: hover) and (pointer: fine) {
   .laptopia-header-phone:hover {
     background: #f1f3f5;
   }
@@ -1706,6 +1728,26 @@ bdi[dir="ltr"] {
   width: calc(100% - 40px);
   max-width: var(--laptopia-grid-rail);
   margin-inline: auto;
+}
+
+/* The Trustindex slider already renders prev/next and runs its own autoplay.
+   Its supplied CSS hides the controls below 1024px; keep them outside the cards. */
+@media (max-width: 1023px) {
+  .laptopia-reviews-rail {
+    margin-bottom: 60px;
+  }
+
+  .laptopia-reviews-rail .ti-widget.ti-goog:not(.ti-disable-nav) .ti-controls {
+    display: block;
+    top: calc(100% + 8px);
+    margin-top: 0;
+  }
+
+  .laptopia-reviews-rail .ti-widget.ti-goog .ti-controls :is(.ti-next, .ti-prev) {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {

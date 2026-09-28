@@ -12,17 +12,17 @@
 
     <?php
     $price_rows = array(
-      array( 'label' => 'אבחון במקרה של אי ביצוע תיקון', 'price' => '150₪' ),
-      array( 'label' => 'ניקוי מערכת קירור', 'price' => 'החל מ- 300₪', 'url' => '/cooling-cleaning/' ),
-      array( 'label' => 'החלפת מסך', 'price' => 'החל מ- 550₪', 'url' => 'https://laptopia.co.il/screen-replacement/' ),
-      array( 'label' => 'החלפת מקלדת', 'price' => 'החל מ- 550₪', 'url' => 'https://laptopia.co.il/keyboard-replacement/' ),
-      array( 'label' => 'החלפת שקע טעינה', 'price' => 'החל מ- 250₪', 'url' => '/charging-usb-repair/' ),
-      array( 'label' => 'החלפת שקע USB', 'price' => 'החל מ- 300₪', 'url' => '/charging-usb-repair/' ),
-      array( 'label' => 'החלפת סוללה', 'price' => 'החל מ- 400₪', 'url' => 'https://laptopia.co.il/battery-replacement/' ),
-      array( 'label' => 'תיקון צירים', 'price' => 'החל מ- 500₪', 'url' => '/hinges-plastics-repair/' ),
-      array( 'label' => 'החלפת חלקי פלסטיקה', 'price' => 'החל מ- 700₪', 'url' => '/hinges-plastics-repair/' ),
-      array( 'label' => 'התקנת מערכת הפעלה', 'price' => '300₪', 'url' => '/ram-ssd-windows-upgrade/' ),
-      array( 'label' => 'תיקון לוח אם', 'price' => 'החל מ- 700₪', 'url' => '/motherboard-repair/' ),
+      array( 'label' => 'אבחון במקרה של אי ביצוע תיקון', 'price' => '150₪', 'icon' => 'diagnostics' ),
+      array( 'label' => 'ניקוי מערכת קירור', 'price' => 'החל מ- 300₪', 'icon' => 'cooling-cleaning', 'url' => '/cooling-cleaning/' ),
+      array( 'label' => 'החלפת מסך', 'price' => 'החל מ- 550₪', 'icon' => 'screen-replacement', 'url' => 'https://laptopia.co.il/screen-replacement/' ),
+      array( 'label' => 'החלפת מקלדת', 'price' => 'החל מ- 550₪', 'icon' => 'keyboard-replacement', 'url' => 'https://laptopia.co.il/keyboard-replacement/' ),
+      array( 'label' => 'החלפת שקע טעינה', 'price' => 'החל מ- 250₪', 'icon' => 'charging', 'url' => '/charging-usb-repair/' ),
+      array( 'label' => 'החלפת שקע USB', 'price' => 'החל מ- 300₪', 'icon' => 'charging', 'url' => '/charging-usb-repair/' ),
+      array( 'label' => 'החלפת סוללה', 'price' => 'החל מ- 400₪', 'icon' => 'battery-replacement', 'url' => 'https://laptopia.co.il/battery-replacement/' ),
+      array( 'label' => 'תיקון צירים', 'price' => 'החל מ- 500₪', 'icon' => 'hinge', 'url' => '/hinges-plastics-repair/' ),
+      array( 'label' => 'החלפת חלקי פלסטיקה', 'price' => 'החל מ- 700₪', 'icon' => 'hinge', 'url' => '/hinges-plastics-repair/' ),
+      array( 'label' => 'התקנת מערכת הפעלה', 'price' => '300₪', 'icon' => 'software', 'url' => '/ram-ssd-windows-upgrade/' ),
+      array( 'label' => 'תיקון לוח אם', 'price' => 'החל מ- 700₪', 'icon' => 'motherboard-repair', 'url' => '/motherboard-repair/' ),
     );
     ?>
     <div class="laptopia-price-list">
@@ -33,6 +33,7 @@
           <div class="laptopia-price-row">
         <?php endif; ?>
             <div class="laptopia-price-name laptopia-price-service">
+              <?php get_template_part( 'template-parts/service-icon', null, array( 'slug' => $row['icon'] ) ); ?>
               <span><?php echo laptopia_bidi_text( $row['label'] ); ?></span>
             </div>
             <div class="laptopia-price-value"><?php echo laptopia_bidi_text( $row['price'] ); ?></div>
