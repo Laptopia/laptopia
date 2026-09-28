@@ -28,7 +28,7 @@ if ( ! $case ) {
 <?php wp_body_open(); ?>
 <?php get_template_part( 'template-parts/header', null, array( 'nav_links' => array(
     array( 'href' => home_url( '/' ), 'label' => 'דף הבית' ),
-    array( 'href' => home_url( '/repairs/' ), 'label' => 'תיקונים מהמעבדה' ),
+    array( 'href' => home_url( '/repairs/' ), 'label' => 'תיק עבודות' ),
     array( 'href' => '#contact', 'label' => 'יצירת קשר' ),
 ) ) ); ?>
 <?php get_template_part( 'template-parts/repair-case-content', null, array( 'case' => $case ) ); ?>

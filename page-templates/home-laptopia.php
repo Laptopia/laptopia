@@ -32,6 +32,7 @@ get_template_part( 'template-parts/reviews-heading' );
 echo '<div class="laptopia-reviews-rail">';
 echo do_shortcode( '[trustindex no-registration=google]' );
 echo '</div>';
+get_template_part( 'template-parts/reviews-source-links' );
 
 get_template_part( 'template-parts/contact' );
 echo '</main>';

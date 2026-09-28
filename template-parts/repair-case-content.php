@@ -8,7 +8,7 @@ if ( ! is_array( $case ) ) {
   <nav class="laptopia-repair-breadcrumb" aria-label="מיקום באתר">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>">דף הבית</a><span aria-hidden="true">/</span>
     <?php if ( laptopia_published_repair_page( $case['slug'] ) ) : ?>
-      <a href="<?php echo esc_url( home_url( '/repairs/' ) ); ?>">תיקונים מהמעבדה</a><span aria-hidden="true">/</span>
+      <a href="<?php echo esc_url( home_url( '/repairs/' ) ); ?>">תיק עבודות</a><span aria-hidden="true">/</span>
     <?php endif; ?>
     <span aria-current="page">תיקון צירים</span>
   </nav>

@@ -2266,7 +2266,8 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 }
 
 .laptopia-repairs-intro {
-  padding-block: 54px;
+  padding-block: 36px;
+  text-align: center;
 }
 
 .laptopia-repairs-page .laptopia-repair-eyebrow {
@@ -2279,6 +2280,7 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   margin: 0 0 16px;
   color: #28313b;
   line-height: 1.18;
+  font-size: clamp(30px, 4vw, 42px);
 }
 
 .laptopia-repair-intro h1 {
@@ -2298,6 +2300,7 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 
 .laptopia-repairs-intro p:last-child {
   max-width: var(--laptopia-text-rail);
+  margin: 0 auto;
   line-height: 1.7;
 }
 
@@ -2315,6 +2318,7 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 
 .laptopia-repair-list-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   gap: 24px;
   width: min(calc(100% - 40px), var(--laptopia-grid-rail));
   margin-inline: auto;
@@ -2326,8 +2330,9 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 
 .laptopia-repair-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  max-width: var(--laptopia-content-rail);
+  grid-template-columns: 120px minmax(0, 1fr);
+  width: 100%;
+  max-width: 548px;
   margin-inline: auto;
   overflow: hidden;
   border: 1px solid #dce1e6;
@@ -2342,7 +2347,7 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   display: block;
   width: 100%;
   height: 100%;
-  max-height: 300px;
+  max-height: 260px;
   object-fit: cover;
 }
 
@@ -2351,15 +2356,15 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   min-width: 0;
-  padding: 24px;
+  padding: 18px;
 }
 
 .laptopia-repair-card-title {
   margin: 0;
   color: #28313b;
-  font-size: clamp(19px, 2vw, 24px);
+  font-size: 19px;
   font-weight: 700;
   line-height: 1.35;
 }
@@ -2392,6 +2397,35 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   grid-template-columns: minmax(0, 150px) minmax(0, 1fr);
   max-width: var(--laptopia-text-rail);
   margin-top: 16px;
+}
+
+.laptopia-review-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  width: calc(100% - 40px);
+  max-width: var(--laptopia-text-rail);
+  margin: 18px auto 0;
+  font-size: 14px;
+}
+
+.laptopia-review-source-links a,
+.laptopia-review-source-links a:visited {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #1d6cd1;
+  text-underline-offset: 3px;
+}
+
+.laptopia-review-source-links a:hover {
+  color: #28313b;
+}
+
+.laptopia-review-source-links a:focus-visible {
+  outline: 3px solid #1d6cd1;
+  outline-offset: 3px;
 }
 
 .laptopia-repair-card--compact img {
@@ -2542,12 +2576,12 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   }
 
   .laptopia-repairs-intro {
-    padding-block: 34px;
+    padding-block: 26px;
   }
 
   .laptopia-repairs-page .laptopia-repair-rail,
   .laptopia-repairs-page .laptopia-repair-list-grid {
-    width: min(calc(100% - 40px), 320px);
+    width: calc(100% - 40px);
   }
 
   .laptopia-repair-card {
@@ -2563,8 +2597,8 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   }
 
   .laptopia-repair-card:not(.laptopia-repair-card--compact) img {
-    height: auto;
-    max-height: none;
+    height: 150px;
+    max-height: 150px;
   }
 
   .laptopia-repair-card-body {

@@ -13,7 +13,7 @@ $repairs_current = is_page( 'repairs' ) || is_page_template( 'page-templates/rep
     <nav class="laptopia-header-navigation" aria-label="ניווט ראשי">
       <a class="laptopia-header-home" href="<?php echo esc_url( home_url( '/' ) ); ?>"<?php if ( is_front_page() ) : ?> aria-current="page"<?php endif; ?>>דף הבית</a>
       <?php get_template_part( 'template-parts/services-navigation' ); ?>
-      <a class="laptopia-header-repairs" href="<?php echo esc_url( home_url( '/repairs/' ) ); ?>"<?php if ( $repairs_current ) : ?> aria-current="<?php echo is_page( 'repairs' ) ? 'page' : 'location'; ?>"<?php endif; ?>>תיקונים מהמעבדה</a>
+      <a class="laptopia-header-repairs" href="<?php echo esc_url( home_url( '/repairs/' ) ); ?>"<?php if ( $repairs_current ) : ?> aria-current="<?php echo is_page( 'repairs' ) ? 'page' : 'location'; ?>"<?php endif; ?>>תיק עבודות</a>
       <a class="laptopia-header-about" href="<?php echo esc_url( home_url( '/service-areas/' ) ); ?>"<?php if ( is_page( 'service-areas' ) ) : ?> aria-current="page"<?php endif; ?>>אודותינו</a>
       <a class="laptopia-header-contact" href="#contact">יצירת קשר</a>
       <details class="laptopia-mobile-navigation" dir="rtl">
@@ -26,7 +26,7 @@ $repairs_current = is_page( 'repairs' ) || is_page_template( 'page-templates/rep
           <?php foreach ( laptopia_get_services() as $service ) : ?>
             <a href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>"<?php if ( is_page( $service['slug'] ) ) : ?> aria-current="page"<?php endif; ?>><?php echo laptopia_bidi_text( $service['short_label'] ); ?></a>
           <?php endforeach; ?>
-          <a class="laptopia-mobile-navigation-section" href="<?php echo esc_url( home_url( '/repairs/' ) ); ?>"<?php if ( $repairs_current ) : ?> aria-current="<?php echo is_page( 'repairs' ) ? 'page' : 'location'; ?>"<?php endif; ?>>תיקונים מהמעבדה</a>
+          <a class="laptopia-mobile-navigation-section" href="<?php echo esc_url( home_url( '/repairs/' ) ); ?>"<?php if ( $repairs_current ) : ?> aria-current="<?php echo is_page( 'repairs' ) ? 'page' : 'location'; ?>"<?php endif; ?>>תיק עבודות</a>
           <a class="laptopia-mobile-navigation-section" href="<?php echo esc_url( home_url( '/service-areas/' ) ); ?>"<?php if ( is_page( 'service-areas' ) ) : ?> aria-current="page"<?php endif; ?>>אודותינו</a>
           <a class="laptopia-mobile-navigation-section" href="#contact">יצירת קשר</a>
         </div>

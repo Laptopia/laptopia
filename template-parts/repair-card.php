@@ -21,13 +21,14 @@ $compact = ! empty( $args['compact'] );
       <span class="laptopia-repair-eyebrow"><?php echo laptopia_bidi_ltr( $case['model'] ); ?></span>
       <<?php echo $heading_tag; ?> class="laptopia-repair-card-title"><?php echo esc_html( $case['card_title'] ); ?></<?php echo $heading_tag; ?>>
       <span><?php echo esc_html( $case['card_description'] ); ?></span>
-      <span class="laptopia-repair-card-price">מחיר המקרה: <?php echo laptopia_bidi_price( $case['price'] ); ?></span>
+      <span class="laptopia-repair-card-price">מחיר התיקון: <?php echo laptopia_bidi_price( $case['price'] ); ?></span>
     <?php else : ?>
-      <span class="laptopia-repair-eyebrow"><?php echo esc_html( $case['category'] ); ?> · <?php echo laptopia_bidi_ltr( $case['model'] ); ?></span>
-      <<?php echo $heading_tag; ?> class="laptopia-repair-card-title"><?php echo laptopia_bidi_text( $case['heading'] ); ?></<?php echo $heading_tag; ?>>
-      <span><?php echo esc_html( $case['intro'] ); ?></span>
-      <span class="laptopia-repair-card-price">מחיר המקרה הזה: <?php echo laptopia_bidi_price( $case['price'] ); ?></span>
+      <span class="laptopia-repair-eyebrow"><?php echo esc_html( $case['category'] ); ?></span>
+      <<?php echo $heading_tag; ?> class="laptopia-repair-card-title"><?php echo laptopia_bidi_ltr( $case['model'] ); ?></<?php echo $heading_tag; ?>>
+      <span><strong>הבעיה:</strong> <?php echo esc_html( $case['card_problem'] ?? $case['problem'] ); ?></span>
+      <span><strong>התיקון:</strong> <?php echo esc_html( $case['card_description'] ); ?></span>
+      <span class="laptopia-repair-card-price">מחיר התיקון: <?php echo laptopia_bidi_price( $case['price'] ); ?></span>
     <?php endif; ?>
-    <span class="laptopia-repair-card-read">לקריאת התיקון <?php echo laptopia_ui_icon( 'arrow-left' ); ?></span>
+    <span class="laptopia-repair-card-read">לפרטי התיקון <?php echo laptopia_ui_icon( 'arrow-left' ); ?></span>
   </div>
 </a>

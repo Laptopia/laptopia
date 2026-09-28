@@ -24,8 +24,8 @@ $cases = laptopia_get_repair_cases();
   <section class="laptopia-section laptopia-repairs-intro" aria-labelledby="repairs-title">
     <div class="laptopia-repair-rail">
       <p class="laptopia-repair-eyebrow">מהעבודה במעבדה</p>
-      <h1 id="repairs-title">תיקונים מהמעבדה</h1>
-      <p>מקרים אמיתיים של תיקון מחשבים ניידים במעבדת Laptopia ברמלה. בכל מקרה מוצגים הנזק שנמצא, העבודה שנעשתה והתוצאה. המחיר המתואר שייך למחשב המסוים; מחיר של מחשב אחר נקבע לאחר בדיקה.</p>
+      <h1 id="repairs-title">תיק עבודות</h1>
+      <p>תיעוד תיקונים אמיתיים במעבדה שלנו. בכל תיקון מוצג הנזק או התלונה שאיתו המחשב הגיע, סדר העבודה שלנו על המחשב והתיקון הסופי. המחיר שמופיע בתיקונים מותאם לפי סוג המחשב ומורכבות העבודה ועלות החלקים. כל מחשב מקבל מחיר מותאם אישית.</p>
     </div>
   </section>
   <section class="laptopia-section laptopia-repairs-list" aria-label="מקרי תיקון">
