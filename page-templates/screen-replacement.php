@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="screen-title">החלפת מסך למחשב נייד ברמלה והסביבה</h1>
       <p>מסך שבור, פסים או תמונה שנעלמת? בודקים אם מקור התקלה במסך ומתאימים חלק חלופי לפי הדגם.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><span>החלפת מסך — החל מ- <?php echo laptopia_bidi_price( '550₪' ); ?></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><span>החלפת מסך — <?php echo laptopia_price_display( 'screen' ); ?></span></div>
       <p>המחיר הסופי נקבע לפי הדגם והמסך המתאים, לפני אישור העבודה.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '6 חודשי אחריות על מסך שהוחלף' ) ); ?>
       <div class="laptopia-buttons">
@@ -43,13 +43,11 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="screen-prices-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="screen-prices-title">כמה עולה החלפת מסך למחשב נייד?</h2>
-      <div class="laptopia-diagnostic">
-        <strong>החלפת מסך — החל מ- <?php echo laptopia_bidi_price( '550₪' ); ?></strong>
-        <p>העלות תלויה בדגם המחשב, בסוג המסך ובמורכבות העבודה. הצעת המחיר נמסרת לפני ביצוע ההחלפה והעבודה מתבצעת רק לאחר אישור הלקוח.</p>
-        <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם <?php echo laptopia_bidi_price( '150₪' ); ?>.</p>
-        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
-      </div>
+      <?php get_template_part( 'template-parts/pricing-panel', null, array(
+        'price_key' => 'screen',
+        'label' => 'החלפת מסך',
+        'description' => 'העלות תלויה בדגם המחשב, בסוג המסך ובמורכבות העבודה. הצעת המחיר נמסרת לפני ביצוע ההחלפה והעבודה מתבצעת רק לאחר אישור הלקוח.',
+      ) ); ?>
       <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
     </div>
   </section>
@@ -113,7 +111,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="screen-warranty-title">אחריות על המסך שהוחלף</h2>
       <div class="laptopia-board-content">
-        <div class="laptopia-card">
+        <div class="laptopia-card laptopia-compact-notice">
           <h3><bdi dir="ltr">6</bdi> חודשי אחריות על מסך שהוחלף</h3>
           <p>האחריות ניתנת בהתאם לסוג התיקון והרכיב.</p>
         </div>
@@ -129,7 +127,7 @@ get_template_part( 'template-parts/header', null, array(
       <div class="laptopia-warranty-grid">
         <div class="laptopia-card"><h3>האם מסך שחור מחייב החלפת מסך?</h3><p>לא בהכרח. הבעיה יכולה להיות במסך, בחיבוריו או ברכיב אחר במחשב. נדרשת בדיקה כדי לקבוע מה מקור התקלה.</p></div>
         <div class="laptopia-card"><h3>איך יודעים איזה מסך מתאים למחשב?</h3><p>בודקים את דגם המחשב ואת מאפייני המסך הקיים. אפשר לשלוח מראש את פרטי הדגם ותמונה כדי להתחיל בבדיקת ההתאמה.</p></div>
-        <div class="laptopia-card"><h3>כמה עולה להחליף את המסך?</h3><p>המחיר מתחיל ב-<?php echo laptopia_bidi_price( '550₪' ); ?>. העלות הסופית תלויה במסך הנדרש ובדגם המחשב ונמסרת לאישור לפני ביצוע העבודה.</p></div>
+        <div class="laptopia-card"><h3>כמה עולה להחליף את המסך?</h3><p>המחיר מתחיל ב-<?php echo laptopia_price_amount( 'screen' ); ?>. העלות הסופית תלויה במסך הנדרש ובדגם המחשב ונמסרת לאישור לפני ביצוע העבודה.</p></div>
         <div class="laptopia-card"><h3>כמה זמן נמשכת החלפת מסך?</h3><p>משך העבודה תלוי בדגם המחשב, בזמינות המסך ובסוג התקלה.</p></div>
         <div class="laptopia-card"><h3>האם מקבלים אחריות על המסך?</h3><p>על מסך שהוחלף ניתנים 6 חודשי אחריות, בהתאם לסוג התיקון והרכיב.</p></div>
         <div class="laptopia-card"><h3>האם אפשר להגיע בלי לתאם?</h3><p>הגעה למעבדה ומסירת מחשב מתבצעות בתיאום מראש. פנו בוואטסאפ או בטלפון לתיאום.</p></div>
@@ -144,9 +142,4 @@ get_template_part( 'template-parts/header', null, array(
 </main>
 
 <?php
-get_template_part( 'template-parts/footer' );
-get_template_part( 'template-parts/floating-whatsapp' );
-wp_footer();
-?>
-</body>
-</html>
+get_footer();

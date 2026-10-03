@@ -4,8 +4,11 @@ require_once get_stylesheet_directory() . '/inc/services.php';
 require_once get_stylesheet_directory() . '/inc/icons.php';
 require_once get_stylesheet_directory() . '/inc/ui-icons.php';
 require_once get_stylesheet_directory() . '/inc/bidi.php';
+require_once get_stylesheet_directory() . '/inc/prices.php';
+require_once get_stylesheet_directory() . '/inc/google-reviews.php';
 require_once get_stylesheet_directory() . '/inc/repairs.php';
 require_once get_stylesheet_directory() . '/inc/seo.php';
+require_once get_stylesheet_directory() . '/inc/analytics.php';
 
 function laptopia_background_mode() {
     $modes = array(
@@ -82,6 +85,13 @@ add_action( 'wp_enqueue_scripts', function() {
         get_stylesheet_directory_uri() . '/assets/css/laptopia.css',
         array(),
         filemtime( get_stylesheet_directory() . '/assets/css/laptopia.css' )
+    );
+    wp_enqueue_script(
+        'laptopia-metadata',
+        get_stylesheet_directory_uri() . '/assets/js/metadata.js',
+        array(),
+        filemtime( get_stylesheet_directory() . '/assets/js/metadata.js' ),
+        true
     );
     wp_enqueue_script(
         'laptopia-navigation',

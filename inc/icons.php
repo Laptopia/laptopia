@@ -7,6 +7,7 @@ function laptopia_get_icon_svg( $key ) {
     // Page slugs reuse component icons, including callers such as header/favicons.
     $aliases = array(
         'charging-usb-repair' => 'charging',
+        'peripheral-ports' => 'charging',
         'hinges-plastics-repair' => 'hinge',
         'ram-ssd-windows-upgrade' => 'upgrade',
     );

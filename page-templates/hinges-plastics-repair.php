@@ -23,8 +23,8 @@ defined( 'ABSPATH' ) || exit;
       <h1 id="service-title">תיקון צירים ופלסטיקה למחשב נייד ברמלה והסביבה</h1>
       <p>ציר קשה, מסגרת שנפתחת או מכסה שמתרומם? בודקים את הציר, נקודות העיגון וחלקי המארז לפני בחירת דרך התיקון.</p>
       <div class="laptopia-service-price-grid">
-        <div class="laptopia-board-price laptopia-service-cta"><span><span class="laptopia-price-card-label">תיקון צירים</span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">500₪</bdi></span></span></div>
-        <div class="laptopia-board-price laptopia-service-cta"><span><span class="laptopia-price-card-label">תיקון פלסטיקה / מארז</span><span class="laptopia-service-price-amount">החל מ- <bdi dir="ltr">700₪</bdi></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><span><span class="laptopia-price-card-label">תיקון צירים</span><span class="laptopia-service-price-amount"><?php echo laptopia_price_display( 'hinges' ); ?></span></span></div>
+        <div class="laptopia-board-price laptopia-service-cta"><span><span class="laptopia-price-card-label">תיקון פלסטיקה / מארז</span><span class="laptopia-service-price-amount"><?php echo laptopia_price_display( 'plastics' ); ?></span></span></div>
       </div>
       <p>המחיר והיקף העבודה נקבעים לאחר בדיקה ואישור הלקוח.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '3 חודשי אחריות על התיקון' ) ); ?>
@@ -108,14 +108,14 @@ defined( 'ABSPATH' ) || exit;
       <div class="laptopia-service-price-grid">
         <div class="laptopia-card laptopia-price-card">
           <h3>תיקון צירים</h3>
-          <p class="laptopia-price-card-value">החל מ- <?php echo laptopia_bidi_price( '500₪' ); ?></p>
+          <p class="laptopia-price-card-value"><?php echo laptopia_price_display( 'hinges' ); ?></p>
         </div>
         <div class="laptopia-card laptopia-price-card">
           <h3>תיקון פלסטיקה / מארז</h3>
-          <p class="laptopia-price-card-value">החל מ- <?php echo laptopia_bidi_price( '700₪' ); ?></p>
+          <p class="laptopia-price-card-value"><?php echo laptopia_price_display( 'plastics' ); ?></p>
         </div>
       </div>
-      <p class="laptopia-price-note">המחיר תלוי במבנה הדגם, בחלקים שנפגעו ובזמינות החלקים הנדרשים. דרך הטיפול והמחיר נקבעים לאחר בדיקה ואישור הלקוח.</p>
+      <p class="laptopia-pricing-explanation">המחיר תלוי במבנה הדגם, בחלקים שנפגעו ובזמינות החלקים הנדרשים. דרך הטיפול והמחיר נקבעים לאחר בדיקה ואישור הלקוח.</p>
       <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
     </div>
   </section>
@@ -133,7 +133,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">אחריות ותנאי השירות</h2>
       <div class="laptopia-board-content">
-        <div class="laptopia-card"><h3>3 חודשי אחריות על התיקון</h3><p>פרטי הטיפול ותנאי האחריות יימסרו לפני אישור העבודה. ההצעה תבהיר אילו חלקים וחיבורים נכללים בטיפול.</p></div>
+        <div class="laptopia-card laptopia-compact-notice"><h3>3 חודשי אחריות על התיקון</h3><p>פרטי הטיפול ותנאי האחריות יימסרו לפני אישור העבודה. ההצעה תבהיר אילו חלקים וחיבורים נכללים בטיפול.</p></div>
       </div>
     <?php get_template_part( 'template-parts/warranty-exclusion' ); ?>
     </div>
@@ -156,9 +156,4 @@ defined( 'ABSPATH' ) || exit;
   ) ); ?>
 </main>
 <?php
-get_template_part( 'template-parts/footer' );
-get_template_part( 'template-parts/floating-whatsapp' );
-wp_footer();
-?>
-</body>
-</html>
+get_footer();

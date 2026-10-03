@@ -2,10 +2,6 @@
 
   <div class="laptopia-hero-content">
 
-    <div class="laptopia-badge">
-      מעבדת מחשבים ניידים ברמלה והסביבה
-    </div>
-
     <h1>
       תיקון מקצועי למחשבים ניידים
     </h1>
@@ -47,10 +43,6 @@
       <span>מחיר מאושר מראש</span>
       <span>אחריות על התיקון</span>
       <span>שירות אישי</span>
-    </div>
-
-    <div class="laptopia-phone-line">
-      053-803-6244
     </div>
 
   </div>

@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="battery-title">החלפת סוללה למחשב נייד ברמלה והסביבה</h1>
       <p>הסוללה מתרוקנת מהר, מתנפחת או שהמחשב נכבה ללא מטען? בודקים אם נדרשת החלפה או שמקור התקלה במערכת הטעינה.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><span>החלפת סוללה — החל מ- <?php echo laptopia_bidi_price( '400₪' ); ?></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><span>החלפת סוללה — <?php echo laptopia_price_display( 'battery' ); ?></span></div>
       <p>המחיר הסופי נקבע לפי הדגם והסוללה המתאימה, לפני אישור העבודה.</p>
       <?php get_template_part( 'template-parts/service-hero-details', null, array( 'warranty' => '12 חודשי אחריות על סוללה מקורית' ) ); ?>
       <div class="laptopia-buttons">
@@ -78,7 +78,7 @@ get_template_part( 'template-parts/header', null, array(
       <h2 id="battery-diagnosis-title">מתי צריך להחליף סוללה ומתי הבעיה במקום אחר?</h2>
       <p>החלפת סוללה מתאימה כאשר הבדיקה מצביעה על סוללה שחוקה או תקולה. חוסר טעינה אינו מעיד בהכרח על צורך בהחלפה, ולכן בודקים את מקור התקלה לפני הזמנת חלק או ביצוע העבודה.</p>
       <h3>המטען ושקע הטעינה</h3>
-      <p>מטען שאינו מתאים או שקע טעינה תקול יכולים להשפיע על טעינת המחשב. החלפת סוללה לבדה אינה פותרת בהכרח בעיות אלה. מידע נוסף נמצא בעמוד <a class="laptopia-context-link" href="<?php echo esc_url( home_url( '/charging-usb-repair/' ) ); ?>">תיקון שקעי טעינה ו-USB</a>.</p>
+      <p>מטען שאינו מתאים או שקע טעינה תקול יכולים להשפיע על טעינת המחשב. החלפת סוללה לבדה אינה פותרת בהכרח בעיות אלה. מידע נוסף נמצא בעמוד <a class="laptopia-context-link" href="<?php echo esc_url( home_url( '/charging-usb-repair/' ) ); ?>">תיקון שקעי טעינה</a>.</p>
       <h3>מערכת הטעינה במחשב</h3>
       <p>לעיתים התקלה נמצאת במעגלי הטעינה ולא בסוללה. אם מתגלה צורך בטיפול אחר, פרטי העבודה והמחיר יימסרו לאישור לפני ביצוע התיקון.</p>
     </div>
@@ -98,13 +98,11 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="battery-prices-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="battery-prices-title">כמה עולה החלפת סוללה למחשב נייד?</h2>
-      <div class="laptopia-diagnostic">
-        <strong>החלפת סוללה — החל מ- <?php echo laptopia_bidi_price( '400₪' ); ?></strong>
-        <p>העלות הסופית תלויה בדגם המחשב, בסוג הסוללה ובמורכבות העבודה. המחיר נמסר לאישור לפני ההחלפה.</p>
-        <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם <?php echo laptopia_bidi_price( '150₪' ); ?>.</p>
-        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
-      </div>
+      <?php get_template_part( 'template-parts/pricing-panel', null, array(
+        'price_key' => 'battery',
+        'label' => 'החלפת סוללה',
+        'description' => 'העלות הסופית תלויה בדגם המחשב, בסוג הסוללה ובמורכבות העבודה. המחיר נמסר לאישור לפני ההחלפה.',
+      ) ); ?>
       <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
     </div>
   </section>
@@ -127,7 +125,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="battery-warranty-title">אחריות על הסוללה</h2>
       <div class="laptopia-board-content">
-        <div class="laptopia-card">
+        <div class="laptopia-card laptopia-compact-notice">
           <h3>12 חודשי אחריות על סוללה מקורית</h3>
           <p>תקופת האחריות הזו מתייחסת לסוללה מקורית. תנאי האחריות לסוללה המוצעת יימסרו לפני אישור ההחלפה.</p>
         </div>
@@ -143,7 +141,7 @@ get_template_part( 'template-parts/header', null, array(
       <div class="laptopia-warranty-grid">
         <div class="laptopia-card"><h3>המחשב לא נטען — האם צריך סוללה חדשה?</h3><p>לא בהכרח. התקלה יכולה להיות במטען, בשקע הטעינה או במערכת הטעינה. האבחון נועד לקבוע אם החלפת הסוללה היא הטיפול המתאים.</p></div>
         <div class="laptopia-card"><h3>איך בודקים אם יש סוללה מתאימה לדגם שלי?</h3><p>שלחו את דגם המחשב המדויק. נבדוק את התאמת הסוללה ואת זמינותה לפני אישור העבודה.</p></div>
-        <div class="laptopia-card"><h3>כמה עולה להחליף סוללה?</h3><p>המחיר מתחיל ב-<?php echo laptopia_bidi_price( '400₪' ); ?>. העלות הסופית נקבעת בהתאם לדגם, לסוללה הנדרשת ולמורכבות העבודה.</p></div>
+        <div class="laptopia-card"><h3>כמה עולה להחליף סוללה?</h3><p>המחיר מתחיל ב-<?php echo laptopia_price_amount( 'battery' ); ?>. העלות הסופית נקבעת בהתאם לדגם, לסוללה הנדרשת ולמורכבות העבודה.</p></div>
         <div class="laptopia-card"><h3>כמה זמן נמשכת החלפת הסוללה?</h3><p>משך העבודה תלוי בדגם המחשב, בזמינות הסוללה ובסוג התקלה.</p></div>
         <div class="laptopia-card"><h3>איזו אחריות ניתנת על הסוללה?</h3><p>על סוללה מקורית ניתנים 12 חודשי אחריות. תנאי האחריות לסוללה המוצעת נמסרים לפני אישור ההחלפה.</p></div>
         <div class="laptopia-card"><h3>האם צריך לתאם לפני ההגעה?</h3><p>כן. הגעה למעבדה ומסירת מחשב מתבצעות בתיאום מראש בלבד, בוואטסאפ או בטלפון.</p></div>
@@ -158,9 +156,4 @@ get_template_part( 'template-parts/header', null, array(
 </main>
 
 <?php
-get_template_part( 'template-parts/footer' );
-get_template_part( 'template-parts/floating-whatsapp' );
-wp_footer();
-?>
-</body>
-</html>
+get_footer();

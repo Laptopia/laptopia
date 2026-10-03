@@ -14,6 +14,7 @@ $priority = ! empty( $args['priority'] );
          height="<?php echo esc_attr( (string) (int) $image['height'] ); ?>"
          loading="<?php echo $priority ? 'eager' : 'lazy'; ?>"
          <?php if ( $priority ) : ?>fetchpriority="high"<?php endif; ?> decoding="async">
+    <span class="laptopia-photo-zoom" aria-hidden="true"><?php echo laptopia_get_icon_svg( 'diagnostics' ); ?></span>
   </button>
   <?php if ( ! empty( $image['caption'] ) ) : ?><figcaption><?php echo esc_html( $image['caption'] ); ?></figcaption><?php endif; ?>
 </figure>

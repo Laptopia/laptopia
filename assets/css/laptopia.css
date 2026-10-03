@@ -84,9 +84,31 @@ textarea:focus-visible {
 }
 
 :root {
+  --laptopia-graphite: #28313b;
+  --laptopia-text: #202832;
+  --laptopia-secondary: #56616e;
+  --laptopia-light: #f1f3f5;
+  --laptopia-surface: #fff;
+  --laptopia-border: #dce1e6;
+  --laptopia-accent: #2f80ed;
+  --laptopia-link: #1557ad;
+  --laptopia-informational-badge: #428ef4;
+  --laptopia-page-background: #f8f9fa;
+  --laptopia-hero-background: radial-gradient(ellipse at 14% 0%, rgba(100, 116, 139, .09), transparent 55%),
+    radial-gradient(ellipse at 88% 0%, rgba(100, 116, 139, .07), transparent 50%),
+    linear-gradient(180deg, rgba(241, 243, 245, .6), rgba(255, 255, 255, .35));
   --laptopia-content-rail: 850px;
   --laptopia-grid-rail: 1120px;
   --laptopia-text-rail: 740px;
+  --laptopia-action-height: 50px;
+  --laptopia-action-padding-inline: 24px;
+  --laptopia-action-radius: 12px;
+  --laptopia-action-gap: 13px;
+}
+
+/* One base below transparent artwork; content surfaces keep their own colors. */
+body.wp-theme-laptopia {
+  background-color: var(--laptopia-page-background);
 }
 
 .laptopia-section,
@@ -200,22 +222,23 @@ textarea:focus-visible {
 .laptopia-section-title {
   margin: 0 0 12px;
   text-align: center;
-  font-size: 36px;
-  line-height: 1.25;
-  font-weight: 700;
 }
 
 .laptopia-section-subtitle {
   margin: 0 0 32px;
   text-align: center;
   color: #56616e;
-  font-size: 17px;
 }
 
 .laptopia-btn {
-  display: inline-block;
-  padding: 15px 27px;
-  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: 100%;
+  min-height: var(--laptopia-action-height);
+  padding: 12px var(--laptopia-action-padding-inline);
+  border-radius: var(--laptopia-action-radius);
   font-size: 18px;
   font-weight: 700;
   transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
@@ -262,7 +285,7 @@ textarea:focus-visible {
 .laptopia-buttons.laptopia-contact-actions {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 680px;
+  max-width: var(--laptopia-text-rail);
   margin-inline: auto;
 }
 
@@ -396,7 +419,7 @@ bdi[dir="ltr"] {
 }
 
 .laptopia-hero-content {
-  max-width: 900px;
+  max-width: var(--laptopia-content-rail);
   margin: 0 auto;
 }
 
@@ -413,23 +436,17 @@ bdi[dir="ltr"] {
 
 .laptopia-hero h1 {
   margin: 0 0 17px;
-  font-size: 50px;
-  line-height: 1.15;
 }
 
 .laptopia-hero h2 {
   margin: 0 0 17px;
   color: #56616e;
-  font-size: 26px;
-  line-height: 1.45;
 }
 
 .laptopia-hero p {
-  max-width: 800px;
+  max-width: var(--laptopia-text-rail);
   margin: 0 auto 26px;
   color: #56616e;
-  font-size: 19px;
-  line-height: 1.8;
 }
 
 .laptopia-appointment {
@@ -447,8 +464,14 @@ bdi[dir="ltr"] {
 .laptopia-buttons {
   display: flex;
   justify-content: center;
-  gap: 13px;
+  gap: var(--laptopia-action-gap);
   flex-wrap: wrap;
+}
+
+/* Equal-sized WhatsApp/phone pairs across hero and service introductions. */
+.laptopia-section .laptopia-buttons:not(.laptopia-contact-actions):has(> .laptopia-btn-whatsapp):has(> .laptopia-btn-dark) > .laptopia-btn {
+  flex: 0 1 290px;
+  width: 290px;
 }
 
 .laptopia-trust {
@@ -511,14 +534,11 @@ bdi[dir="ltr"] {
 
 .laptopia-card h3 {
   margin: 0 0 8px;
-  font-size: 19px;
 }
 
 .laptopia-card p {
   margin: 0;
   color: #56616e;
-  font-size: 15px;
-  line-height: 1.65;
 }
 
 
@@ -546,7 +566,7 @@ bdi[dir="ltr"] {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-  max-width: 960px;
+  max-width: var(--laptopia-content-rail);
   margin: 28px auto 0;
 }
 
@@ -595,7 +615,7 @@ bdi[dir="ltr"] {
 }
 
 .laptopia-board-content {
-  max-width: 850px;
+  max-width: var(--laptopia-content-rail);
   margin: 0 auto;
 }
 
@@ -613,17 +633,12 @@ bdi[dir="ltr"] {
 
 .laptopia-board h2 {
   margin: 0 0 12px;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.25;
 }
 
 .laptopia-board p {
-  max-width: 860px;
+  max-width: var(--laptopia-text-rail);
   margin: 0 auto 22px;
   color: #56616e;
-  font-size: 18px;
-  line-height: 1.8;
 }
 
 .laptopia-board-price {
@@ -674,14 +689,11 @@ bdi[dir="ltr"] {
 
 .laptopia-step h3 {
   margin: 0 0 7px;
-  font-size: 18px;
 }
 
 .laptopia-step p {
   margin: 0;
   color: #56616e;
-  font-size: 14px;
-  line-height: 1.6;
 }
 
 
@@ -746,7 +758,7 @@ bdi[dir="ltr"] {
   text-align: center;
   border: 1px solid #dce1e6;
   border-radius: 16px;
-  background: #f1f3f5;
+  background: var(--laptopia-content-card);
   color: #56616e;
   line-height: 1.7;
 }
@@ -810,37 +822,18 @@ bdi[dir="ltr"] {
 }
 
 .laptopia-contact-content {
-  max-width: 950px;
+  max-width: var(--laptopia-content-rail);
   margin: 0 auto;
-}
-
-.laptopia-service-contact .laptopia-contact-content {
-  width: 100%;
-  max-width: 600px;
-  margin-inline: auto;
-}
-
-.laptopia-service-contact .laptopia-contact-info,
-.laptopia-service-contact .laptopia-contact-note,
-.laptopia-service-contact .laptopia-service-contact-actions {
-  width: 100%;
-  max-width: 100%;
-  margin-inline: auto;
 }
 
 .laptopia-contact h2 {
   margin: 0 0 12px;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.25;
 }
 
 .laptopia-contact-intro {
-  max-width: 720px;
+  max-width: var(--laptopia-text-rail);
   margin: 0 auto 26px;
   color: #dce1e6;
-  font-size: 17px;
-  line-height: 1.8;
 }
 
 .laptopia-contact-note {
@@ -854,27 +847,27 @@ bdi[dir="ltr"] {
   border: 1px solid rgba(255, 255, 255, .18);
 }
 
-.laptopia-service-contact .laptopia-contact-note a,
-.laptopia-service-contact .laptopia-contact-note a:visited {
+.laptopia-contact-navigation a,
+.laptopia-contact-navigation a:visited {
   color: #dce1e6;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.laptopia-service-contact .laptopia-contact-note a:hover,
-.laptopia-service-contact .laptopia-contact-note a:active,
-.laptopia-service-contact .laptopia-contact-note a:focus-visible {
+.laptopia-contact-navigation a:hover,
+.laptopia-contact-navigation a:active,
+.laptopia-contact-navigation a:focus-visible {
   color: #5999f1;
 }
 
-.laptopia-service-contact .laptopia-contact-note a:focus-visible {
+.laptopia-contact-navigation a:focus-visible {
   box-shadow: none;
   outline: 2px solid #5999f1;
   outline-offset: 4px;
 }
 
 .laptopia-contact-info {
-  max-width: 600px;
+  max-width: var(--laptopia-text-rail);
   margin: 0 auto 26px;
   display: grid;
   grid-template-columns: repeat(2,1fr);
@@ -900,7 +893,7 @@ bdi[dir="ltr"] {
 }
 
 .laptopia-hours {
-  max-width: 630px;
+  max-width: var(--laptopia-text-rail);
   margin: 28px auto 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, .18);
@@ -908,22 +901,28 @@ bdi[dir="ltr"] {
   background: rgba(255, 255, 255, .04);
 }
 
-/* Homepage contact CTA sizing */
-.laptopia-contact:not(.laptopia-service-contact) .laptopia-contact-info,
-.laptopia-contact:not(.laptopia-service-contact) .laptopia-contact-actions {
-  max-width: 630px;
+/* Shared contact rails: information/actions are not the whole section width. */
+.laptopia-contact .laptopia-contact-info,
+.laptopia-contact .laptopia-contact-actions {
+  width: 100%;
+  max-width: var(--laptopia-text-rail);
   margin-inline: auto;
 }
-
-.laptopia-contact:not(.laptopia-service-contact) .laptopia-contact-actions .laptopia-cta-content {
-  white-space: nowrap;
+.laptopia-contact .laptopia-cta-content { white-space: nowrap; }
+.laptopia-contact-note { max-width: var(--laptopia-text-rail); }
+.laptopia-contact-navigation { margin: 0 auto 27px; text-align: center; }
+.laptopia-contact-navigation a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .06);
 }
-
-@media (max-width: 520px) {
-  .laptopia-contact:not(.laptopia-service-contact) .laptopia-contact-actions {
-    grid-template-columns: 1fr;
-  }
-}
+.laptopia-contact-inquiry { background: transparent; color: var(--laptopia-graphite); }
+.laptopia-contact-inquiry .laptopia-contact-intro { color: var(--laptopia-secondary); }
 
 .laptopia-hours-row {
   display: flex;
@@ -940,6 +939,8 @@ bdi[dir="ltr"] {
 /* FOOTER */
 
 .laptopia-footer {
+  position: relative;
+  z-index: 1;
   direction: rtl;
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -1063,17 +1064,12 @@ bdi[dir="ltr"] {
   }
 
   .laptopia-hero h1 {
-    font-size: 31px;
-    line-height: 1.25;
   }
 
   .laptopia-hero h2 {
-    font-size: 19px;
   }
 
   .laptopia-hero p {
-    font-size: 16px;
-    line-height: 1.75;
   }
 
   .laptopia-appointment {
@@ -1081,8 +1077,14 @@ bdi[dir="ltr"] {
   }
 
   .laptopia-btn {
-    width: 100%;
-    padding: 14px 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: 12px 18px;
     font-size: 16px;
   }
 
@@ -1098,12 +1100,10 @@ bdi[dir="ltr"] {
   .laptopia-section-title,
   .laptopia-board h2,
   .laptopia-contact h2 {
-    font-size: 28px;
   }
 
   .laptopia-section-subtitle {
     margin-bottom: 27px;
-    font-size: 15px;
   }
 
   .laptopia-services-grid,
@@ -1118,7 +1118,6 @@ bdi[dir="ltr"] {
   }
 
   .laptopia-board p {
-    font-size: 16px;
   }
 
   .laptopia-board-price {
@@ -1139,7 +1138,6 @@ bdi[dir="ltr"] {
   }
 
   .laptopia-contact-intro {
-    font-size: 15px;
   }
 
   .laptopia-hours-row {
@@ -1157,8 +1155,9 @@ bdi[dir="ltr"] {
   }
 }
 
-/* HERO VISUAL ENHANCEMENTS */
-.laptopia-hero {
+/* Shared upper composition: artwork and typography remain separate. */
+.laptopia-hero,
+.laptopia-page-foundation {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -1169,7 +1168,9 @@ bdi[dir="ltr"] {
 }
 
 .laptopia-hero::before,
-.laptopia-hero::after {
+.laptopia-hero::after,
+.laptopia-page-foundation::before,
+.laptopia-page-foundation::after {
   position: absolute;
   z-index: -1;
   border-radius: 50%;
@@ -1177,7 +1178,8 @@ bdi[dir="ltr"] {
   pointer-events: none;
 }
 
-.laptopia-hero::before {
+.laptopia-hero::before,
+.laptopia-page-foundation::before {
   top: -18%;
   right: -8%;
   width: 430px;
@@ -1186,7 +1188,8 @@ bdi[dir="ltr"] {
   box-shadow: 0 0 0 24px rgba(100, 116, 139, .035), 0 0 0 48px rgba(100, 116, 139, .025);
 }
 
-.laptopia-hero::after {
+.laptopia-hero::after,
+.laptopia-page-foundation::after {
   bottom: 20%;
   left: -8%;
   width: 360px;
@@ -1198,7 +1201,7 @@ bdi[dir="ltr"] {
 .laptopia-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 680px;
+  max-width: var(--laptopia-content-rail);
   margin: 0 auto;
   text-align: center;
 }
@@ -1210,7 +1213,6 @@ bdi[dir="ltr"] {
 }
 
 .laptopia-hero h1 {
-  letter-spacing: -.02em;
 }
 
 .laptopia-hero .laptopia-badge,
@@ -1237,7 +1239,7 @@ bdi[dir="ltr"] {
 }
 
 @media (max-width: 900px) {
-  .laptopia-hero-content { max-width: 640px; margin: 0 auto; text-align: center; }
+  .laptopia-hero-content { max-width: var(--laptopia-content-rail); margin: 0 auto; text-align: center; }
 }
 
 @media (max-width: 600px) {
@@ -1289,7 +1291,6 @@ bdi[dir="ltr"] {
 
 .laptopia-header-navigation > a:not(.laptopia-header-about)[aria-current] {
   color: #28313b;
-  text-decoration: underline;
   text-underline-offset: 4px;
 }
 
@@ -1470,6 +1471,7 @@ bdi[dir="ltr"] {
   }
 
   .laptopia-header-navigation .laptopia-services-dropdown,
+  .laptopia-header-price,
   .laptopia-header-repairs,
   .laptopia-header-navigation .laptopia-header-about {
     display: none;
@@ -1621,33 +1623,27 @@ bdi[dir="ltr"] {
 
 /* Shared mobile CTA sizing */
 @media (max-width: 600px) {
-  .laptopia-section .laptopia-buttons,
-  .laptopia-section .laptopia-buttons.laptopia-contact-actions {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    width: calc(100% - 40px);
-    max-width: 320px;
+  .laptopia-section .laptopia-buttons:not(.laptopia-contact-actions) {
+    display: flex;
+    width: auto;
+    max-width: calc(100% - 30px);
     margin-inline: auto;
   }
 
-  .laptopia-section .laptopia-buttons .laptopia-btn {
+  .laptopia-section .laptopia-buttons.laptopia-contact-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, 250px);
+    max-width: 250px;
+    margin-inline: auto;
+  }
+
+  .laptopia-section .laptopia-buttons.laptopia-contact-actions .laptopia-btn {
     width: 100%;
   }
 
-  .laptopia-reviews-heading .laptopia-buttons {
-    width: calc(100% - 30px);
-  }
-
-  .laptopia-section .laptopia-buttons .laptopia-cta-content {
+  .laptopia-section .laptopia-buttons:not(.laptopia-contact-actions) .laptopia-cta-content {
     white-space: nowrap;
-  }
-}
-
-@media (min-width: 521px) and (max-width: 600px) {
-  .laptopia-contact:not(.laptopia-service-contact) .laptopia-buttons.laptopia-contact-actions {
-    width: 100%;
-    max-width: 630px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1730,6 +1726,75 @@ bdi[dir="ltr"] {
   margin-inline: auto;
 }
 
+/* Google review cards; neutral loading precedes success or confirmed fallback. */
+[data-google-reviews-shell] { display: grid; grid-template-columns: minmax(0, 1fr); }
+[data-google-reviews-shell] > div { grid-area: 1 / 1; min-width: 0; }
+[data-google-reviews-official][hidden],
+[data-google-reviews-fallback][hidden] { display: none !important; }
+.laptopia-google-reviews { padding-block: 56px; background: rgba(255, 255, 255, .2); }
+.laptopia-google-reviews .laptopia-reviews-rail { margin-bottom: 0; }
+.laptopia-google-reviews-heading { display: grid; justify-items: center; gap: 11px; margin-bottom: 26px; text-align: center; }
+.laptopia-google-reviews-heading .laptopia-section-title { margin: 0; text-align: center; }
+.laptopia-google-reviews-disclosure { margin: 0; color: #56616e; font-size: 14px; }
+.laptopia-google-rating { display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap; gap: 6px 10px; color: #28313b; }
+.laptopia-google-rating strong { font-size: 30px; line-height: 1; }
+.laptopia-google-rating span { color: #56616e; font-size: 14px; }
+.laptopia-google-rating .laptopia-google-rating-stars { color: #a66a00; font-size: 19px; letter-spacing: 1px; }
+.laptopia-google-carousel-frame { position: relative; }
+.laptopia-google-carousel { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; overflow-y: hidden; overflow-anchor: none; scroll-snap-type: x mandatory; overscroll-behavior-inline: contain; scrollbar-width: none; padding: 2px; }
+.laptopia-google-carousel::-webkit-scrollbar { display: none; }
+.laptopia-google-review-card { box-sizing: border-box; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; padding: 20px; border: 1px solid #dce1e6; border-radius: 16px; background: #f1f3f5; box-shadow: 0 4px 14px rgba(32, 40, 50, .045); scroll-snap-align: start; color: #202832; }
+.laptopia-google-review-author { display: flex; align-items: center; gap: 10px; min-height: 40px; max-width: 100%; }
+.laptopia-google-review-author img { width: 40px; height: 40px; flex: 0 0 40px; border-radius: 50%; object-fit: cover; }
+.laptopia-google-review-author div { min-width: 0; }
+.laptopia-google-review-author a { display: block; overflow-wrap: anywhere; font-weight: 700; color: #28313b; }
+.laptopia-google-review-author small { display: block; color: #56616e; }
+.laptopia-google-review-stars { color: #a66a00; font-size: 20px; letter-spacing: 1px; margin-top: 14px; }
+.laptopia-google-review-text { margin: 10px 0 0; line-height: 1.55; overflow-wrap: anywhere; white-space: pre-line; }
+.laptopia-google-review-text.is-collapsed { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden; }
+.laptopia-google-review-expand { border: 0; padding: 4px 0; background: none; color: #1d6cd1; cursor: pointer; font: inherit; }
+.laptopia-google-review-link { margin-top: auto; padding-top: 12px; color: #1d6cd1; font-size: 13px; font-weight: 400; }
+.laptopia-google-carousel-arrow { position: absolute; z-index: 1; top: 50%; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; transform: translateY(-50%); border: 1px solid #dce1e6; border-radius: 50%; background: #f1f3f5; box-shadow: 0 3px 10px rgba(32, 40, 50, .08); color: #28313b; direction: ltr; font-size: 25px; line-height: 1; cursor: pointer; }
+.laptopia-google-carousel-prev { right: -20px; }
+.laptopia-google-carousel-next { left: -20px; }
+@media (hover: hover) and (pointer: fine) { .laptopia-google-carousel-arrow:hover { background: #dce1e6; } }
+.laptopia-google-carousel-arrow:focus-visible,
+.laptopia-google-review-expand:focus-visible { outline: 3px solid #1d6cd1; outline-offset: 3px; }
+.laptopia-google-attribution { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 18px; color: #5e5e5e; font-size: 12px; }
+.laptopia-google-attribution img { display: block; width: 100px; height: auto; }
+.laptopia-google-reviews-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.laptopia-google-review-action { box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; min-height: var(--laptopia-action-height); padding: 10px var(--laptopia-action-padding-inline); border: 1px solid #28313b; border-radius: var(--laptopia-action-radius); font-size: 14px; font-weight: 600; line-height: 1.35; text-align: center; text-decoration: none; }
+.laptopia-google-review-action-google,
+.laptopia-google-review-action-google:visited { background: #28313b; color: #fff; }
+.laptopia-google-review-action-easy,
+.laptopia-google-review-action-easy:visited { background: #f1f3f5; border-color: #dce1e6; color: #28313b; }
+.laptopia-easy-icon { display: block; width: 19px; height: 19px; flex: 0 0 19px; border-radius: 4px; }
+@media (hover: hover) and (pointer: fine) { .laptopia-google-review-action-google:hover { background: #202832; color: #fff; } .laptopia-google-review-action-easy:hover { background: #dce1e6; color: #28313b; } }
+.laptopia-google-review-action:focus-visible { outline: 3px solid #1d6cd1; outline-offset: 3px; }
+@media (max-width: 700px) {
+  .laptopia-google-reviews { padding-block: 36px 88px; }
+  .laptopia-google-carousel { grid-auto-columns: 88%; gap: 12px; }
+  .laptopia-google-carousel-arrow { width: 44px; height: 44px; }
+  .laptopia-google-carousel-prev { right: -24px; }
+  .laptopia-google-carousel-next { left: -12px; }
+  .laptopia-google-reviews-actions { flex-direction: column; width: min(calc(100vw - 104px), 260px); margin-inline: auto; }
+  .laptopia-google-review-action { width: 100%; padding-inline: 10px; font-size: 13px; }
+}
+@media (max-width: 600px) {
+  .laptopia-section .laptopia-buttons:not(.laptopia-contact-actions):has(> .laptopia-btn-whatsapp):has(> .laptopia-btn-dark) {
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 260px);
+  }
+  .laptopia-section .laptopia-buttons:not(.laptopia-contact-actions):has(> .laptopia-btn-whatsapp):has(> .laptopia-btn-dark) > .laptopia-btn {
+    flex: none;
+    width: 100%;
+  }
+}
+@media (min-width: 701px) and (max-width: 1023px) {
+  .laptopia-google-carousel { grid-auto-columns: calc((100% - 18px) / 2); }
+}
+
 /* The Trustindex slider already renders prev/next and runs its own autoplay.
    Its supplied CSS hides the controls below 1024px; keep them outside the cards. */
 @media (max-width: 1023px) {
@@ -1771,6 +1836,13 @@ bdi[dir="ltr"] {
   color: #fff;
 }
 
+/* Service Hero prices are static information, separate from real action controls. */
+.laptopia-service-page .laptopia-hero .laptopia-board-price {
+  background: var(--laptopia-informational-badge);
+  color: var(--laptopia-text);
+  cursor: default;
+}
+
 .laptopia-service-cta .laptopia-dropdown-icon {
   flex: 0 0 17px;
   width: 17px;
@@ -1802,15 +1874,15 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) {
   pointer-events: none;
 }
 
-body[data-laptopia-background]:not([data-laptopia-background=""]) :is(.laptopia-services, .laptopia-process, .laptopia-prices, .laptopia-warranty, .laptopia-reviews-heading, .laptopia-info-panel-section) {
+body:is([data-laptopia-background]:not([data-laptopia-background=""]), .laptopia-standard-page) :is(.laptopia-services, .laptopia-process, .laptopia-prices, .laptopia-warranty, .laptopia-reviews-heading, .laptopia-info-panel-section),
+.laptopia-standard-page main > :not(.laptopia-page-foundation, .laptopia-hero, .laptopia-contact, .laptopia-page-prose-body) {
   background-color: rgba(255, 255, 255, .20);
 }
 
-body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero {
-  background:
-    radial-gradient(ellipse at 14% 0%, rgba(100, 116, 139, .09), transparent 55%),
-    radial-gradient(ellipse at 88% 0%, rgba(100, 116, 139, .07), transparent 50%),
-    linear-gradient(180deg, rgba(241, 243, 245, .6), rgba(255, 255, 255, .35));
+body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero,
+.laptopia-standard-page .laptopia-hero,
+.laptopia-standard-page .laptopia-page-foundation {
+  background: var(--laptopia-hero-background);
 }
 
 /* Back to top */
@@ -1938,7 +2010,7 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 }
 
 .laptopia-hero .laptopia-service-price-grid {
-  max-width: 630px;
+  max-width: var(--laptopia-text-rail);
   gap: 12px;
   margin-block: 20px;
 }
@@ -1972,14 +2044,10 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 
 .laptopia-price-card h3 {
   margin: 0 0 12px;
-  font-size: 18px;
-  line-height: 1.4;
 }
 
 .laptopia-price-card p:not(.laptopia-price-card-value) {
   margin: 0 0 16px;
-  font-size: 15px;
-  line-height: 1.75;
 }
 
 .laptopia-price-card .laptopia-price-card-value {
@@ -2001,8 +2069,6 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 .laptopia-service-case .laptopia-price-note {
   max-width: var(--laptopia-text-rail);
   margin: 20px auto 0;
-  font-size: 15px;
-  line-height: 1.75;
 }
 
 @media (min-width: 901px) {
@@ -2027,7 +2093,7 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 
   .laptopia-hero .laptopia-service-price-grid {
     width: calc(100% - 40px);
-    max-width: 320px;
+    max-width: var(--laptopia-text-rail);
   }
 
   .laptopia-price-card {
@@ -2143,8 +2209,6 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   max-width: var(--laptopia-text-rail);
   margin: -8px auto 20px;
   color: #56616e;
-  font-size: 14px;
-  line-height: 1.5;
 }
 
 .laptopia-service-hero-details > * {
@@ -2182,7 +2246,6 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 
   .laptopia-service-page .laptopia-hero p {
     margin-bottom: 16px;
-    line-height: 1.6;
   }
 
   .laptopia-service-hero-details {
@@ -2191,7 +2254,6 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
     width: 100%;
     margin-top: -10px;
     margin-bottom: 16px;
-    font-size: 13px;
   }
 
   .laptopia-service-hero-details .laptopia-service-hero-location {
@@ -2269,6 +2331,12 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   padding-block: 36px;
   text-align: center;
 }
+.laptopia-repairs-page .laptopia-repairs-intro > .laptopia-repair-rail {
+  padding: clamp(20px, 3vw, 36px);
+  border: 1px solid var(--laptopia-border);
+  border-radius: 16px;
+  background: var(--laptopia-content-surface);
+}
 
 .laptopia-repairs-page .laptopia-repair-eyebrow {
   margin-bottom: 10px;
@@ -2279,37 +2347,29 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 .laptopia-repairs-intro h1 {
   margin: 0 0 16px;
   color: #28313b;
-  line-height: 1.18;
-  font-size: clamp(30px, 4vw, 42px);
 }
 
 .laptopia-repair-intro h1 {
   max-width: var(--laptopia-content-rail);
   margin: 0 0 14px;
   color: #28313b;
-  font-size: clamp(30px, 4vw, 42px);
-  line-height: 1.24;
 }
 
 .laptopia-repair-intro p:not(.laptopia-repair-eyebrow),
 .laptopia-repair-stage > .laptopia-repair-rail > p {
   max-width: var(--laptopia-text-rail);
   margin: 0 0 18px;
-  line-height: 1.7;
 }
 
 .laptopia-repairs-intro p:last-child {
   max-width: var(--laptopia-text-rail);
   margin: 0 auto;
-  line-height: 1.7;
 }
 
 .laptopia-repair-stage h2,
 .laptopia-repair-related h2 {
   margin: 0 0 10px;
   color: #28313b;
-  font-size: clamp(22px, 2.6vw, 28px);
-  line-height: 1.3;
 }
 
 .laptopia-repair-stage-muted {
@@ -2364,9 +2424,6 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 .laptopia-repair-card-title {
   margin: 0;
   color: #28313b;
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 1.35;
 }
 
 .laptopia-repair-card-price {
@@ -2444,7 +2501,7 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 }
 
 .laptopia-repair-photo-main {
-  max-width: 680px;
+  max-width: var(--laptopia-text-rail);
   margin-inline: auto;
 }
 
@@ -2480,7 +2537,7 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 
 .laptopia-repair-details-two {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 680px;
+  max-width: var(--laptopia-text-rail);
   margin: 12px auto 0;
 }
 
@@ -2492,12 +2549,10 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 
 .laptopia-repair-outcome p {
   margin: 0 0 10px;
-  line-height: 1.65;
 }
 
 .laptopia-repair-outcome p:nth-child(n+3) {
   color: #56616e;
-  font-size: 14px;
 }
 
 .laptopia-repair-lightbox {
@@ -2628,3 +2683,800 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Standard pages opt into the existing calm hero environment, without a canvas. */
+.laptopia-standard-page {
+  position: relative;
+  isolation: isolate;
+  color: var(--laptopia-text);
+  font-family: Arial, sans-serif;
+}
+/* Standard pages share the ring and layering; each template selects its own art. */
+.laptopia-standard-page main {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  overflow: clip;
+}
+.laptopia-standard-page main > * {
+  position: relative;
+  z-index: 1;
+}
+.laptopia-page-art {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  color: rgba(86, 97, 110, .46);
+}
+.laptopia-art-svg {
+  position: absolute;
+  width: 210px;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.laptopia-art-svg--primary { top: 17%; right: max(20px, calc((100vw - 1240px) / 2)); }
+.laptopia-art-svg--secondary { bottom: 13%; left: max(18px, calc((100vw - 1260px) / 2)); width: 155px; opacity: .64; }
+.laptopia-art-currency {
+  position: absolute;
+  font: 400 48px/1 Arial, sans-serif;
+  color: rgba(86, 97, 110, .43);
+  animation: laptopia-art-float 10s ease-in-out infinite alternate;
+}
+.laptopia-art-currency--ils { top: 13%; right: 8%; font-size: 56px; }
+.laptopia-art-currency--dollar { top: 29%; left: 7%; animation-delay: -4s; }
+.laptopia-art-currency--euro { top: 54%; right: 5%; animation-delay: -7s; }
+.laptopia-art-currency--pound { top: 72%; left: 10%; font-size: 42px; animation-delay: -2s; }
+.laptopia-art-currency--yen { top: 82%; right: 14%; font-size: 38px; animation-delay: -6s; }
+@keyframes laptopia-art-float {
+  to { transform: translate3d(10px, -24px, 0); opacity: .58; }
+}
+.laptopia-page-art--portfolio .laptopia-art-screen,
+.laptopia-page-art--portfolio .laptopia-art-base,
+.laptopia-page-art--portfolio .laptopia-art-keyboard,
+.laptopia-page-art--portfolio .laptopia-art-hinges,
+.laptopia-page-art--workbench .laptopia-art-screen,
+.laptopia-page-art--workbench .laptopia-art-base { transform-box: fill-box; transform-origin: center; }
+.laptopia-art-screen { animation: laptopia-art-assemble-screen 9s ease-in-out infinite alternate; }
+.laptopia-art-base { animation: laptopia-art-assemble-base 9s ease-in-out infinite alternate; }
+.laptopia-art-keyboard, .laptopia-art-hinges { animation: laptopia-art-assemble-detail 9s ease-in-out infinite alternate; }
+.laptopia-page-art--portfolio .laptopia-art-svg--secondary,
+.laptopia-page-art--workbench .laptopia-art-svg--secondary { animation: laptopia-art-float 12s ease-in-out infinite alternate; }
+@keyframes laptopia-art-assemble-screen { from { transform: translate3d(-13px, -15px, 0) rotate(-3deg); opacity: .55; } to { transform: none; opacity: 1; } }
+@keyframes laptopia-art-assemble-base { from { transform: translate3d(12px, 15px, 0); opacity: .55; } to { transform: none; opacity: 1; } }
+@keyframes laptopia-art-assemble-detail { from { opacity: .25; } to { opacity: 1; } }
+.laptopia-art-route { stroke-dasharray: 8 9; animation: laptopia-art-route-flow 13s linear infinite; }
+@keyframes laptopia-art-route-flow { to { stroke-dashoffset: -136; } }
+.laptopia-art-node, .laptopia-art-hub { animation: laptopia-art-node-pulse 5s ease-in-out infinite alternate; }
+@keyframes laptopia-art-node-pulse { to { opacity: .35; } }
+.laptopia-page-art--privacy .laptopia-art-data { animation: laptopia-art-data-drift 8s ease-in-out infinite alternate; }
+@keyframes laptopia-art-data-drift { to { transform: translate3d(9px, -7px, 0); opacity: .4; } }
+.laptopia-page-art--terms .laptopia-art-document-lines { animation: laptopia-art-document-lines 8s ease-in-out infinite alternate; }
+@keyframes laptopia-art-document-lines { to { opacity: .32; transform: translateY(4px); } }
+.laptopia-art-approval { stroke-dasharray: 34; animation: laptopia-art-approval 8s ease-in-out infinite alternate; }
+@keyframes laptopia-art-approval { from { stroke-dashoffset: 34; } to { stroke-dashoffset: 0; } }
+.laptopia-page-art--privacy, .laptopia-page-art--terms { color: rgba(86, 97, 110, .32); }
+.laptopia-page-art--privacy .laptopia-art-svg--primary,
+.laptopia-page-art--terms .laptopia-art-svg--primary { width: 165px; }
+.laptopia-art-mobile { display: none; }
+.laptopia-legal-page .laptopia-page-surface { background: var(--laptopia-content-card); }
+@media (max-width: 900px) {
+  .laptopia-page-art .laptopia-art-svg { display: none; }
+  .laptopia-art-mobile {
+    display: block;
+    position: absolute;
+    top: 12%;
+    right: 1px;
+    width: 18px;
+    height: 72%;
+    stroke: currentColor;
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .laptopia-art-mobile-part { animation: laptopia-art-mobile-assemble 9s ease-in-out infinite alternate; }
+  .laptopia-art-mobile-part:nth-child(2) { animation-delay: -3s; }
+  .laptopia-art-mobile-part:nth-child(3) { animation-delay: -6s; }
+  .laptopia-art-mobile .laptopia-art-data { animation: laptopia-art-data-drift 8s ease-in-out infinite alternate; }
+  .laptopia-art-mobile .laptopia-art-document-lines { animation: laptopia-art-document-lines 8s ease-in-out infinite alternate; }
+}
+@keyframes laptopia-art-mobile-assemble { to { transform: translateY(8px); opacity: .5; } }
+@media (max-width: 600px) {
+  .laptopia-page-art { opacity: .82; }
+  .laptopia-art-currency { font-size: 20px; animation-name: laptopia-art-mobile-currency; }
+  .laptopia-art-currency--ils { right: 1px; font-size: 21px; }
+  .laptopia-art-currency--dollar { left: 2px; }
+  .laptopia-art-currency--euro { right: 1px; }
+  .laptopia-art-currency--pound { left: 2px; font-size: 20px; }
+  .laptopia-art-currency--yen { right: 1px; font-size: 19px; }
+}
+@keyframes laptopia-art-mobile-currency { to { transform: translate3d(0, -16px, 0); opacity: .58; } }
+@media (prefers-reduced-motion: reduce) {
+  .laptopia-page-art, .laptopia-page-art * { animation: none !important; }
+}
+/* A multiword model in a heading may wrap; its LTR isolation stays intact. */
+.laptopia-standard-page main h1 bdi { white-space: normal; }
+.laptopia-standard-page .laptopia-repair-stage-muted { background: transparent; }
+.laptopia-standard-page .laptopia-repair-stage-muted > .laptopia-repair-rail {
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid var(--laptopia-border);
+  border-radius: 16px;
+  background: var(--laptopia-light);
+}
+.laptopia-standard-content { padding-block: 0 56px; }
+.laptopia-standard-content > .laptopia-page-foundation { padding-top: 40px; }
+.laptopia-page-container {
+  width: min(calc(100% - 40px), var(--laptopia-content-rail));
+  margin-inline: auto;
+}
+.laptopia-page-surface {
+  padding: clamp(20px, 3vw, 40px);
+  border: 1px solid var(--laptopia-border);
+  border-radius: 16px;
+  background: var(--laptopia-content-surface);
+}
+.laptopia-page-prose {
+  overflow-wrap: anywhere;
+}
+.laptopia-page-prose article { max-width: var(--laptopia-text-rail); margin-inline: auto; }
+.laptopia-page-prose h1 { margin-top: 0; margin-bottom: 32px; text-align: center; }
+.laptopia-page-prose h2 { margin: 28px 0 10px; color: var(--laptopia-graphite); }
+.laptopia-page-prose p { margin: 0 0 14px; }
+.laptopia-page-prose p:last-child { margin-bottom: 0; }
+.laptopia-page-prose a, .laptopia-page-prose a:visited { color: var(--laptopia-link); text-decoration: underline; text-underline-offset: 3px; }
+.laptopia-page-prose a:hover { color: var(--laptopia-graphite); }
+.laptopia-page-prose a:focus-visible { outline: 3px solid var(--laptopia-link); outline-offset: 3px; }
+.laptopia-footer-legal { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; margin-top: 16px; font-size: 14px; }
+.laptopia-footer-legal a, .laptopia-footer-legal a:visited { display: inline-flex; align-items: center; min-height: 44px; color: #f1f3f5; }
+.laptopia-footer-legal a:hover, .laptopia-footer-legal a:focus-visible { color: #5999f1; }
+.laptopia-footer-legal a:focus-visible { outline: 2px solid #5999f1; outline-offset: 3px; }
+.laptopia-footer-legal a[aria-current="page"] { text-decoration: underline; text-underline-offset: 3px; }
+/* Text navigation remains recognisable on touch, without button-like surfaces. */
+.laptopia-footer :is(.laptopia-footer-services, .laptopia-footer-legal) a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(203, 210, 217, .55);
+  text-decoration-skip-ink: auto;
+}
+.laptopia-footer :is(.laptopia-footer-services, .laptopia-footer-legal) a:hover,
+.laptopia-footer :is(.laptopia-footer-services, .laptopia-footer-legal) a:focus-visible {
+  text-decoration-color: currentColor;
+}
+.laptopia-footer :is(.laptopia-footer-services, .laptopia-footer-legal) a:focus-visible {
+  box-shadow: none;
+  outline: 2px solid #5999f1;
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .laptopia-footer-services,
+  .laptopia-footer-legal {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 420px);
+    margin-inline: auto;
+    gap: 4px 20px;
+    text-align: start;
+  }
+  .laptopia-footer-services a,
+  .laptopia-footer-legal a {
+    display: block;
+    align-content: center;
+    min-width: 0;
+    min-height: 44px;
+    padding: 4px;
+    line-height: 1.5;
+  }
+  .laptopia-footer-services a:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+  .laptopia-footer-legal {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+  }
+}
+@media (max-width: 600px) {
+  .laptopia-standard-content { padding-block: 0 36px; }
+  .laptopia-standard-content > .laptopia-page-foundation { padding-top: 28px; }
+  .laptopia-page-prose h2 { }
+}
+
+/* The homepage keeps a short price entry point; the full list uses standard-page rails. */
+.laptopia-price-teaser .laptopia-section-subtitle { max-width: var(--laptopia-text-rail); margin-inline: auto; }
+.laptopia-price-teaser .laptopia-diagnostic { max-width: var(--laptopia-content-rail); margin-top: 20px; }
+.laptopia-price-teaser .laptopia-diagnostic p { margin: 8px 0 0; }
+.laptopia-price-teaser .laptopia-buttons { margin-top: 22px; }
+.laptopia-price-page-main { padding-block: 0 56px; }
+.laptopia-price-page-main .laptopia-section { padding: 0 0 28px; }
+.laptopia-price-page-main .laptopia-price-page-intro { padding-top: 36px; }
+.laptopia-price-page-intro { text-align: center; }
+.laptopia-price-page-intro h1 { margin: 0 0 16px; }
+.laptopia-price-page-intro p { max-width: var(--laptopia-text-rail); margin: 0 auto; color: var(--laptopia-secondary); }
+.laptopia-price-list-container { background: transparent; }
+.laptopia-price-list-heading { margin: 0 0 18px; color: var(--laptopia-graphite); }
+.laptopia-price-page-list .laptopia-price-list { display: grid; gap: 8px; overflow: visible; border: 0; border-radius: 0; box-shadow: none; }
+.laptopia-price-page-list .laptopia-price-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 44px;
+  align-items: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 9px 12px;
+  border: 1px solid var(--laptopia-border);
+  border-radius: 12px;
+  background: var(--laptopia-light);
+}
+.laptopia-price-page-list .laptopia-price-row-static { grid-template-columns: minmax(0, 1fr) auto; }
+.laptopia-price-page-list .laptopia-price-row-link,
+.laptopia-price-page-list .laptopia-price-row-link:visited { color: var(--laptopia-text); }
+.laptopia-price-page-list .laptopia-price-row-link {
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .laptopia-price-page-list .laptopia-price-row-link:hover {
+    background: #fff;
+    border-color: #c3ccd5;
+    box-shadow: 0 10px 24px rgba(32, 40, 50, .11);
+    transform: translateY(-2px);
+  }
+}
+.laptopia-price-page-list .laptopia-price-row-link:focus-visible {
+  outline: 3px solid rgba(40, 49, 59, .55);
+  outline-offset: 3px;
+}
+.laptopia-price-page-list .laptopia-price-name { min-width: 0; }
+.laptopia-price-page-list .laptopia-price-value { color: var(--laptopia-graphite); }
+.laptopia-price-detail-link {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  color: var(--laptopia-link);
+}
+.laptopia-price-detail-link .laptopia-ui-icon { width: 18px; height: 18px; }
+.laptopia-price-page-list .laptopia-price-note { max-width: var(--laptopia-text-rail); }
+.laptopia-price-page-list .laptopia-price-note a,
+.laptopia-price-page-conditions a { color: var(--laptopia-link); }
+.laptopia-price-page-conditions { }
+.laptopia-price-page-conditions .laptopia-section-title { margin-top: 0; }
+.laptopia-price-page-conditions p { margin: 12px auto 0; max-width: var(--laptopia-text-rail); }
+@media (max-width: 600px) {
+  .laptopia-price-page-main { padding-block: 0 36px; }
+  .laptopia-price-page-main .laptopia-price-page-intro { padding-top: 28px; }
+  .laptopia-price-page-main .laptopia-section { padding-bottom: 20px; }
+  .laptopia-price-list-heading { }
+  .laptopia-price-page-list .laptopia-price-row { gap: 6px; padding-inline: 10px; }
+  .laptopia-price-page-list .laptopia-price-name { font-size: 14px; }
+  .laptopia-price-page-list .laptopia-price-value { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .laptopia-price-page-list .laptopia-price-row-link { transition: none; }
+  .laptopia-price-page-list .laptopia-price-row-link:hover { transform: none; }
+}
+/* Continuous scene enrichment: scoped to the existing standard-page artwork. */
+.laptopia-scene-field{position:absolute;top:12%;height:82%;width:240px;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.laptopia-scene-field--right{right:max(8px,calc((100vw - 1370px)/2))}
+.laptopia-scene-field--left{left:max(8px,calc((100vw - 1370px)/2));transform:rotate(180deg);opacity:.7}
+.laptopia-page-art--portfolio .laptopia-scene-field{opacity:.64}
+.laptopia-page-art--privacy .laptopia-scene-field,.laptopia-page-art--terms .laptopia-scene-field{opacity:.65}
+.laptopia-scene-part{animation:laptopia-scene-part 16s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}
+.laptopia-scene-part:nth-child(2){animation-delay:-7s;animation-duration:19s}
+.laptopia-scene-part:nth-child(3){animation-delay:-12s;animation-duration:23s}
+.laptopia-scene-part:nth-child(4){animation-delay:-4s;animation-duration:17s}
+@keyframes laptopia-scene-part{from{transform:translate(7px,-9px) rotate(-2deg)}to{transform:translate(-5px,7px) rotate(1deg)}}
+.laptopia-scene-signal{stroke:#1d6cd1;stroke-opacity:.65;stroke-width:2;stroke-dasharray:7 500;animation:laptopia-scene-signal 12s linear infinite}
+.laptopia-scene-signal:nth-of-type(2){animation-duration:17s;animation-delay:-8s}
+.laptopia-scene-signal:nth-of-type(3){animation-duration:14s;animation-delay:-5s}
+.laptopia-scene-signal:nth-of-type(4){animation-duration:19s;animation-delay:-11s}
+@keyframes laptopia-scene-signal{to{stroke-dashoffset:-507}}
+.laptopia-scene-clause{animation:laptopia-scene-clause 15s ease-in-out infinite;opacity:.8}
+.laptopia-scene-clause:nth-child(2){animation-delay:-4s}.laptopia-scene-clause:nth-child(3){animation-delay:-8s}.laptopia-scene-clause:nth-child(4){animation-delay:-12s}
+@keyframes laptopia-scene-clause{0%,100%{opacity:.45}45%,70%{opacity:1}}
+.laptopia-currency-particle{position:absolute;left:var(--x);top:var(--y);font-size:var(--size,38px);line-height:1;color:rgba(86,97,110,var(--alpha,.4));pointer-events:none;will-change:transform}
+.laptopia-currency-particle:nth-child(1){--x:89%;--y:14%;--size:54px}
+.laptopia-currency-particle:nth-child(2){--x:7%;--y:23%;--size:42px;--alpha:.32}
+.laptopia-currency-particle:nth-child(3){--x:91%;--y:43%;--size:34px}
+.laptopia-currency-particle:nth-child(4){--x:12%;--y:68%;--size:48px}
+.laptopia-currency-particle:nth-child(5){--x:82%;--y:80%;--size:33px;--alpha:.28}
+.laptopia-currency-particle:nth-child(6){--x:3%;--y:48%;--size:29px}
+.laptopia-currency-particle:nth-child(7){--x:77%;--y:28%;--size:28px;--alpha:.26}
+.laptopia-currency-particle:nth-child(8){--x:17%;--y:39%;--size:25px;--alpha:.3}
+.laptopia-currency-particle:nth-child(9){--x:94%;--y:65%;--size:44px}
+.laptopia-currency-particle:nth-child(10){--x:4%;--y:86%;--size:37px}
+.laptopia-currency-particle:nth-child(11){--x:23%;--y:12%;--size:24px;--alpha:.24}
+.laptopia-currency-particle:nth-child(12){--x:74%;--y:59%;--size:26px;--alpha:.25}
+.laptopia-currency-particle:nth-child(13){--x:16%;--y:91%;--size:26px}
+.laptopia-currency-particle:nth-child(14){--x:86%;--y:94%;--size:24px;--alpha:.3}
+.laptopia-price-page .laptopia-price-list-container{padding:24px;background:#e9edf1;border:1px solid var(--laptopia-border);border-radius:16px;box-shadow:0 5px 18px rgba(40,49,59,.035)}
+@media(max-width:1100px){.laptopia-scene-field{width:160px;opacity:.55}}
+@media(max-width:900px){.laptopia-scene-field{display:none}.laptopia-currency-particle:nth-child(n+8){display:none}.laptopia-currency-particle{font-size:21px}.laptopia-currency-particle:nth-child(1){--x:94%;--y:15%}.laptopia-currency-particle:nth-child(2){--x:1%;--y:29%}.laptopia-currency-particle:nth-child(3){--x:95%;--y:49%}.laptopia-currency-particle:nth-child(4){--x:1%;--y:72%}.laptopia-currency-particle:nth-child(5){--x:94%;--y:88%}.laptopia-currency-particle:nth-child(6){--x:1%;--y:51%}.laptopia-currency-particle:nth-child(7){--x:94%;--y:34%}}
+@media(max-width:600px){.laptopia-price-page .laptopia-price-list-container{padding:14px 6px}.laptopia-price-page .laptopia-price-row{padding-inline:7px;grid-template-columns:minmax(0,1fr) auto 32px}.laptopia-price-page .laptopia-price-row-static{grid-template-columns:minmax(0,1fr) auto}.laptopia-price-page .laptopia-price-detail-link{width:32px}}
+@media(prefers-reduced-motion:reduce){.laptopia-page-art .laptopia-scene-part,.laptopia-page-art .laptopia-scene-signal,.laptopia-page-art .laptopia-scene-clause{animation:none!important}.laptopia-currency-particle{will-change:auto}}
+
+/* Match the service canvas: transparent viewport artwork behind existing surfaces. */
+.laptopia-page-art--full{position:fixed;inset:0;opacity:1}
+.laptopia-page-motif{position:absolute;width:230px;height:auto;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;overflow:visible;pointer-events:none}
+.laptopia-page-motif--first{top:4%;right:max(16px,calc((100vw - 1350px)/2))}
+.laptopia-page-motif--middle{top:40%;left:max(16px,calc((100vw - 1350px)/2))}
+.laptopia-page-motif--last{top:72%;right:max(16px,calc((100vw - 1350px)/2))}
+.laptopia-page-art--portfolio .laptopia-page-motif--first{left:max(18px,calc((100vw - 1390px)/2));right:auto;width:255px;top:10%}
+.laptopia-page-art--portfolio .laptopia-page-motif--last{top:34%;width:230px}
+.laptopia-page-art--repair-case .laptopia-page-motif{overflow:hidden}
+.laptopia-page-art--privacy,.laptopia-page-art--terms{color:rgba(86,97,110,.42)}
+.laptopia-page-art--terms .laptopia-page-motif,.laptopia-page-art--privacy .laptopia-page-motif{width:205px}
+.laptopia-assembly-lid,.laptopia-assembly-board,.laptopia-assembly-keys,.laptopia-assembly-cover{animation:laptopia-exploded-assembly 18s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.laptopia-assembly-lid{--assembly-y:35px;--assembly-start:-13px}
+.laptopia-assembly-board{--assembly-y:8px;--assembly-start:15px}
+.laptopia-assembly-keys{--assembly-y:69px;--assembly-start:0px}
+.laptopia-assembly-cover{--assembly-y:0px;--assembly-start:16px}
+@keyframes laptopia-exploded-assembly{0%,15%,100%{transform:translateY(var(--assembly-start))}45%,65%{transform:translateY(var(--assembly-y))}}
+.laptopia-agreement-line{animation:laptopia-clause-sequence 18s ease-in-out infinite}
+.laptopia-agreement-line:nth-of-type(2){animation-delay:1.2s}.laptopia-agreement-line:nth-of-type(3){animation-delay:2.4s}
+@keyframes laptopia-clause-sequence{0%,12%,100%{opacity:.12}30%,80%{opacity:1}}
+.laptopia-agreement-seal,.laptopia-secure-lock{animation:laptopia-protection-pulse 18s ease-in-out infinite}
+@keyframes laptopia-protection-pulse{0%,18%,100%{opacity:.35}45%,75%{opacity:1}}
+.laptopia-motif-confirm{stroke-dasharray:70;stroke-dashoffset:70;animation:laptopia-confirm-sequence 18s ease-in-out infinite}
+@keyframes laptopia-confirm-sequence{0%,25%,100%{stroke-dashoffset:70;opacity:.3}50%,80%{stroke-dashoffset:0;opacity:1}}
+.laptopia-secure-packets{animation:laptopia-protected-packets 12s ease-in-out infinite}
+@keyframes laptopia-protected-packets{0%,15%,100%{transform:translate(0,0);opacity:.7}70%,85%{transform:translate(42px,25px);opacity:0}}
+.laptopia-page-art--full .laptopia-currency-particle{font-family:Arial,'Segoe UI Symbol',sans-serif}
+.laptopia-currency-particle:nth-child(1){--y:5%}.laptopia-currency-particle:nth-child(2){--y:13%}.laptopia-currency-particle:nth-child(3){--y:22%}.laptopia-currency-particle:nth-child(4){--y:30%}.laptopia-currency-particle:nth-child(5){--y:40%}.laptopia-currency-particle:nth-child(6){--y:48%}.laptopia-currency-particle:nth-child(7){--y:56%}.laptopia-currency-particle:nth-child(8){--y:62%}.laptopia-currency-particle:nth-child(9){--y:69%}.laptopia-currency-particle:nth-child(10){--y:73%}.laptopia-currency-particle:nth-child(11){--y:8%}.laptopia-currency-particle:nth-child(12){--y:35%}.laptopia-currency-particle:nth-child(13){--y:52%}.laptopia-currency-particle:nth-child(14){--y:78%}
+@media(max-width:1100px){.laptopia-page-motif{width:165px}.laptopia-page-art--portfolio .laptopia-page-motif--first{width:190px}.laptopia-page-art--privacy .laptopia-page-motif,.laptopia-page-art--terms .laptopia-page-motif{width:155px}}
+@media(max-width:900px){
+ .laptopia-page-art--full{color:rgba(86,97,110,.58)}
+ .laptopia-page-art--full .laptopia-page-motif{width:180px;stroke-width:1.8}
+ .laptopia-page-motif--first{top:2%;right:-38px;left:auto}
+ .laptopia-page-motif--middle{top:36%;left:-38px;right:auto}
+ .laptopia-page-motif--last{top:67%;right:-34px;left:auto}
+ .laptopia-page-art--portfolio .laptopia-page-motif--first{top:5%;width:185px;right:-35px;left:auto}
+ .laptopia-page-art--portfolio .laptopia-page-motif--last{top:45%;width:180px;left:-35px;right:auto}
+ .laptopia-standard-page .laptopia-page-surface{background:var(--laptopia-content-surface)}
+ .laptopia-standard-page .laptopia-repair-stage-muted>.laptopia-repair-rail{background:rgba(241,243,245,.88)}
+ .laptopia-page-art--full .laptopia-currency-particle{font-size:36px;color:rgba(86,97,110,.52)}
+ .laptopia-currency-particle:nth-child(1){--x:90%;--y:3%}.laptopia-currency-particle:nth-child(2){--x:1%;--y:16%}.laptopia-currency-particle:nth-child(3){--x:91%;--y:29%}.laptopia-currency-particle:nth-child(4){--x:1%;--y:42%}.laptopia-currency-particle:nth-child(5){--x:90%;--y:54%}.laptopia-currency-particle:nth-child(6){--x:1%;--y:66%}.laptopia-currency-particle:nth-child(7){--x:90%;--y:78%}
+}@media(max-width:900px){
+ /* Artwork is decorative, not a separate block above the page content. */
+ .laptopia-page-art--full .laptopia-page-motif--first{top:78px;right:20px;width:125px}
+ .laptopia-page-art--portfolio .laptopia-page-motif--first{top:76px;right:22px;left:auto;width:130px}
+ .laptopia-page-art--full .laptopia-page-motif--middle{width:185px;left:-25px}
+ .laptopia-page-art--full .laptopia-page-motif--last{width:175px;right:-25px}
+ .laptopia-legal-page .laptopia-page-surface{background:var(--laptopia-content-card)}
+ .laptopia-page-art--full .laptopia-currency-particle:nth-child(1){--y:88px;--x:77%;font-size:46px}
+ .laptopia-page-art--full .laptopia-currency-particle:nth-child(2){--x:12%;--y:122px;font-size:38px}
+}.laptopia-page-motif--ending{display:none}
+@media(max-width:900px){
+ .laptopia-page-art--privacy .laptopia-page-motif--middle,.laptopia-page-art--terms .laptopia-page-motif--middle{top:34%}
+ .laptopia-page-art--privacy .laptopia-page-motif--last,.laptopia-page-art--terms .laptopia-page-motif--last{top:60%}
+ .laptopia-page-art--full .laptopia-page-motif--ending{display:block;top:84%;width:150px;left:-18px}
+ /* Keep animated PCB traces in the gutters, clear of the mobile text rail. */
+ .laptopia-page-art--repair-case .laptopia-page-motif--first{width:125px;right:-107px}
+ .laptopia-page-art--repair-case .laptopia-page-motif--middle{width:185px;left:-167px}
+ .laptopia-page-art--repair-case .laptopia-page-motif--last{width:175px;right:-157px}
+}
+
+/* Short introductions must not cut the shared ring at their lower edge.
+   Horizontal clipping remains at the page boundary. */
+.laptopia-page-foundation { overflow: clip visible; }
+
+/* Editable prose keeps one continuous readable card across its title and body.
+   Only the title section owns the same upper foundation used by every Hero. */
+.laptopia-page-prose-heading {
+  padding-bottom: 0;
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flow-root;
+}
+.laptopia-page-prose-heading h1 { max-width: var(--laptopia-text-rail); margin-inline: auto; }
+.laptopia-page-prose-body {
+  padding-top: 0;
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.laptopia-page-prose-body article { display: flow-root; }
+.laptopia-page-prose-body article > :first-child { margin-top: 0; }
+
+/* Shared content hierarchy and interaction semantics; background foundation is unchanged. */
+:root {
+  --laptopia-content-surface: #e9edf1;
+  --laptopia-content-card: #f1f3f5;
+  --laptopia-navigation-accent: #2f80ed;
+  --laptopia-navigation-surface: #e1e7ed;
+  --laptopia-navigation-hover: #d6dfe8;
+  --laptopia-navigation-border: #b7c3cf;
+}
+.laptopia-section :is(.laptopia-content-link, .laptopia-context-link,
+  .laptopia-price-note a, .laptopia-pricing-explanation a, .laptopia-page-prose a, .laptopia-info-panel p a,
+  .laptopia-faq a, .laptopia-price-page-conditions a, .laptopia-card p a):not(.laptopia-btn, .laptopia-element-link),
+.laptopia-service-hero-details a:not([href^="tel:"]) {
+  color: var(--laptopia-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+.laptopia-section :is(.laptopia-content-link, .laptopia-context-link,
+  .laptopia-price-note a, .laptopia-pricing-explanation a, .laptopia-page-prose a, .laptopia-info-panel p a,
+  .laptopia-faq a, .laptopia-price-page-conditions a, .laptopia-card p a):not(.laptopia-btn, .laptopia-element-link):is(:hover, :focus-visible) {
+  color: var(--laptopia-link);
+  text-decoration-thickness: 2px;
+}
+.laptopia-section :is(.laptopia-content-link, .laptopia-context-link,
+  .laptopia-price-note a, .laptopia-pricing-explanation a, .laptopia-page-prose a, .laptopia-info-panel p a,
+  .laptopia-faq a, .laptopia-price-page-conditions a, .laptopia-card p a):focus-visible {
+  outline: 2px solid #1d6cd1;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.laptopia-element-link.laptopia-card::after {
+  display: block;
+  color: var(--laptopia-navigation-accent);
+  font-size: 17px;
+  line-height: 1;
+}
+.laptopia-repair-card-read .laptopia-ui-icon,
+.laptopia-price-detail-link .laptopia-ui-icon {
+  color: var(--laptopia-navigation-accent);
+}
+.laptopia-section .laptopia-btn-navigation,
+.laptopia-section .laptopia-btn-navigation:visited {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-inline: 20px;
+  border: 1px solid var(--laptopia-navigation-border);
+  background: var(--laptopia-navigation-surface);
+  color: var(--laptopia-text);
+  text-decoration: none;
+  font-weight: 700;
+}
+.laptopia-section .laptopia-btn-navigation::after {
+  content: "←";
+  position: static;
+  display: inline-block;
+  color: var(--laptopia-navigation-accent);
+  font-size: 20px;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.laptopia-btn-navigation .laptopia-ui-icon { display: none; }
+.laptopia-section .laptopia-btn-navigation:hover {
+  background: var(--laptopia-navigation-hover);
+  border-color: var(--laptopia-navigation-border);
+  color: var(--laptopia-text);
+}
+.laptopia-section .laptopia-btn-navigation:focus-visible {
+  outline: 3px solid #1d6cd1;
+  outline-offset: 3px;
+}
+.laptopia-diagnostic { background: var(--laptopia-content-card); }
+.laptopia-trust,
+.laptopia-service-hero-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px 24px;
+}
+.laptopia-trust > *, .laptopia-service-hero-details > * {
+  position: relative;
+  max-width: 100%;
+  min-width: 0;
+}
+.laptopia-hero .laptopia-trust > span {
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.laptopia-metadata-ready > :not(.laptopia-metadata-row-start)::before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  right: -24px;
+  width: 24px;
+  height: calc(var(--laptopia-type-small) * var(--laptopia-line-compact));
+  display: grid;
+  place-items: center;
+  color: #8793a0;
+  opacity: 1;
+  font-family: inherit;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  pointer-events: none;
+}
+.laptopia-service-hero-details > * { white-space: normal; }
+.laptopia-info-panel :is(p, ul, ol),
+.laptopia-page-prose :is(p, ul, ol),
+.laptopia-repair-stage p {
+  text-align: start;
+  text-indent: 0;
+}
+/* Typography follows content roles, independently of wrapping or line count. */
+.laptopia-section .laptopia-section-title,
+.laptopia-section-subtitle,
+.laptopia-section .laptopia-presentation-lead { text-align: center; text-indent: 0; margin-inline: auto; }
+.laptopia-reading-content :is(p, ul, ol),
+.laptopia-page-prose-body :is(h2, h3),
+.laptopia-faq .laptopia-card p,
+.laptopia-diagnostic p,
+.laptopia-service-case .laptopia-price-note {
+  text-align: start;
+  text-indent: 0;
+}
+.laptopia-section .laptopia-standalone-navigation {
+  text-align: center;
+  margin-inline: auto;
+}
+/* Only actual whole-surface links receive navigation affordance. */
+.laptopia-section :is(a.laptopia-card.laptopia-element-link, a.laptopia-repair-card, a.laptopia-price-row.laptopia-price-row-link) {
+  background: var(--laptopia-navigation-surface);
+  border-color: var(--laptopia-navigation-border);
+  color: var(--laptopia-text);
+  cursor: pointer;
+}
+.laptopia-section :is(a.laptopia-card.laptopia-element-link, a.laptopia-repair-card, a.laptopia-price-row.laptopia-price-row-link):focus-visible {
+  outline: 3px solid var(--laptopia-link);
+  outline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .laptopia-section :is(a.laptopia-card.laptopia-element-link, a.laptopia-repair-card, a.laptopia-price-row.laptopia-price-row-link):hover {
+    background: var(--laptopia-navigation-hover);
+    border-color: var(--laptopia-navigation-border);
+    color: var(--laptopia-text);
+  }
+}
+[data-google-reviews-shell][data-google-reviews-state] { min-height: 700px; }
+[data-google-reviews-state="loading"] [data-google-reviews-fallback] { display: none; }
+.laptopia-reviews-loading {
+  padding: 56px 20px;
+  color: var(--laptopia-secondary);
+  text-align: center;
+}
+[data-google-reviews-shell]:not([data-google-reviews-state="loading"]) .laptopia-reviews-loading { display: none; }
+.laptopia-reviews-skeleton {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: var(--laptopia-grid-rail);
+  margin: 58px auto 0;
+}
+.laptopia-reviews-skeleton i {
+  display: block;
+  height: 320px;
+  border: 1px solid var(--laptopia-border);
+  border-radius: 16px;
+  background: var(--laptopia-content-card);
+}
+@media (max-width: 700px) {
+  [data-google-reviews-shell][data-google-reviews-state] { min-height: 850px; }
+  .laptopia-reviews-skeleton { grid-template-columns: minmax(0, 1fr); }
+  .laptopia-reviews-skeleton i:not(:first-child) { display: none; }
+}
+@media (max-width: 360px) {
+  [data-google-reviews-shell][data-google-reviews-state] { min-height: 900px; }
+}
+@media (max-width: 600px) {
+  .laptopia-footer-services, .laptopia-footer-legal { text-align: center; }
+  .laptopia-footer-services a, .laptopia-footer-legal a { text-align: center; }
+}
+
+/* Shared semantic typography: page composition, reading, compact information. */
+:root {
+  --laptopia-type-hero: 50px;
+  --laptopia-type-heading: 36px;
+  --laptopia-type-hero-subtitle: 26px;
+  --laptopia-type-lead: 17px;
+  --laptopia-type-title: 18px;
+  --laptopia-type-subheading: 20px;
+  --laptopia-type-body: 16px;
+  --laptopia-type-compact: 15px;
+  --laptopia-type-small: 14px;
+  --laptopia-type-label: 18px;
+  --laptopia-weight-regular: 400;
+  --laptopia-weight-heading: 700;
+  --laptopia-line-body: 1.7;
+  --laptopia-line-compact: 1.65;
+  --laptopia-line-heading: 1.25;
+}
+.laptopia-content-rail { max-width: var(--laptopia-content-rail); }
+.laptopia-hero h1 {
+  font-size: var(--laptopia-type-hero);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+}
+.laptopia-section .laptopia-section-title,
+.laptopia-board h2, .laptopia-contact h2,
+.laptopia-repair-intro h1, .laptopia-repairs-intro h1,
+.laptopia-repair-stage h2, .laptopia-repair-related h2 {
+  font-size: var(--laptopia-type-heading);
+  font-weight: var(--laptopia-weight-heading);
+  line-height: var(--laptopia-line-heading);
+}
+.laptopia-hero h2 {
+  font-size: var(--laptopia-type-hero-subtitle);
+  font-weight: 500;
+  line-height: 1.45;
+}
+.laptopia-section :is(.laptopia-section-subtitle, .laptopia-presentation-lead),
+.laptopia-hero p, .laptopia-contact-intro {
+  font-size: var(--laptopia-type-lead);
+  font-weight: var(--laptopia-weight-regular);
+  line-height: var(--laptopia-line-body);
+}
+.laptopia-section :is(.laptopia-card h3, .laptopia-step h3, .laptopia-info-panel h3, .laptopia-diagnostic h3, .laptopia-repair-card-title, .laptopia-price-list-heading) {
+  font-size: var(--laptopia-type-title);
+  font-weight: var(--laptopia-weight-heading);
+  line-height: var(--laptopia-line-heading);
+}
+.laptopia-section :is(.laptopia-card p:not(.laptopia-price-card-value), .laptopia-info-panel p:not(.laptopia-price-note, .laptopia-standalone-navigation, .laptopia-principal-value, .laptopia-important-label), .laptopia-reading-content p:not(.laptopia-price-note, .laptopia-standalone-navigation), .laptopia-diagnostic p, .laptopia-page-prose article, .laptopia-repair-stage > .laptopia-repair-rail > p) {
+  font-size: var(--laptopia-type-body);
+  font-weight: var(--laptopia-weight-regular);
+  line-height: var(--laptopia-line-body);
+}
+.laptopia-section .laptopia-step p {
+  font-size: var(--laptopia-type-compact);
+  font-weight: var(--laptopia-weight-regular);
+  line-height: var(--laptopia-line-compact);
+}
+.laptopia-section .laptopia-page-prose-body :is(h2, h3) {
+  font-size: var(--laptopia-type-subheading);
+  font-weight: var(--laptopia-weight-heading);
+  line-height: var(--laptopia-line-heading);
+}
+.laptopia-section :is(.laptopia-price-note, .laptopia-service-hero-details, .laptopia-trust, .laptopia-repair-eyebrow, .laptopia-repair-photo figcaption, .laptopia-component-figure figcaption, .laptopia-liquid-damage-figure figcaption, .laptopia-contact-hours-note) {
+  font-size: var(--laptopia-type-small);
+  line-height: var(--laptopia-line-compact);
+}
+.laptopia-section .laptopia-repair-eyebrow { letter-spacing: normal; }
+.laptopia-section :is(.laptopia-btn, .laptopia-btn-navigation) {
+  font-size: var(--laptopia-type-label);
+  font-weight: var(--laptopia-weight-heading);
+  line-height: 1.5;
+}
+.laptopia-info-panel p, .laptopia-reading-content p,
+.laptopia-page-prose p, .laptopia-repair-stage > .laptopia-repair-rail > p {
+  margin-block: 0 16px;
+  text-indent: 0;
+}
+.laptopia-info-panel p:last-child, .laptopia-page-prose p:last-child { margin-bottom: 0; }
+.laptopia-info-panel h3, .laptopia-page-prose-body :is(h2, h3) { margin-block: 24px 8px; }
+.laptopia-section .laptopia-diagnostic p { margin-block: 8px 0; }
+.laptopia-contact-hours-note { color: #9ca3af; margin: 14px 0 27px; }
+@media (max-width: 600px) {
+  :root {
+    --laptopia-type-hero: 31px;
+    --laptopia-type-heading: 28px;
+    --laptopia-type-hero-subtitle: 19px;
+    --laptopia-type-lead: 16px;
+    --laptopia-type-label: 16px;
+  }
+}
+/* Only existing enlarged-photo triggers receive zoom affordance. */
+.laptopia-repair-photo-trigger { position: relative; overflow: hidden; }
+.laptopia-repair-photo-trigger img { transition: transform .18s ease; }
+.laptopia-photo-zoom {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--laptopia-navigation-border);
+  border-radius: 50%;
+  background: rgba(248, 249, 250, .94);
+  color: var(--laptopia-graphite);
+  box-shadow: 0 2px 8px rgba(40, 49, 59, .12);
+  pointer-events: none;
+}
+.laptopia-photo-zoom svg { width: 19px; height: 19px; }
+@media (hover: hover) and (pointer: fine) {
+  .laptopia-repair-photo-trigger:hover img { transform: scale(1.025); }
+  .laptopia-repair-photo-trigger:hover .laptopia-photo-zoom { background: var(--laptopia-navigation-surface); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .laptopia-repair-photo-trigger img { transition: none; }
+  .laptopia-repair-photo-trigger:hover img { transform: none; }
+}
+
+/* Conceptual panel divisions are presentation headings; legal prose is not. */
+.laptopia-info-panel-section .laptopia-info-panel > h3,
+.laptopia-section h3.laptopia-concept-heading,
+.laptopia-section h3.laptopia-panel-heading {
+  color: var(--laptopia-text);
+  text-align: center;
+  font-size: var(--laptopia-type-subheading);
+  font-weight: var(--laptopia-weight-heading);
+  line-height: var(--laptopia-line-heading);
+  margin-block: 24px 12px;
+}
+.laptopia-section .laptopia-panel-heading { margin-top: 0; }
+.laptopia-section.laptopia-faq .laptopia-card h3 {
+  text-align: center;
+  margin-block: 0 16px;
+}
+.laptopia-section .laptopia-card:not(a) p:not(.laptopia-price-card-value) {
+  text-align: start;
+  text-indent: 0;
+}
+.laptopia-section p.laptopia-pricing-explanation {
+  max-width: var(--laptopia-text-rail);
+  margin: 16px auto 0;
+  text-align: start;
+  text-indent: 0;
+  font-size: var(--laptopia-type-body);
+  font-weight: var(--laptopia-weight-regular);
+  line-height: var(--laptopia-line-body);
+  color: var(--laptopia-secondary);
+}
+.laptopia-section p.laptopia-principal-value,
+.laptopia-section .laptopia-pricing-panel p.laptopia-principal-value {
+  max-width: var(--laptopia-text-rail);
+  margin: 0 auto 16px;
+  text-align: center;
+  color: var(--laptopia-graphite);
+  font-size: var(--laptopia-type-subheading);
+  font-weight: var(--laptopia-weight-heading);
+  line-height: 1.5;
+}
+.laptopia-section .laptopia-important-label {
+  text-align: center;
+  font-size: var(--laptopia-type-title);
+  line-height: var(--laptopia-line-compact);
+}
+.laptopia-pricing-panel { padding: 24px; }
+.laptopia-pricing-panel > p,
+.laptopia-diagnostic-subsection { max-width: var(--laptopia-text-rail); margin-inline: auto; }
+.laptopia-diagnostic-subsection { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--laptopia-border); }
+.laptopia-diagnostic-subsection .laptopia-concept-heading { margin-top: 0; }
+.laptopia-section .laptopia-diagnostic-subsection p { text-align: start; margin-block: 0 16px; }
+.laptopia-section .laptopia-diagnostic-subsection p:last-child { margin-bottom: 0; }
+.laptopia-section .laptopia-price-card .laptopia-price-card-value {
+  margin: 0 0 16px;
+  padding-top: 0;
+  border-top: 0;
+  font-size: var(--laptopia-type-subheading);
+  font-weight: var(--laptopia-weight-heading);
+}
+.laptopia-section .laptopia-price-card .laptopia-price-card-value:last-child { margin-bottom: 0; }
+.laptopia-section .laptopia-price-card p:not(.laptopia-price-card-value) { width: 100%; margin-bottom: 0; }
+
+/* Semantic short information: opt in, without narrowing substantial content. */
+.laptopia-section .laptopia-card.laptopia-compact-notice {
+  width: fit-content;
+  min-width: min(100%, 28ch);
+  max-width: min(100%, var(--laptopia-text-rail));
+  margin-inline: auto;
+  padding: 20px;
+}
+@media (max-width: 600px) {
+  .laptopia-section .laptopia-card.laptopia-compact-notice { width: 100%; }
+}
+/* Current identity stays visible independently of hover/focus/visited. */
+.laptopia-header-navigation > a[aria-current],
+.laptopia-services-panel a[aria-current],
+.laptopia-mobile-navigation-panel a[aria-current],
+.laptopia-footer :is(.laptopia-footer-services, .laptopia-footer-legal) a[aria-current] {
+  text-decoration-line: underline;
+  text-decoration-style: double;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: currentColor;
+}
+.laptopia-services-panel a[aria-current],
+.laptopia-mobile-navigation-panel a[aria-current] { font-weight: 700; }

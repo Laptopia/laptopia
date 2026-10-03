@@ -1,12 +1,29 @@
 <?php
 
+// Legal pages stay crawlable but are intentionally excluded from search results.
+add_filter( 'rank_math/frontend/robots', static function( $robots ) {
+    if ( ! is_admin() && is_page( array( 226, 227 ) ) ) {
+        $robots['index'] = 'noindex';
+        $robots['follow'] = 'follow';
+    }
+    return $robots;
+}, 100 );
+add_filter( 'rank_math/sitemap/entry', static function( $entry, $type, $object ) {
+    if ( 'post' === $type && is_object( $object )
+        && in_array( (int) ( $object->ID ?? 0 ), array( 226, 227 ), true )
+        && 'page' === get_post_type( $object->ID ) ) {
+        return false;
+    }
+    return $entry;
+}, 100, 3 );
+
 // One scope for JSON-LD and Open Graph; unrelated pages/admin remain untouched.
 function laptopia_is_business_page() {
     if ( is_admin() || ! is_page() ) {
         return false;
     }
 
-    $templates = array( 'home-laptopia', 'service-areas', 'repairs', 'repair-case' );
+    $templates = array( 'home-laptopia', 'service-areas', 'repairs', 'repair-case', 'prices' );
     foreach ( laptopia_get_services() as $service ) {
         $templates[] = $service['slug'];
     }
@@ -73,6 +90,51 @@ function laptopia_filter_page_schema( $data ) {
 
 add_filter( 'rank_math/json_ld', 'laptopia_filter_page_schema', 99 );
 
+// Legal pages are not articles. Leave the existing business and site graph intact.
+function laptopia_filter_legal_page_schema( $data ) {
+    if ( is_admin() || ! is_page() || ! is_page_template( 'page-templates/legal.php' )
+        || ! in_array( (int) get_queried_object_id(), array( 226, 227 ), true ) || ! is_array( $data ) ) {
+        return $data;
+    }
+
+    $author_ids = array();
+    foreach ( $data as $key => $entity ) {
+        if ( ! is_array( $entity )
+            || ! in_array( 'Article', (array) ( $entity['@type'] ?? array() ), true ) ) {
+            continue;
+        }
+        if ( ! empty( $entity['author'] ) && is_array( $entity['author'] ) ) {
+            array_walk_recursive( $entity['author'], static function( $value, $property ) use ( &$author_ids ) {
+                if ( '@id' === $property && is_string( $value ) && '' !== $value ) {
+                    $author_ids[] = $value;
+                }
+            } );
+        }
+        unset( $data[ $key ] );
+    }
+
+    foreach ( $data as $key => $entity ) {
+        if ( ! is_array( $entity )
+            || ! in_array( 'Person', (array) ( $entity['@type'] ?? array() ), true )
+            || ! in_array( $entity['@id'] ?? '', $author_ids, true ) ) {
+            continue;
+        }
+        $remaining = $data;
+        unset( $remaining[ $key ] );
+        $referenced = false;
+        array_walk_recursive( $remaining, static function( $value, $property ) use ( &$referenced, $entity ) {
+            if ( '@id' === $property && $value === $entity['@id'] ) {
+                $referenced = true;
+            }
+        } );
+        if ( ! $referenced ) {
+            unset( $data[ $key ] );
+        }
+    }
+    return $data;
+}
+add_filter( 'rank_math/json_ld', 'laptopia_filter_legal_page_schema', 100 );
+
 add_filter( 'rank_math/opengraph/type', static function( $type ) {
     return laptopia_is_business_page() ? 'website' : $type;
 }, 99 );
@@ -133,6 +195,12 @@ add_filter( 'rank_math/frontend/description', static function( $description ) {
 add_filter( 'rank_math/frontend/canonical', static function( $canonical ) {
     return laptopia_repair_seo() ? set_url_scheme( get_permalink( get_queried_object_id() ), 'https' ) : $canonical;
 }, 99 );
+
+add_action( 'rank_math/head', static function() {
+    if ( ! is_admin() && is_page( array( 226, 227 ) ) ) {
+        echo '<link rel="canonical" href="' . esc_url( set_url_scheme( get_permalink( get_queried_object_id() ), 'https' ) ) . '" />' . "\n";
+    }
+}, 20 );
 
 foreach ( array( 'facebook', 'twitter' ) as $network ) {
     add_filter( 'rank_math/opengraph/' . $network . '/og_title', static function( $title ) {

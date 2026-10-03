@@ -16,24 +16,7 @@ if ( ! $case ) {
     }
     return;
 }
+get_template_part( 'template-parts/page-shell-start', null, array( 'body_classes' => explode( ' ', 'laptopia-service-page laptopia-repair-case-page' ), 'background_mode' => 'repair-case' ) );
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php wp_head(); ?>
-</head>
-<body <?php body_class( 'laptopia-service-page laptopia-repair-case-page' ); ?>>
-<?php wp_body_open(); ?>
-<?php get_template_part( 'template-parts/header', null, array( 'nav_links' => array(
-    array( 'href' => home_url( '/' ), 'label' => 'דף הבית' ),
-    array( 'href' => home_url( '/repairs/' ), 'label' => 'תיק עבודות' ),
-    array( 'href' => '#contact', 'label' => 'יצירת קשר' ),
-) ) ); ?>
 <?php get_template_part( 'template-parts/repair-case-content', null, array( 'case' => $case ) ); ?>
-<?php get_template_part( 'template-parts/footer' ); ?>
-<?php get_template_part( 'template-parts/floating-whatsapp' ); ?>
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php get_template_part( 'template-parts/page-shell-end' ); ?>

@@ -2,10 +2,6 @@
 
   <div class="laptopia-board-content laptopia-info-panel">
 
-    <div class="laptopia-board-label">
-      תחום התמחות מרכזי
-    </div>
-
     <h2>
       תיקון לוחות אם למחשבים ניידים
     </h2>
@@ -17,9 +13,9 @@
       ותקלות מורכבות בלוח האם.
     </p>
 
-    <a class="laptopia-board-price laptopia-element-link laptopia-service-cta" href="/motherboard-repair/">
+    <a class="laptopia-board-price laptopia-element-link laptopia-service-cta laptopia-btn-navigation" href="/motherboard-repair/">
       <span>
-      תיקון לוח אם – החל מ- <?php echo laptopia_bidi_price( '700₪' ); ?>
+      תיקון לוח אם – <?php echo laptopia_price_display( 'motherboard' ); ?>
       </span>
     </a>
 

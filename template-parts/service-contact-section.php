@@ -8,19 +8,7 @@ $title_ids = array(
   'keyboard-replacement.php' => 'keyboard-contact-title',
 );
 $title_id = $title_ids[ $template ] ?? 'service-contact-title';
-?>
-<section class="laptopia-section laptopia-contact laptopia-service-contact" id="contact" aria-labelledby="<?php echo esc_attr( $title_id ); ?>">
-  <div class="laptopia-contact-content">
-    <h2 id="<?php echo esc_attr( $title_id ); ?>"><?php get_template_part( 'template-parts/brand-text', null, array( 'text' => $args['heading'] ?? '' ) ); ?></h2>
-    <p class="laptopia-contact-intro"><?php echo laptopia_bidi_text( $args['description'] ?? '' ); ?></p>
-    <div class="laptopia-contact-info">
-      <div class="laptopia-info-box"><div class="laptopia-info-value">אלמוג 2, רמלה</div></div>
-      <div class="laptopia-info-box"><div class="laptopia-info-value"><bdi dir="ltr">053-803-6244</bdi></div></div>
-    </div>
-    <p class="laptopia-contact-note">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</p>
-    <?php if ( ! is_page_template( 'page-templates/service-areas.php' ) ) : ?>
-      <p class="laptopia-contact-note"><a href="<?php echo esc_url( home_url( '/service-areas/' ) ); ?>">אזורי שירות והגעה למעבדה</a></p>
-    <?php endif; ?>
-    <?php get_template_part( 'template-parts/service-contact-actions' ); ?>
-  </div>
-</section>
+$options = $args ?? array();
+$options['title_id'] = $title_id;
+$options['show_service_area'] = ! is_page_template( 'page-templates/service-areas.php' );
+get_template_part( 'template-parts/contact', null, $options );

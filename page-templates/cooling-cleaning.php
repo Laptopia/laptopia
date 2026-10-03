@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="cooling-title">ניקוי מערכת קירור למחשב נייד ברמלה והסביבה</h1>
       <p>המחשב מתחמם, המאוורר רועש או שהביצועים יורדים? בודקים את זרימת האוויר, המאוורר והצטברות האבק לפני שקובעים את הטיפול.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><span>ניקוי מערכת קירור — החל מ- <?php echo laptopia_bidi_price( '300₪' ); ?></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><span>ניקוי מערכת קירור — <?php echo laptopia_price_display( 'cooling' ); ?></span></div>
       <p>המחיר הסופי נקבע לפי הדגם והיקף הטיפול, לפני אישור העבודה.</p>
       <?php get_template_part( 'template-parts/service-hero-details' ); ?>
       <div class="laptopia-buttons">
@@ -82,13 +82,11 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="cooling-prices-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="cooling-prices-title">כמה עולה ניקוי מערכת קירור למחשב נייד?</h2>
-      <div class="laptopia-diagnostic">
-        <strong>ניקוי מערכת קירור — החל מ- <?php echo laptopia_bidi_price( '300₪' ); ?></strong>
-        <p>העלות תלויה בדגם, בגישה למערכת ובהיקף העבודה. אם מתגלה צורך בתיקון או בהחלפת רכיב, המחיר יימסר לאישור לפני ביצועו.</p>
-        <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם <?php echo laptopia_bidi_price( '150₪' ); ?>.</p>
-        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
-      </div>
+      <?php get_template_part( 'template-parts/pricing-panel', null, array(
+        'price_key' => 'cooling',
+        'label' => 'ניקוי מערכת קירור',
+        'description' => 'העלות תלויה בדגם, בגישה למערכת ובהיקף העבודה. אם מתגלה צורך בתיקון או בהחלפת רכיב, המחיר יימסר לאישור לפני ביצועו.',
+      ) ); ?>
       <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
     </div>
   </section>
@@ -126,7 +124,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-card"><h3>האם החלפת משחה תרמית כלולה?</h3><p>הצורך בטיפול בחומר התרמי והכללתו במחיר נקבעים לפי הדגם וממצאי הבדיקה. היקף העבודה יפורט בהצעה לפני האישור.</p></div>
         <div class="laptopia-card"><h3>כל כמה זמן כדאי לנקות?</h3><p>התדירות תלויה בסביבת העבודה, בשימוש ובמצב המחשב. אם מופיעים חום חריג, רעש או שינוי בביצועים, כדאי לפנות לבדיקה.</p></div>
         <div class="laptopia-card"><h3>כמה זמן נמשך הטיפול?</h3><p>משך העבודה תלוי בדגם המחשב, במצב מערכת הקירור ובסוג התקלה. אם נדרש חלק נוסף, גם זמינותו יכולה להשפיע.</p></div>
-        <div class="laptopia-card"><h3>כמה עולה הניקוי?</h3><p>ניקוי מערכת קירור מתחיל ב-<?php echo laptopia_bidi_price( '300₪' ); ?>. המחיר הסופי נקבע לפי היקף העבודה ונמסר לאישור מראש.</p></div>
+        <div class="laptopia-card"><h3>כמה עולה הניקוי?</h3><p>ניקוי מערכת קירור מתחיל ב-<?php echo laptopia_price_amount( 'cooling' ); ?>. המחיר הסופי נקבע לפי היקף העבודה ונמסר לאישור מראש.</p></div>
         <div class="laptopia-card"><h3>האם צריך לתאם הגעה?</h3><p>כן. פנו בוואטסאפ או בטלפון לתיאום מסירת המחשב למעבדה ברמלה.</p></div>
       </div>
     </div>
@@ -139,9 +137,4 @@ get_template_part( 'template-parts/header', null, array(
 </main>
 
 <?php
-get_template_part( 'template-parts/footer' );
-get_template_part( 'template-parts/floating-whatsapp' );
-wp_footer();
-?>
-</body>
-</html>
+get_footer();

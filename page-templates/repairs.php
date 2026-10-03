@@ -5,27 +5,13 @@
  */
 defined( 'ABSPATH' ) || exit;
 $cases = laptopia_get_repair_cases();
+get_template_part( 'template-parts/page-shell-start', null, array( 'body_classes' => explode( ' ', 'laptopia-service-page laptopia-repairs-page' ), 'background_mode' => 'portfolio' ) );
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php wp_head(); ?>
-</head>
-<body <?php body_class( 'laptopia-service-page laptopia-repairs-page' ); ?>>
-<?php wp_body_open(); ?>
-<?php get_template_part( 'template-parts/header', null, array( 'nav_links' => array(
-    array( 'href' => home_url( '/' ), 'label' => 'דף הבית' ),
-    array( 'href' => home_url( '/service-areas/' ), 'label' => 'על המעבדה' ),
-    array( 'href' => '#contact', 'label' => 'יצירת קשר' ),
-) ) ); ?>
 <main dir="rtl">
-  <section class="laptopia-section laptopia-repairs-intro" aria-labelledby="repairs-title">
+  <section class="laptopia-section laptopia-page-foundation laptopia-repairs-intro" aria-labelledby="repairs-title">
     <div class="laptopia-repair-rail">
-      <p class="laptopia-repair-eyebrow">מהעבודה במעבדה</p>
       <h1 id="repairs-title">תיק עבודות</h1>
-      <p>תיעוד תיקונים אמיתיים במעבדה שלנו. בכל תיקון מוצג הנזק או התלונה שאיתו המחשב הגיע, סדר העבודה שלנו על המחשב והתיקון הסופי. המחיר שמופיע בתיקונים מותאם לפי סוג המחשב ומורכבות העבודה ועלות החלקים. כל מחשב מקבל מחיר מותאם אישית.</p>
+      <p class="laptopia-presentation-lead">תיעוד תיקונים אמיתיים במעבדה שלנו. בכל תיקון מוצג הנזק או התלונה שאיתו המחשב הגיע, סדר העבודה שלנו על המחשב והתיקון הסופי. המחיר שמופיע בתיקונים מותאם לפי סוג המחשב ומורכבות העבודה ועלות החלקים. כל מחשב מקבל מחיר מותאם אישית.</p>
     </div>
   </section>
   <section class="laptopia-section laptopia-repairs-list" aria-label="מקרי תיקון">
@@ -39,8 +25,4 @@ $cases = laptopia_get_repair_cases();
   </section>
   <?php get_template_part( 'template-parts/service-contact-section', null, array( 'heading' => 'רוצים לתאם בדיקה?', 'description' => 'שלחו את דגם המחשב ותיאור התקלה, ונתאם מסירה במעבדה ברמלה.' ) ); ?>
 </main>
-<?php get_template_part( 'template-parts/footer' ); ?>
-<?php get_template_part( 'template-parts/floating-whatsapp' ); ?>
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php get_template_part( 'template-parts/page-shell-end' ); ?>

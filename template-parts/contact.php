@@ -1,38 +1,48 @@
-<section class="laptopia-section laptopia-contact" id="contact">
-
+<?php
+/** Canonical contact/pre-footer. Options change content, never page-specific geometry. */
+defined( 'ABSPATH' ) || exit;
+$options = wp_parse_args( $args ?? array(), array(
+  'heading' => 'יצירת קשר',
+  'description' => 'שלחו לנו הודעה בוואטסאפ עם דגם המחשב ותיאור התקלה. ניתן לצרף תמונה כדי שנוכל להבין טוב יותר במה מדובר.',
+  'title_id' => 'service-contact-title',
+  'show_info' => true,
+  'show_info_labels' => false,
+  'show_hours' => false,
+  'show_service_area' => true,
+  'appointment' => 'הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.',
+  'notice_first' => false,
+  'address' => 'אלמוג 2, רמלה',
+  'action_order' => array( 'phone', 'whatsapp', 'waze', 'google-maps' ),
+  'tone' => 'dark',
+) );
+$is_light = 'light' === $options['tone'];
+?>
+<section class="laptopia-section laptopia-contact<?php echo $is_light ? ' laptopia-contact-inquiry' : ' laptopia-service-contact'; ?>" id="contact" aria-labelledby="<?php echo esc_attr( $options['title_id'] ); ?>">
   <div class="laptopia-contact-content">
-
-    <h2>
-      יצירת קשר
-    </h2>
-
-    <div class="laptopia-contact-intro">
-      שלחו לנו הודעה בוואטסאפ עם דגם המחשב ותיאור התקלה.
-      ניתן לצרף תמונה כדי שנוכל להבין טוב יותר במה מדובר.
-    </div>
-
-    <div class="laptopia-contact-note">
-      הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד
-    </div>
-
-    <div class="laptopia-contact-info">
-
-      <div class="laptopia-info-box">
-        <div class="laptopia-info-title">כתובת</div>
-        <div class="laptopia-info-value">
-          רחוב אלמוג 2, רמלה
+    <h2 id="<?php echo esc_attr( $options['title_id'] ); ?>"><?php get_template_part( 'template-parts/brand-text', null, array( 'text' => $options['heading'] ) ); ?></h2>
+    <p class="laptopia-contact-intro"><?php echo laptopia_bidi_text( $options['description'] ); ?></p>
+    <?php if ( $options['notice_first'] && $options['appointment'] ) : ?>
+      <div class="laptopia-contact-note"><?php echo esc_html( $options['appointment'] ); ?></div>
+    <?php endif; ?>
+    <?php if ( $options['show_info'] ) : ?>
+      <div class="laptopia-contact-info">
+        <div class="laptopia-info-box">
+          <?php if ( $options['show_info_labels'] ) : ?><div class="laptopia-info-title">כתובת</div><?php endif; ?>
+          <div class="laptopia-info-value"><?php echo esc_html( $options['address'] ); ?></div>
+        </div>
+        <div class="laptopia-info-box">
+          <?php if ( $options['show_info_labels'] ) : ?><div class="laptopia-info-title">טלפון</div><?php endif; ?>
+          <div class="laptopia-info-value"><bdi dir="ltr">053-803-6244</bdi></div>
         </div>
       </div>
-
-      <div class="laptopia-info-box">
-        <div class="laptopia-info-title">טלפון</div>
-        <div class="laptopia-info-value">
-          053-803-6244
-        </div>
-      </div>
-
-    </div>
-
+    <?php endif; ?>
+    <?php if ( ! $options['notice_first'] && $options['appointment'] ) : ?>
+      <p class="laptopia-contact-note"><?php echo esc_html( $options['appointment'] ); ?></p>
+    <?php endif; ?>
+    <?php if ( $options['show_service_area'] ) : ?>
+      <p class="laptopia-contact-navigation"><a href="<?php echo esc_url( home_url( '/service-areas/' ) ); ?>">אזורי שירות והגעה למעבדה</a></p>
+    <?php endif; ?>
+    <?php if ( $options['show_hours'] ) : ?>
     <div class="laptopia-hours">
 
       <div class="laptopia-hours-row">
@@ -72,43 +82,11 @@
 
     </div>
 
-    <p style="color:#9ca3af;font-size:13px;margin:14px 0 27px;">
+    <p class="laptopia-contact-hours-note">
       בשבתות ובחגים שעות הפעילות עשויות להשתנות
     </p>
 
-    <div class="laptopia-buttons laptopia-contact-actions">
-
-      <a class="laptopia-btn laptopia-btn-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener">
-        <span class="laptopia-cta-content">
-          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'whatsapp' ) ); ?>
-          <span>שלחו הודעה ב-<bdi dir="ltr">WhatsApp</bdi></span>
-        </span>
-      </a>
-
-      <a class="laptopia-btn laptopia-btn-white"
-         href="tel:+972538036244">
-        <span class="laptopia-cta-content">
-          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?>
-          <span>התקשרו למעבדה</span>
-        </span>
-      </a>
-
-      <a class="laptopia-btn laptopia-btn-google-maps" href="https://maps.app.goo.gl/142XHnrHZfT4tYYQA" target="_blank" rel="noopener">
-        <span class="laptopia-cta-content">
-          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'google-maps' ) ); ?>
-          <span>ניווט ב-<bdi dir="ltr">Google Maps</bdi></span>
-        </span>
-      </a>
-
-      <a class="laptopia-btn laptopia-btn-waze" href="https://ul.waze.com/ul?venue_id=22872383.228592761.149507&amp;overview=yes&amp;utm_campaign=default&amp;utm_source=waze_website&amp;utm_medium=lm_share_location" target="_blank" rel="noopener">
-        <span class="laptopia-cta-content">
-          <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'waze' ) ); ?>
-          <span>ניווט ב-<bdi dir="ltr">Waze</bdi></span>
-        </span>
-      </a>
-
-    </div>
-
+    <?php endif; ?>
+    <?php get_template_part( 'template-parts/service-contact-actions', null, array( 'order' => $options['action_order'], 'light' => $is_light ) ); ?>
   </div>
-
 </section>

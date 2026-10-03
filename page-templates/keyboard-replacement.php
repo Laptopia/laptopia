@@ -30,7 +30,7 @@ get_template_part( 'template-parts/header', null, array(
     <div class="laptopia-hero-content">
       <h1 id="keyboard-title">החלפת מקלדת למחשב נייד ברמלה והסביבה</h1>
       <p>מקשים חסרים, לא מגיבים או מקלידים תווים לא צפויים? בודקים אם מקור התקלה במקלדת ומתאימים חלק לפי מבנה הדגם.</p>
-      <div class="laptopia-board-price laptopia-service-cta"><span>החלפת מקלדת — החל מ- <?php echo laptopia_bidi_price( '550₪' ); ?></span></div>
+      <div class="laptopia-board-price laptopia-service-cta"><span>החלפת מקלדת — <?php echo laptopia_price_display( 'keyboard' ); ?></span></div>
       <p>המחיר הסופי נקבע לפי הדגם ואופן התקנת המקלדת.</p>
       <?php get_template_part( 'template-parts/service-hero-details' ); ?>
       <div class="laptopia-buttons">
@@ -85,13 +85,11 @@ get_template_part( 'template-parts/header', null, array(
   <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="keyboard-prices-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="keyboard-prices-title">כמה עולה החלפת מקלדת למחשב נייד?</h2>
-      <div class="laptopia-diagnostic">
-        <strong>החלפת מקלדת — החל מ- <?php echo laptopia_bidi_price( '550₪' ); ?></strong>
-        <p>המחיר תלוי בדגם, בסוג המקלדת ובאופן התקנתה. הצעת המחיר נמסרת לפני העבודה, וההחלפה מתבצעת לאחר אישור הלקוח.</p>
-        <h3>דמי אבחון</h3>
-        <p>במקרה שבו הלקוח בוחר שלא לבצע תיקון לאחר האבחון, דמי האבחון הם <?php echo laptopia_bidi_price( '150₪' ); ?>.</p>
-        <p>אם לאחר הבדיקה נקבע כי המחשב אינו ניתן לתיקון מבחינה טכנית, לא ייגבו דמי אבחון.</p>
-      </div>
+      <?php get_template_part( 'template-parts/pricing-panel', null, array(
+        'price_key' => 'keyboard',
+        'label' => 'החלפת מקלדת',
+        'description' => 'המחיר תלוי בדגם, בסוג המקלדת ובאופן התקנתה. הצעת המחיר נמסרת לפני העבודה, וההחלפה מתבצעת לאחר אישור הלקוח.',
+      ) ); ?>
       <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
     </div>
   </section>
@@ -129,7 +127,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-card"><h3>האם מקשים שלא מגיבים מחייבים החלפה?</h3><p>לא בהכרח. בודקים גם הגדרות, חיבורים ותקלות אפשריות ברכיבים אחרים לפני שקובעים מה צריך לתקן.</p></div>
         <div class="laptopia-card"><h3>האם יש מקלדת מתאימה לדגם שלי?</h3><p>שלחו את הדגם המדויק. נבדוק התאמה, פריסה וזמינות של חלק מתאים; אין התחייבות למלאי לכל דגם.</p></div>
         <div class="laptopia-card"><h3>כמה זמן נמשכת ההחלפה?</h3><p>משך העבודה תלוי בדגם המחשב, בזמינות המקלדת ובסוג התקלה.</p></div>
-        <div class="laptopia-card"><h3>מה המחיר ואילו תנאים נמסרים מראש?</h3><p>המחיר מתחיל ב-<?php echo laptopia_bidi_price( '550₪' ); ?>. המחיר הסופי, פרטי המקלדת ותנאי האחריות נמסרים לאישור לפני ההחלפה.</p></div>
+        <div class="laptopia-card"><h3>מה המחיר ואילו תנאים נמסרים מראש?</h3><p>המחיר מתחיל ב-<?php echo laptopia_price_amount( 'keyboard' ); ?>. המחיר הסופי, פרטי המקלדת ותנאי האחריות נמסרים לאישור לפני ההחלפה.</p></div>
         <div class="laptopia-card"><h3>צריך לתאם לפני ההגעה?</h3><p>כן. פנו בוואטסאפ או בטלפון לתיאום מסירת המחשב למעבדה ברמלה.</p></div>
       </div>
     </div>
@@ -142,9 +140,4 @@ get_template_part( 'template-parts/header', null, array(
 </main>
 
 <?php
-get_template_part( 'template-parts/footer' );
-get_template_part( 'template-parts/floating-whatsapp' );
-wp_footer();
-?>
-</body>
-</html>
+get_footer();

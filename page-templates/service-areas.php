@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class( 'laptopia-service-page' ); ?>>
+<body <?php body_class( 'laptopia-service-page laptopia-standard-page laptopia-bg--region' ); ?>>
 <?php wp_body_open(); ?>
 
 <?php get_template_part( 'template-parts/header', null, array(
@@ -23,6 +23,7 @@ defined( 'ABSPATH' ) || exit;
     array( 'href' => '#contact', 'label' => 'יצירת קשר' ),
   ),
 ) ); ?>
+<?php get_template_part( 'template-parts/page-background', null, array( 'mode' => 'region' ) ); ?>
 
 <main dir="rtl">
   <section class="laptopia-section laptopia-hero" aria-labelledby="service-areas-title">
@@ -118,9 +119,4 @@ defined( 'ABSPATH' ) || exit;
 </main>
 
 <?php
-get_template_part( 'template-parts/footer' );
-get_template_part( 'template-parts/floating-whatsapp' );
-wp_footer();
-?>
-</body>
-</html>
+get_footer();
