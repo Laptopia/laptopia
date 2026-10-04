@@ -2359,6 +2359,8 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
 .laptopia-repair-stage > .laptopia-repair-rail > p {
   max-width: var(--laptopia-text-rail);
   margin: 0 0 18px;
+  margin-inline: auto;
+  text-align: start;
 }
 
 .laptopia-repairs-intro p:last-child {
@@ -2541,9 +2543,21 @@ body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
   margin: 12px auto 0;
 }
 
+.laptopia-repair-details:where(:has(> :nth-child(2):last-child)) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: var(--laptopia-text-rail);
+  margin-inline: auto;
+}
+
+.laptopia-repair-details:has(> :only-child) {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: var(--laptopia-text-rail);
+  margin-inline: auto;
+}
+
 .laptopia-repair-outcome {
   max-width: var(--laptopia-text-rail);
-  margin: 20px 0 18px;
+  margin: 20px auto 18px;
   padding: 22px 26px;
 }
 
