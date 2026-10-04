@@ -222,6 +222,50 @@ Do not claim that a check passed if it was not actually run.
 
 If a check cannot be performed, state that explicitly in the final report.
 
+## Git and production deployment safety
+
+### Pre-deployment Git verification
+
+Before every production deployment, do not assume the production checkout is clean or synchronized.
+
+Before changing production, inspect at minimum:
+
+- current production `HEAD`;
+- expected/current `origin/main`, verified with `fetch`;
+- `git status`;
+- ahead/behind relationship where applicable;
+- tracked local modifications;
+- relevant untracked files/directories.
+
+A successful push to GitHub does not by itself mean production can safely run a blind `git pull`.
+
+### Normal clean deployment
+
+If production is clean and the update is a normal fast-forward from the expected `main`, use the normal release workflow defined elsewhere in this document.
+
+Do not introduce reconciliation steps when they are unnecessary.
+
+### Dirty, divergent, or unexpected production state
+
+If production contains unexpected tracked modifications, divergence, conflicting state, or other unexplained differences:
+
+- do not blindly pull;
+- do not overwrite the working tree;
+- do not automatically treat production differences as obsolete;
+- inspect and understand the differences before choosing a recovery plan.
+
+Reconciliation must remain within the current task's explicitly authorized scope. If it is required but not authorized, report the dependency before changing production.
+
+Before reconciliation changes, create a backup that preserves the current Git state, tracked local changes, and relevant untracked data. Then fetch and separately verify `HEAD`, `origin/main`, ahead/behind, and the working tree.
+
+Do not use `git reset --hard`, `git clean`, or broad restore commands to eliminate production differences. Do not delete unrelated or untracked data.
+
+Use `git reset --mixed` only after analyzing the state and establishing that changing HEAD/index while preserving the working tree is appropriate. It is not a default deployment step.
+
+Do not temporarily roll back the live site's working tree during reconciliation. Restore any remaining tracked differences only at specific, reviewed paths after determining which version is correct.
+
+Verify the resulting Git state and working tree after reconciliation. A previously successful reconciliation does not establish that future production checkouts are clean or synchronized.
+
 ## Production verification
 
 Code completion alone does not prove production success.
