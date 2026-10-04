@@ -6,7 +6,7 @@ usort( $services, static function( $a, $b ) { return $a['home_order'] <=> $b['ho
 <section class="laptopia-section laptopia-services" id="services">
   <div class="laptopia-inner">
     <h2 class="laptopia-section-title">שירותי המעבדה</h2>
-    <div class="laptopia-section-subtitle">תיקון מחשבים ניידים ברמלה מכל היצרנים והדגמים</div>
+    <div class="laptopia-section-subtitle">תיקון מחשבים ניידים מיצרנים שונים, בהתאם לדגם ולתקלה</div>
     <div class="laptopia-services-grid">
       <?php foreach ( $services as $service ) : ?>
         <a class="laptopia-card laptopia-element-link" href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>">

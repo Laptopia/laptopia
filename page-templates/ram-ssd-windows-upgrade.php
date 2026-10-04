@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
   <section class="laptopia-section laptopia-hero" aria-labelledby="service-title">
     <div class="laptopia-hero-content">
       <h1 id="service-title">שדרוג זיכרון ו-<?php echo laptopia_bidi_ltr( 'SSD' ); ?> והתקנת מערכת הפעלה למחשב נייד ברמלה והסביבה</h1>
-      <p>צריכים יותר זיכרון, נפח <?php echo laptopia_bidi_ltr( 'SSD' ); ?> או התקנת <?php echo laptopia_bidi_ltr( 'Windows' ); ?>? בודקים התאמה לדגם ומפרידים בין שדרוג חומרה, מערכת הפעלה וטיפול במידע.</p>
+      <p>צריכים יותר זיכרון, כונן <?php echo laptopia_bidi_ltr( 'SSD' ); ?> בנפח גדול יותר או התקנת <?php echo laptopia_bidi_ltr( 'Windows' ); ?>? בודקים התאמה לדגם ומבחינים בין שדרוג חומרה, התקנת מערכת הפעלה וגיבוי או העברת מידע.</p>
       <div class="laptopia-board-price laptopia-service-cta"><span class="laptopia-service-price-lines"><span><?php echo laptopia_bidi_ltr( 'RAM' ); ?> — מחיר לפי התאמה ורכיב</span><span><?php echo laptopia_bidi_ltr( 'SSD' ); ?> — מחיר לפי סוג ונפח</span><span><?php echo laptopia_bidi_ltr( 'Windows' ); ?> — <?php echo laptopia_price_display( 'windows' ); ?></span></span></div>
       <p><?php echo laptopia_bidi_ltr( 'Windows' ); ?> מותקן באמצעות רישיון קיים של הלקוח; גיבוי והעברת מידע מתומחרים בנפרד.</p>
       <?php get_template_part( 'template-parts/service-hero-details' ); ?>
@@ -78,7 +78,7 @@ defined( 'ABSPATH' ) || exit;
       <h3>התאמת זיכרון <?php echo laptopia_bidi_ltr( 'RAM' ); ?></h3>
       <p>בחלק מהמחשבים הזיכרון מולחם ואינו ניתן לשדרוג רגיל; בדגמים אחרים יש חריץ אחד או שניים. ההתאמה תלויה בדגם ובפלטפורמה.</p>
       <h3>התאמת <?php echo laptopia_bidi_ltr( 'SSD' ); ?> והעברת מידע</h3>
-      <p>לא כל מחשב תומך בכל <?php echo laptopia_bidi_ltr( 'NVMe' ); ?>. העברת מערכת או מידע אפשרית רק בהתאם למצב הכונן ולתנאים הטכניים.</p>
+      <p>לא כל כונן <?php echo laptopia_bidi_ltr( 'NVMe' ); ?> מתאים לכל מחשב. האפשרות להעביר את מערכת ההפעלה או את המידע תלויה במצב הכונן ובתאימות הטכנית.</p>
       <h3>התקנת מערכת הפעלה</h3>
       <p>התקנה אינה מבטיחה פתרון של תקלה חומרתית.</p>
     </div>
@@ -93,7 +93,7 @@ defined( 'ABSPATH' ) || exit;
     </div>
   </section>
   <?php get_template_part( 'template-parts/process', null, array(
-    'title' => 'איך מתבצע השדרוג או התקנת המערכת?',
+    'title' => 'איך משדרגים את המחשב או מתקינים את מערכת ההפעלה?',
     'steps' => array(
       array( 'title' => 'תיאום מראש', 'text' => 'שולחים דגם, צרכים ותיאור הבעיה.' ),
       array( 'title' => 'בדיקת התאמה', 'text' => 'בודקים זיכרון, כונן ומצב מערכת לפי הצורך.' ),

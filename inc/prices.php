@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 function laptopia_price_rows() {
     return array(
-        'diagnostics' => array( 'label' => 'אבחון במקרה של אי ביצוע תיקון', 'amount' => '150₪', 'type' => 'fixed', 'icon' => 'diagnostics' ),
+        'diagnostics' => array( 'label' => 'דמי אבחון אם בוחרים שלא לתקן', 'amount' => '150₪', 'type' => 'fixed', 'icon' => 'diagnostics' ),
         'cooling' => array( 'label' => 'ניקוי מערכת קירור', 'amount' => '300₪', 'type' => 'from', 'icon' => 'cooling-cleaning', 'slug' => 'cooling-cleaning' ),
         'screen' => array( 'label' => 'החלפת מסך', 'amount' => '550₪', 'type' => 'from', 'icon' => 'screen-replacement', 'slug' => 'screen-replacement' ),
         'keyboard' => array( 'label' => 'החלפת מקלדת', 'amount' => '550₪', 'type' => 'from', 'icon' => 'keyboard-replacement', 'slug' => 'keyboard-replacement' ),
@@ -28,5 +28,8 @@ function laptopia_price_display( $key ) {
     if ( ! isset( $rows[ $key ] ) ) {
         return '';
     }
-    return ( 'from' === $rows[ $key ]['type'] ? 'החל מ- ' : '' ) . laptopia_price_amount( $key );
+    $amount = laptopia_price_amount( $key );
+    return 'from' === $rows[ $key ]['type']
+        ? '<span class="laptopia-bidi-phrase">החל מ- ' . $amount . '</span>'
+        : $amount;
 }

@@ -47,7 +47,7 @@ get_template_part( 'template-parts/header', null, array(
       <div class="laptopia-warranty-grid">
         <div class="laptopia-card"><h3>מקשים שאינם מגיבים</h3><p>מקש בודד או קבוצת מקשים יכולים להפסיק להגיב. בודקים אם התקלה במקלדת, בחיבור שלה או במקום אחר.</p></div>
         <div class="laptopia-card"><h3>מקשים חסרים או שבורים</h3><p>נזק למקש או למנגנון שמתחתיו עלול להפריע להקלדה. האפשרות לטפל במקש בנפרד או הצורך בהחלפת המקלדת נבדקים לפי מצבה והדגם.</p></div>
-        <div class="laptopia-card"><h3>הקלדה כפולה או לא צפויה</h3><p>תווים שחוזרים על עצמם או הקלדה ללא לחיצה מצדיקים בדיקה. התופעה לבדה אינה קובעת איזה חלק צריך להחליף.</p></div>
+        <div class="laptopia-card"><h3>הקלדה כפולה או לא צפויה</h3><p>תווים שחוזרים על עצמם או הקלדה ללא לחיצה מצדיקים בדיקה. אי אפשר לקבוע מהתסמין בלבד איזה חלק צריך להחליף.</p></div>
       </div>
       <figure class="laptopia-component-figure laptopia-screen-figure">
         <img src="https://laptopia.co.il/wp-content/uploads/2026/09/keyboard-damaged-hp.webp" alt="מקלדת מחשב נייד עם מקשים חסרים לפני החלפה" width="1254" height="1254" loading="lazy" decoding="async">

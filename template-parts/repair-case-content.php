@@ -54,8 +54,8 @@ if ( ! is_array( $case ) ) {
       <h2 class="laptopia-section-title" id="repair-result">התוצאה</h2>
       <p><?php echo esc_html( $case['result'] ); ?></p>
       <div class="laptopia-info-panel laptopia-repair-outcome">
-        <p class="laptopia-principal-value"><strong>מחיר המקרה הזה:</strong> <?php echo laptopia_bidi_price( $case['price'] ); ?></p>
-        <p class="laptopia-important-label"><strong>אחריות לתיקון הזה:</strong> <?php echo esc_html( $case['warranty'] ); ?></p>
+        <p class="laptopia-principal-value"><strong>מחיר התיקון:</strong> <?php echo laptopia_bidi_price( $case['price'] ); ?></p>
+        <p class="laptopia-important-label"><strong>אחריות על התיקון:</strong> <?php echo esc_html( $case['warranty'] ); ?></p>
         <p class="laptopia-price-note"><?php echo esc_html( $case['warranty_exclusion'] ); ?></p>
         <p class="laptopia-price-note"><?php echo esc_html( $case['disclaimer'] ); ?></p>
       </div>

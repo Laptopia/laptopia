@@ -11,7 +11,7 @@ get_template_part( 'template-parts/page-shell-start', null, array( 'body_classes
   <section class="laptopia-section laptopia-page-foundation laptopia-repairs-intro" aria-labelledby="repairs-title">
     <div class="laptopia-repair-rail">
       <h1 id="repairs-title">תיק עבודות</h1>
-      <p class="laptopia-presentation-lead">תיעוד תיקונים אמיתיים במעבדה שלנו. בכל תיקון מוצג הנזק או התלונה שאיתו המחשב הגיע, סדר העבודה שלנו על המחשב והתיקון הסופי. המחיר שמופיע בתיקונים מותאם לפי סוג המחשב ומורכבות העבודה ועלות החלקים. כל מחשב מקבל מחיר מותאם אישית.</p>
+      <p class="laptopia-presentation-lead">תיעוד תיקונים אמיתיים במעבדה שלנו. בכל מקרה מתועדים הנזק או תלונת הלקוח, שלבי העבודה והתוצאה הסופית. המחיר שמופיע בתיקונים מותאם לפי סוג המחשב ומורכבות העבודה ועלות החלקים. כל מחשב מקבל מחיר מותאם אישית.</p>
     </div>
   </section>
   <section class="laptopia-section laptopia-repairs-list" aria-label="מקרי תיקון">

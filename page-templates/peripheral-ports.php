@@ -30,7 +30,7 @@ get_template_part( 'template-parts/page-shell-start', null, array(
       <p class="laptopia-section-subtitle">סוג החיבור והפעולה שלא עובדת עוזרים לכוון את הבדיקה.</p>
       <div class="laptopia-warranty-grid">
         <div class="laptopia-card"><h3><?php echo laptopia_bidi_ltr( 'USB-A' ); ?></h3><p>עכבר, כונן חיצוני או התקן אחר אינם מזוהים, או שהחיבור מתנתק. בודקים גם כבל והתקן תקינים כדי להפריד בין תקלה במחשב לתקלה באביזר.</p></div>
-        <div class="laptopia-card"><h3><?php echo laptopia_bidi_ltr( 'USB-C' ); ?> ותחנות עגינה</h3><p>הטעינה עובדת אבל הנתונים, המסך או תחנת העגינה אינם מזוהים? בודקים את תמיכת השקע בפעולה המבוקשת, את הכבל ואת קווי החיבור.</p></div>
+        <div class="laptopia-card"><h3><?php echo laptopia_bidi_ltr( 'USB-C' ); ?> ותחנות עגינה</h3><p>הטעינה עובדת, אבל אין העברת נתונים או שהמסך או תחנת העגינה אינם מזוהים? בודקים את תמיכת השקע בפעולה המבוקשת, את הכבל ואת קווי החיבור.</p></div>
         <div class="laptopia-card"><h3><?php echo laptopia_bidi_ltr( 'HDMI' ); ?> ותצוגה חיצונית</h3><p>המסך החיצוני אינו מזוהה או שהתמונה מתנתקת. בודקים את המחבר ואת החיבור ללוח, לצד הכבל, המסך והגדרות התצוגה.</p></div>
         <div class="laptopia-card"><h3>אוזניות וקוראי כרטיסים</h3><p>שקע אוזניות <?php echo laptopia_bidi_ltr( '3.5mm' ); ?> או קורא <?php echo laptopia_bidi_ltr( 'SD / microSD' ); ?> שאינו מזהה כרטיס נבדקים לפי הדגם. אפשר לפנות גם לגבי חיבורים חיצוניים אחרים ולברר אם ניתן לטפל בהם.</p></div>
       </div>
