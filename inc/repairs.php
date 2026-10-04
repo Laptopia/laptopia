@@ -6,6 +6,7 @@
  */
 function laptopia_get_repair_cases() {
     $media = 'https://laptopia.co.il/wp-content/uploads/2026/09/';
+    $dell_media = 'https://laptopia.co.il/wp-content/uploads/2026/10/';
 
     return array(
         'asus-tuf-f15-hinge-repair' => array(
@@ -40,6 +41,40 @@ function laptopia_get_repair_cases() {
                 'repair_details' => array(
                     array( 'src' => $media . 'hinge_repair_left-rotated.jpg', 'alt' => 'אזור ציר לאחר שחזור נקודות העיגון וחיזוק באפוקסי', 'width' => 911, 'height' => 683, 'caption' => 'פרט מאזור התיקון' ),
                     array( 'src' => $media . 'hinge_repair_right-rotated.jpg', 'alt' => 'הציר השני לאחר שחזור נקודות העיגון וחיזוק באפוקסי', 'width' => 911, 'height' => 683, 'caption' => 'פרט מהציר השני' ),
+                ),
+            ),
+        ),
+        'dell-vostro-5402-lcd-cover-hinge-repair' => array(
+            'slug' => 'dell-vostro-5402-lcd-cover-hinge-repair',
+            'model' => 'Dell Vostro 5402',
+            'category' => 'צירים ופלסטיקה',
+            'service_path' => '/hinges-plastics-repair/',
+            'heading' => 'החלפת גב מסך ותיקון צירים במחשב Dell Vostro 5402',
+            'intro' => 'המחשב הגיע למעבדה עם גב מסך שבור באזור הצירים. נקודות החיבור של הצירים לגב המסך נשברו, והצירים נעו בקושי והפעילו עומס נוסף על המבנה.',
+            'card_problem' => 'נזק בגב המסך ובנקודות החיבור באזור הצירים.',
+            'card_title' => 'החלפת גב מסך ותיקון צירים',
+            'card_description' => 'החלפת גב המסך, ניקוי וכיוון הצירים ושיקום האזור הפגוע.',
+            'problem' => 'בחלק התחתון של גב המסך נגרם נזק משמעותי: נקודות החיבור שמחזיקות את הצירים נשברו, ונפגעו גם כיסויי הצירים במסגרת הקדמית. הצירים עצמם לא היו שבורים, אך נעו בקושי ולעיתים נתקעו, והפעילו עומס נוסף על נקודות החיבור.',
+            'diagnosis' => 'מכלול המסך פורק כדי לבדוק את גב המסך, הצירים, המסגרת והחיבורים. באזור הצירים נמצאו אבק וסימני קורוזיה. לא היה צורך להחליף את הצירים או את מסך ה-LCD המקורי; החלקים התקינים נשמרו.',
+            'repair' => 'הצירים המקוריים נוקו מאבק ומשאריות קורוזיה וכוונו לתנועה חלקה יותר ולהפחתת העומס על גב המסך. רק גב המסך הפגום הוחלף בחדש. מסך ה-LCD המקורי, הצירים ושאר הרכיבים התקינים הועברו לגב החדש. כיסויי הצירים שנפגעו במסגרת הקדמית שוקמו, ולאחר מכן מכלול המסך והמחשב הורכבו מחדש.',
+            'result' => 'לאחר ההרכבה נבדקו פתיחה וסגירה של המכסה, תנועת שני הצירים, יציבות גב המסך ופעולת התצוגה. המחשב חזר לעבודה תקינה עם גב מסך חדש ותנועה תקינה של הצירים.',
+            'price' => '700₪',
+            'warranty' => '3 חודשים',
+            'warranty_exclusion' => 'האחריות אינה כוללת נזק פיזי או נזקי נוזלים שנגרמו לאחר התיקון.',
+            'disclaimer' => 'זהו תיעוד של תיקון אמיתי מסוים, והמחיר 700₪ מתייחס למקרה זה בלבד. מחיר, שיטת תיקון ואפשרות התיקון במחשב אחר נקבעים רק לאחר אבחון.',
+            'seo_title' => 'החלפת גב מסך ותיקון צירים ב-Dell Vostro 5402 | Laptopia',
+            'seo_description' => 'תיקון אמיתי של Dell Vostro 5402 עם גב מסך וחיבורי צירים פגומים: ניקוי וכיוון הצירים והחלפת גב המסך תוך שמירת ה-LCD המקורי. מחיר המקרה בלבד: 700₪.',
+            'images' => array(
+                'finished' => array( 'src' => $dell_media . 'dell-vostro-5402-repair-final-result.webp', 'alt' => 'מחשב Dell Vostro 5402 מורכב לאחר התיקון עם תמונה על המסך', 'width' => 1920, 'height' => 1440, 'caption' => 'המחשב לאחר ההרכבה ובדיקת התצוגה' ),
+                'opened' => array( 'src' => $dell_media . 'dell-vostro-5402-lcd-cover-damage-before.webp', 'alt' => 'Dell Vostro 5402 לפני התיקון עם נזק בגב המסך באזור הצירים', 'width' => 1920, 'height' => 1440, 'caption' => 'לפני התיקון: אזורי הצירים הפגועים' ),
+                'damage' => array(
+                    array( 'src' => $dell_media . 'dell-vostro-5402-broken-hinge-mounts.webp', 'alt' => 'מכלול המסך המפורק עם נזק באזור הצירים והצירים שהוסרו', 'width' => 1920, 'height' => 1440, 'caption' => 'מכלול המסך לפני התיקון והצירים המקוריים שהוסרו' ),
+                    array( 'src' => $dell_media . 'dell-vostro-5402-disassembled-broken-parts.webp', 'alt' => 'גב המסך הישן מבפנים, עם נקודות חיבור פגומות והצירים שהוסרו', 'width' => 1920, 'height' => 1440, 'caption' => 'גב המסך הישן ונקודות החיבור הפגומות' ),
+                ),
+                'repaired' => array( 'src' => $dell_media . 'dell-vostro-5402-old-new-lcd-cover.webp', 'alt' => 'השוואה בין גב המסך הפגום לגב המסך החדש של Dell Vostro 5402', 'width' => 1440, 'height' => 1920, 'caption' => 'גב המסך הישן למעלה והגב החדש למטה' ),
+                'repair_details' => array(
+                    array( 'src' => $dell_media . 'dell-vostro-5402-lcd-installed-new-cover.webp', 'alt' => 'מסך Dell Vostro 5402 מותקן בגב המסך החדש במהלך ההרכבה', 'width' => 1920, 'height' => 1440, 'caption' => 'מסך ה-LCD המקורי והצירים המקוריים בגב החדש' ),
+                    array( 'src' => $dell_media . 'dell-vostro-5402-display-assembly-after-repair.webp', 'alt' => 'מכלול המסך של Dell Vostro 5402 לאחר החלפת גב המסך ולפני ההרכבה הסופית', 'width' => 1920, 'height' => 1440, 'caption' => 'מכלול המסך לאחר הרכבת המסגרת, לפני החיבור למחשב' ),
                 ),
             ),
         ),
