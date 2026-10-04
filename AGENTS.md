@@ -270,9 +270,25 @@ Verify the resulting Git state and working tree after reconciliation. A previous
 
 Code completion alone does not prove production success.
 
-For tasks that include deployment, the normal release flow is:
+For ordinary site-changing tasks where production deployment is authorized, Codex must by default independently complete the full authorized release cycle:
 
-code → checks → push/update `main` → production update → LiteSpeed Cache purge → verify the real production URL.
+local changes → checks → commit → push `main` → verify production Git state → safe production update → LiteSpeed Cache purge → real production verification.
+
+Do not stop after local changes, commit, or push to wait for a separate user command for the next standard stage when deployment is already authorized by the current task and there is no safety problem.
+
+Stop before production only when:
+
+- the task explicitly prohibits commit/deployment;
+- necessary access is unavailable;
+- unexpected or unsafe Git state is discovered;
+- the next action exceeds the authorized scope;
+- a required stage cannot be performed safely.
+
+In these cases, stop and explicitly report the reason.
+
+Repository-only changes such as `AGENTS.md` that do not affect site runtime do not require production deployment unless the task separately requires it.
+
+For site-changing tasks, an unqualified `PASS` means full PASS after production verification. A local-only or GitHub-only result must not be called full PASS when the task required deployment.
 
 Do not report production PASS before the actual production site has been checked after cache purge.
 
