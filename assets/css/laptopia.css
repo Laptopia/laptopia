@@ -1900,28 +1900,7 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
   display: none;
 }
 
-body.laptopia-floating-whatsapp-obscured .laptopia-floating-whatsapp,
-body.laptopia-back-to-top-obscured .laptopia-back-to-top {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-body.laptopia-floating-whatsapp-obscured .laptopia-floating-whatsapp:focus,
-body.laptopia-back-to-top-obscured .laptopia-back-to-top:focus {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
 @media (max-width: 900px) {
-  body.laptopia-floating-whatsapp-obscured .laptopia-floating-whatsapp,
-  body.laptopia-back-to-top-obscured .laptopia-back-to-top {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-
   .laptopia-floating-control {
     width: 44px;
     height: 44px;
