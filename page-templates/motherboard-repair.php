@@ -40,6 +40,7 @@ get_template_part( 'template-parts/header', null, array(
       <div class="laptopia-phone-line">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</div>
     </div>
   </section>
+  <?php get_template_part( 'template-parts/service-repairs', null, array( 'service_path' => '/motherboard-repair/' ) ); ?>
 
   <section class="laptopia-section laptopia-services" aria-labelledby="symptoms-title">
     <div class="laptopia-inner">

@@ -56,6 +56,7 @@ defined( 'ABSPATH' ) || exit;
       ),
     ),
   ) ); ?>
+  <?php get_template_part( 'template-parts/service-repairs', null, array( 'service_path' => '/charging-usb-repair/' ) ); ?>
   <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="ports">
     <div class="laptopia-board-content laptopia-info-panel">
       <h2>שלושה סוגים של חיבורי טעינה</h2>

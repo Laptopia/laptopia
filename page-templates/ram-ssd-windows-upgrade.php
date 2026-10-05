@@ -32,6 +32,7 @@ defined( 'ABSPATH' ) || exit;
       <div class="laptopia-phone-line">קבלת מחשבים במעבדה בתיאום מראש בלבד</div>
     </div>
   </section>
+  <?php get_template_part( 'template-parts/service-repairs', null, array( 'service_path' => '/ram-ssd-windows-upgrade/' ) ); ?>
   <section class="laptopia-section laptopia-prices" id="prices">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">מחירי שדרוג והתקנת מערכת הפעלה</h2>

@@ -40,6 +40,7 @@ get_template_part( 'template-parts/header', null, array(
       <div class="laptopia-phone-line">הגעה למעבדה ומסירת מחשב בתיאום מראש בלבד.</div>
     </div>
   </section>
+  <?php get_template_part( 'template-parts/service-repairs', null, array( 'service_path' => '/screen-replacement/' ) ); ?>
   <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="screen-prices-title">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title" id="screen-prices-title">כמה עולה החלפת מסך למחשב נייד?</h2>

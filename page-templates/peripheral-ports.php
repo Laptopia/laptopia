@@ -24,6 +24,7 @@ get_template_part( 'template-parts/page-shell-start', null, array(
       <div class="laptopia-phone-line">קבלת מחשבים במעבדה בתיאום מראש בלבד</div>
     </div>
   </section>
+  <?php get_template_part( 'template-parts/service-repairs', null, array( 'service_path' => '/peripheral-ports/' ) ); ?>
   <section class="laptopia-section laptopia-services">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">איזה חיבור אינו עובד?</h2>

@@ -2358,10 +2358,7 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
 }
 
 .laptopia-repair-list-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
-  gap: 24px;
-  width: min(calc(100% - 40px), var(--laptopia-grid-rail));
+  width: min(calc(100% - 40px), var(--laptopia-content-rail));
   margin-inline: auto;
 }
 
@@ -2437,30 +2434,34 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
   margin-top: 16px;
 }
 
-.laptopia-service-repairs-grid {
+:is(.laptopia-service-repairs-grid, .laptopia-repair-list-grid) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
+}
+
+.laptopia-service-repairs-grid {
   margin-top: 20px;
 }
 
-.laptopia-service-repairs-grid > .laptopia-repair-card {
+:is(.laptopia-service-repairs-grid, .laptopia-repair-list-grid) > .laptopia-repair-card {
   flex: 0 0 calc((100% - 48px) / 3);
   min-width: 0;
   max-width: none;
   margin: 0;
   grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
 }
 
-.laptopia-service-repairs-grid > .laptopia-repair-card img {
+:is(.laptopia-service-repairs-grid, .laptopia-repair-list-grid) > .laptopia-repair-card img {
   aspect-ratio: 4 / 3;
   height: auto;
   min-height: 0;
   max-height: none;
 }
 
-.laptopia-service-repairs-grid .laptopia-repair-card-body {
+:is(.laptopia-service-repairs-grid, .laptopia-repair-list-grid) .laptopia-repair-card-body {
   overflow-wrap: anywhere;
 }
 
@@ -2469,18 +2470,26 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
   text-align: center;
 }
 
+.laptopia-repair-list-grid .laptopia-repair-card-body {
+  justify-content: flex-start;
+}
+
+.laptopia-repair-list-grid .laptopia-repair-card-read {
+  margin-top: auto;
+}
+
 .laptopia-service-repairs-footer a {
   min-height: 44px;
 }
 
 @media (max-width: 1100px) {
-  .laptopia-service-repairs-grid > .laptopia-repair-card {
+  :is(.laptopia-service-repairs-grid, .laptopia-repair-list-grid) > .laptopia-repair-card {
     flex-basis: calc((100% - 24px) / 2);
   }
 }
 
 @media (max-width: 700px) {
-  .laptopia-service-repairs-grid > .laptopia-repair-card {
+  :is(.laptopia-service-repairs-grid, .laptopia-repair-list-grid) > .laptopia-repair-card {
     flex-basis: 100%;
     max-width: 420px;
   }
@@ -2691,11 +2700,6 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
 
   .laptopia-repair-card--compact img {
     min-height: 100px;
-  }
-
-  .laptopia-repair-card:not(.laptopia-repair-card--compact) img {
-    height: 150px;
-    max-height: 150px;
   }
 
   .laptopia-repair-card-body {
