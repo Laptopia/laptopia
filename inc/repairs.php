@@ -86,6 +86,45 @@ function laptopia_get_repair_case( $slug ) {
     return $cases[ $slug ] ?? null;
 }
 
+/** Published direct children of /repairs/, matched to case data, newest first. */
+function laptopia_get_published_repair_cases_for_service( $service_path, $limit = 3 ) {
+    $limit = max( 0, (int) $limit );
+    if ( ! $limit || ! is_string( $service_path ) || '' === trim( $service_path, '/' ) ) {
+        return array();
+    }
+    $service_path = '/' . trim( $service_path, '/' ) . '/';
+    $listing = get_page_by_path( 'repairs', OBJECT, 'page' );
+    if ( ! $listing ) {
+        return array();
+    }
+
+    // One bounded parent query, never one lookup per static case.
+    $pages = get_posts( array(
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'post_parent' => $listing->ID,
+        'posts_per_page' => -1,
+        'orderby' => array( 'date' => 'DESC', 'ID' => 'DESC' ),
+        'no_found_rows' => true,
+        'update_post_meta_cache' => false,
+        'update_post_term_cache' => false,
+    ) );
+    $cases = laptopia_get_repair_cases();
+    $selected = array();
+    foreach ( $pages as $page ) {
+        $case = $cases[ $page->post_name ] ?? null;
+        if ( ! $case || $service_path !== ( $case['service_path'] ?? '' ) || ! empty( $page->post_password ) ) {
+            continue;
+        }
+        $case['url'] = get_permalink( $page );
+        $selected[] = $case;
+        if ( count( $selected ) >= $limit ) {
+            break;
+        }
+    }
+    return $selected;
+}
+
 function laptopia_repair_case_url( $slug ) {
     $page = laptopia_published_repair_page( $slug );
     return $page ? get_permalink( $page ) : '';

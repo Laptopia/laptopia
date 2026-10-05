@@ -62,15 +62,7 @@ defined( 'ABSPATH' ) || exit;
       ),
     ),
   ) ); ?>
-  <?php if ( laptopia_published_repair_page( 'asus-tuf-f15-hinge-repair' ) ) : ?>
-    <section class="laptopia-section laptopia-repair-related" aria-labelledby="related-repair-title">
-      <div class="laptopia-repair-rail">
-        <p class="laptopia-repair-eyebrow">תיקון אמיתי מהמעבדה</p>
-        <h2 id="related-repair-title">שיקום עיגוני צירים במקרה אמיתי</h2>
-        <?php get_template_part( 'template-parts/repair-card', null, array( 'case' => laptopia_get_repair_case( 'asus-tuf-f15-hinge-repair' ), 'compact' => true ) ); ?>
-      </div>
-    </section>
-  <?php endif; ?>
+  <?php get_template_part( 'template-parts/service-repairs', null, array( 'service_path' => '/hinges-plastics-repair/' ) ); ?>
   <section class="laptopia-section laptopia-services">
     <div class="laptopia-inner">
       <h2 class="laptopia-section-title">מתי כדאי לבדוק צירים ופלסטיקה?</h2>

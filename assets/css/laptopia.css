@@ -2437,6 +2437,55 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
   margin-top: 16px;
 }
 
+.laptopia-service-repairs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.laptopia-service-repairs-grid > .laptopia-repair-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.laptopia-service-repairs-grid > .laptopia-repair-card img {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+}
+
+.laptopia-service-repairs-grid .laptopia-repair-card-body {
+  overflow-wrap: anywhere;
+}
+
+.laptopia-service-repairs-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.laptopia-service-repairs-footer a {
+  min-height: 44px;
+}
+
+@media (max-width: 1100px) {
+  .laptopia-service-repairs-grid > .laptopia-repair-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 700px) {
+  .laptopia-service-repairs-grid > .laptopia-repair-card {
+    flex-basis: 100%;
+    max-width: 420px;
+  }
+}
+
 .laptopia-review-source-links {
   display: flex;
   flex-wrap: wrap;

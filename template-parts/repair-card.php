@@ -3,7 +3,7 @@ $case = $args['case'] ?? null;
 if ( ! is_array( $case ) || empty( $case['slug'] ) ) {
     return;
 }
-$url = laptopia_repair_case_url( $case['slug'] );
+$url = $args['url'] ?? laptopia_repair_case_url( $case['slug'] );
 if ( ! $url ) {
     return;
 }
