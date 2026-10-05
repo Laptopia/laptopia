@@ -10,7 +10,7 @@
     </div>
     <?php get_template_part( 'template-parts/consumer-price-note' ); ?>
     <div class="laptopia-buttons">
-      <a class="laptopia-btn laptopia-btn-navigation" href="<?php echo esc_url( home_url( '/prices/' ) ); ?>">למחירון המלא</a>
+      <a class="laptopia-btn laptopia-btn-navigation" data-analytics-event="price_list_click" data-analytics-placement="home_price_teaser" href="<?php echo esc_url( home_url( '/prices/' ) ); ?>">למחירון המלא</a>
     </div>
   </div>
 </section>

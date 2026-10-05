@@ -12,7 +12,7 @@ $order = $args['order'] ?? array( 'phone', 'whatsapp', 'waze', 'google-maps' );
 <div class="laptopia-buttons laptopia-contact-actions laptopia-service-contact-actions">
   <?php foreach ( $order as $type ) : ?>
     <?php if ( ! isset( $actions[ $type ] ) ) { continue; } $action = $actions[ $type ]; ?>
-    <a class="laptopia-btn <?php echo esc_attr( $action['class'] ); ?>" href="<?php echo esc_url( $action['url'] ); ?>"<?php if ( $action['external'] ) : ?> target="_blank" rel="noopener"<?php endif; ?>>
+    <a class="laptopia-btn <?php echo esc_attr( $action['class'] ); ?>" data-analytics-placement="contact"<?php if ( in_array( $type, array( 'waze', 'google-maps' ), true ) ) : ?> data-analytics-event="directions_click" data-analytics-provider="<?php echo esc_attr( 'waze' === $type ? 'waze' : 'google_maps' ); ?>"<?php endif; ?> href="<?php echo esc_url( $action['url'] ); ?>"<?php if ( $action['external'] ) : ?> target="_blank" rel="noopener"<?php endif; ?>>
       <span class="laptopia-cta-content"><?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => $type ) ); ?><span><?php echo laptopia_bidi_text( $action['label'] ); ?></span></span>
     </a>
   <?php endforeach; ?>

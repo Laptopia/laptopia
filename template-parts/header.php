@@ -36,7 +36,7 @@ $repairs_current = is_page( 'repairs' ) || is_page_template( 'page-templates/rep
     </nav>
 
     <a class="laptopia-header-phone"
-       href="tel:+972538036244"
+       data-analytics-placement="header" href="tel:+972538036244"
        aria-label="התקשרו למעבדה: 053-803-6244">
       <?php get_template_part( 'template-parts/cta-icon', null, array( 'type' => 'phone' ) ); ?>
       <bdi class="laptopia-header-phone-number" dir="ltr">053-803-6244</bdi>

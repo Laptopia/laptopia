@@ -9,7 +9,7 @@ usort( $services, static function( $a, $b ) { return $a['home_order'] <=> $b['ho
     <div class="laptopia-section-subtitle">תיקון מחשבים ניידים מיצרנים שונים, בהתאם לדגם ולתקלה</div>
     <div class="laptopia-services-grid">
       <?php foreach ( $services as $service ) : ?>
-        <a class="laptopia-card laptopia-element-link" href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>">
+        <a class="laptopia-card laptopia-element-link" data-analytics-event="service_card_click" data-analytics-placement="home_services" data-analytics-service="<?php echo esc_attr( $service['slug'] ); ?>" href="<?php echo esc_url( home_url( '/' . $service['slug'] . '/' ) ); ?>">
           <div class="laptopia-service-icon" aria-hidden="true"><?php echo str_replace( '<svg ', '<svg width="22" height="22" focusable="false" ', laptopia_get_icon_svg( $service['slug'] ) ); ?></div>
           <h3><?php echo laptopia_bidi_text( $service['home_label'] ); ?></h3>
           <p><?php echo laptopia_bidi_text( $service['home_description'] ); ?></p>
