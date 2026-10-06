@@ -67,7 +67,7 @@ $is_light = 'light' === $options['tone'];
     </p>
 
     <p class="laptopia-contact-hours-note">שעות הפעילות המעודכנות החל מ־06.10.2026. קבלת מחשבים בתיאום מראש בלבד.</p>
-    <p class="laptopia-contact-hours-note">במקרים דחופים, נא לפנות ב־<a href="https://wa.me/972538036244" target="_blank" rel="noopener"><bdi dir="ltr">WhatsApp</bdi></a> בלבד. נחזור אליכם כשנתפנה.</p>
+    <p class="laptopia-contact-hours-note">במקרים דחופים, נא לפנות ב־<a class="laptopia-contact-urgent-whatsapp" href="https://wa.me/972538036244" target="_blank" rel="noopener"><bdi dir="ltr">WhatsApp</bdi></a> בלבד. נחזור אליכם כשנתפנה.</p>
 
     <?php endif; ?>
     <?php get_template_part( 'template-parts/service-contact-actions', null, array( 'order' => $options['action_order'], 'light' => $is_light ) ); ?>

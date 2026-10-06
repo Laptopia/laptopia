@@ -3403,6 +3403,21 @@ body[data-laptopia-background]:not([data-laptopia-background=""]) .laptopia-hero
 .laptopia-info-panel h3, .laptopia-page-prose-body :is(h2, h3) { margin-block: 24px 8px; }
 .laptopia-section .laptopia-diagnostic p { margin-block: 8px 0; }
 .laptopia-contact-hours-note { color: #9ca3af; margin: 14px 0 27px; }
+.laptopia-contact-hours-note .laptopia-contact-urgent-whatsapp,
+.laptopia-contact-hours-note .laptopia-contact-urgent-whatsapp:visited {
+  color: #5999f1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.laptopia-contact-hours-note .laptopia-contact-urgent-whatsapp:hover,
+.laptopia-contact-hours-note .laptopia-contact-urgent-whatsapp:focus {
+  color: var(--laptopia-link);
+  background-color: var(--laptopia-light);
+}
+.laptopia-contact-hours-note .laptopia-contact-urgent-whatsapp:focus-visible {
+  outline: 2px solid #5999f1;
+  outline-offset: 3px;
+}
 @media (max-width: 600px) {
   :root {
     --laptopia-type-hero: 31px;
