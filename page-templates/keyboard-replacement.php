@@ -50,10 +50,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-card"><h3>מקשים חסרים או שבורים</h3><p>נזק למקש או למנגנון שמתחתיו עלול להפריע להקלדה. האפשרות לטפל במקש בנפרד או הצורך בהחלפת המקלדת נבדקים לפי מצבה והדגם.</p></div>
         <div class="laptopia-card"><h3>הקלדה כפולה או לא צפויה</h3><p>תווים שחוזרים על עצמם או הקלדה ללא לחיצה מצדיקים בדיקה. אי אפשר לקבוע מהתסמין בלבד איזה חלק צריך להחליף.</p></div>
       </div>
-      <figure class="laptopia-component-figure laptopia-screen-figure">
-        <img src="https://laptopia.co.il/wp-content/uploads/2026/09/keyboard-damaged-hp.webp" alt="מקלדת מחשב נייד עם מקשים חסרים לפני החלפה" width="1254" height="1254" loading="lazy" decoding="async">
-        <figcaption>מקלדת מחשב נייד עם מקשים חסרים לפני החלפה</figcaption>
-      </figure>
+
     </div>
   </section>
 
@@ -77,10 +74,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-card"><h3>שפה ופריסת המקשים</h3><p>בודקים את פריסת המקשים והשפות של החלק המוצע ומבהירים את הפרטים לפני הזמנתו.</p></div>
         <div class="laptopia-card"><h3>תאורה וכפתור הפעלה</h3><p>במקלדות עם תאורה או כפתור הפעלה משולב בודקים גם את התאמת התכונות והחיבורים לדגם.</p></div>
       </div>
-      <figure class="laptopia-component-figure laptopia-screen-figure">
-        <img src="https://laptopia.co.il/wp-content/uploads/2026/09/asus-keyboard-replacement-original-clean-e1789160656975.webp" alt="החלפת מקלדת RGB במחשב נייד ASUS עקב תקלה בכפתור ההפעלה" width="792" height="1104" loading="lazy" decoding="async">
-        <figcaption>החלפת מקלדת <?php echo laptopia_bidi_ltr( 'RGB' ); ?> במחשב נייד <?php echo laptopia_bidi_ltr( 'ASUS' ); ?> בעקבות תקלה בכפתור ההפעלה</figcaption>
-      </figure>
+
     </div>
   </section>
   <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="keyboard-prices-title">

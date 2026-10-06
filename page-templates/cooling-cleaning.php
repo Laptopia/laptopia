@@ -51,10 +51,7 @@ get_template_part( 'template-parts/header', null, array(
         <div class="laptopia-card"><h3>מאוורר רועש לאורך זמן</h3><p>מאוורר שפועל בעוצמה גבוהה עשוי להעיד על מאמץ לפנות חום. רעש מכני יכול לנבוע גם מבלאי במאוורר, ולכן נדרש אבחון.</p></div>
         <div class="laptopia-card"><h3>האטה או כיבוי תחת עומס</h3><p>ירידה בביצועים או כיבוי בזמן עבודה יכולים להיות קשורים להתחממות, אך אינם מוכיחים שהבעיה במערכת הקירור. בודקים את מקור התקלה; אם הממצאים מצביעים על תקלה ברכיבים, אפשר לקרוא גם על <a class="laptopia-context-link" href="<?php echo esc_url( home_url( '/motherboard-repair/' ) ); ?>">תיקון לוח אם למחשב נייד</a>.</p></div>
       </div>
-      <figure class="laptopia-component-figure laptopia-screen-figure">
-        <img src="https://laptopia.co.il/wp-content/uploads/2026/09/cooling-before.webp" alt="מערכת קירור של מחשב נייד סתומה באבק לפני ניקוי" width="573" height="573" loading="lazy" decoding="async">
-        <figcaption>מערכת קירור סתומה באבק לפני ניקוי</figcaption>
-      </figure>
+
     </div>
   </section>
 
@@ -68,16 +65,6 @@ get_template_part( 'template-parts/header', null, array(
       <p>בודקים אם נדרש טיפול נוסף מעבר לניקוי, למשל במאוורר או בחומר התרמי. הצורך בטיפול והכללתו בהצעה נקבעים לאחר בדיקה; החלפת חלקים אינה כלולה אוטומטית במחיר ההתחלתי.</p>
       <h3>הרכבה ובדיקת פעולה</h3>
       <p>לאחר הניקוי מרכיבים את המחשב ובודקים את פעולתו. התוצאה תלויה גם במצב הרכיבים ובמקור ההתחממות, ואין התחייבות לירידה קבועה בטמפרטורה.</p>
-    </div>
-    <div class="laptopia-component-gallery">
-      <figure class="laptopia-component-figure">
-        <img src="https://laptopia.co.il/wp-content/uploads/2026/09/cooling-after-open.webp" alt="מערכת קירור של מחשב נייד לאחר ניקוי ותחזוקה" width="573" height="573" loading="lazy" decoding="async">
-        <figcaption>מערכת הקירור לאחר ניקוי ותחזוקה</figcaption>
-      </figure>
-      <figure class="laptopia-component-figure">
-        <img src="https://laptopia.co.il/wp-content/uploads/2026/09/cooling-after-complete.webp" alt="מחשב נייד לאחר ניקוי מערכת הקירור והרכבה" width="573" height="573" loading="lazy" decoding="async">
-        <figcaption>המחשב לאחר ניקוי מערכת הקירור והרכבה</figcaption>
-      </figure>
     </div>
   </section>
   <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="cooling-prices-title">

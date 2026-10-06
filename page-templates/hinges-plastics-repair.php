@@ -35,33 +35,6 @@ defined( 'ABSPATH' ) || exit;
       <div class="laptopia-phone-line">קבלת מחשבים במעבדה בתיאום מראש בלבד</div>
     </div>
   </section>
-  <?php get_template_part( 'template-parts/service-case', null, array(
-    'heading' => 'דוגמה מתיקון אמיתי',
-    'description' => 'במקרה זה הציר נעקר ממקומו ופגע באזור החיבור במארז. בוצע שיקום של אזור העיגון, חיזוק הציר והרכבה מחדש של המחשב.',
-    'images' => array(
-      array(
-        'src' => 'https://laptopia.co.il/wp-content/uploads/2026/09/hinge-damage-1.webp',
-        'caption' => 'לפני',
-        'alt' => 'ציר מחשב נייד שנעקר מהמארז לפני תיקון',
-        'width' => 573,
-        'height' => 573,
-      ),
-      array(
-        'src' => 'https://laptopia.co.il/wp-content/uploads/2026/09/hinge-damage-2.webp',
-        'caption' => 'אזור הנזק',
-        'alt' => 'נזק באזור הציר והפלסטיקה של מחשב נייד',
-        'width' => 573,
-        'height' => 573,
-      ),
-      array(
-        'src' => 'https://laptopia.co.il/wp-content/uploads/2026/09/hinge-repair-after.webp',
-        'caption' => 'אחרי',
-        'alt' => 'מחשב נייד ASUS לאחר תיקון ציר ופלסטיקה',
-        'width' => 573,
-        'height' => 573,
-      ),
-    ),
-  ) ); ?>
   <?php get_template_part( 'template-parts/service-repairs', null, array( 'service_path' => '/hinges-plastics-repair/' ) ); ?>
   <section class="laptopia-section laptopia-services">
     <div class="laptopia-inner">

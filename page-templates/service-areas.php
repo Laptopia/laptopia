@@ -43,10 +43,8 @@ defined( 'ABSPATH' ) || exit;
 
   <section class="laptopia-section laptopia-board laptopia-info-panel-section" aria-labelledby="about-laptopia-title">
     <div class="laptopia-board-content laptopia-info-panel">
-      <h2 class="laptopia-section-title" id="about-laptopia-title">למה פתחתי את <?php get_template_part( 'template-parts/brand-wordmark' ); ?> גם ללקוחות פרטיים?</h2>
-      <p>אני מהנדס שעוסק בתיקון מחשבים ניידים. בעבודה היומיומית שלי אני מטפל בכעשרה מחשבים ניידים המגיעים ממעבדות שירות ומחנויות מחשבים שונות.</p>
-      <p>העבודה עם המעבדות והחנויות ממשיכה להיות חלק קבוע מהפעילות המקצועית שלי. במקביל פתחתי את <?php get_template_part( 'template-parts/brand-wordmark' ); ?> כדי שגם ללקוחות פרטיים תהיה אפשרות לפנות ישירות למהנדס שמבצע את האבחון והתיקון.</p>
-      <p>רציתי להנגיש את השירות הזה לשכנים, לחברים ולתושבי רמלה והסביבה, במעבדה שבה אני עובד בפועל ובתיאום מראש.</p>
+      <h2 class="laptopia-section-title" id="about-laptopia-title">על מעבדת <?php get_template_part( 'template-parts/brand-wordmark' ); ?></h2>
+      <p>אני מהנדס ובעל מעבדת <?php get_template_part( 'template-parts/brand-wordmark' ); ?> — מעבדה ביתית לתיקון מחשבים ניידים ברמלה. אני מבצע את האבחון והתיקון באופן אישי, ומסירת המחשב מתואמת מראש.</p>
     </div>
   </section>
 

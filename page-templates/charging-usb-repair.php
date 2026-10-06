@@ -43,19 +43,6 @@ defined( 'ABSPATH' ) || exit;
       </div>
     </div>
   </section>
-  <?php get_template_part( 'template-parts/service-case', null, array(
-    'heading' => 'דוגמה מתיקון אמיתי',
-    'description' => 'במקרה זה המחבר נפגע יחד עם חלק מאזור הלוח. התיקון כלל שיקום של אזור החיבור בלוח והתקנת המחבר מחדש.',
-    'images' => array(
-      array(
-        'src' => 'https://laptopia.co.il/wp-content/uploads/2026/09/usb-port-board-damage.webp',
-        'alt' => 'שקע USB-C פגום עם נזק ללוח האם',
-        'title' => 'נזק לשקע USB-C וללוח האם',
-        'width' => 1200,
-        'height' => 1600,
-      ),
-    ),
-  ) ); ?>
   <?php get_template_part( 'template-parts/service-repairs', null, array( 'service_path' => '/charging-usb-repair/' ) ); ?>
   <section class="laptopia-section laptopia-board laptopia-info-panel-section" id="ports">
     <div class="laptopia-board-content laptopia-info-panel">

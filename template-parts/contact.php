@@ -47,27 +47,27 @@ $is_light = 'light' === $options['tone'];
 
       <div class="laptopia-hours-row">
         <span>ראשון</span>
-        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
+        <strong><bdi dir="ltr">07:00–09:00</bdi><br><bdi dir="ltr">18:00–23:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>שני</span>
-        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
+        <strong><bdi dir="ltr">07:00–09:00</bdi><br><bdi dir="ltr">18:00–23:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>שלישי</span>
-        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
+        <strong><bdi dir="ltr">07:00–09:00</bdi><br><bdi dir="ltr">18:00–23:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>רביעי</span>
-        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
+        <strong><bdi dir="ltr">07:00–09:00</bdi><br><bdi dir="ltr">18:00–23:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
         <span>חמישי</span>
-        <strong><bdi dir="ltr">10:00–22:00</bdi></strong>
+        <strong><bdi dir="ltr">07:00–09:00</bdi><br><bdi dir="ltr">18:00–23:00</bdi></strong>
       </div>
 
       <div class="laptopia-hours-row">
@@ -85,6 +85,9 @@ $is_light = 'light' === $options['tone'];
     <p class="laptopia-contact-hours-note">
       בשבתות ובחגים שעות הפעילות עשויות להשתנות
     </p>
+
+    <p class="laptopia-contact-hours-note">שעות הפעילות המעודכנות החל מ־06.10.2026. קבלת מחשבים בתיאום מראש בלבד.</p>
+    <p class="laptopia-contact-hours-note">במקרים דחופים ניתן לשלוח הודעה ב-<bdi dir="ltr">WhatsApp</bdi>; נחזור אליכם כשנתפנה.</p>
 
     <?php endif; ?>
     <?php get_template_part( 'template-parts/service-contact-actions', null, array( 'order' => $options['action_order'], 'light' => $is_light ) ); ?>

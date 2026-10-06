@@ -60,18 +60,7 @@ get_template_part( 'template-parts/header', null, array(
           <p>קצר או נזק מנוזלים עלולים לפגוע ברכיבים ובמעגלים בלוח האם. אפשרות התיקון תלויה במצב הלוח ובהיקף הנזק ונבחנת לאחר בדיקה.</p>
         </div>
       </div>
-      <figure class="laptopia-liquid-damage-figure">
-        <img
-          class="laptopia-liquid-damage-image"
-          src="https://laptopia.co.il/wp-content/uploads/2026/09/water-optimized.webp"
-          width="1215"
-          height="911"
-          alt="תיקון לוח אם למחשב נייד לאחר נזקי נוזלים במעבדת Laptopia ברמלה"
-          loading="lazy"
-          decoding="async"
-        >
-        <figcaption>דוגמה לנזקי נוזלים וקורוזיה בלוח אם של מחשב נייד</figcaption>
-      </figure>
+
     </div>
   </section>
 
@@ -85,30 +74,6 @@ get_template_part( 'template-parts/header', null, array(
       <p>כאשר מצב הלוח מאפשר זאת, התיקון מתמקד ברכיבים ובמעגלים התקולים בלוח האם, במקום בהחלפת הלוח כולו.</p>
       <h3>החלטה בהתאם לממצאי הבדיקה</h3>
       <p>לא בכל מקרה ניתן לתקן את לוח האם. האפשרות להמשיך בתיקון נבחנת בהתאם לסוג התקלה ולמצב הלוח, והעבודה מתבצעת רק לאחר אישור הלקוח.</p>
-    </div>
-    <div class="laptopia-component-gallery">
-      <figure class="laptopia-component-figure">
-        <img
-          src="https://laptopia.co.il/wp-content/uploads/2026/09/component-repair.webp"
-          width="573"
-          height="573"
-          alt="תיקון ברמת הרכיב בלוח אם של מחשב נייד במעבדת Laptopia ברמלה"
-          loading="lazy"
-          decoding="async"
-        >
-        <figcaption>דוגמה לתיקון ברמת הרכיב בלוח אם של מחשב נייד</figcaption>
-      </figure>
-      <figure class="laptopia-component-figure">
-        <img
-          src="https://laptopia.co.il/wp-content/uploads/2026/09/micro-component-coin-e1788901294840.webp"
-          width="573"
-          height="573"
-          alt="רכיב אלקטרוני זעיר במסגרת תיקון לוח אם למחשב נייד"
-          loading="lazy"
-          decoding="async"
-        >
-        <figcaption>דוגמה לרכיב זעיר המולחם במסגרת תיקון ברמת הרכיב</figcaption>
-      </figure>
     </div>
   </section>
   <section class="laptopia-section laptopia-prices" id="prices" aria-labelledby="prices-title">
