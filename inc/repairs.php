@@ -71,7 +71,7 @@ function laptopia_get_repair_cases() {
                     array( 'src' => $dell_media . 'dell-vostro-5402-broken-hinge-mounts.webp', 'alt' => 'מכלול המסך המפורק עם נזק באזור הצירים והצירים שהוסרו', 'width' => 1920, 'height' => 1440, 'caption' => 'מכלול המסך לפני התיקון והצירים המקוריים שהוסרו' ),
                     array( 'src' => $dell_media . 'dell-vostro-5402-disassembled-broken-parts.webp', 'alt' => 'גב המסך הישן מבפנים, עם נקודות חיבור פגומות והצירים שהוסרו', 'width' => 1920, 'height' => 1440, 'caption' => 'גב המסך הישן ונקודות החיבור הפגומות' ),
                 ),
-                'repaired' => array( 'src' => $dell_media . 'dell-vostro-5402-old-new-lcd-cover.webp', 'alt' => 'השוואה בין גב המסך הפגום לגב המסך החדש של Dell Vostro 5402', 'width' => 1440, 'height' => 1920, 'caption' => 'גב המסך הישן למעלה והגב החדש למטה' ),
+                'repaired' => array( 'src' => $dell_media . 'Разборка-устройства-на-рабочем-столе-e1791347940205.png', 'alt' => 'השוואה בין גב המסך הפגום לגב המסך החדש של Dell Vostro 5402', 'width' => 1084, 'height' => 1270, 'caption' => 'גב המסך הישן למעלה והגב החדש למטה' ),
                 'repair_details' => array(
                     array( 'src' => $dell_media . 'dell-vostro-5402-lcd-installed-new-cover.webp', 'alt' => 'מסך Dell Vostro 5402 מותקן בגב המסך החדש במהלך ההרכבה', 'width' => 1920, 'height' => 1440, 'caption' => 'מסך ה-LCD המקורי והצירים המקוריים בגב החדש' ),
                     array( 'src' => $dell_media . 'dell-vostro-5402-display-assembly-after-repair.webp', 'alt' => 'מכלול המסך של Dell Vostro 5402 לאחר החלפת גב המסך ולפני ההרכבה הסופית', 'width' => 1920, 'height' => 1440, 'caption' => 'מכלול המסך לאחר הרכבת המסגרת, לפני החיבור למחשב' ),
